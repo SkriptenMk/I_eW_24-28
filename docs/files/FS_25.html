@@ -79,9 +79,10 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: [{ data: ['index'] },{ data: ['categories'] }],
-      
-      searchColumns: [],
+      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      page: 30,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -214,16 +215,940 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-table" id="listing-listing">
 <div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+    <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+      <option value="" disabled="" selected="" hidden="">Order By</option>
+      <option value="index" data-direction="asc">Default</option>
+      <option value="listing-date-sort" data-direction="asc">
+        Date - Oldest
+      </option>
+      <option value="listing-date-sort" data-direction="desc">
+        Date - Newest
+      </option>
+      <option value="listing-title-sort" data-direction="asc">
+        Title
+      </option>
+      <option value="listing-author" data-direction="asc">
+        Author
+      </option>
+    </select>
+  </div>
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
-<table class="quarto-listing-table table caption-top" data-quarto-postprocess="true">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+
+<th>
+<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
+</th>
+
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+
+<th>
+<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
+</th>
+
+</tr>
+</thead>
 <tbody class="list">
+
+<tr data-index="0" data-listing-date-sort="1739919600000" data-listing-file-modified-sort="1751731334924" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="254" data-listing-title-sort="Queues in Python" data-listing-filename-sort="queue.md">
+<td>
+<span class="listing-date">19.02.2025</span>
+</td>
+<td>
+<a href="../files/lektionen_fs25/250219/queue.html" class="title listing-title">Queues in Python</a>
+</td>
+<td>
+<span class="listing-author">Jacques Mock Schindler</span>
+</td>
+
+</tr>
+
+<tr data-index="1" data-listing-date-sort="1740524400000" data-listing-file-modified-sort="1751731488324" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1494" data-listing-title-sort="Das Binärsystem" data-listing-filename-sort="binaersystem.md">
+<td>
+<span class="listing-date">26.02.2025</span>
+</td>
+<td>
+<a href="../files/lektionen_fs25/250226/binaersystem.html" class="title listing-title">Das Binärsystem</a>
+</td>
+<td>
+<span class="listing-author">Jacques Mock Schindler</span>
+</td>
+
+</tr>
+
+<tr data-index="2" data-listing-date-sort="NaN" data-listing-file-modified-sort="1751731578591" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="190" data-listing-title-sort="Binary Search Tree" data-listing-filename-sort="bst.ipynb">
+<td>
+<span class="listing-date">Invalid Date</span>
+</td>
+<td>
+<a href="../files/lektionen_fs25/250305/bst.html" class="title listing-title">Binary Search Tree</a>
+</td>
+<td>
+<span class="listing-author">Jacques Mock Schindler</span>
+</td>
+
+</tr>
+
+<tr data-index="3" data-listing-date-sort="1742338800000" data-listing-file-modified-sort="1751731759797" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="337" data-listing-title-sort="Base64-Codierung" data-listing-filename-sort="base64.md">
+<td>
+<span class="listing-date">19.03.2025</span>
+</td>
+<td>
+<a href="../files/lektionen_fs25/250319/base64.html" class="title listing-title">Base64-Codierung</a>
+</td>
+<td>
+<span class="listing-author">Jacques Mock Schindler</span>
+</td>
+
+</tr>
+
+<tr data-index="4" data-listing-date-sort="1742943600000" data-listing-file-modified-sort="1751731825790" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="88" data-listing-title-sort="Lernziele für die Prüfung vom 26. März 2025" data-listing-filename-sort="lernziele.md">
+<td>
+<span class="listing-date">26.03.2025</span>
+</td>
+<td>
+<a href="../files/lektionen_fs25/250326/lernziele.html" class="title listing-title">Lernziele für die Prüfung vom 26. März 2025</a>
+</td>
+<td>
+<span class="listing-author">Jacques Mock Schindler</span>
+</td>
+
+</tr>
+
+<tr data-index="5" data-listing-date-sort="1744754400000" data-listing-file-modified-sort="1751732001140" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="377" data-listing-title-sort="Einführung in Datenbanken" data-listing-filename-sort="datenbank.md">
+<td>
+<span class="listing-date">16.04.2025</span>
+</td>
+<td>
+<a href="../files/lektionen_fs25/250416/datenbank.html" class="title listing-title">Einführung in Datenbanken</a>
+</td>
+<td>
+<span class="listing-author">Jacques Mock Schindler</span>
+</td>
+
+</tr>
+
+<tr data-index="6" data-listing-date-sort="1746568800000" data-listing-file-modified-sort="1751732123259" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="900" data-listing-title-sort="Abfrage von Daten" data-listing-filename-sort="sql.md">
+<td>
+<span class="listing-date">07.05.2025</span>
+</td>
+<td>
+<a href="../files/lektionen_fs25/250507/sql.html" class="title listing-title">Abfrage von Daten</a>
+</td>
+<td>
+<span class="listing-author">Jacques Mock Schindler</span>
+</td>
+
+</tr>
+
+<tr data-index="7" data-listing-date-sort="1747778400000" data-listing-file-modified-sort="1751732236818" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="47" data-listing-title-sort="Lernziele für die Prüfung vom 21. Mai 2025" data-listing-filename-sort="lernziele.md">
+<td>
+<span class="listing-date">21.05.2025</span>
+</td>
+<td>
+<a href="../files/lektionen_fs25/250521/lernziele.html" class="title listing-title">Lernziele für die Prüfung vom 21. Mai 2025</a>
+</td>
+<td>
+<span class="listing-author">Jacques Mock Schindler</span>
+</td>
+
+</tr>
+
+<tr data-index="8" data-listing-file-modified-sort="1739885095524" data-listing-filename-sort="class_diagram.svg">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250219\class_diagram.svg" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="9" data-listing-file-modified-sort="1739885095546" data-listing-filename-sort="linked_list.py">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250219\src\linked_list.py" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="10" data-listing-file-modified-sort="1739885095554" data-listing-filename-sort="muloe_linked_list.py">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250219\src\muloe_linked_list.py" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="11" data-listing-file-modified-sort="1739885095563" data-listing-filename-sort="muloe_nodes.py">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250219\src\muloe_nodes.py" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="12" data-listing-file-modified-sort="1739885095585" data-listing-filename-sort="nodes.py">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250219\src\nodes.py" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="13" data-listing-file-modified-sort="1742241557101" data-listing-filename-sort="tabelle.aux">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250319\tabelle.aux" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="14" data-listing-file-modified-sort="1742241557114" data-listing-filename-sort="tabelle.dvi">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250319\tabelle.dvi" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="15" data-listing-file-modified-sort="1742241557131" data-listing-filename-sort="tabelle.log">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250319\tabelle.log" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="16" data-listing-file-modified-sort="1742241392277" data-listing-filename-sort="tabelle.pdf">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250319\tabelle.pdf" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="17" data-listing-file-modified-sort="1742294535405" data-listing-filename-sort="tabelle.svg">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250319\tabelle.svg" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="18" data-listing-file-modified-sort="1742294535418" data-listing-filename-sort="tabelle.tex">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250319\tabelle.tex" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="19" data-listing-file-modified-sort="1745171973889" data-listing-filename-sort="datenbank.pdf">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\datenbank.pdf" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="20" data-listing-file-modified-sort="1745231919192" data-listing-filename-sort="entity_class.aux">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\entity_class.aux" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="21" data-listing-file-modified-sort="1745231919239" data-listing-filename-sort="entity_class.dvi">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\entity_class.dvi" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="22" data-listing-file-modified-sort="1745231919244" data-listing-filename-sort="entity_class.log">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\entity_class.log" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="23" data-listing-file-modified-sort="1745234397294" data-listing-filename-sort="entity_class.svg">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\entity_class.svg" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="24" data-listing-file-modified-sort="1745234397302" data-listing-filename-sort="entity_class.tex">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\entity_class.tex" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="25" data-listing-file-modified-sort="1745231981562" data-listing-filename-sort="entity_subject.aux">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\entity_subject.aux" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="26" data-listing-file-modified-sort="1745231981600" data-listing-filename-sort="entity_subject.dvi">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\entity_subject.dvi" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="27" data-listing-file-modified-sort="1745231981609" data-listing-filename-sort="entity_subject.log">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\entity_subject.log" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="28" data-listing-file-modified-sort="1745234397311" data-listing-filename-sort="entity_subject.svg">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\entity_subject.svg" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="29" data-listing-file-modified-sort="1745234397320" data-listing-filename-sort="entity_subject.tex">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\entity_subject.tex" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="30" data-listing-file-modified-sort="1745232045748" data-listing-filename-sort="entity_teacher.aux">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\entity_teacher.aux" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="31" data-listing-file-modified-sort="1745232045776" data-listing-filename-sort="entity_teacher.dvi">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\entity_teacher.dvi" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="32" data-listing-file-modified-sort="1745232045781" data-listing-filename-sort="entity_teacher.log">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\entity_teacher.log" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="33" data-listing-file-modified-sort="1745234397330" data-listing-filename-sort="entity_teacher.svg">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\entity_teacher.svg" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="34" data-listing-file-modified-sort="1745234397339" data-listing-filename-sort="entity_teacher.tex">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\entity_teacher.tex" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="35" data-listing-file-modified-sort="1744716812747" data-listing-filename-sort="er_example.aux">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\er_example.aux" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="36" data-listing-file-modified-sort="1744716812782" data-listing-filename-sort="er_example.dvi">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\er_example.dvi" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="37" data-listing-file-modified-sort="1744716812785" data-listing-filename-sort="er_example.log">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\er_example.log" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="38" data-listing-file-modified-sort="1745057687625" data-listing-filename-sort="er_example_gross.aux">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\er_example_gross.aux" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="39" data-listing-file-modified-sort="1745057687645" data-listing-filename-sort="er_example_gross.dvi">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\er_example_gross.dvi" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="40" data-listing-file-modified-sort="1745234397349" data-listing-filename-sort="er_example_gross.fdb_latexmk">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\er_example_gross.fdb_latexmk" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="41" data-listing-file-modified-sort="1745045917644" data-listing-filename-sort="er_example_gross.fls">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\er_example_gross.fls" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="42" data-listing-file-modified-sort="1745057687648" data-listing-filename-sort="er_example_gross.log">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\er_example_gross.log" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="43" data-listing-file-modified-sort="1745045917655" data-listing-filename-sort="er_example_gross.pdf">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\er_example_gross.pdf" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="44" data-listing-file-modified-sort="1745234397360" data-listing-filename-sort="er_example_gross.svg">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\er_example_gross.svg" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="45" data-listing-file-modified-sort="1745045676265" data-listing-filename-sort="er_example_gross.synctex(busy).gz">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\er_example_gross.synctex(busy).gz" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="46" data-listing-file-modified-sort="1745234397369" data-listing-filename-sort="er_example_gross.tex">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\er_example_gross.tex" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="47" data-listing-file-modified-sort="1745057832527" data-listing-filename-sort="er_example_klein.aux">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\er_example_klein.aux" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="48" data-listing-file-modified-sort="1745057832539" data-listing-filename-sort="er_example_klein.dvi">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\er_example_klein.dvi" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="49" data-listing-file-modified-sort="1745234397395" data-listing-filename-sort="er_example_klein.fdb_latexmk">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\er_example_klein.fdb_latexmk" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="50" data-listing-file-modified-sort="1744722295260" data-listing-filename-sort="er_example_klein.fls">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\er_example_klein.fls" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="51" data-listing-file-modified-sort="1745057832540" data-listing-filename-sort="er_example_klein.log">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\er_example_klein.log" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="52" data-listing-file-modified-sort="1744722295283" data-listing-filename-sort="er_example_klein.pdf">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\er_example_klein.pdf" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="53" data-listing-file-modified-sort="1745234397403" data-listing-filename-sort="er_example_klein.svg">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\er_example_klein.svg" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="54" data-listing-file-modified-sort="1745234397411" data-listing-filename-sort="er_example_klein.tex">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\er_example_klein.tex" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="55" data-listing-file-modified-sort="1745234397419" data-listing-filename-sort="tikz-er2.sty">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250416\tikz-er2.sty" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="56" data-listing-file-modified-sort="1745211007596" data-listing-filename-sort="feedback_sql.pdf">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250507\feedback_sql.pdf" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="57" data-listing-file-modified-sort="1745164610383" data-listing-filename-sort="relationship_cut.aux">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250507\relationship_cut.aux" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="58" data-listing-file-modified-sort="1745164610414" data-listing-filename-sort="relationship_cut.dvi">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250507\relationship_cut.dvi" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="59" data-listing-file-modified-sort="1745164610416" data-listing-filename-sort="relationship_cut.log">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250507\relationship_cut.log" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="60" data-listing-file-modified-sort="1745234397438" data-listing-filename-sort="relationship_cut.svg">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250507\relationship_cut.svg" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="61" data-listing-file-modified-sort="1745234397446" data-listing-filename-sort="relationship_cut.tex">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250507\relationship_cut.tex" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="62" data-listing-file-modified-sort="1745169802427" data-listing-filename-sort="relationship_teaches.aux">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250507\relationship_teaches.aux" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="63" data-listing-file-modified-sort="1745169802445" data-listing-filename-sort="relationship_teaches.dvi">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250507\relationship_teaches.dvi" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="64" data-listing-file-modified-sort="1745169802446" data-listing-filename-sort="relationship_teaches.log">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250507\relationship_teaches.log" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="65" data-listing-file-modified-sort="1745234397454" data-listing-filename-sort="relationship_teaches.svg">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250507\relationship_teaches.svg" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="66" data-listing-file-modified-sort="1745234397463" data-listing-filename-sort="relationship_teaches.tex">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250507\relationship_teaches.tex" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
+<tr data-index="67" data-listing-file-modified-sort="1745171851321" data-listing-filename-sort="sql.pdf">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
+<td>
+<a href="../files\lektionen_fs25\250507\sql.pdf" class="title listing-title">&nbsp;</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+
+</tr>
+
 </tbody>
 </table>
 <div class="listing-no-matching d-none">No matching items</div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
