@@ -21,7 +21,16 @@
   },
   {
     "listing": "/files/FS_25.html",
-    "items": []
+    "items": [
+      "/files/lektionen_fs25/250219/queue.html",
+      "/files/lektionen_fs25/250226/binaersystem.html",
+      "/files/lektionen_fs25/250305/bst.html",
+      "/files/lektionen_fs25/250319/base64.html",
+      "/files/lektionen_fs25/250326/lernziele.html",
+      "/files/lektionen_fs25/250416/datenbank.html",
+      "/files/lektionen_fs25/250507/sql.html",
+      "/files/lektionen_fs25/250521/lernziele.html"
+    ]
   },
   {
     "listing": "/files/HS_25.html",
