@@ -11,7 +11,7 @@
     "href": "index.html#schedule",
     "title": "Welcome",
     "section": "Schedule",
-    "text": "Schedule\nThe programme reflects the current state of planning. Changes are to be expected during the course of the semester."
+    "text": "Schedule\n\n\n\nDate\nTopic\n\n\n\n\n20.08.2025\nObject-oriented Programming: Classes\n\n\n03.09.2025\nObject-oriented Programming: Inheritance\n\n\n10.09.2025\nObject-oriented Programming: Encapsulation\n\n\n17.09.2025\nObject-oriented Programming: Imports\n\n\n24.09.2025\nObject-oriented Programming: Refactoring\n\n\n22.10.2025\nObject-oriented Programming: Exercise\n\n\n29.10.2025\nTest\n\n\n05.11.2025\nNetworks: TCP/IP\n\n\n12.11.2025\nNetworks: Wireshark\n\n\n19.11.2025\nNetworks: Exercise\n\n\n26.11.2025\nCryptology: Caesar\n\n\n03.12.2025\nCryptology: Vigenère Chiffre\n\n\n10.12.2025\nCryptology: Break Vigenère\n\n\n17.12.2025\nTest\n\n\n07.01.2026\nCryptology: Public Key Cryptography\n\n\n14.01.2026\nCryptology: RSA\n\n\n21.01.2026\nCryptology: Digital Signatures\n\n\n\nThe programme reflects the current state of planning. Changes are to be expected during the course of the semester."
   },
   {
     "objectID": "index.html#grading",
