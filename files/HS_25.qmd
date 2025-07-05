@@ -1,0 +1,9 @@
+---
+title: "Autumn Term Materials 2025/2026"
+date-format: DD.MM.YYYY
+listing:
+  contents: lektionen_hs25/**
+  type: table
+  sort: date
+---
+

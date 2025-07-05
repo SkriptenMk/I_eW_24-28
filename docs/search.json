@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "This site contains all the information you need for your computer science course."
+  },
+  {
+    "objectID": "index.html#schedule",
+    "href": "index.html#schedule",
+    "title": "Welcome",
+    "section": "Schedule",
+    "text": "Schedule"
+  },
+  {
+    "objectID": "index.html#grading",
+    "href": "index.html#grading",
+    "title": "Welcome",
+    "section": "Grading",
+    "text": "Grading"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "files/HS_25.html",
+    "href": "files/HS_25.html",
+    "title": "Autumn Term Materials 2025/2026",
+    "section": "",
+    "text": "No matching items"
+  }
+]

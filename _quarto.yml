@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Computer Science Course Materials for School Year 2025/26 (2eW)"
+  navbar:
+    right:
+      - text: Home
+        href: index.qmd
+      - text: Autumn Term 2025/2026
+        href: files/HS_25.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+
+

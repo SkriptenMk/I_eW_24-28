@@ -1,0 +1,10 @@
+---
+title: "Welcome"
+---
+
+This site contains all the information you need for your computer
+science course.
+
+## Schedule
+
+## Grading
