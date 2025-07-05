@@ -1,13 +1,5 @@
 [
   {
-    "listing": "/files/HS_25.html",
-    "items": []
-  },
-  {
-    "listing": "/files/FS_25.html",
-    "items": []
-  },
-  {
     "listing": "/files/HS_24.html",
     "items": [
       "/files/lektionen_hs24/240821/einfuehrung.html",
@@ -24,8 +16,15 @@
       "/files/lektionen_hs24/241211/schneeflocke.html",
       "/files/lektionen_hs24/241218/lernziele.html",
       "/files/lektionen_hs24/250115/binary_search_tree.html",
-      "/files/lektionen_hs24/250122/speicherstrukturen.html",
-      "/files/lektionen_hs24/250122/src/Sandbox.html"
+      "/files/lektionen_hs24/250122/speicherstrukturen.html"
     ]
+  },
+  {
+    "listing": "/files/FS_25.html",
+    "items": []
+  },
+  {
+    "listing": "/files/HS_25.html",
+    "items": []
   }
 ]
