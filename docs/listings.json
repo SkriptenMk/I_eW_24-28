@@ -1,17 +1,21 @@
 [
   {
-    "listing": "/files/HS_24.html",
-    "items": [
-      "/files/lektionen_hs24/240821/einfuehrung.html",
-      "/files/lektionen_hs24/240828/installationsanleitungen.html"
-    ]
+    "listing": "/files/HS_25.html",
+    "items": []
   },
   {
     "listing": "/files/FS_25.html",
     "items": []
   },
   {
-    "listing": "/files/HS_25.html",
-    "items": []
+    "listing": "/files/HS_24.html",
+    "items": [
+      "/files/lektionen_hs24/240821/einfuehrung.html",
+      "/files/lektionen_hs24/240828/installationsanleitungen.html",
+      "/files/lektionen_hs24/240904/problemloesung.html",
+      "/files/lektionen_hs24/240911/Variablen.html",
+      "/files/lektionen_hs24/240918/main.html",
+      "/files/lektionen_hs24/240925/main.html"
+    ]
   }
 ]

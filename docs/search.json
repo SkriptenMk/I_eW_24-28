@@ -21,39 +21,95 @@
     "text": "Grading\nTwo written examinations are scheduled per semester. In addition, oral participation is graded. Oral participation includes, in particular, asking questions.\nThe Final grades are calculated as a weighted average of the two. written examinations and the oral participation grade. The Average grade of the two written examinations is weighted at 90%, while the grade for oral participation is weighted at 10%."
   },
   {
-    "objectID": "files/lektionen_hs24/240821/einfuehrung.html",
-    "href": "files/lektionen_hs24/240821/einfuehrung.html",
-    "title": "Was ist Informatik?",
+    "objectID": "files/materialien/240904/schweizerfahne_muloe.html",
+    "href": "files/materialien/240904/schweizerfahne_muloe.html",
+    "title": "Einfache Zeichnungen",
     "section": "",
-    "text": "Um diese Frage zu beantworten, hilft es vielleicht sich die Übersetzung des Begriffes ins Englische vor Augen zu führen - Computer Science.\nDie Informatik ist allso die Wissenschaft, die sich mit Computern befasst. Gemeint ist damit die wissenschaftliche Auseinandersetzungen mit Fragen der folgenden Art:\n\nWie sind Computer aufgebaut?\nWie werden Informationen im Computer verarbeitet, abgespeichert und dargestellt?\nWie funktioniert die Kommunikation zwischen Computern?\nWelche Auswirkungen haben Computer auf die Gesellschaft?\n\nDieser Fragenkatalog ist nicht abschliessend und lediglich beispielhaft.\nIn einer ersten Phase werden wir uns hauptsächlich mit der zweiten Frage auseinandersetzen. Dazu werden wir mit der Programmiesprache Python kleine Programme schreiben."
+    "text": "Als Beispiel für die Vorgehnsweise wird hier die Französische Trikolore gezeichnet. Das Seitenverhältnis der Trikolore ist 2 zu 3.\n# Import der erforderlichen Libraries (nur einmal pro Notebook nötig)\nfrom pytamaro.de import (\n    rot, blau, weiss,\n    rechteck, kreis_sektor,\n    drehe, neben, ueber,\n    zeige_grafik\n)\nAls erstes werden die einzelnen Rechtecke gezeichnet.\nbleu = rechteck(10, 20, blau)\nzeige_grafik(bleu)\nblanc = rechteck(10, 20, weiss)\nzeige_grafik(blanc)\nrouge = rechteck(10, 20, rot)\nzeige_grafik(rouge)\nAnschliessend werden die Einzelteile zusammengesetzt.\nzweidrittel = neben(bleu, blanc)\nzeige_grafik(zweidrittel)\ntrikolore = neben(zweidrittel, rouge)\nzeige_grafik(trikolore)"
   },
   {
-    "objectID": "files/HS_24.html",
-    "href": "files/HS_24.html",
-    "title": "Autumn Term Materials 2024/2025",
-    "section": "",
-    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\n21.08.2024\n\n\nWas ist Informatik?\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n28.08.2024\n\n\nErforderliche Systemeinrichtungen\n\n\nJacques Mock Schindler\n\n\n\n\n\n\nNo matching items"
+    "objectID": "files/materialien/240904/schweizerfahne_muloe.html#tessiner-wappen",
+    "href": "files/materialien/240904/schweizerfahne_muloe.html#tessiner-wappen",
+    "title": "Einfache Zeichnungen",
+    "section": "Tessiner Wappen",
+    "text": "Tessiner Wappen\nPyTamaro wird von einem Team an der Università della Svizzera italiana in Lugano entwickelt. Zu ehren des Standortkantons geht es in einer ersten Übung darum, das Tessiner Wappen zu zeichnen.\n\n\nVorgehen\n\nDas Wappen wird in Einzelteile zerlegt.\n\nDie Einzelteile werden aufgelistet.\n\nrotes Rechteck\nblaues Rechteck\nroter Viertelkreis\nblauer Viertelkreis\n\nDie Einzelteile werden mit PyTamaro programmiert.\nDie Einzelteile werden mit PyTamaro zusammengesetzt.\n\n\n\nUmsetzung in PyTamaro\n\nrotes_rechteck = rechteck(10, 15, rot)\nzeige_grafik(rotes_rechteck)\n\n\n\n\n\n\n\n\n\nblaues_rechteck = rechteck(10, 15, blau)\nzeige_grafik(blaues_rechteck)\n\n\n\n\n\n\n\n\n\nroter_viertelkreis = kreis_sektor(10, 90, rot)\nroter_viertelkreis = drehe(180, roter_viertelkreis)\nzeige_grafik(roter_viertelkreis)\n\n\n\n\n\n\n\n\n\nblauer_viertelkreis = kreis_sektor(10, 90, blau)\nblauer_viertelkreis = drehe(270, blauer_viertelkreis)\nzeige_grafik(blauer_viertelkreis)\n\n\n\n\n\n\n\n\n\nobere_haelfte = neben(rotes_rechteck, blaues_rechteck)\nzeige_grafik(obere_haelfte)\n\n\n\n\n\n\n\n\n\nuntere_haelfte = neben(roter_viertelkreis, blauer_viertelkreis)\nzeige_grafik(untere_haelfte)\n\n\n\n\n\n\n\n\n\nti = ueber(obere_haelfte, untere_haelfte)\nzeige_grafik(ti)\n\n\n\n\n\n\n\n\n\n\nCode Aufräumen (Refactoring)\nDie Erste Aufgabe beim Programmieren ist sicher die Lösung des konkreten Problems. Eng damit Verbunden ist allerdings auch die übersichtliche Darstellung des Programms. Dabei ist insbesondere darauf zu achten, das Wiederholungen so weit wie möglich vermieden werden. Unten steht der bereinigte Code der verwendet wurde, um das Tessiner Wappen zu zeichnen.\nrotes_rechteck = rechteck(10, 15, rot)\nblaues_rechteck = rechteck(10, 15, blau)\nroter_viertelkreis = kreis_sektor(10, 90, rot)\nroter_viertelkreis = drehe(180, roter_viertelkreis)\nblauer_viertelkreis = kreis_sektor(10, 90, blau)\nblauer_viertelkreis = drehe(270, blauer_viertelkreis)\nobere_haelfte = neben(rotes_rechteck, blaues_rechteck)\nuntere_haelfte = neben(roter_viertelkreis, blauer_viertelkreis)\nti = ueber(obere_haelfte, untere_haelfte)\nzeige_grafik(ti)\nDieser Code soll nun so bereinigt werden, dass Wiederholungen vermieden werden. Dabei soll allerdings dessen Verständlichkeit nicht leiden.\n\nbreite = 50\nlaenge = 1.5 * breite\nrotes_rechteck = rechteck(breite, laenge, rot)\nblaues_rechteck = rechteck(breite, laenge, blau)\nroter_viertelkreis = kreis_sektor(breite, 90, rot)\nroter_viertelkreis = drehe(180, roter_viertelkreis)\nblauer_viertelkreis = kreis_sektor(breite, 90, blau)\nblauer_viertelkreis = drehe(270, blauer_viertelkreis)\nobere_haelfte = neben(rotes_rechteck, blaues_rechteck)\nuntere_haelfte = neben(roter_viertelkreis, blauer_viertelkreis)\nti = ueber(obere_haelfte, untere_haelfte)\nzeige_grafik(ti)"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
+    "objectID": "files/materialien/240904/schweizerfahne_muloe.html#schweizerfahne",
+    "href": "files/materialien/240904/schweizerfahne_muloe.html#schweizerfahne",
+    "title": "Einfache Zeichnungen",
+    "section": "Schweizerfahne",
+    "text": "Schweizerfahne\nAlle kennen die Schweizerfahne. Ein weisses Kreuz auf rotem Grund. Was viele nicht wissen, dass es für die genauen Proportionen eine gesetzliche Grundlage gibt, das Bundesgesetz über den Schutz des Schweizerwappens und anderer öffentlicher Zeichen (Wappenschutzgesetz, WSchG). Das WSchG regelt in seinem Anhang 2 die Proportionen und die Farben der Schweizerfahne.\n\nBasierend auf diesen Vorgaben soll die Schweizerfahne gezeichnet werden.\n\nUmsetzung in PyTamaro\n\nfrom pytamaro.de import (\n    ueberlagere,\n    weiss, rgb_farbe\n)\n\n\nhintergrundfarbe = rgb_farbe(255, 0, 0)\neinheit = 5\nbreite = 20 * einheit\nhoehe = 6 * einheit\nkante = 32 * einheit\n\ntuch = rechteck(kante, kante, hintergrundfarbe)\nbalken = rechteck(breite, hoehe, weiss)\nbalken_senkrecht = drehe(90, balken)\nkreuz = ueberlagere(balken, balken_senkrecht)\nfahne = ueberlagere(kreuz, tuch)\nzeige_grafik(fahne)"
   },
   {
-    "objectID": "files/FS_25.html",
-    "href": "files/FS_25.html",
-    "title": "Spring Term Materials 2025",
+    "objectID": "files/lektionen_hs24/240925/main.html",
+    "href": "files/lektionen_hs24/240925/main.html",
+    "title": "Bedingungen in Python",
     "section": "",
-    "text": "No matching items"
+    "text": "Es gibt Situationen, in denen soll einzelne Anweisungen eines Programmes nur dann ausgeführt werden, wenn eine bestimmte Bedingung zutrifft. Die allgemeine Struktur einer solchen wenn-dann-sonst-Konstruktion sieht folgendermassen aus:\nWENN Bedingung DANN\n    Anweisungen, die ausgeführt werden, wenn die Bedingung wahr ist\nSONST\n    Anweisungen, die ausgeführt werden, wenn die Bedingung falsch ist\nENDE WENN\nIn Python wird das als\nif x == True\n    ...\nelse:\n    ...\ndargestellt. Dabei können nach dem if beliebige Bedingungen formuliert werden. Die dazu erforderlichen Vergleichsoperatoren sind\n\n\n\nOperator\nBedeutung\n\n\n\n\n==\nist gleich\n\n\n!=\nnicht gleich\n\n\n&lt;=\nkleiner gleich\n\n\n&gt;=\ngrösser gleich\n\n\n\nMehrere Bedingungen können dabei mit und bzw. oder verknüpft werden. Die Verknüpfung der Bedingungen erfolgen nach den Regeln der formalen Logik."
   },
   {
-    "objectID": "files/HS_25.html",
-    "href": "files/HS_25.html",
-    "title": "Autumn Term Materials 2025/2026",
+    "objectID": "files/lektionen_hs24/240925/main.html#bedinungen",
+    "href": "files/lektionen_hs24/240925/main.html#bedinungen",
+    "title": "Bedingungen in Python",
     "section": "",
-    "text": "No matching items"
+    "text": "Es gibt Situationen, in denen soll einzelne Anweisungen eines Programmes nur dann ausgeführt werden, wenn eine bestimmte Bedingung zutrifft. Die allgemeine Struktur einer solchen wenn-dann-sonst-Konstruktion sieht folgendermassen aus:\nWENN Bedingung DANN\n    Anweisungen, die ausgeführt werden, wenn die Bedingung wahr ist\nSONST\n    Anweisungen, die ausgeführt werden, wenn die Bedingung falsch ist\nENDE WENN\nIn Python wird das als\nif x == True\n    ...\nelse:\n    ...\ndargestellt. Dabei können nach dem if beliebige Bedingungen formuliert werden. Die dazu erforderlichen Vergleichsoperatoren sind\n\n\n\nOperator\nBedeutung\n\n\n\n\n==\nist gleich\n\n\n!=\nnicht gleich\n\n\n&lt;=\nkleiner gleich\n\n\n&gt;=\ngrösser gleich\n\n\n\nMehrere Bedingungen können dabei mit und bzw. oder verknüpft werden. Die Verknüpfung der Bedingungen erfolgen nach den Regeln der formalen Logik."
+  },
+  {
+    "objectID": "files/lektionen_hs24/240925/main.html#aussagenlogik-verknüpfung-von-bedingungen",
+    "href": "files/lektionen_hs24/240925/main.html#aussagenlogik-verknüpfung-von-bedingungen",
+    "title": "Bedingungen in Python",
+    "section": "Aussagenlogik (Verknüpfung von Bedingungen)",
+    "text": "Aussagenlogik (Verknüpfung von Bedingungen)\nComputer verarbeiten Daten. Daten werden im Computer als Nullen und Einsen oder als “Strom” und “kein Strom” dargestellt. Mit diesen zwei Zuständen lässt sich alles darstellen. Weil alles mit zwei Zuständen dargestellt werden kann ist diese Form der Darstellung digital.\nIm folgenden sollen die logischen Operationen\n\nlogisches Nicht (not)\nlogisches Und (and)\nlogisches Oder (or)\nlogisches Exklusiv-Oder (xor)\n\nbetrachtet werden.\n\nDie Negation\nDie logische Negation wird als nicht-Operation bezeichnet.\nWenn es nur zwei Werte - 0 und 1 - gibt, dann ist\n\nder Wert, der nicht 0 ist, 1 und\nder Wert, der nicht 1 ist, 0.\n\nNicht wird mit dem Symbol ¬ oder \\(\\ \\bar{ }\\ \\) (Strich über dem verneinten Zeichen) dargestellt.\nMan kann damit schreiben\n\\(\\lnot 1 = 0\\)\noder\n\\(\\bar{1} = 0\\)\nDie Verneinung kann in einer sogenannten Wahrheitstabelle dargestellt werden.\n\n\n\n\\(x\\)\n\\(\\bar{x}\\)\n\n\n\n\n0\n1\n\n\n1\n0\n\n\n\nMit Wahrheitstabellen lassen sich auch andere logische Operationen definieren.\n\n\nLogisches Und (and)\nDas logische Und (and) wird mit dem Symbol \\(\\land\\) dargestellt.\nDie Wahrheitstabelle dafür sieht folgendermassen aus:\n\n\n\n\\(x\\)\n\\(y\\)\n\\(x \\land y\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n0\n\n\n1\n0\n0\n\n\n1\n1\n1\n\n\n\n\n\nLogisches Oder (or)\nDas logische Oder (or) wird mit dem Symbol \\(\\lor\\) dargestellt.\nDie Wahrheitstabelle für das logische Oder sieht folgendermassen aus:\n\n\n\n\\(x\\)\n\\(y\\)\n\\(x \\lor y\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n1\n\n\n1\n0\n1\n\n\n1\n1\n1\n\n\n\n\n\nLogisches exklusiv-Oder (xor)\nDas logische exklusiv-Oder (xor) wird mit dem Symbol \\(\\dot\\lor\\) dargestellt.\nDie Wahrheitstabelle für das logische exklusiv-Oder sieht folgendermassen aus:\n\n\n\n\\(x\\)\n\\(y\\)\n\\(x \\dot\\lor y\\)\n\n\n\n\n0\n0\n0\n\n\n0\n1\n1\n\n\n1\n0\n1\n\n\n1\n1\n0\n\n\n\n\n\nRangfolge logischer Operatoren\nAnalog zu den arithmetischen Operationen haben auch die logischen Operatoren eine Rangfolge. Am stärksten bindet dabei not (\\(\\lnot x\\) oder \\(\\bar{x}\\)) gefolgt von and (\\(x \\land y\\)) und or (\\(x \\lor y\\))."
+  },
+  {
+    "objectID": "files/lektionen_hs24/240925/main.html#arbeitsblatt",
+    "href": "files/lektionen_hs24/240925/main.html#arbeitsblatt",
+    "title": "Bedingungen in Python",
+    "section": "Arbeitsblatt",
+    "text": "Arbeitsblatt\nHier finden Sie ein Arbeitsblatt für die Arbeit mit Bedingungen in Python."
+  },
+  {
+    "objectID": "files/lektionen_hs24/240911/Variablen.html",
+    "href": "files/lektionen_hs24/240911/Variablen.html",
+    "title": "Variablen und Datentypen in Python",
+    "section": "",
+    "text": "Python verfügt über eingebaute mathematische Fähigkeiten. Es kann die Grundrechenarten und kennt die Hierarchie der Operationen. Sie können das überprüfen, in dem Sie in der folgenden Zelle die Rechnung \\[2+3\\cdot4\\] ausführen.\n\n# hier können Sie die Rechnung ausführen\n\nDie folgende Tabelle gibt einen Überblick über die direkt in Python verfügbaren mathematischen Funktionen:\n\n\n\nBeschreibung\nBefehl\nBeispiel\n\n\n\n\nAddition\n+\n2 + 3\n\n\nSubtraktion\n-\n3 - 2\n\n\nMultiplikation\n*\n3 * 2\n\n\nDivision\n/\n3 / 2\n\n\nPotenzen\n**\n3 ** 2\n\n\nWurzeln\n**(1/n)\n16 ** (1/2)\n\n\nGanzzahlige Division\n//\n7 // 2\n\n\nModulo\n%\n7 % 2"
+  },
+  {
+    "objectID": "files/lektionen_hs24/240911/Variablen.html#python-als-rechner",
+    "href": "files/lektionen_hs24/240911/Variablen.html#python-als-rechner",
+    "title": "Variablen und Datentypen in Python",
+    "section": "",
+    "text": "Python verfügt über eingebaute mathematische Fähigkeiten. Es kann die Grundrechenarten und kennt die Hierarchie der Operationen. Sie können das überprüfen, in dem Sie in der folgenden Zelle die Rechnung \\[2+3\\cdot4\\] ausführen.\n\n# hier können Sie die Rechnung ausführen\n\nDie folgende Tabelle gibt einen Überblick über die direkt in Python verfügbaren mathematischen Funktionen:\n\n\n\nBeschreibung\nBefehl\nBeispiel\n\n\n\n\nAddition\n+\n2 + 3\n\n\nSubtraktion\n-\n3 - 2\n\n\nMultiplikation\n*\n3 * 2\n\n\nDivision\n/\n3 / 2\n\n\nPotenzen\n**\n3 ** 2\n\n\nWurzeln\n**(1/n)\n16 ** (1/2)\n\n\nGanzzahlige Division\n//\n7 // 2\n\n\nModulo\n%\n7 % 2"
+  },
+  {
+    "objectID": "files/lektionen_hs24/240911/Variablen.html#variablen",
+    "href": "files/lektionen_hs24/240911/Variablen.html#variablen",
+    "title": "Variablen und Datentypen in Python",
+    "section": "Variablen",
+    "text": "Variablen\nIn Python sind Variablen symbolische Namen für gespeicherte Daten. Variablen verweisen dabei auf den Speicherbereich im Computer, in dem die entsprechenden Daten physikalisch abgelegt sind. Aus diesem Grund werden Variablen gelegentlich auch als Zeiger bezeichnet. Was genau für Daten in diesem Speicherbereich abgelegt werden, spielt keine Rolle und kann während der Ausführung eines Programmes auch ändern.\nVariablen werden Werte mit dem Gleichheitszeichen zugewiesen. Um der Variable \\(x\\) den Wert \\(2\\) zuzuweisen, ist die Eingabe x = 2 erfoderlich. Die Variable steht links vom Gleichheitszeichen, der zuzuweisende Wert rechts davon.\nÜberprüfen Sie dies, indem Sie in der folgenden Zelle der Variabel \\(y\\) den Wert \\(3\\) und der Variabel \\(z\\) den Wert \\(4\\) zuweisen. Anschliessend multipliziern Sie die beiden Variablen miteinander.\n\n# hier die Aufgabe einfüllen\n\nWenn Variablen neue Werte zugewiesen werden, wird die Referenz auf den Speicherbereich mit dem alten Wert gelöscht. Die Daten, welche ohne Verweis durch eine Variable im Speicher liegen, werden vom in Python eingebauten Garbage Collector im Hintergrund gelöscht und der so freigewordene Speicherplatz kann wieder verwendet werden.\nSie können überprüfen, dass Variablen neue Werte zugewiesen werden können, indem Sie in der untenstehenden Zelle die Variabeln \\(y\\) und \\(z\\) addieren. Sie erhalten dann das Resultat \\(7\\). Das heisst, den Variablen \\(y\\) und \\(z\\) sind immer noch die Werte \\(3\\) und \\(4\\) zugewiesen.\n\n# addieren Sie hier y und z\n\nWenn Sie in der folgenden Zelle der Variabel \\(y\\) den Wert \\(5\\) zuweisen und anschliessend \\(y\\) und \\(z\\) addieren erhalten Sie als neues Resultat \\(9\\).\n\n# weisen Sie hier y den neuen Wert zu\n\nVariablen können auch Resultate von Berechnungen zugewiesen werden. Ausserdem können Variablen ganze Wörter als Namen haben. Dies ist gegenüber einzelnen Buchstaben vorzuziehen, weil dann aussagekräftige Namen gewählt werden können. Grundsätzich sind die Namen von Variabeln frei wählbar. Es gibt allerdings eine Reihe von reservierten Begriffen, welche in der Programmiersprache Python eine eigene Bedeutung haben. Unzulässig sind ausserdem Namen, die mit Ziffern beginnen.\nFür die Darstellung von Namen für Variablen hat sich in Python eingebürgert, Variablen klein zu schreiben und Wörter durch Underlines zu trennen (\\(this\\_is\\_a\\_valid\\_variable\\)). Diese Darstellung nennt sich Snake Case. Zudem werden Variablen meist mit englischen Begriffen bezeichnet.\nWeisen Sie in der nächsten Zelle der Variable result das Resultat der Rechnung \\(y + z\\) zu und geben Sie das Resultat mit print(result) aus. print() ist eine Funktion, die Python zur Verfügung stellt. Was Funktionen sind, wird im nächsten Abschnitt erklärt.\n\n# weisen Sie hier der Variable result das Resultat zu"
+  },
+  {
+    "objectID": "files/lektionen_hs24/240911/Variablen.html#funktionen-in-python",
+    "href": "files/lektionen_hs24/240911/Variablen.html#funktionen-in-python",
+    "title": "Variablen und Datentypen in Python",
+    "section": "Funktionen in Python",
+    "text": "Funktionen in Python\nPython verfügt über viele bereits vordefinierte Funktionen. Die oben verwendete Funktion print() ist ein Beispiel dafür. Um zu demonstrieren, wie Funktionen in Python definiert werden, zeige ich Ihnen als Beispiel eine Funktion, mit der zwei Zahlen addiert werden.\n\ndef get_sum(x, y):\n    return x + y\n\nresult = get_sum(3,4)\nprint(result)\n\ndef ist das Schlüsselwort für die Definition einer Funktion. get_sum ist der von mir gewählte Name dieser Funktion. Für die Wahl des Namens einer Funktion gelten die gleichen Regeln, wie für Variablen. In den Klammern stehen die sogenannten Parameter, welche der Funktion übergeben werden, damit sie etwas damit macht. Mit dem Doppelpunkt wird die Signatur der Funktion abgeschlossen. Die Signatur zeigt idealerweise, was eine Funktion womit macht. Sie gibt aber keine Auskunft darüber, wie sie das macht.\nPython gruppiert Befehle, die zusammengehören, durch die gleiche Tiefe der Einrückung. Eine Einrückung hat üblicherweise die Tiefe von vier Leerzeichen. Im Beispiel oben gibt es nur eine eingerückte Zeile, weil die Funktion nur aus einem Befehl besteht. Mit return gibt die Funktion das Resultat zurück.\nIm Beispiel wird das Resultat der Berechnung, welche die Funktion ausführt der Variable result zugewiesen. Der Wert der Variable result wird mit print(result) ausgegeben.\nDefinieren Sie in der folgenden Zelle eine Funktion, mit der zwei Zahlen multipliziert werden.\n\n# hier kommt Ihre Funktion hin"
+  },
+  {
+    "objectID": "files/lektionen_hs24/240911/Variablen.html#datentypen",
+    "href": "files/lektionen_hs24/240911/Variablen.html#datentypen",
+    "title": "Variablen und Datentypen in Python",
+    "section": "Datentypen",
+    "text": "Datentypen\nAls nächstes geht es um die Frage, auf welche Inhalte eine Variable zeigen kann.\nIm Grundsatz kann eine Variable auf beliebige Inhalte verweisen.\nAm einfachsten ist die Verwendung der grundlegenden Datenypen (basic data types), welche Python zur Verfügung stellt. Dies sind (mit ihren englischen Bezeichnungen):\n\nInteger (Ganzzahl)\nFloating-Point Number (Gleitkommazahl)\nComplex Number (komplexe Zahl)\nString (Zeichenkette)\nBoolean Type (Wahrheitswert)\n\nDarüber hinaus ist es möglich, eigene Datentypen zu programmieren. Hier aber zuerst eine Beschreibung der grundlegenden Datentypen von Python.\n\nInteger\nDie Bezeichnung für Integer in Python ist ein kurzes int.\nAnders als in anderen Progammiersprachen gibt es in Python theoretisch keine Beschränkung, wie gross ein Integer sein kann. Die einzige Grenze ist der Speicherplatz des konkreten Systems.\nWenn einer Variable ein grosser Integer zugewiesen wird, kann dieser zur besseren Lesbarkeit auch mit einem Underline als Tausendertrennzeichen geschrieben werden (100_000).\nUm das Auszuprobieren, weisen Sie in der folgenden Zelle der Variable \\(a\\) den Wert von einer Million und der Variable \\(b\\) den Wert von einer Milliarde zu. Anschliessend addieren Sie \\(a\\) und \\(b\\) und weisen das Resultat der Variable \\(big\\_sum\\) zu. Zum Schluss geben Sie den Wert von \\(big\\_sum\\) mit der Funktion print() aus.\n\n# hier können Sie Ihre Berechnung vornehmen\n\nEingegebene Zahlen werden automatisch als Dezimalzahlen interpretiert.\nIntegers können jedoch auch als Binär-, Oktal- oder Hexadezimalzahlen eingegeben werden. Die Eingabe erfordert dann allerdings ein Präfix, welches das Zahlensysten identifiziert. Die folgende Tabelle stellt die möglichen Präfixe zusammen.\n\n\n\nPräfix\nBedeutung\nBasis\n\n\n\n\n0b (Null + Kleinbuchstabe b)\nBinärzahl\n2\n\n\n0B (Null + Grossbuchstabe B)\n\n2\n\n\n0o (Null + Kleinbuchstabe o)\nOktalzahl\n8\n\n\n0O (Null + Grossbuchstabe O)\n\n8\n\n\n0x (Null + Kleinbuchstabe x)\nHexadezimalzahl\n16\n\n\n0X (Null + Grossbuchstabe X)\n\n16\n\n\n\nIn der folgende Zelle finden Sie ein entsprechendes Beispiel.\n\nb = 0b101010\no = 0o52\nx = 0x2a\n\nprint(b, o, x)\n\n\n\nGleitkommazahl\nDie Bezeichnung für Gleitkommazahlen in Python ist float. Python interpretiert Zahlen mit einem Dezimalpunkt als Gleitkommazahlen. Optional können Zahlen mit e oder E in “wissenschaftlicher” Schreibweise eigegeben werden (1000 = 1e3 bzw. 1e-3 = 0.001).\nWeisen Sie in der folgenden Zelle den Variablen million und billionth die passenden Werte in wissenschaftlicher Schreibweise zu.\n\n# hier die Werte den beiden Variablen zuweisen\n\n\n\nKomplexe Zahlen\nPython kann auch mit komplexen Zahlen umgehen. Der Abschnitt zu diesem Thema kann wieder aufgegriffen werden, wenn Sie in Mathe die komplexen Zahlen besprochen haben.\n\n\nString\nZeichenketten werden von Python als str bezeichnet.\nZeichenketten sind beliebige Zeichenfolgen. Damit Python Zeichenketten als solche erkennt, müssen sie durch die Verwendung von einfachen oder doppelten Anführungs- und Schlusszeichen als solche gekennzeichnet werden.\n\"Ich bin eine Zeichenkette.\" oder 'Ich bin auch eine Zeichenkette.'\nWenn man in der Zeichenkette Anführungszeichen braucht, müssen die eingrenzenden Anfürhungszeichen von der “anderen Sorte” sein (\"It's cool learning Python!\" oder 'Der Lehrer sagt: \"Es ist cool Python zu lernen.\"'). Eine andere Möglichkeit reservierte Zeichen zu verwenden ist der Gebrauch eines “escape”-Zeichens. In Python ist das der “backslash”. Die beiden Beispielsätze von vorher hätten entsprechend auch folgendermassen geschrieben werden können:\n'It\\'s cool learning Python!' bzw. \"Der Lehrer sagt: \\\"Es ist cool Python zu lernen.\\\"\"\nDie Länge von Zeichenketten wird lediglich durch die Speicherkapazität des Systems begrenzt. Insbesondere kann eine Zeichenkette auch leer sein ('').\nZeichenketten können, wie alle Datentypen, Variablen zugewiesen werden.\n\nstandard_greeting = \"Hello World\"\nprint(standard_greeting)\n\n\n\nBoolean Type\nWahrheitswerte werden in Python als bool bezeichnet. Wahrheitswerte können entweder “wahr” oder “falsch” sein.\nWahrheitswerte werden zur Steuerung von Programmflüssen verwendet. Mit einem Wahrheitswert kann zum Beispiel gesteuert werden, wie oft ein Programmteil wiederholt werden soll."
+  },
+  {
+    "objectID": "files/lektionen_hs24/240911/Variablen.html#funktionen-mit-type-hints",
+    "href": "files/lektionen_hs24/240911/Variablen.html#funktionen-mit-type-hints",
+    "title": "Variablen und Datentypen in Python",
+    "section": "Funktionen mit Type-Hints",
+    "text": "Funktionen mit Type-Hints\nZum Abschluss komme ich noch einmal auf die Definition von Funktionen zurück. In Python können Variablen - anders als zum Beispiel in Java - beliebige Datentypen zugewiesen werden. Wenn Variablen im Verlauf eines Programms mehrfach verwendet werden, können ihnen auch unterschiedliche Datentypen zugewiesen werden. Dies ist allerdings schlechter Programmierstil.\nAus diesem Grund ist es sinnvoll, bei der Definition einer Funktion zu deklarieren, welche Datentypen die Parameter haben und welcher Datentyp der Rückgabewert hat. Dies soll mit dem Beispiel der Funktion get_quotient verdeutlicht werden.\n\ndef get_quotient(x : int, y : int) -&gt; float:\n    return x / y\n\nHier wird angegeben, dass die Parameter \\(x\\) und \\(y\\) vom Datentyp int sein sollen. Der Datentyp des Rückgabewertes wird hinter -&gt; geschrieben. Im Beispiel ist der Rückgabewert vom Typ float. Das ist so, weil die Funktion zum Beispiel \\(3 / 4 = 3.5\\) rechnet.\nAber Achtung: die Funktion arbeitet auch dann korrekt, wenn ein anderer als der deklarierte Datentyp übergeben wird. Voraussetzung ist lediglich, dass der Datentyp mit den verwendeten Operationen kompatibel ist. Die “Type-Hints” dienen lediglich der besseren Nachvollziehbarkeit, was die Funktion macht."
   },
   {
     "objectID": "files/lektionen_hs24/240828/installationsanleitungen.html",
@@ -96,5 +152,82 @@
     "title": "Erforderliche Systemeinrichtungen",
     "section": "Arbeitsumgebung in der lokalen Ordnerstruktur",
     "text": "Arbeitsumgebung in der lokalen Ordnerstruktur\nIch gehe davon aus, dass Sie die Dateien für die Schule grundsätzlich folgendermassen organisiert haben:\n+---Schule\n    +---BG\n    +---Chemie\n    +---Deutsch\n    +---Englisch\n    +---Franzoesisch\n    +---Geographie\n    +---Geschichte\n    +---Informatik\n    ¦   +---Einfuehrung\n    +---Klassenstunde\n    +---Mathematik\n    +---Musik\n    +---PPP\nFür das erstellen der verlangten Python Virtual Environment wechseln Sie jeweils in den Ordner Schule&gt;Informatik&gt;Einfuehrung."
+  },
+  {
+    "objectID": "files/HS_25.html",
+    "href": "files/HS_25.html",
+    "title": "Autumn Term Materials 2025/2026",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "files/FS_25.html",
+    "href": "files/FS_25.html",
+    "title": "Spring Term Materials 2025",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "files/HS_24.html",
+    "href": "files/HS_24.html",
+    "title": "Autumn Term Materials 2024/2025",
+    "section": "",
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\n21.08.2024\n\n\nWas ist Informatik?\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n28.08.2024\n\n\nErforderliche Systemeinrichtungen\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n04.09.2024\n\n\nProbleme lösen\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n11.09.2024\n\n\nVariablen und Datentypen in Python\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n18.09.2024\n\n\nWiederholungen in Python\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n25.09.2024\n\n\nBedingungen in Python\n\n\nJacques Mock Schindler\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "files/lektionen_hs24/240821/einfuehrung.html",
+    "href": "files/lektionen_hs24/240821/einfuehrung.html",
+    "title": "Was ist Informatik?",
+    "section": "",
+    "text": "Um diese Frage zu beantworten, hilft es vielleicht sich die Übersetzung des Begriffes ins Englische vor Augen zu führen - Computer Science.\nDie Informatik ist allso die Wissenschaft, die sich mit Computern befasst. Gemeint ist damit die wissenschaftliche Auseinandersetzungen mit Fragen der folgenden Art:\n\nWie sind Computer aufgebaut?\nWie werden Informationen im Computer verarbeitet, abgespeichert und dargestellt?\nWie funktioniert die Kommunikation zwischen Computern?\nWelche Auswirkungen haben Computer auf die Gesellschaft?\n\nDieser Fragenkatalog ist nicht abschliessend und lediglich beispielhaft.\nIn einer ersten Phase werden wir uns hauptsächlich mit der zweiten Frage auseinandersetzen. Dazu werden wir mit der Programmiesprache Python kleine Programme schreiben."
+  },
+  {
+    "objectID": "files/lektionen_hs24/240904/problemloesung.html",
+    "href": "files/lektionen_hs24/240904/problemloesung.html",
+    "title": "Probleme lösen",
+    "section": "",
+    "text": "In dieser Einheit geht es darum, sich mit einer ersten Art der Problemlösung beim Programmieren auseinanderzusetzen.\nDie hier vorgeschlagene Vorgehensweise ist simpel. Man nimmt das Problem und unterteilt es solange in Teilprobleme, bis nur noch einfach zu lösende Teilprobleme übrigbleiben.\nZur Illustration soll gezeigt werden, wie die Französische Trikolore gezeichnet werden kann. Wird diese in ihre Einzelteile zerlegt bleiben drei gleichgrosse nebeneinander angeordnete Rechtecke in den Farben blau, weiss und rot. Entsprechend muss man die drei Rechtecke zeichnen und anschliessen nebeneinander anordnen.\nDamit Sie das an Ihrem Computer tun können, müssen die folgenden Vorbereitungsarbeiten erledigt werden (es wird vorausgesetzt, dass alle Systemeinrichtungsarbeiten aus der Lektion vom 28. August 24 erfolgreich abgeschlossen sind):\n\nLegen Sie im Ordner Informatik einen Unterordner 240904 an.\nKlicken Sie den neuen Ordner 240904 mit der rechten Maustaste an und wählen sie aus dem Kontextmenü weitere Optionen aus. In den weiteren Optionen wählen Sie In Terminal öffnen.\nIm neuen Terminal erstellen Sie eine Python Virtual Environment.\n...\\240904&gt; python -m venv venv\nStarten Sie die Python Virtual Environment.\n...\\240904&gt; venv\\Scripts\\activate\nInstallieren Sie in dieser Python Virtual Environment die Pakete jupyter und pytamaro.\n...\\240904&gt; python -m pip install jupyter pytamaro\nDieser Vorgang dauert einige Minuten.\nJetzt können Sie unter dem Link Arbeitsblatt das vorbereitete Jupyter Notebook in den neuen Ordner 240904 herunterladen.\nStarten Sie Jupyter Notebook\n...\\240904&gt; jupyter notebook\nÖffnen Sie das Jupyter Notebook mit Doppelklick auf den Dateinamen schweizerfahne.ipynb\nFolgen Sie den Anleitungen im Arbeitsblatt.\n\nDiese Vorgehensweise soll in diesem Arbeitsblatt am Wappen des Kantons Tessin und der Schweizerfahne geübt werden."
+  },
+  {
+    "objectID": "files/lektionen_hs24/240918/main.html",
+    "href": "files/lektionen_hs24/240918/main.html",
+    "title": "Wiederholungen in Python",
+    "section": "",
+    "text": "Eine Stärke von Computerprogrammen ist die wiederholte Ausführung von Anweisungen. Viele Programmiersprachen stellen dafür ein Konstrukt mit dem Namen ‘For-Schleife’ zur Verfügung. Eine ‘For-Schleife’ funktioniert unabhängig von einer konkreten Programmiersprache folgendermassen:\nFÜR variable VON startwert BIS endwert [MIT schrittweite]\n    Anweisungen\nENDE FÜR\nÜbersetzt nach Python sieht das so aus:\nfor i in range(n):\n    do...\nstartwert BIS endwert [MIT schrittweite] wird dabei durch range(n) ausgedrückt. Dabei ist n der Endwert. Gezählt wird bis zum aber ohne den Endwert. Startwert und Schrittweite haben Vorgabewerte. Der Vorgabewert für den Start ist 0, derjenige der Schrittweite 1. Weil range() diese vorgegebenen Werte hat, müssen diese nicht explizit angegeben werden. Wenn der Startwert abweichend vom Vorgabewert festgelegt werden soll, kann dieser explizit angegeben werden. Der Aufruf von range() sieht dann so aus:\nrange(startwert, endwert)\nFalls eine von 1 abweichende Schrittweite festgelegt werden soll lautet der Aufruf\nrange(startwert, endwert, schrittweite)\nIn diesem Fall müssen neben dem Endwert sowohl der Startwert und die Schrittweite angegeben werden. Andernfalls kann nicht zwischen den einzelnen Angaben zu Endwert, Startwert und Schrittweite unterschieden werden.\nIm hier verlinkten Arbeitsblatt finden Sie ein paar Übungen zu Python For-Schleifen."
+  },
+  {
+    "objectID": "files/materialien/240904/schweizerfahne.html",
+    "href": "files/materialien/240904/schweizerfahne.html",
+    "title": "Einfache Zeichnungen mit PyTamaro",
+    "section": "",
+    "text": "Hier geht es zur online Anleitung für PyTamaro.\nAls Beispiel für die Vorgehnsweise wird hier die Französische Trikolore gezeichnet. Das Seitenverhältnis der Trikolore ist 2 zu 3.\n# Import der erforderlichen Libraries (nur einmal pro Notebook nötig)\nfrom pytamaro.de import (\n    rot, blau, weiss,\n    rechteck, kreis_sektor, ellipse,\n    drehe, neben, ueber,\n    zeige_grafik\n)\nAls erstes werden die einzelnen Rechtecke gezeichnet.\nbleu = rechteck(10, 20, blau)\nzeige_grafik(bleu)\nblanc = rechteck(10, 20, weiss)\nzeige_grafik(blanc)\nrouge = rechteck(10, 20, rot)\nzeige_grafik(rouge)\nAnschliessend werden die Einzelteile zusammengesetzt.\nzweidrittel = neben(bleu, blanc)\nzeige_grafik(zweidrittel)\ntrikolore = neben(zweidrittel, rouge)\nzeige_grafik(trikolore)"
+  },
+  {
+    "objectID": "files/materialien/240904/schweizerfahne.html#tessiner-wappen",
+    "href": "files/materialien/240904/schweizerfahne.html#tessiner-wappen",
+    "title": "Einfache Zeichnungen mit PyTamaro",
+    "section": "Tessiner Wappen",
+    "text": "Tessiner Wappen\nPyTamaro wird von einem Team an der Università della Svizzera italiana in Lugano entwickelt. Zu ehren des Standortkantons geht es in einer ersten Übung darum, das Tessiner Wappen zu zeichnen.\n\n\nVorgehen\n\nDas Wappen wird in Einzelteile zerlegt.\n\nDie Einzelteile werden aufgelistet.\n\nrotes Rechteck\nblaues Rechteck\nroter Viertelkreis\nblauer Viertelkreis\n\nDie Einzelteile werden mit PyTamaro programmiert.\nDie Einzelteile werden mit PyTamaro zusammengesetzt.\n\n\n\nUmsetzung in PyTamaro\n\n# Hier das rote Rechteck zeichnen\n\n\n# Hier das blaue Rechteck zeichnen\n\n\n# Hier den roten Viertelkreis zeichnen\n\n\n# Hier den blauen Viertelkreis zeichnen\n\n\n# hier die obere Hälfte zusammensetzen\n\n\n# hier die untere Hälfte zusammensetzen\n\n\n# hir das ganze Wappen zusammensetzen\n\n\n\nCode Aufräumen (Refactoring)\nDie Erste Aufgabe beim Programmieren ist sicher die Lösung des konkreten Problems. Eng damit Verbunden ist allerdings auch die übersichtliche Darstellung des Programms. Dabei ist insbesondere darauf zu achten, das Wiederholungen so weit wie möglich vermieden werden. Unten steht der bereinigte Code der verwendet wurde, um das Tessiner Wappen zu zeichnen.\nrotes_rechteck = rechteck(10, 15, rot)\nblaues_rechteck = rechteck(10, 15, blau)\nroter_viertelkreis = kreis_sektor(10, 90, rot)\nroter_viertelkreis = drehe(180, roter_viertelkreis)\nblauer_viertelkreis = kreis_sektor(10, 90, blau)\nblauer_viertelkreis = drehe(270, blauer_viertelkreis)\nobere_haelfte = neben(rotes_rechteck, blaues_rechteck)\nuntere_haelfte = neben(roter_viertelkreis, blauer_viertelkreis)\nti = ueber(obere_haelfte, untere_haelfte)\nzeige_grafik(ti)\nDieser Code soll nun so bereinigt werden, dass Wiederholungen vermieden werden. Dabei soll allerdings dessen Verständlichkeit nicht leiden.\n\n# hier kommt der \"aufgeräumte Code\""
+  },
+  {
+    "objectID": "files/materialien/240904/schweizerfahne.html#schweizerfahne",
+    "href": "files/materialien/240904/schweizerfahne.html#schweizerfahne",
+    "title": "Einfache Zeichnungen mit PyTamaro",
+    "section": "Schweizerfahne",
+    "text": "Schweizerfahne\nAlle kennen die Schweizerfahne. Ein weisses Kreuz auf rotem Grund. Was viele nicht wissen, dass es für die genauen Proportionen eine gesetzliche Grundlage gibt, das Bundesgesetz über den Schutz des Schweizerwappens und anderer öffentlicher Zeichen (Wappenschutzgesetz, WSchG). Das WSchG regelt in seinem Anhang 2 die Proportionen und die Farben der Schweizerfahne.\n\nBasierend auf diesen Vorgaben soll die Schweizerfahne gezeichnet werden.\n\nUmsetzung in PyTamaro\n\nfrom pytamaro.de import (\n    ueberlagere,\n    rgb_farbe\n)\n\n\n# hier kommt der Code für die Schweizerfahne"
+  },
+  {
+    "objectID": "files/materialien/240925/conditions.html",
+    "href": "files/materialien/240925/conditions.html",
+    "title": "Bedingungen in Python",
+    "section": "",
+    "text": "from pytamaro.de import (\n    gelb, schwarz,\n    rechteck,\n    neben, ueber,\n    zeige_grafik,\n)\n\n\ngelbes = rechteck(20, 20, gelb)\nschwarzes = rechteck(20, 20, schwarz)\n\n\nungerade_reihe = gelbes\n\nfor i in range(2, 9):\n    if i % 2 == 0:\n        ungerade_reihe = neben(ungerade_reihe, schwarzes)\n        print(i)\n    else:\n        ungerade_reihe = neben(ungerade_reihe, gelbes)\n\nzeige_grafik(ungerade_reihe)\n\n2\n4\n6\n8"
   }
 ]
