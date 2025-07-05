@@ -1,0 +1,9 @@
+---
+title: "Spring Term Materials 2025"
+date-format: DD.MM.YYYY
+listing:
+  contents: lektionen_fs25/**
+  type: table
+  sort: date
+---
+

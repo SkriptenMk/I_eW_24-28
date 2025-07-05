@@ -11,14 +11,28 @@
     "href": "index.html#schedule",
     "title": "Welcome",
     "section": "Schedule",
-    "text": "Schedule"
+    "text": "Schedule\nThe programme reflects the current state of planning. Changes are to be expected during the course of the semester."
   },
   {
     "objectID": "index.html#grading",
     "href": "index.html#grading",
     "title": "Welcome",
     "section": "Grading",
-    "text": "Grading"
+    "text": "Grading\nTwo written examinations are scheduled per semester. In addition, oral participation is graded. Oral participation includes, in particular, asking questions.\nThe Final grades are calculated as a weighted average of the two. written examinations and the oral participation grade. The Average grade of the two written examinations is weighted at 90%, while the grade for oral participation is weighted at 10%."
+  },
+  {
+    "objectID": "files/lektionen_hs24/240821/einfuehrung.html",
+    "href": "files/lektionen_hs24/240821/einfuehrung.html",
+    "title": "Was ist Informatik?",
+    "section": "",
+    "text": "Um diese Frage zu beantworten, hilft es vielleicht sich die Übersetzung des Begriffes ins Englische vor Augen zu führen - Computer Science.\nDie Informatik ist allso die Wissenschaft, die sich mit Computern befasst. Gemeint ist damit die wissenschaftliche Auseinandersetzungen mit Fragen der folgenden Art:\n\nWie sind Computer aufgebaut?\nWie werden Informationen im Computer verarbeitet, abgespeichert und dargestellt?\nWie funktioniert die Kommunikation zwischen Computern?\nWelche Auswirkungen haben Computer auf die Gesellschaft?\n\nDieser Fragenkatalog ist nicht abschliessend und lediglich beispielhaft.\nIn einer ersten Phase werden wir uns hauptsächlich mit der zweiten Frage auseinandersetzen. Dazu werden wir mit der Programmiesprache Python kleine Programme schreiben."
+  },
+  {
+    "objectID": "files/HS_24.html",
+    "href": "files/HS_24.html",
+    "title": "Autumn Term Materials 2024/2025",
+    "section": "",
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\n21.08.2024\n\n\nWas ist Informatik?\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n28.08.2024\n\n\nErforderliche Systemeinrichtungen\n\n\nJacques Mock Schindler\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -28,10 +42,59 @@
     "text": "About this site"
   },
   {
+    "objectID": "files/FS_25.html",
+    "href": "files/FS_25.html",
+    "title": "Spring Term Materials 2025",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
     "objectID": "files/HS_25.html",
     "href": "files/HS_25.html",
     "title": "Autumn Term Materials 2025/2026",
     "section": "",
     "text": "No matching items"
+  },
+  {
+    "objectID": "files/lektionen_hs24/240828/installationsanleitungen.html",
+    "href": "files/lektionen_hs24/240828/installationsanleitungen.html",
+    "title": "Erforderliche Systemeinrichtungen",
+    "section": "",
+    "text": "Im Unterricht im obligatorischen Fach Informatik werden wir Programme in der Programmiersprache Python schreiben. Damit dies möglich ist, müssen Sie an Ihrem Computer ein paar Vorbereitungsarbeiten vornehmen."
+  },
+  {
+    "objectID": "files/lektionen_hs24/240828/installationsanleitungen.html#installation-von-python",
+    "href": "files/lektionen_hs24/240828/installationsanleitungen.html#installation-von-python",
+    "title": "Erforderliche Systemeinrichtungen",
+    "section": "Installation von Python",
+    "text": "Installation von Python\nAls erstes müssen Sie die Programmiersprache Python auf Ihrem Computer verfügbar machen. Hier finden Sie eine entsprechende Anleitung."
+  },
+  {
+    "objectID": "files/lektionen_hs24/240828/installationsanleitungen.html#einrichten-einer-virtuellen-arbeitsumgebung",
+    "href": "files/lektionen_hs24/240828/installationsanleitungen.html#einrichten-einer-virtuellen-arbeitsumgebung",
+    "title": "Erforderliche Systemeinrichtungen",
+    "section": "Einrichten einer virtuellen Arbeitsumgebung",
+    "text": "Einrichten einer virtuellen Arbeitsumgebung\nEs ist gute Praxis, Python Programme in einer virtuellen Arbeitsumgebung zu schreiben und auszuführen. Eine Beschreibung, wie das geht, finden Sie hier."
+  },
+  {
+    "objectID": "files/lektionen_hs24/240828/installationsanleitungen.html#editor-zum-erstellen-von-python-programmen",
+    "href": "files/lektionen_hs24/240828/installationsanleitungen.html#editor-zum-erstellen-von-python-programmen",
+    "title": "Erforderliche Systemeinrichtungen",
+    "section": "Editor zum erstellen von Python Programmen",
+    "text": "Editor zum erstellen von Python Programmen\nGrundsätzlich können Sie Python Programme in einem beliebigen Texteditor erstellen. Um Ihnen die Arbeit etwas zu erleichtern verwenden wir im Unterricht Visual Studio Code."
+  },
+  {
+    "objectID": "files/lektionen_hs24/240828/installationsanleitungen.html#jupyter-notebooks-zum-erstellen-von-python-programmen",
+    "href": "files/lektionen_hs24/240828/installationsanleitungen.html#jupyter-notebooks-zum-erstellen-von-python-programmen",
+    "title": "Erforderliche Systemeinrichtungen",
+    "section": "Jupyter Notebooks zum erstellen von Python Programmen",
+    "text": "Jupyter Notebooks zum erstellen von Python Programmen\nDamit Sie Ihre Pythonprogramme einfach mit den nötigen Notizen versehen können und allenfalls auch ausdrucken, verwenden wir im Unterricht sogenannte Jupyter Notebooks. Wie Sie das für VS Code vorbereiten, wird hier erklärt."
+  },
+  {
+    "objectID": "files/lektionen_hs24/240828/installationsanleitungen.html#arbeitsumgebung-in-der-lokalen-ordnerstruktur",
+    "href": "files/lektionen_hs24/240828/installationsanleitungen.html#arbeitsumgebung-in-der-lokalen-ordnerstruktur",
+    "title": "Erforderliche Systemeinrichtungen",
+    "section": "Arbeitsumgebung in der lokalen Ordnerstruktur",
+    "text": "Arbeitsumgebung in der lokalen Ordnerstruktur\nIch gehe davon aus, dass Sie die Dateien für die Schule grundsätzlich folgendermassen organisiert haben:\n+---Schule\n    +---BG\n    +---Chemie\n    +---Deutsch\n    +---Englisch\n    +---Franzoesisch\n    +---Geographie\n    +---Geschichte\n    +---Informatik\n    ¦   +---Einfuehrung\n    +---Klassenstunde\n    +---Mathematik\n    +---Musik\n    +---PPP\nFür das erstellen der verlangten Python Virtual Environment wechseln Sie jeweils in den Ordner Schule&gt;Informatik&gt;Einfuehrung."
   }
 ]
