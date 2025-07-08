@@ -9,23 +9,23 @@ science course.
 
 | Date | Topic |
 | :--- | :--- |
-| 20.08.2025 | Object-oriented Programming: Classes |
-| 03.09.2025 | Object-oriented Programming: Inheritance |
-| 10.09.2025 | Object-oriented Programming: Encapsulation |
-| 17.09.2025 | Object-oriented Programming: Imports |
-| 24.09.2025 | Object-oriented Programming: Refactoring |
-| 22.10.2025 | Object-oriented Programming: Exercise |
+| 20.08.2025 | Networks: TCP/IP |
+| 03.09.2025 | Networks: Wireshark |
+| 10.09.2025 | Networks: Exercise |
+| 17.09.2025 | Cryptology: Caesar |
+| 24.09.2025 | Cryptology: Vigenère Chiffre |
+| 22.10.2025 | Cryptology: Break Vigenère |
 | 29.10.2025 | Test |
-| 05.11.2025 | Networks: TCP/IP |
-| 12.11.2025 | Networks: Wireshark |
-| 19.11.2025 | Networks: Exercise |
-| 26.11.2025 | Cryptology: Caesar |
-| 03.12.2025 | Cryptology: Vigenère Chiffre |
-| 10.12.2025 | Cryptology: Break Vigenère |
+| 05.11.2025 | Cryptology: Public Key Cryptography (Graph based) |
+| 12.11.2025 | Cryptology: RSA |
+| 19.11.2025 | Cryptology: digital Signatures |
+| 26.11.2025 | AI: Kind of a Definition |
+| 03.12.2025 | AI |
+| 10.12.2025 | AI |
 | 17.12.2025 | Test |
-| 07.01.2026 | Cryptology: Public Key Cryptography |
-| 14.01.2026 | Cryptology: RSA |
-| 21.01.2026 | Cryptology: Digital Signatures |
+| 07.01.2026 | AI |
+| 14.01.2026 | AI |
+| 21.01.2026 | AI |
 
 
 The programme reflects the current state of planning. Changes are to be
