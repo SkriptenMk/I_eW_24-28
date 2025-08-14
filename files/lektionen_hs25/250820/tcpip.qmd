@@ -1,0 +1,66 @@
+---
+title: "2 IP Addresses and DNS"
+date: 2025-08-20
+date-format: DD.MM.YYYY
+author: "Jacques Mock Schindler"
+---
+
+
+## IP addresses
+
+For computers to be accessible within a network, they need a
+unique address. This address is known as an IP address (Internet Protocol
+Address). For around two decades now,
+– there has been a gradual transition from the IPv4 system to IPv6.
+IPv4 addresses are 32-bit addresses represented in four octets (e.g.
+192.0.2.1). This results in $2^{32}$ possible addresses, which is slightly more
+than 4.29 billion. This demonstrates the limited nature of IPv4 addresses.
+This limitation led to the development of IPv6.
+IPv6 addresses are 128 bits long. They are displayed in hexadecimal
+notation, with eight groups of four hexadecimal digits (e.g. 
+2001:0db8:85a3:0000:0000:8a2e:370:7334). The length of
+128 bits allows for $2^{128}$ addresses, which in decimal notation corresponds to $3.4
+\times 10^{38}$, a number with 39 digits. There would be approximately
+$6.7 \cdot 10^{23}$ IPv6 addresses per square metre of the
+Earth's surface - that is roughly
+one 
+<a href="https://en.wikipedia.org/wiki/Avogadro_constant" target="_blank">
+Avogadro number</a> per square metre.
+
+
+## DNS Lookup
+
+People find it difficult to remember IP addresses. Therefore,
+domain names were introduced, which are easier to remember. An example of
+a domain name is www.google.com. A possible 
+IP address for Google's domain name is 172.217.168.68; often
+there are several IP addresses for a domain name. The Domain Name
+System (DNS) is responsible for
+‘translating’ a domain name into an IP address. 
+
+### How it works
+
+1. **Request:** When a user visits a website, the
+   browser sends a DNS request to a DNS server to determine the IP address of the
+   desired domain. 
+2. **Resolution:** The DNS server checks its cache for an
+  existing assignment. If no assignment is found, the
+  server forwards the request to other DNS servers until the IP address
+  is determined. 
+3. **Response:** The DNS server sends the IP address it found back to
+  the browser, which can then connect to the website. 
+
+### Types of DNS records
+
+- **A record:** Links a domain name to an IPv4 address.
+- **AAAA record:** Links a domain name to an IPv6 address.
+- **CNAME record:** Alias for another domain name.
+- **MX record:** Specifies the mail server for a domain.
+
+### Significance
+
+The domain name is crucial for the user-friendliness of the
+Internet, as it allows websites to be accessed via easy-to-remember names
+instead of numerical IP addresses. Without DNS,
+users would have to know the IP addresses of all the websites they want to visit
+.

@@ -8,7 +8,7 @@
 
 <meta name="author" content="Jacques Mock Schindler">
 
-<title>1 Computer Networks – Computer Science Course Materials for School Year 2025/26 (2eW)</title>
+<title>2 IP Addresses and DNS – Computer Science Course Materials for School Year 2025/26 (2eW)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 </head>
@@ -129,8 +158,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-osi-and-the-tcpip-model" id="toc-the-osi-and-the-tcpip-model" class="nav-link active" data-scroll-target="#the-osi-and-the-tcpip-model">The OSI and the TCP/IP model</a></li>
-  <li><a href="#analogy-to-encapsulation-in-object-oriented-programming-oop" id="toc-analogy-to-encapsulation-in-object-oriented-programming-oop" class="nav-link" data-scroll-target="#analogy-to-encapsulation-in-object-oriented-programming-oop">Analogy to encapsulation in object-oriented programming (OOP)</a></li>
+  <li><a href="#ip-addresses" id="toc-ip-addresses" class="nav-link active" data-scroll-target="#ip-addresses">IP addresses</a></li>
+  <li><a href="#dns-lookup" id="toc-dns-lookup" class="nav-link" data-scroll-target="#dns-lookup">DNS Lookup</a>
+  <ul class="collapse">
+  <li><a href="#how-it-works" id="toc-how-it-works" class="nav-link" data-scroll-target="#how-it-works">How it works</a></li>
+  <li><a href="#types-of-dns-records" id="toc-types-of-dns-records" class="nav-link" data-scroll-target="#types-of-dns-records">Types of DNS records</a></li>
+  <li><a href="#significance" id="toc-significance" class="nav-link" data-scroll-target="#significance">Significance</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -139,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">1 Computer Networks</h1>
+<h1 class="title">2 IP Addresses and DNS</h1>
 </div>
 
 
@@ -168,84 +202,41 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Computer networks are systems that enable computers and other devices to communicate with each other. Originally, they were primarily used for exchanging messages. Today, networks also enable the sharing of resources such as printers, files and Internet access. They form the basis for many everyday applications – from e-mails and video conferences to cloud services.</p>
-<p>A computer network consists of several interconnected devices (e.g. computers, smartphones, servers) that communicate via various transmission media such as cables or radio waves. Important objectives of a network are:<br>
-* Efficient communication * Reliable availability of information * Security of data transmission</p>
-<p>Rules and protocols are used in networks to enable communication. A well-known reference model for describing these processes is the Open Systems Interconnection (OSI) layer model. It divides network communication into seven layers that build on top of each other – from the physical transmission of data to the application layer, where programs such as web browsers or email clients operate.</p>
-<section id="the-osi-and-the-tcpip-model" class="level2">
-<h2 class="anchored" data-anchor-id="the-osi-and-the-tcpip-model">The OSI and the TCP/IP model</h2>
-<p>The OSI model is a reference model. It helps to structure and understand the complex processes involved in data transmission. The seven layers (with typical data units, known as Protocol or Payload Data Units (PDUs)) at a glance:</p>
-<ol type="1">
-<li>Physical layer
-<ul>
-<li>Transmits individual bits as electrical, optical or radio signals via the transmission medium (e.g.&nbsp;cable, radio).</li>
-<li>PDU: Bits</li>
-</ul></li>
-<li>Data link layer
-<ul>
-<li>Ensures local, frame-based transmission between directly connected devices; regulates access to the medium (medium access control, MAC).</li>
-<li>Provides error detection and, depending on the technology, simple error handling/retransmissions (e.g.&nbsp;for WLAN).</li>
-<li>PDU: Frames</li>
-</ul></li>
-<li>Network Layer
-<ul>
-<li>Forwarding packets across multiple networks (routing); addressing at the network level (e.g.&nbsp;IP addresses).</li>
-<li>Example protocol: Internet Protocol (IP).</li>
-<li>PDU: Packets</li>
-</ul></li>
-<li>Transport Layer
-<ul>
-<li>Provides end-to-end transport between applications. Different protocols offer different services:
-<ul>
-<li>TCP: reliable, ordered, connection-oriented; incl.&nbsp;flow and congestion control.</li>
-<li>UDP: connectionless, no guarantee of reliability or order.</li>
-<li>PDU: segments (TCP) or datagrams (UDP)</li>
-</ul></li>
-</ul></li>
-<li>Session Layer
-<ul>
-<li>Establishes, manages and terminates sessions between applications (e.g.&nbsp;session management, dialogue control).</li>
-</ul></li>
-<li>Presentation Layer
-<ul>
-<li>Translates data between representation formats (e.g.&nbsp;character encoding, serialisation) and can compress/encrypt data.</li>
-</ul></li>
-<li>Application Layer
-<ul>
-<li>Provides the interface to application programmes and application protocols (e.g.&nbsp;HTTP, SMTP, DNS).</li>
-</ul></li>
-</ol>
-<p>The OSI layer model has not been implemented as a protocol stack in its pure form. In practice, the TCP/IP model (TCP = Transmission Control Protocol, IP = Internet Protocol) has become established.</p>
-<p>The TCP/IP model consists of four layers that combine the functions of the OSI model:</p>
-<ol type="1">
-<li>Network access layer (OSI: Physical and Data Link Layers)
-<ul>
-<li>Examples: Ethernet, WLAN; MAC addresses; switches typically operate here.</li>
-<li>PDU: Frames</li>
-</ul></li>
-<li>Internet layer (OSI: Network Layer)
-<ul>
-<li>Examples: IP, routing; routers operate here; IP addresses.</li>
-<li>PDU: Packets</li>
-</ul></li>
-<li>Transport layer (OSI: Transport Layer)
-<ul>
-<li>Examples: TCP (reliable, ordered), UDP (connectionless); ports identify services.</li>
-<li>PDU: Segments (TCP) / Datagrams (UDP)</li>
-</ul></li>
-<li>Application layer (OSI: Application, Presentation, and Session Layers)
-<ul>
-<li>Examples: HTTP/HTTPS, SMTP, DNS. Encryption such as TLS is typically above the transport layer and is assigned to applications.</li>
-</ul></li>
-</ol>
-<p>The TCP/IP model is now the basis for communication on the Internet and in most computer networks.</p>
+<section id="ip-addresses" class="level2">
+<h2 class="anchored" data-anchor-id="ip-addresses">IP addresses</h2>
+<p>For computers to be accessible within a network, they need a unique address. This address is known as an IP address (Internet Protocol Address). For around two decades now, – there has been a gradual transition from the IPv4 system to IPv6. IPv4 addresses are 32-bit addresses represented in four octets (e.g. 192.0.2.1). This results in <span class="math inline">\(2^{32}\)</span> possible addresses, which is slightly more than 4.29 billion. This demonstrates the limited nature of IPv4 addresses. This limitation led to the development of IPv6. IPv6 addresses are 128 bits long. They are displayed in hexadecimal notation, with eight groups of four hexadecimal digits (e.g.&nbsp; 2001:0db8:85a3:0000:0000:8a2e:370:7334). The length of 128 bits allows for <span class="math inline">\(2^{128}\)</span> addresses, which in decimal notation corresponds to <span class="math inline">\(3.4
+\times 10^{38}\)</span>, a number with 39 digits. There would be approximately <span class="math inline">\(6.7 \cdot 10^{23}\)</span> IPv6 addresses per square metre of the Earth’s surface - that is roughly one <a href="https://en.wikipedia.org/wiki/Avogadro_constant" target="_blank"> Avogadro number</a> per square metre.</p>
+<p>In order for computers to be accessible within a network, they need a unique address. This address is known as an IP address (Internet Protocol Address). Currently – that is, for around two decades now – there has been a gradual transition from the IPv4 system to IPv6.<br>
+IPv4 addresses are 32-bit addresses represented in four octets (e.g. 192.0.2.1). A length of 32 bits results in <span class="math inline">\(2^{32}\)</span>, which is slightly more than 4.29 billion possible addresses. This shows that IPv4 addresses are limited. This limitation led to the development of IPv6.<br>
+IPv6 addresses are 128 bits long. They are displayed in hexadecimal notation, with eight groups of four hexadecimal digits (e.g. 2001:0db8:85a3:0000:0000:8a2e:0370:7334). The length of 128 bits allows for <span class="math inline">\(2^{128}\)</span> addresses, which in decimal notation corresponds to <span class="math inline">\(3.4
+\cdot 10^{38}\)</span>, a number with 39 digits. There would be approximately <span class="math inline">\(6.7 \cdot 10^{23}\)</span> IPv6 addresses per square metre of the Earth’s surface – that is roughly one <a href="https://de.wikipedia.org/wiki/Avogadro-Konstante" target="_blank"> Avogadro number</a> per square metre.</p>
 </section>
-<section id="analogy-to-encapsulation-in-object-oriented-programming-oop" class="level2">
-<h2 class="anchored" data-anchor-id="analogy-to-encapsulation-in-object-oriented-programming-oop">Analogy to encapsulation in object-oriented programming (OOP)</h2>
-<p>The layer model in network technology can be compared to the principle of encapsulation in object-oriented programming. In both cases, complex tasks are divided into clearly defined, independent units (layers or classes). Each layer in the network model has a precisely defined task and only communicates with the layer directly above or below it – similar to how a class in OOP hides its internal details and only interacts with other classes via defined interfaces.</p>
-<p>This encapsulation reduces complexity, makes changes easier to implement and allows the individual components to remain independently maintainable. Just as a class encapsulates its data and methods in OOP, each layer in the layer model encapsulates the details of its function and provides only the necessary services for the next layer.</p>
+<section id="dns-lookup" class="level2">
+<h2 class="anchored" data-anchor-id="dns-lookup">DNS Lookup</h2>
+<p>People find it difficult to remember IP addresses. Therefore, domain names were introduced, which are easier to remember. An example of a domain name is www.google.com. A possible IP address for Google’s domain name is 172.217.168.68; often there are several IP addresses for a domain name. The Domain Name System (DNS) is responsible for ‘translating’ a domain name into an IP address.</p>
+<section id="how-it-works" class="level3">
+<h3 class="anchored" data-anchor-id="how-it-works">How it works</h3>
+<ol type="1">
+<li><strong>Request:</strong> When a user visits a website, the browser sends a DNS request to a DNS server to determine the IP address of the desired domain.</li>
+<li><strong>Resolution:</strong> The DNS server checks its cache for an existing assignment. If no assignment is found, the server forwards the request to other DNS servers until the IP address is determined.</li>
+<li><strong>Response:</strong> The DNS server sends the IP address it found back to the browser, which can then connect to the website.</li>
+</ol>
+</section>
+<section id="types-of-dns-records" class="level3">
+<h3 class="anchored" data-anchor-id="types-of-dns-records">Types of DNS records</h3>
+<ul>
+<li><strong>A record:</strong> Links a domain name to an IPv4 address.</li>
+<li><strong>AAAA record:</strong> Links a domain name to an IPv6 address.</li>
+<li><strong>CNAME record:</strong> Alias for another domain name.</li>
+<li><strong>MX record:</strong> Specifies the mail server for a domain.</li>
+</ul>
+</section>
+<section id="significance" class="level3">
+<h3 class="anchored" data-anchor-id="significance">Significance</h3>
+<p>The domain name is crucial for the user-friendliness of the Internet, as it allows websites to be accessed via easy-to-remember names instead of numerical IP addresses. Without DNS, users would have to know the IP addresses of all the websites they want to visit .</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
