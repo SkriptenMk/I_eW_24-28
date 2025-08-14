@@ -4,6 +4,8 @@ date-format: DD.MM.YYYY
 listing:
   contents: lektionen_hs25/**
   type: table
-  sort: date
+  sort: 
+    - "date"
+    - "title"
 ---
 

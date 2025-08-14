@@ -42,25 +42,88 @@
     "text": "Schweizerfahne\nAlle kennen die Schweizerfahne. Ein weisses Kreuz auf rotem Grund. Was viele nicht wissen, dass es für die genauen Proportionen eine gesetzliche Grundlage gibt, das Bundesgesetz über den Schutz des Schweizerwappens und anderer öffentlicher Zeichen (Wappenschutzgesetz, WSchG). Das WSchG regelt in seinem Anhang 2 die Proportionen und die Farben der Schweizerfahne.\n\nBasierend auf diesen Vorgaben soll die Schweizerfahne gezeichnet werden.\n\nUmsetzung in PyTamaro\n\nfrom pytamaro.de import (\n    ueberlagere,\n    weiss, rgb_farbe\n)\n\n\nhintergrundfarbe = rgb_farbe(255, 0, 0)\neinheit = 5\nbreite = 20 * einheit\nhoehe = 6 * einheit\nkante = 32 * einheit\n\ntuch = rechteck(kante, kante, hintergrundfarbe)\nbalken = rechteck(breite, hoehe, weiss)\nbalken_senkrecht = drehe(90, balken)\nkreuz = ueberlagere(balken, balken_senkrecht)\nfahne = ueberlagere(kreuz, tuch)\nzeige_grafik(fahne)"
   },
   {
-    "objectID": "files/lektionen_hs25/250820/tcpip.html",
-    "href": "files/lektionen_hs25/250820/tcpip.html",
-    "title": "2 IP Addresses and DNS",
+    "objectID": "files/lektionen_hs25/250820/tld.html",
+    "href": "files/lektionen_hs25/250820/tld.html",
+    "title": "4 Top-level domains and their allocation",
     "section": "",
-    "text": "For computers to be accessible within a network, they need a unique address. This address is known as an IP address (Internet Protocol Address). For around two decades now, – there has been a gradual transition from the IPv4 system to IPv6. IPv4 addresses are 32-bit addresses represented in four octets (e.g. 192.0.2.1). This results in \\(2^{32}\\) possible addresses, which is slightly more than 4.29 billion. This demonstrates the limited nature of IPv4 addresses. This limitation led to the development of IPv6. IPv6 addresses are 128 bits long. They are displayed in hexadecimal notation, with eight groups of four hexadecimal digits (e.g.  2001:0db8:85a3:0000:0000:8a2e:370:7334). The length of 128 bits allows for \\(2^{128}\\) addresses, which in decimal notation corresponds to \\(3.4\n\\times 10^{38}\\), a number with 39 digits. There would be approximately \\(6.7 \\cdot 10^{23}\\) IPv6 addresses per square metre of the Earth’s surface - that is roughly one  Avogadro number per square metre."
+    "text": "Top-level domains (TLDs) are the last part of a domain name – the part after the last dot. In the address www.example.com, ‘.com’ is the top-level domain. TLDs form the highest hierarchical level in the Domain Name System (DNS) and are essential for the organisation of the Internet.\nEvery domain name follows a hierarchical structure that is read from right to left:\nwww.kbw.ch\n\nTLD: .ch (Switzerland)\n\nSecond-level domain: kbw\n\nSubdomain: www"
   },
   {
-    "objectID": "files/lektionen_hs25/250820/tcpip.html#ip-addresses",
-    "href": "files/lektionen_hs25/250820/tcpip.html#ip-addresses",
-    "title": "2 IP Addresses and DNS",
+    "objectID": "files/lektionen_hs25/250820/tld.html#what-are-top-level-domains",
+    "href": "files/lektionen_hs25/250820/tld.html#what-are-top-level-domains",
+    "title": "4 Top-level domains and their allocation",
     "section": "",
-    "text": "For computers to be accessible within a network, they need a unique address. This address is known as an IP address (Internet Protocol Address). For around two decades now, – there has been a gradual transition from the IPv4 system to IPv6. IPv4 addresses are 32-bit addresses represented in four octets (e.g. 192.0.2.1). This results in \\(2^{32}\\) possible addresses, which is slightly more than 4.29 billion. This demonstrates the limited nature of IPv4 addresses. This limitation led to the development of IPv6. IPv6 addresses are 128 bits long. They are displayed in hexadecimal notation, with eight groups of four hexadecimal digits (e.g.  2001:0db8:85a3:0000:0000:8a2e:370:7334). The length of 128 bits allows for \\(2^{128}\\) addresses, which in decimal notation corresponds to \\(3.4\n\\times 10^{38}\\), a number with 39 digits. There would be approximately \\(6.7 \\cdot 10^{23}\\) IPv6 addresses per square metre of the Earth’s surface - that is roughly one  Avogadro number per square metre."
+    "text": "Top-level domains (TLDs) are the last part of a domain name – the part after the last dot. In the address www.example.com, ‘.com’ is the top-level domain. TLDs form the highest hierarchical level in the Domain Name System (DNS) and are essential for the organisation of the Internet.\nEvery domain name follows a hierarchical structure that is read from right to left:\nwww.kbw.ch\n\nTLD: .ch (Switzerland)\n\nSecond-level domain: kbw\n\nSubdomain: www"
   },
   {
-    "objectID": "files/lektionen_hs25/250820/tcpip.html#dns-lookup",
-    "href": "files/lektionen_hs25/250820/tcpip.html#dns-lookup",
-    "title": "2 IP Addresses and DNS",
-    "section": "DNS Lookup",
-    "text": "DNS Lookup\nPeople find it difficult to remember IP addresses. Therefore, domain names were introduced, which are easier to remember. An example of a domain name is www.google.com. A possible IP address for Google’s domain name is 172.217.168.68; often there are several IP addresses for a domain name. The Domain Name System (DNS) is responsible for ‘translating’ a domain name into an IP address.\n\nHow it works\n\nRequest: When a user visits a website, the browser sends a DNS request to a DNS server to determine the IP address of the desired domain.\nResolution: The DNS server checks its cache for an existing assignment. If no assignment is found, the server forwards the request to other DNS servers until the IP address is determined.\nResponse: The DNS server sends the IP address it found back to the browser, which can then connect to the website.\n\n\n\nTypes of DNS records\n\nA record: Links a domain name to an IPv4 address.\nAAAA record: Links a domain name to an IPv6 address.\nCNAME record: Alias for another domain name.\nMX record: Specifies the mail server for a domain.\n\n\n\nSignificance\nThe domain name is crucial for the user-friendliness of the Internet, as it allows websites to be accessed via easy-to-remember names instead of numerical IP addresses. Without DNS, users would have to know the IP addresses of all the websites they want to visit."
+    "objectID": "files/lektionen_hs25/250820/tld.html#types-of-top-level-domains",
+    "href": "files/lektionen_hs25/250820/tld.html#types-of-top-level-domains",
+    "title": "4 Top-level domains and their allocation",
+    "section": "Types of top-level domains",
+    "text": "Types of top-level domains\n\n1. Generic top-level domains (gTLDs)\nGeneric TLDs are not country-specific and can be registered worldwide:\n\n.com – Commercial (originally for companies)\n.org – Organisation (for organisations)\n.net – Network (originally for network providers)\n.edu – Education (only for accredited educational institutions)\n.gov – Government (only for US government agencies)\n.mil – Military (only for the US military)\n\n\n\n2. Country Code Top Level Domains (ccTLDs)\nEach country is assigned a two-letter code according to ISO 3166-1:\n\n.ch – Switzerland (Confoederatio Helvetica)\n.de – Germany\n.fr – France\n.uk – United Kingdom\n.us – United States\n\nThere are a total of 249 ccTLDs for countries and territories.\n\n\n3. New Generic Top Level Domains (ngTLDs)\nSince 2013, over 1,200 new TLDs have been introduced:\n\n.shop, .blog, .app\n.berlin, .paris, .swiss\n.google, .apple (brand TLDs)"
+  },
+  {
+    "objectID": "files/lektionen_hs25/250820/tld.html#the-registry-icann-and-iana",
+    "href": "files/lektionen_hs25/250820/tld.html#the-registry-icann-and-iana",
+    "title": "4 Top-level domains and their allocation",
+    "section": "The registry: ICANN and IANA",
+    "text": "The registry: ICANN and IANA\nThe Internet Corporation for Assigned Names and Numbers (ICANN) is the central organisation for the administration of the domain name system. It was founded in 1998 and is headquartered in Los Angeles, USA.\nThe Internet Assigned Numbers Authority (IANA), a division of ICANN, manages the root zone of the DNS. This contains all TLDs and their associated name servers.\n\nHierarchy of allocation\n\nICANN/IANA → Manages all TLDs\nRegistry → Operates a specific TLD (e.g. SWITCH for .ch)\nRegistrar → Sells domains to end customers\nRegistrant → The domain owner"
+  },
+  {
+    "objectID": "files/lektionen_hs25/250820/tld.html#the-allocation-process-for-new-gtlds",
+    "href": "files/lektionen_hs25/250820/tld.html#the-allocation-process-for-new-gtlds",
+    "title": "4 Top-level domains and their allocation",
+    "section": "The allocation process for new gTLDs",
+    "text": "The allocation process for new gTLDs\n\nPhase 1: Application\nOrganisations can apply to ICANN for new TLDs. The last major application round was in 2012:\n\nApplication fee: USD 185,000\nApplication period: 4 months\nApplications received: 1,930\n\n\n\nPhase 2: Evaluation\nICANN reviews each application for: - Technical competence - Financial stability - No trademark infringements - Public interest\n\n\nPhase 3: Delegation\nAfter successful review, the TLD is entered into the root zone. The entire process typically takes 18-24 months."
+  },
+  {
+    "objectID": "files/lektionen_hs25/250820/tld.html#costs-and-fees",
+    "href": "files/lektionen_hs25/250820/tld.html#costs-and-fees",
+    "title": "4 Top-level domains and their allocation",
+    "section": "Costs and fees",
+    "text": "Costs and fees\n\nFor registry operators\n\nAnnual ICANN fee: USD 25,000 per TLD\nTransaction fee: USD 0.25 per domain registration\nOperating costs: Technical infrastructure, personnel, marketing\n\n\n\nFor end customers (examples)\n\n.ch domain: CHF 10-20 per year\n.com domain: CHF 15-25 per year\nPremium ngTLDs: CHF 50-500+ per year"
+  },
+  {
+    "objectID": "files/lektionen_hs25/250820/tld.html#special-regulations",
+    "href": "files/lektionen_hs25/250820/tld.html#special-regulations",
+    "title": "4 Top-level domains and their allocation",
+    "section": "Special regulations",
+    "text": "Special regulations\n\nRestricted TLDs\nSome TLDs have special registration conditions:\n\n.edu – Only for accredited US universities\n.museum – Only for museums\n.aero – Only for the aviation industry\n.swiss – Connection to Switzerland required\n\n\n\nInternationalised domain names (IDN)\nSince 2010, TLDs in non-Latin scripts have been possible:\n\n.中国 (China)\n.рф (Russia)\n.ελ (Greece)"
+  },
+  {
+    "objectID": "files/lektionen_hs25/250820/tld.html#statistical-overview",
+    "href": "files/lektionen_hs25/250820/tld.html#statistical-overview",
+    "title": "4 Top-level domains and their allocation",
+    "section": "Statistical overview",
+    "text": "Statistical overview\nAs of 2025, there are: - Active TLDs: ~1,500 - Registered domains worldwide: ~370 million - Largest TLD: .com with ~160 million domains - Swiss .ch domains: ~2.5 million\nThe distribution follows a power law: the 10 largest TLDs host around 75% of all domains."
+  },
+  {
+    "objectID": "files/lektionen_hs25/250820/tld.html#significance-and-outlook",
+    "href": "files/lektionen_hs25/250820/tld.html#significance-and-outlook",
+    "title": "4 Top-level domains and their allocation",
+    "section": "Significance and outlook",
+    "text": "Significance and outlook\nTop-level domains are more than just technical designations – they are digital identities. A .ch domain signals Swiss origin, while a .edu domain stands for education. With the continuous expansion of the Internet, the importance of a well-thought-out TLD structure is also growing.\nThe next ICANN application round for new gTLDs is planned for 2026. Experts expect another 500-1,000 new TLDs, including an increasing number of city and brand names. The challenge will be to maintain a balance between innovation and clarity."
+  },
+  {
+    "objectID": "files/lektionen_hs25/250820/networks.html",
+    "href": "files/lektionen_hs25/250820/networks.html",
+    "title": "1 Computer Networks",
+    "section": "",
+    "text": "Computer networks are systems that enable computers and other devices to communicate with each other. Originally, they were primarily used for exchanging messages. Today, networks also enable the sharing of resources such as printers, files and Internet access. They form the basis for many everyday applications – from e-mails and video conferences to cloud services.\nA computer network consists of several interconnected devices (e.g. computers, smartphones, servers) that communicate via various transmission media such as cables or radio waves. Important objectives of a network are:\n* Efficient communication * Reliable availability of information * Security of data transmission\nRules and protocols are used in networks to enable communication. A well-known reference model for describing these processes is the Open Systems Interconnection (OSI) layer model. It divides network communication into seven layers that build on top of each other – from the physical transmission of data to the application layer, where programs such as web browsers or email clients operate."
+  },
+  {
+    "objectID": "files/lektionen_hs25/250820/networks.html#the-osi-and-the-tcpip-model",
+    "href": "files/lektionen_hs25/250820/networks.html#the-osi-and-the-tcpip-model",
+    "title": "1 Computer Networks",
+    "section": "The OSI and the TCP/IP model",
+    "text": "The OSI and the TCP/IP model\nThe OSI model is a reference model. It helps to structure and understand the complex processes involved in data transmission. The seven layers (with typical data units, known as Protocol or Payload Data Units (PDUs)) at a glance:\n\nPhysical layer\n\nTransmits individual bits as electrical, optical or radio signals via the transmission medium (e.g. cable, radio).\nPDU: Bits\n\nData link layer\n\nEnsures local, frame-based transmission between directly connected devices; regulates access to the medium (medium access control, MAC).\nProvides error detection and, depending on the technology, simple error handling/retransmissions (e.g. for WLAN).\nPDU: Frames\n\nNetwork Layer\n\nForwarding packets across multiple networks (routing); addressing at the network level (e.g. IP addresses).\nExample protocol: Internet Protocol (IP).\nPDU: Packets\n\nTransport Layer\n\nProvides end-to-end transport between applications. Different protocols offer different services:\n\nTCP: reliable, ordered, connection-oriented; incl. flow and congestion control.\nUDP: connectionless, no guarantee of reliability or order.\nPDU: segments (TCP) or datagrams (UDP)\n\n\nSession Layer\n\nEstablishes, manages and terminates sessions between applications (e.g. session management, dialogue control).\n\nPresentation Layer\n\nTranslates data between representation formats (e.g. character encoding, serialisation) and can compress/encrypt data.\n\nApplication Layer\n\nProvides the interface to application programmes and application protocols (e.g. HTTP, SMTP, DNS).\n\n\nThe OSI layer model has not been implemented as a protocol stack in its pure form. In practice, the TCP/IP model (TCP = Transmission Control Protocol, IP = Internet Protocol) has become established.\nThe TCP/IP model consists of four layers that combine the functions of the OSI model:\n\nNetwork access layer (OSI: Physical and Data Link Layers)\n\nExamples: Ethernet, WLAN; MAC addresses; switches typically operate here.\nPDU: Frames\n\nInternet layer (OSI: Network Layer)\n\nExamples: IP, routing; routers operate here; IP addresses.\nPDU: Packets\n\nTransport layer (OSI: Transport Layer)\n\nExamples: TCP (reliable, ordered), UDP (connectionless); ports identify services.\nPDU: Segments (TCP) / Datagrams (UDP)\n\nApplication layer (OSI: Application, Presentation, and Session Layers)\n\nExamples: HTTP/HTTPS, SMTP, DNS. Encryption such as TLS is typically above the transport layer and is assigned to applications.\n\n\nThe TCP/IP model is now the basis for communication on the Internet and in most computer networks."
+  },
+  {
+    "objectID": "files/lektionen_hs25/250820/networks.html#analogy-to-encapsulation-in-object-oriented-programming-oop",
+    "href": "files/lektionen_hs25/250820/networks.html#analogy-to-encapsulation-in-object-oriented-programming-oop",
+    "title": "1 Computer Networks",
+    "section": "Analogy to encapsulation in object-oriented programming (OOP)",
+    "text": "Analogy to encapsulation in object-oriented programming (OOP)\nThe layer model in network technology can be compared to the principle of encapsulation in object-oriented programming. In both cases, complex tasks are divided into clearly defined, independent units (layers or classes). Each layer in the network model has a precisely defined task and only communicates with the layer directly above or below it – similar to how a class in OOP hides its internal details and only interacts with other classes via defined interfaces.\nThis encapsulation reduces complexity, makes changes easier to implement and allows the individual components to remain independently maintainable. Just as a class encapsulates its data and methods in OOP, each layer in the layer model encapsulates the details of its function and provides only the necessary services for the next layer."
   },
   {
     "objectID": "files/lektionen_hs24/250122/speicherstrukturen.html",
@@ -270,7 +333,7 @@
     "href": "files/HS_25.html",
     "title": "Autumn Term Materials 2025/2026",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\n20.08.2025\n\n\n1 Computer Networks\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n20.08.2025\n\n\n2 IP Addresses and DNS\n\n\nJacques Mock Schindler\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\n20.08.2025\n\n\n1 Computer Networks\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n20.08.2025\n\n\n2 IP Addresses and DNS\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n20.08.2025\n\n\n3 Network Address Translation (NAT)\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n20.08.2025\n\n\n4 Top-level domains and their allocation\n\n\nJacques Mock Schindler\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "files/lektionen_fs25/250226/binaersystem.html",
@@ -574,25 +637,81 @@
     "text": "Die bisher verwendete Python Listen sind sehr einfach zu bedienen. Allerdings verschleiern sie die zu Grunde liegende Datenstruktur.\nBei einer Python Liste handelt es sich um ein dynamisches Array. Ein Array ist eine Datenstruktur, bei der im Voraus ein zusammenhängender Speicherbereich von fixer Grösse definiert wird. Bei einem dynamischen Array fällt die Restriktion der fixierten Grösse weg und dem Speicherplatz wird laufend den Bedürfnissen angepasst. Die Anpassung der Grösse des Speicherbereichs ist allerdings mit erheblichem Rechenaufwand verbunden. Diesem Nachteil steht allerdings der Vorteil gegenüber, dass in einem Array mittels des Index mit konstantem Aufwand auf die einzelnen Elemente zugegriffen werden kann. Falls das Array sortiert ist, kann ausserdem relativ effizient nach einem Element in dieser Datenstruktur gesucht werden.\nEine Alternative für das Ablegen einer Sequenz von Elementen mit nicht im Voraus bestimmten Umfang, ist eine verkettete Liste (linked list).\nDie verkettete Liste (linked list) ist eine Datenstruktur, bei der mit einer Variabel auf das erste gespeicherte Element verwiesen wird. Zusammen mit diesem Element wird auch der Speicherort des nächsten Elementes gespeichert. Von dieser Verkettung von Element zu Element hat die Datenstruktur ihren Namen. In einer verketteten Liste lassen sich neue Elemente mit konstantem Aufwand einfügen. Allerdings hat die verkettete Liste den Nachteil, dass die Suche nach einem Element mit linearem Aufwand verbunden ist.\nAn dieser Stelle kommt der binäre Suchbaum (binary search tree, bst) ins Spiel.\n\nBäume in der Informatik\n\n\n\nQuelle: xkcd.com/835, besucht am 4. Mai 24\n\n\nEin Baum in der Informatik ist eine Datenstruktur die aus Knoten (engl. Vertex bzw. vertices, V) und Kanten (engl. edge, E) besteht. Der erste Knoten ist die Wurzel (engl. root). Alle anderen Knoten haben einen Knoten als Elternknoten. Ein Elternknoten kann ein oder mehrere Kindknoten haben. Ein Knoten ohne Kinder wird als Blatt bezeichnet. Üblicherweise werden Bäume vom Wurzelknoten aus nach unten dargestellt.\n\nEin binärer Suchbaum ist eine baumförmige Datenstruktur, bei der jeder Knoten ein oder zwei Kinder hat. Die Werte in den Knoten sind dabei so in den Baum eingeordnet, dass jedes linke Kind kleiner ist als der Elternknoten und jedes rechte Kind grösser. Im Idealfall ist der Baum symmetrisch ausbalanciert. Es kann allerdings auch sein, dass ein binärer Suchbaum derart aus dem Gleichgewicht ist, dass er wie eine verkettete Liste aussieht. Aus diesem Grund muss bei der Effizienzbetrachtung dieser Datenstruktur zwischen Idealfall und Worst Case unterschieden werden. Im Idealfall ist die Suche und das Einfügen neuer Elemente mit einem Aufwand von \\(log(n)\\) möglich. Im Worst Case verursacht die Suche einen linearen Aufwand.\nDie folgende Grafik zeigt ein Beispiel eines binären Suchbaums.\n\n\n\nBeispielbaum"
   },
   {
-    "objectID": "files/lektionen_hs25/250820/networks.html",
-    "href": "files/lektionen_hs25/250820/networks.html",
-    "title": "1 Computer Networks",
+    "objectID": "files/lektionen_hs25/250820/nat.html",
+    "href": "files/lektionen_hs25/250820/nat.html",
+    "title": "3 Network Address Translation (NAT)",
     "section": "",
-    "text": "Computer networks are systems that enable computers and other devices to communicate with each other. Originally, they were primarily used for exchanging messages. Today, networks also enable the sharing of resources such as printers, files and Internet access. They form the basis for many everyday applications – from e-mails and video conferences to cloud services.\nA computer network consists of several interconnected devices (e.g. computers, smartphones, servers) that communicate via various transmission media such as cables or radio waves. Important objectives of a network are:\n* Efficient communication * Reliable availability of information * Security of data transmission\nRules and protocols are used in networks to enable communication. A well-known reference model for describing these processes is the Open Systems Interconnection (OSI) layer model. It divides network communication into seven layers that build on top of each other – from the physical transmission of data to the application layer, where programs such as web browsers or email clients operate."
+    "text": "Network Address Translation (NAT) is a process for automatically and transparently translating IP addresses in data packets. NAT enables multiple devices in a private network to communicate with the Internet via a single public IP address. This technology was developed to address the scarcity of IPv4 addresses while increasing the security of private networks.\nIn practice, this means that if you connect multiple devices (laptop, smartphone, smart TV) to the Internet at home, all of these devices share a single public IP address assigned to you by your Internet service provider."
   },
   {
-    "objectID": "files/lektionen_hs25/250820/networks.html#the-osi-and-the-tcpip-model",
-    "href": "files/lektionen_hs25/250820/networks.html#the-osi-and-the-tcpip-model",
-    "title": "1 Computer Networks",
-    "section": "The OSI and the TCP/IP model",
-    "text": "The OSI and the TCP/IP model\nThe OSI model is a reference model. It helps to structure and understand the complex processes involved in data transmission. The seven layers (with typical data units, known as Protocol or Payload Data Units (PDUs)) at a glance:\n\nPhysical layer\n\nTransmits individual bits as electrical, optical or radio signals via the transmission medium (e.g. cable, radio).\nPDU: Bits\n\nData link layer\n\nEnsures local, frame-based transmission between directly connected devices; regulates access to the medium (medium access control, MAC).\nProvides error detection and, depending on the technology, simple error handling/retransmissions (e.g. for WLAN).\nPDU: Frames\n\nNetwork Layer\n\nForwarding packets across multiple networks (routing); addressing at the network level (e.g. IP addresses).\nExample protocol: Internet Protocol (IP).\nPDU: Packets\n\nTransport Layer\n\nProvides end-to-end transport between applications. Different protocols offer different services:\n\nTCP: reliable, ordered, connection-oriented; incl. flow and congestion control.\nUDP: connectionless, no guarantee of reliability or order.\nPDU: segments (TCP) or datagrams (UDP)\n\n\nSession Layer\n\nEstablishes, manages and terminates sessions between applications (e.g. session management, dialogue control).\n\nPresentation Layer\n\nTranslates data between representation formats (e.g. character encoding, serialisation) and can compress/encrypt data.\n\nApplication Layer\n\nProvides the interface to application programmes and application protocols (e.g. HTTP, SMTP, DNS).\n\n\nThe OSI layer model has not been implemented as a protocol stack in its pure form. In practice, the TCP/IP model (TCP = Transmission Control Protocol, IP = Internet Protocol) has become established.\nThe TCP/IP model consists of four layers that combine the functions of the OSI model:\n\nNetwork access layer (OSI: Physical and Data Link Layers)\n\nExamples: Ethernet, WLAN; MAC addresses; switches typically operate here.\nPDU: Frames\n\nInternet layer (OSI: Network Layer)\n\nExamples: IP, routing; routers operate here; IP addresses.\nPDU: Packets\n\nTransport layer (OSI: Transport Layer)\n\nExamples: TCP (reliable, ordered), UDP (connectionless); ports identify services.\nPDU: Segments (TCP) / Datagrams (UDP)\n\nApplication layer (OSI: Application, Presentation, and Session Layers)\n\nExamples: HTTP/HTTPS, SMTP, DNS. Encryption such as TLS is typically above the transport layer and is assigned to applications.\n\n\nThe TCP/IP model is now the basis for communication on the Internet and in most computer networks."
+    "objectID": "files/lektionen_hs25/250820/nat.html#what-is-nat",
+    "href": "files/lektionen_hs25/250820/nat.html#what-is-nat",
+    "title": "3 Network Address Translation (NAT)",
+    "section": "",
+    "text": "Network Address Translation (NAT) is a process for automatically and transparently translating IP addresses in data packets. NAT enables multiple devices in a private network to communicate with the Internet via a single public IP address. This technology was developed to address the scarcity of IPv4 addresses while increasing the security of private networks.\nIn practice, this means that if you connect multiple devices (laptop, smartphone, smart TV) to the Internet at home, all of these devices share a single public IP address assigned to you by your Internet service provider."
   },
   {
-    "objectID": "files/lektionen_hs25/250820/networks.html#analogy-to-encapsulation-in-object-oriented-programming-oop",
-    "href": "files/lektionen_hs25/250820/networks.html#analogy-to-encapsulation-in-object-oriented-programming-oop",
-    "title": "1 Computer Networks",
-    "section": "Analogy to encapsulation in object-oriented programming (OOP)",
-    "text": "Analogy to encapsulation in object-oriented programming (OOP)\nThe layer model in network technology can be compared to the principle of encapsulation in object-oriented programming. In both cases, complex tasks are divided into clearly defined, independent units (layers or classes). Each layer in the network model has a precisely defined task and only communicates with the layer directly above or below it – similar to how a class in OOP hides its internal details and only interacts with other classes via defined interfaces.\nThis encapsulation reduces complexity, makes changes easier to implement and allows the individual components to remain independently maintainable. Just as a class encapsulates its data and methods in OOP, each layer in the layer model encapsulates the details of its function and provides only the necessary services for the next layer."
+    "objectID": "files/lektionen_hs25/250820/nat.html#how-nat-works",
+    "href": "files/lektionen_hs25/250820/nat.html#how-nat-works",
+    "title": "3 Network Address Translation (NAT)",
+    "section": "How NAT works",
+    "text": "How NAT works\n\nBasic principle\nNAT operates at layer 3 of the OSI model and changes the addresses in the IP header of data packets. The process works as follows:\n\nOutgoing connection: A device on the private network (e.g. 192.168.1.10) sends a request to a server on the Internet.\nAddress translation: The NAT router replaces the private source IP address with its public IP address (e.g. 203.0.113.5).\nTable entry: The router stores the assignment in a NAT table.\nResponse: When the server responds, the router uses the NAT table to forward the response to the correct device on the private network.\n\n\n\nNAT table\nThe NAT table is at the heart of the process. It contains the following information:\n\nPrivate IP address (e.g. 192.168.1.10)\nPrivate port (e.g. 54321)\nPublic IP address (e.g. 203.0.113.5)\nPublic port (e.g. 12345)\nDestination IP address (e.g. 93.184.216.34)\nDestination port (e.g. 80)"
+  },
+  {
+    "objectID": "files/lektionen_hs25/250820/nat.html#private-ip-address-ranges",
+    "href": "files/lektionen_hs25/250820/nat.html#private-ip-address-ranges",
+    "title": "3 Network Address Translation (NAT)",
+    "section": "Private IP address ranges",
+    "text": "Private IP address ranges\nSpecial IP address ranges are reserved for private networks that are not routed on the public Internet:\n\n10.0.0.0 to 10.255.255.255 (10.0.0.0/8) – 16,777,216 addresses\n172.16.0.0 to 172.31.255.255 (172.16.0.0/12) – 1,048,576 addresses\n\n192.168.0.0 to 192.168.255.255 (192.168.0.0/16) – 65,536 addresses\n\nThese ranges can be reused as often as desired in private networks, as they are only valid locally."
+  },
+  {
+    "objectID": "files/lektionen_hs25/250820/nat.html#types-of-nat",
+    "href": "files/lektionen_hs25/250820/nat.html#types-of-nat",
+    "title": "3 Network Address Translation (NAT)",
+    "section": "Types of NAT",
+    "text": "Types of NAT\n\n1. Static NAT (one-to-one NAT)\nWith static NAT, a private IP address is permanently assigned to a public IP address. This is used when a server in the private network needs to be permanently accessible from the Internet.\nExample: - Private: 192.168.1.100 ↔︎ Public: 203.0.113.10\n\n\n2. Dynamic NAT\nDynamic NAT dynamically assigns private IP addresses from a pool of public IP addresses. The assignment is made as needed and is released again after a certain period of time.\n\n\n3. Port Address Translation (PAT)\n\nWhat is a port?\nTo understand how PAT works, we first need to understand the concept of ports. An IP address identifies a computer on the network – but many programs run simultaneously on a computer, all of which want to use network connections.\nAnalogy: Imagine the IP address as the postal address of a high-rise building. The port number then corresponds to the apartment number. Just as the post office knows which apartment a letter belongs to, the computer knows which program the data should be delivered to based on the port number.\nPorts are 16-bit numbers (0 to 65,535) and are divided into three categories: - Well-known ports (0-1023): Reserved for standard services - Port 80: HTTP (websites) - Port 443: HTTPS (encrypted websites) - Port 22: SSH (secure connection) - Port 25: SMTP (email transmission) - Registered ports (1024-49,151): For registered services - Dynamic/private ports (49,152-65,535): Freely usable\n\n\nHow PAT works\nPAT, also known as NAT overload, is the most common form of NAT. Here, many private IP addresses share a single public IP address, with differentiation based on port numbers.\nThe router not only remembers which private IP address has established a connection, but also which port. This allows multiple devices to communicate simultaneously via the same public IP address.\nCalculation example: With 16-bit port numbers, \\(2^{16} = 65,536\\) ports are theoretically available. Minus the reserved ports (0-1023), this leaves approximately 64,512 usable ports for simultaneous connections. In practice, this means that a home router could theoretically manage over 64,000 simultaneous connections."
+  },
+  {
+    "objectID": "files/lektionen_hs25/250820/nat.html#advantages-and-disadvantages",
+    "href": "files/lektionen_hs25/250820/nat.html#advantages-and-disadvantages",
+    "title": "3 Network Address Translation (NAT)",
+    "section": "Advantages and disadvantages",
+    "text": "Advantages and disadvantages\n\nAdvantages\n\nIP address savings: A household with 20 devices only needs one public IP address\nSecurity: Private IP addresses are not directly accessible from the outside\nFlexibility: The internal network structure can be changed without affecting the public address\n\n\n\nDisadvantages\n\nEnd-to-end connectivity: Direct connections between devices are made more difficult\nComplexity: Certain applications (e.g. VoIP, online gaming) require special configurations\nPerformance: Address translation requires computing power and can cause delays"
+  },
+  {
+    "objectID": "files/lektionen_hs25/250820/nat.html#practical-example",
+    "href": "files/lektionen_hs25/250820/nat.html#practical-example",
+    "title": "3 Network Address Translation (NAT)",
+    "section": "Practical example",
+    "text": "Practical example\nLet’s consider a typical home router:\n\nYour laptop (192.168.1.15) opens the website www.example.com\nHTTP request:\n\nSource: 192.168.1.15:45678\nDestination: 93.184.216.34:80\n\nNAT router translates:\n\nSource: 85.5.123.45:23456 (public IP)\nDestination: 93.184.216.34:80\n\nServer responds:\n\nSource: 93.184.216.34:80\nDestination: 85.5.123.45:23456\n\nRouter translates back:\n\nSource: 93.184.216.34:80\nDestination: 192.168.1.15:45678"
+  },
+  {
+    "objectID": "files/lektionen_hs25/250820/nat.html#significance-for-the-future",
+    "href": "files/lektionen_hs25/250820/nat.html#significance-for-the-future",
+    "title": "3 Network Address Translation (NAT)",
+    "section": "Significance for the future",
+    "text": "Significance for the future\nWith the introduction of IPv6 and its \\(2^{128}\\) possible addresses, NAT will theoretically become superfluous. In practice, however, NAT will continue to be used because:\n\nMany networks are still based on IPv4\nNAT provides additional security\nThe transition to IPv6 is taking place gradually\n\nNAT therefore remains an important technology for the modern Internet, solving both the address shortage and contributing to network security."
+  },
+  {
+    "objectID": "files/lektionen_hs25/250820/tcpip.html",
+    "href": "files/lektionen_hs25/250820/tcpip.html",
+    "title": "2 IP Addresses and DNS",
+    "section": "",
+    "text": "For computers to be accessible within a network, they need a unique address. This address is known as an IP address (Internet Protocol Address). For around two decades now, – there has been a gradual transition from the IPv4 system to IPv6. IPv4 addresses are 32-bit addresses represented in four octets (e.g. 192.0.2.1). This results in \\(2^{32}\\) possible addresses, which is slightly more than 4.29 billion. This demonstrates the limited nature of IPv4 addresses. This limitation led to the development of IPv6. IPv6 addresses are 128 bits long. They are displayed in hexadecimal notation, with eight groups of four hexadecimal digits (e.g.  2001:0db8:85a3:0000:0000:8a2e:370:7334). The length of 128 bits allows for \\(2^{128}\\) addresses, which in decimal notation corresponds to \\(3.4\n\\times 10^{38}\\), a number with 39 digits. There would be approximately \\(6.7 \\cdot 10^{23}\\) IPv6 addresses per square metre of the Earth’s surface - that is roughly one  Avogadro number per square metre."
+  },
+  {
+    "objectID": "files/lektionen_hs25/250820/tcpip.html#ip-addresses",
+    "href": "files/lektionen_hs25/250820/tcpip.html#ip-addresses",
+    "title": "2 IP Addresses and DNS",
+    "section": "",
+    "text": "For computers to be accessible within a network, they need a unique address. This address is known as an IP address (Internet Protocol Address). For around two decades now, – there has been a gradual transition from the IPv4 system to IPv6. IPv4 addresses are 32-bit addresses represented in four octets (e.g. 192.0.2.1). This results in \\(2^{32}\\) possible addresses, which is slightly more than 4.29 billion. This demonstrates the limited nature of IPv4 addresses. This limitation led to the development of IPv6. IPv6 addresses are 128 bits long. They are displayed in hexadecimal notation, with eight groups of four hexadecimal digits (e.g.  2001:0db8:85a3:0000:0000:8a2e:370:7334). The length of 128 bits allows for \\(2^{128}\\) addresses, which in decimal notation corresponds to \\(3.4\n\\times 10^{38}\\), a number with 39 digits. There would be approximately \\(6.7 \\cdot 10^{23}\\) IPv6 addresses per square metre of the Earth’s surface - that is roughly one  Avogadro number per square metre."
+  },
+  {
+    "objectID": "files/lektionen_hs25/250820/tcpip.html#dns-lookup",
+    "href": "files/lektionen_hs25/250820/tcpip.html#dns-lookup",
+    "title": "2 IP Addresses and DNS",
+    "section": "DNS Lookup",
+    "text": "DNS Lookup\nPeople find it difficult to remember IP addresses. Therefore, domain names were introduced, which are easier to remember. An example of a domain name is www.google.com. A possible IP address for Google’s domain name is 172.217.168.68; often there are several IP addresses for a domain name. The Domain Name System (DNS) is responsible for ‘translating’ a domain name into an IP address.\n\nHow it works\n\nRequest: When a user visits a website, the browser sends a DNS request to a DNS server to determine the IP address of the desired domain.\nResolution: The DNS server checks its cache for an existing assignment. If no assignment is found, the server forwards the request to other DNS servers until the IP address is determined.\nResponse: The DNS server sends the IP address it found back to the browser, which can then connect to the website.\n\n\n\nTypes of DNS records\n\nA record: Links a domain name to an IPv4 address.\nAAAA record: Links a domain name to an IPv6 address.\nCNAME record: Alias for another domain name.\nMX record: Specifies the mail server for a domain.\n\n\n\nSignificance\nThe domain name is crucial for the user-friendliness of the Internet, as it allows websites to be accessed via easy-to-remember names instead of numerical IP addresses. Without DNS, users would have to know the IP addresses of all the websites they want to visit."
   },
   {
     "objectID": "files/materialien/240904/schweizerfahne.html",
