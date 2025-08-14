@@ -36,7 +36,9 @@
     "listing": "/files/HS_25.html",
     "items": [
       "/files/lektionen_hs25/250820/networks.html",
-      "/files/lektionen_hs25/250820/tcpip.html"
+      "/files/lektionen_hs25/250820/tcpip.html",
+      "/files/lektionen_hs25/250820/nat.html",
+      "/files/lektionen_hs25/250820/tld.html"
     ]
   }
 ]

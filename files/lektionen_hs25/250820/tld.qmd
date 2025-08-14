@@ -1,0 +1,155 @@
+---
+title: "4 Top-level domains and their allocation"
+date: 2025-08-20
+date-format: DD.MM.YYYY
+author: "Jacques Mock Schindler"
+---
+
+## What are top-level domains?
+
+Top-level domains (TLDs) are the last part of a domain name – the part
+after the last dot. In the address www.example.com, ‘.com’ is the
+top-level domain. TLDs form the highest hierarchical level in the Domain
+Name System (DNS) and are essential for the organisation of the
+Internet. 
+
+Every domain name follows a hierarchical structure that is read from
+right to left: 
+
+**www.kbw.ch**  
+
+* TLD: .ch (Switzerland)  
+* Second-level domain: kbw  
+* Subdomain: www  
+
+## Types of top-level domains
+
+### 1. Generic top-level domains (gTLDs)
+
+Generic TLDs are not country-specific and can be registered worldwide: 
+
+- **.com** – Commercial (originally for companies)
+- **.org** – Organisation (for organisations)
+- **.net** – Network (originally for network providers)
+- **.edu** – Education (only for accredited educational institutions)
+- **.gov** – Government (only for US government agencies)
+- **.mil** – Military (only for the US military)
+
+### 2. Country Code Top Level Domains (ccTLDs)
+
+Each country is assigned a two-letter code according to ISO 3166-1:
+
+- **.ch** – Switzerland (Confoederatio Helvetica)
+- **.de** – Germany
+- **.fr** – France
+- **.uk** – United Kingdom
+- **.us** – United States
+
+There are a total of 249 ccTLDs for countries and territories.
+
+### 3. New Generic Top Level Domains (ngTLDs)
+
+Since 2013, over 1,200 new TLDs have been introduced:
+
+- **.shop**, **.blog**, **.app**
+- **.berlin**, **.paris**, **.swiss**
+- **.google**, **.apple** (brand TLDs)
+
+## The registry: ICANN and IANA
+
+The **Internet Corporation for Assigned Names and Numbers (ICANN)** is
+the central organisation for the administration of the domain name
+system. It was founded in 1998 and is headquartered in Los Angeles, USA. 
+
+The **Internet Assigned Numbers Authority (IANA)**, a division of ICANN,
+manages the root zone of the DNS. This contains all TLDs and their
+associated name servers. 
+
+### Hierarchy of allocation
+
+1. **ICANN/IANA** → Manages all TLDs
+2. **Registry** → Operates a specific TLD (e.g. SWITCH for .ch)
+3. **Registrar** → Sells domains to end customers
+4. **Registrant** → The domain owner
+
+## The allocation process for new gTLDs
+
+### Phase 1: Application
+
+Organisations can apply to ICANN for new TLDs. The last major
+application round was in 2012: 
+
+- **Application fee:** USD 185,000
+- **Application period:** 4 months
+- **Applications received:** 1,930
+
+### Phase 2: Evaluation
+
+ICANN reviews each application for:
+- Technical competence
+- Financial stability
+- No trademark infringements
+- Public interest
+
+### Phase 3: Delegation
+
+After successful review, the TLD is entered into the root zone. The
+entire process typically takes 18-24 months. 
+
+## Costs and fees
+
+### For registry operators
+
+- **Annual ICANN fee:** USD 25,000 per TLD
+- **Transaction fee:** USD 0.25 per domain registration
+- **Operating costs:** Technical infrastructure, personnel, marketing 
+
+### For end customers (examples)
+
+- **.ch domain:** CHF 10-20 per year
+- **.com domain:** CHF 15-25 per year
+- **Premium ngTLDs:** CHF 50-500+ per year
+
+
+## Special regulations
+
+### Restricted TLDs
+
+Some TLDs have special registration conditions:
+
+- **.edu** – Only for accredited US universities
+- **.museum** – Only for museums
+- **.aero** – Only for the aviation industry
+- **.swiss** – Connection to Switzerland required
+
+### Internationalised domain names (IDN)
+
+Since 2010, TLDs in non-Latin scripts have been possible:
+
+- **.中国** (China)
+- **.рф** (Russia)
+- **.ελ** (Greece)
+
+## Statistical overview
+
+As of 2025, there are:
+- **Active TLDs:** ~1,500
+- **Registered domains worldwide:** ~370 million
+- **Largest TLD:** .com with ~160 million domains
+- **Swiss .ch domains:** ~2.5 million
+
+The distribution follows a power law: the 10 largest TLDs host around
+75% of all domains. 
+
+## Significance and outlook
+
+Top-level domains are more than just technical designations – they are
+digital identities. A .ch domain signals Swiss origin, while a .edu
+domain stands for education. With the continuous expansion of the
+Internet, the importance of a well-thought-out TLD structure is also
+growing. 
+
+The next ICANN application round for new gTLDs is planned for 2026.
+Experts expect another 500-1,000 new TLDs, including an increasing
+number of city and brand names. The challenge will be to maintain a
+balance between innovation and clarity. 
