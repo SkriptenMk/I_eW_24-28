@@ -59,8 +59,7 @@ System (DNS) is responsible for
 
 ### Significance
 
-The domain name is crucial for the user-friendliness of the
-Internet, as it allows websites to be accessed via easy-to-remember names
-instead of numerical IP addresses. Without DNS,
-users would have to know the IP addresses of all the websites they want to visit
-.
+The domain name is crucial for the user-friendliness of the Internet, as
+it allows websites to be accessed via easy-to-remember names instead of
+numerical IP addresses. Without DNS, users would have to know the IP
+addresses of all the websites they want to visit.
