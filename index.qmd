@@ -7,6 +7,9 @@ science course.
 
 ## Schedule
 
+The programme reflects the current state of planning. Changes are to be
+expected during the course of the semester.
+
 | Date | Topic |
 | :--- | :--- |
 | 20.08.2025 | Networks: TCP/IP |
@@ -28,8 +31,7 @@ science course.
 | 21.01.2026 | AI |
 
 
-The programme reflects the current state of planning. Changes are to be
-expected during the course of the semester.
+
 
 ## Grading
 
@@ -41,3 +43,10 @@ The Final grades are calculated as a weighted average of the two.
 written examinations and the oral participation grade. The
 Average grade of the two written examinations is weighted at 90%, while
 the grade for oral participation is weighted at 10%.
+
+You have the opportunity to improve your mark in an upcoming exam. If
+you report an issue through the link on the right-hand side before the
+exam takes place, you may be awarded a maximum increase of one mark.  
+To report an issue, you must sign up with
+<a href="https://www.github.com" target="_blank">
+GitHub</a>. Use your school email address to register.
