@@ -3,7 +3,9 @@ project:
   output-dir: docs
 
 website:
-  title: "Computer Science Course Materials for School Year 2025/26 (2eW)"
+  title: "Computer Science Course Materials for School Year 2025/26   (2eW)"
+  repo-url: https://github.com/SkriptenMk/I_eW_24-28
+  repo-actions: [source, edit, issue]
   navbar:
     right:
       - text: Home
