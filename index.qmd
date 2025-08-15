@@ -48,4 +48,5 @@ You have the opportunity to improve your mark in an upcoming exam. If
 you report an issue through the link on the right-hand side before the
 exam takes place, you may be awarded a maximum increase of one mark.  
 To report an issue, you must sign up with
-[GitHub](www.github.com). Use your school email address to register.
+<a href="https://www.github.com" target="_blank">
+GitHub</a>. Use your school email address to register.
