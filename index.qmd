@@ -50,3 +50,10 @@ exam takes place, you may be awarded a maximum increase of one mark.
 To report an issue, you must sign up with
 <a href="https://www.github.com" target="_blank">
 GitHub</a>. Use your school email address to register.
+
+## Appointments
+
+
+If you would like a personal appointment, here is the link to 
+<a href="https://calendar.app.google/zeGrkDcyjgqqc95SA" target="_blank">
+Rent-A-Mock</a>.
