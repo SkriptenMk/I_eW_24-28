@@ -133,6 +133,7 @@ Since 2010, TLDs in non-Latin scripts have been possible:
 ## Statistical overview
 
 As of 2025, there are:
+
 - **Active TLDs:** ~1,500
 - **Registered domains worldwide:** ~370 million
 - **Largest TLD:** .com with ~160 million domains
