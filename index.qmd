@@ -17,8 +17,8 @@ expected during the course of the semester.
 | 10.09.2025 | Networks: Exercise |
 | 17.09.2025 | Cryptology: Caesar |
 | 24.09.2025 | Cryptology: Vigenère Chiffre |
-| 22.10.2025 | Cryptology: Break Vigenère |
-| 29.10.2025 | Test |
+| 22.10.2025 | Test |
+| 29.10.2025 | Cryptology: Break Vigenère |
 | 05.11.2025 | Cryptology: Public Key Cryptography (Graph based) |
 | 12.11.2025 | Cryptology: RSA |
 | 19.11.2025 | Cryptology: digital Signatures |
