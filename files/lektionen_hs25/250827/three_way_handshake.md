@@ -50,7 +50,7 @@ recorded data traffic can be filtered. The filter is entered in the
 input field for ‘Display filter’.
 
 
-![Wireshark Anzeigefilter](ws_anzeigefilter.png)
+![Wireshark display filter](ws_anzeigefilter.png)
 
 The corresponding filter for DNS queries to a given website
 is
@@ -192,7 +192,7 @@ the so-called "Three-Way Handshake". This process ensures that both sides are re
 to send and receive data.  
 The following illustration shows a schematic representation of the "Three-Way Handshake".
 
-![Schema Three-Way Handshake](schema_three-way-handshake.png)
+![Scheme Three-Way Handshake](schema_three-way-handshake.png)
 
 The client sends a SYN packet to the server to request a connection.
 The server responds with a SYN-ACK packet. This means it acknowledges the request with an ACK and inquires with a SYN whether the client is (still) ready to establish the connection. To make it clear that the ACK in the SYN-ACK packet refers to the original SYN packet, the individual packets are assigned a sequence number. The ACK returns the sequence number of the SYN packet plus one.
@@ -205,12 +205,13 @@ ip.addr == 85.236.46.65
 
 This sole filter, however, still shows too many packets.
 
-![ip.addr Filter](ws_ip-addr-Filter.png)
+![ip.addr filter](ws_ip-addr-Filter.png)
 
 To further narrow down the results, only those packets should be displayed that have either the SYN flag or the ACK flag (or both) set. This can be achieved with the following filter:
 
 ```wireshark
-ip.addr == 85.236.46.65 and (tcp.flags.syn == 1 or tcp.flags.ack == 1 )
+ip.addr == 85.236.46.65 and 
+  (tcp.flags.syn == 1 or tcp.flags.ack == 1 )
 ```
 
 Still, this shows way too many packets. Therefore, only those packets
@@ -224,10 +225,12 @@ The following listing shows the entire filter command for displaying the
 packets belonging to this TCP stream:
 
 ```wireshark
-ip.addr == 85.236.46.65 and (tcp.flags.syn == 1 or tcp.flags.ack == 1) and !(tcp.stream eq 8)
+ip.addr == 85.236.46.65 and 
+  (tcp.flags.syn == 1 or tcp.flags.ack == 1) and
+  !(tcp.stream eq 8)
 ```
 
-![Three-Way Handshake Pakete](ws_three-way-handshake.png)
+![Three-way handshake packets](ws_three-way-handshake.png)
 
 That the packets show the communication sequence of the Three-Way
 Handshake can be seen from the set flags. In the first step, the client
