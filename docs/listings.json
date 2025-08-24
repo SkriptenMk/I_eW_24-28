@@ -1,5 +1,28 @@
 [
   {
+    "listing": "/files/HS_25.html",
+    "items": [
+      "/files/lektionen_hs25/250820/networks.html",
+      "/files/lektionen_hs25/250820/tcpip.html",
+      "/files/lektionen_hs25/250820/nat.html",
+      "/files/lektionen_hs25/250820/tld.html",
+      "/files/lektionen_hs25/250827/three_way_handshake.html"
+    ]
+  },
+  {
+    "listing": "/files/FS_25.html",
+    "items": [
+      "/files/lektionen_fs25/250219/queue.html",
+      "/files/lektionen_fs25/250226/binaersystem.html",
+      "/files/lektionen_fs25/250305/bst.html",
+      "/files/lektionen_fs25/250319/base64.html",
+      "/files/lektionen_fs25/250326/lernziele.html",
+      "/files/lektionen_fs25/250416/datenbank.html",
+      "/files/lektionen_fs25/250507/sql.html",
+      "/files/lektionen_fs25/250521/lernziele.html"
+    ]
+  },
+  {
     "listing": "/files/HS_24.html",
     "items": [
       "/files/lektionen_hs24/240821/einfuehrung.html",
@@ -17,28 +40,6 @@
       "/files/lektionen_hs24/241218/lernziele.html",
       "/files/lektionen_hs24/250115/binary_search_tree.html",
       "/files/lektionen_hs24/250122/speicherstrukturen.html"
-    ]
-  },
-  {
-    "listing": "/files/FS_25.html",
-    "items": [
-      "/files/lektionen_fs25/250219/queue.html",
-      "/files/lektionen_fs25/250226/binaersystem.html",
-      "/files/lektionen_fs25/250305/bst.html",
-      "/files/lektionen_fs25/250319/base64.html",
-      "/files/lektionen_fs25/250326/lernziele.html",
-      "/files/lektionen_fs25/250416/datenbank.html",
-      "/files/lektionen_fs25/250507/sql.html",
-      "/files/lektionen_fs25/250521/lernziele.html"
-    ]
-  },
-  {
-    "listing": "/files/HS_25.html",
-    "items": [
-      "/files/lektionen_hs25/250820/networks.html",
-      "/files/lektionen_hs25/250820/tcpip.html",
-      "/files/lektionen_hs25/250820/nat.html",
-      "/files/lektionen_hs25/250820/tld.html"
     ]
   }
 ]
