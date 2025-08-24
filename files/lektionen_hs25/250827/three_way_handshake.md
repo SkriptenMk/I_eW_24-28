@@ -1,4 +1,10 @@
-# Monitoring Internet connections
+---
+title: "5 Monitoring Internet connections"
+date: 2025-08-27
+date-format: DD.MM.YYYY
+author: "Jacques Mock Schindler"
+---
+
 
 The following explanations are based on the analysis of network packets
 recorded with Wireshark. This requires the installation of
