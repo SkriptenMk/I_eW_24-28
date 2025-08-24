@@ -7,91 +7,91 @@ Wireshark. The
 Wireshark website</a>  provides the
 corresponding download.
 
-## Aufzeichnen von Netzwerkpaketen
+## Recording network packets
 
-Um Netzwerkpakete aufzuzeichnen, wird Wireshark gestartet. Das
-Startfenster von Wireshark stellt sich folgendermassen dar:
+To record network packets, start Wireshark. The
+Wireshark start window looks like this:
 
-![Wireshark Startfenster](ws_start_window.png)
+![Wireshark start window](ws_start_window.png)
 
-Unter dem Titel "Aufzeichnen" kann der gewünschte Netzwerkadapter
-ausgewählt und die Aufzeichnung gestartet werden. Die erfassten Pakete
-werden in Echtzeit angezeigt und können später analysiert werden. In der
-Schule wird die Verbindung zum Internet per WLAN hergestellt.
-Entsprechend ist der WLAN-Adapter auszuwählen. Sobald der entsprechende
-Adapter ausgewählt ist, kann die Aufzeichnung gestartet werden.
-Gestartet wird die Aufzeichnung durch einen Klick auf das blaue
-Haifischflossen-Symbol in der Symbolleiste. Die Auszeichnung startet
-umgehend. Angehalten wird die Aufzeichnung mit einem Klick auf das
-rote Quadrat-Symbol in der Symbolleiste. Die Aufzeichnung kann entweder
-über das Menü Datei > Speichern, durch einen Klick auf das Dateisymbol
-oder durch die Tastenkombination `Strg + S` gespeichert werden.
+Under the heading ‘Capture’, you can select the desired network adapter
+and start recording. The captured packets
+are displayed in real time and can be analysed later. At
+school, the connection to the Internet is established via WLAN.
+The WLAN adapter must be selected accordingly. Once the appropriate
+adapter has been selected, recording can be started.
+Recording is started by clicking on the blue
+shark fin icon in the toolbar. Recording starts
+immediately. Recording is paused by clicking on the
+red square icon in the toolbar. The recording can be saved either
+via the File > Save menu, by clicking on the file icon
+or by using the key combination `Ctrl + S`.
 
-## Beobachten der DNS-Anfragen
+## Monitoring DNS requests
 
-### Filtern der Aufzeichnung
+### Filtering the recording
 
-Um die DNS-Anfragen zu beobachten, wird bei laufender Wireshark
-Aufzeichnung eine beliebige Website aufgerufen. Dadurch werden die
-entsprechenden DNS-Anfragen erfasst und können in Wireshark
-analysiert werden. Nach dem Aufruf der Website kann die Aufzeichnung
-angehalten und die erfassten Pakete analysiert werden (wenn die
-Aufzeichnung weiterläuft, bewegen sich die Pakete im Anzeigefenster
-ständig weiter).
+To monitor DNS requests, any website is called up while Wireshark
+recording is running. This captures the
+corresponding DNS requests, which can then be analysed in Wireshark.
+After calling up the website, the recording can be 
+paused and the captured packets analysed (if the
+recording continues, the packets in the display window
+continue to move).
 
-Damit die relevanten Datenpakete angezeigt werden, kann der
-aufgezeichnete Datenverkehr gefiltert werden. Der Filter wird in der
-Eingabefeld für "Anzeigefilter" eingegeben.
+To display the relevant data packets, the
+recorded data traffic can be filtered. The filter is entered in the
+input field for ‘Display filter’.
+
 
 ![Wireshark Anzeigefilter](ws_anzeigefilter.png)
 
-Der entsprechende Filter für DNS-Anfragen zu einer gegebenen Website
-lautet 
+The corresponding filter for DNS queries to a given website
+is
 
 ```txt
 dns.qry.name == "www.example.com"
 ```
 
-Der angewendete Filterbefehl ist relativ einfach nachzuvollziehen.
-An erster Stelle steht hier das Protokoll nach dem gefiltert wird. Weil
-nach den DNS-Anfragen gefiltert wird, ist das hier `dns`. `dns` alleine
-wäre bereits ein gültiger Filter. Allerdings werden dann alle DNS-Pakete
-angezeigt. Der Filter wird daher zu `dns.qry.name` ergänzt Dabei steht
-`qry` als Abkürzung für query - Anfrage. Die Ergänzung `name` steht für den Domain Name,
-der Abgefragt wird. `==` ist die logische Verknüpfung, nach der gefiltert wird
-und bedeutet hier "ist gleich". Zwischen den Anführungszeichen steht der
-String, nach dem gesucht wird.  
-Sofern die Seite während der Aufzeichnung genau
-einmal aufgerufen wurde, wird der Filter zwei Pakete anzeigen: eine
-DNS-Anfrage und eine DNS-Antwort.
+The filter command used is relatively easy to understand.
+The first thing to note here is the protocol being filtered. Because
+the filtering is based on DNS queries, this is `dns`. `dns` alone
+would already be a valid filter. However, this would then display all DNS packets
+. The filter is therefore supplemented to `dns.qry.name`, where
+`qry` is short for query. The addition `name` stands for the domain name
+that is being queried. `==` is the logical operator used for filtering
+and means ‘is equal to’ in this case. The string being searched for is between the quotation marks.
+If the page was accessed exactly once during recording, the filter will display two packets: one
+DNS query and one DNS response.
+If the page was accessed multiple times during recording, the filter
+will display multiple packets. 
 
-![Gefilterte Wireshark-Pakete](ws_dns_query.png)
 
-Das Bild zeigt als erstes Paket die DNS-Anfrage für
-www.deutschegrammaphon.com und als zweites Paket die entsprechende
-Antwort.
+![Filtered Wireshark packets](ws_dns_query.png)
 
-### Analyse der gefilterten Pakete
+The image shows the DNS query for
+www.deutschegrammaphon.com as the first packet and the corresponding
+response as the second packet.
 
-Für eine genaue Analyse der Kommunikation kann ein einzelnes Paket
-durch anklicken ausgewählt werden. Dadurch wird das Paket im unteren
-Bereich von Wireshark detailliert angezeigt und kann genauer
-untersucht werden.
+### Analysis of the filtered packets
 
-![Inhalt des Ausgewählten Pakets](ws_selected_package.png)
+For a detailed analysis of the communication, a single packet can be
+selected by clicking on it. This will display the packet in the lower
+area of Wireshark in detail and it can be examined more closely.
 
-Dass es sich hier im Bild um die Details des ausgewählten Paketes
-handelt, ist an der übereinstimmenden Paketnummer zu erkennen. Die
-Zeilen in der 
-Detailansicht entsprechen den einzelnen Protokoll-Header-Feldern des
-ausgewählten Paketes. Das bildet auch das TCP/IP Schichtenmodell ab.
+![Content of the selected packet](ws_selected_package.png)
 
-Die Detailansicht kann durch einen Klick auf die Dreiecke am Anfang der
-einzelnen Protokoll-Header-Felder erweitert werden. Dadurch werden
-weitere Informationen zu den jeweiligen Feldern angezeigt. Hier werden
-jedoch nur die Zusammenfassungen der Header-Felder erläutert.
+That it is the details of the selected packet that are shown in the
+image is evident from the matching packet number. The lines in the 
+detail view correspond to the individual protocol header fields of the
+selected packet. This also reflects the TCP/IP layering model.
 
-Im Beispiel wird als erstes der Inhalt des Headers des Internetlayers erläutert. 
+The detail view can be expanded by clicking on the triangles at the beginning of the
+individual protocol header fields. This will display
+further information about the respective fields. However, only the
+summaries of the header fields are explained here. 
+
+In this example, the content of the Internet layer header is explained first.
 
 ```text
 
@@ -99,40 +99,37 @@ Internet Protocol Version 4, Src: 192.168.1.108, Dst: 192.168.1.1
 
 ```
 
-In der Zusammenfassung werden die die Quell- und
-Ziel-Adressen des IP-Pakets angezeigt. Im vorliegenden Fall sind das jeweils die
-Privaten IP-Adressen 192.168.1.108 und 192.168.1.1. 192.168.1.108
-ist die Quell-Adresse, erkennbar an der Abkürzung "Src" und 192.168.1.1
-die Ziel-Adresse, erkennbar an der Abkürzung "Dst". Beide Geräte
-befinden sich damit im gleichen LAN. Der Rechner mit der IP-Adresse
-192.168.1.1 ist der Router. Dieses Gerät stellt die Internetverbindung
-her und kann DNS-Anfragen aus seinem Cache beantworten.
+In the summary, the source and destination addresses of the IP packet
+are displayed. In this case, these are the private IP addresses
+192.168.1.108 and 192.168.1.1. 192.168.1.108 is the source address,
+identifiable by the abbreviation "Src", and 192.168.1.1 is the
+destination address, identifiable by the abbreviation "Dst". Both
+devices are thus located in the same LAN. The computer with the IP
+address 192.168.1.1 is the router. This device establishes the Internet
+connection and can answer DNS queries from its cache.
 
-Im Header für das User Datagram Protocol (UDP) werden die Quell- und
-Ziel-Ports angezeigt. 
+In the header for the User Datagram Protocol (UDP), the source and
+destination ports are displayed.
 
 ```text
 User Datagram Protocol, Src Port: 53586, Dst Port: 53
 ```
-Der Quellport wurde mit 53586 automatisch und weit oberhalb der sog.
-"Well-Known Ports" (0-1023) gewählt. Die "Well-Known Ports" sind Ports,
-die von bestimmten Anwendungen oder Diensten standardmässig verwendet
-werden. Entsprechend wurde der Zielport auf 53 gewählt, da dies der
-standardmässige Port für DNS-Anfragen ist. Eine Liste der "Well-Known Ports"
-findet sich in der 
+The source port was automatically chosen as 53586, well above the
+so-called "Well-Known Ports" (0-1023). The "Well-Known Ports" are ports
+that are used by certain applications or services by default. Accordingly,
+the destination port was set to 53, as this is the default port for
+DNS queries. A list of "Well-Known Ports" can be found in the
 <a
 href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml"
 target="_blank">
-offiziellen IANA-Portdatenbank</a>. Der Quellport ermöglicht es dem
-Zielsystem, die Antwort an den korrekten Absender zurückzusenden.
-NAT-Geräte (vgl. 
-[Abschnitt Network Address Translation (NAT)](../250822/nat.md))
-nutzen diese Port-Informationen zusätzlich für die Zuordnung
-zwischen privaten und öffentlichen Adressen. 
+official IANA port database</a>. The source port allows the
+destination system to send the response back to the correct sender.
 
-Der zuunterst dargestellte Layer in der Detailansicht, beinhaltet die
-eigentliche Anfrage für die Übersetzung des Domainnamens in eine
-IP-Adresse.
+NAT devices (see [Section Network Address Translation (NAT)](../250820/nat.qmd))
+use this port information for the mapping between private and public addresses.
+
+The layer displayed at the bottom of the detail view contains the actual
+request for the translation of the domain name into an IP address. 
 
 ```text
 Domain Name System (query)
@@ -147,18 +144,17 @@ Domain Name System (query)
     [Response In: 723]
 ```
 
-Aus diesem Grund wird dieser Teil der Analyse hier auch aufgefaltet
-dargestellt.  
-Unter dem Stichwort `Queries` wird die gesuchte Adresse
-`www.deutschegrammophon.com` angezeigt. Das Stichwort `type A` zeigt an,
-dass es sich hier um eine Anfrage nach einer IPv4-Adresse handelt.
-IPv4-Adressen werden mit `A` bezeichnet, IPv6 mit `AAAA`. Das letzte
-Element in dieser Zeile ist die Klasse der Anfrage, in diesem Fall `IN`
-für das Internet. Obwohl heute fast ausschliesslich das Internet als
-Netzwerktyp verwendet wird, ist das Feld für die Klasse (IN) aus
-historischen Gründen weiterhin Teil jeder DNS-Anfrage. 
+For this reason, this part of the analysis is also unfolded here.
+Under the keyword `Queries`, the requested address
+`www.deutschegrammophon.com` is displayed. The keyword `type A` indicates
+that this is a request for an IPv4 address.
+IPv4 addresses are designated with `A`, while IPv6 addresses are
+designated with `AAAA`. The last element in this line is the class of
+the request, in this case `IN` for the Internet. Although today almost
+exclusively the Internet is used as a network type, the field for the
+class (IN) is still part of every DNS request for historical reasons. 
 
-Der entsprechende Inhalt der Antwort sieht folgendermassen aus:
+The corresponding content of the response looks as follows:
 
 ```text
 Domain Name System (response)
@@ -175,66 +171,51 @@ Domain Name System (response)
 
 ```
 
-Das Paket wiederholt die Frage und liefert die Antwort des DNS-Servers.
-Der Domainname `www.deutschegrammophon.com` ist mit der IPv4-Adresse
-`85.236.46.65` verknüpft. 
+The packet repeats the question and provides the answer from the DNS server.
+The domain name `www.deutschegrammophon.com` is associated with the IPv4 address
+`85.236.46.65`.
 
-Damit kann die Verbindung zur Website `www.deutschegrammophon.com`
-hergestellt werden. 
+This allows the connection to the website `www.deutschegrammophon.com`
+to be established.
 
-## Beobachtung des Verbindungsaufbaus
+## Monitoring of the Connection Establishment
 
-Der Verbindungsaufbau zwischen Client (lokaler Rechner) und Server
-(Rechner im Internet) erfolgt in mehreren 
-Schritten, die im sogenannten "Three-Way Handshake" zusammengefasst
-werden. Dieser Prozess stellt sicher, dass beide Seiten bereit sind,
-Daten zu senden und zu empfangen. Die folgende Abbildung zeigt eine
-schematische Darstellung des "Three-Way Handshake".
+The connection establishment between the client (local computer) and the server
+(computer on the Internet) takes place in several steps, which are summarized in
+the so-called "Three-Way Handshake". This process ensures that both sides are ready
+to send and receive data.  
+The following illustration shows a schematic representation of the "Three-Way Handshake".
 
 ![Schema Three-Way Handshake](schema_three-way-handshake.png)
 
-Der Client sendet ein SYN-Paket an den Server, um eine Verbindung
-anzufordern. Dieser Antwortet mit einem SYN-ACK-Paket. Das heisst, er
-bestätigt die Anfrage mit einem ACK und fragt seinerseits mit
-einem SYN nach, ob der Client (immer noch) bereit ist, die
-Verbindung aufzubauen. Damit klar ist, dass sich das ACK im
-SYN-ACK-Paket auf das ursprüngliche SYN-Paket bezieht, werden die
-einzelnen Pakete mit einer Sequenznummer (Sequence Number) versehen. Das
-ACK gibt die Sequenznummer des SYN-Paketes plus eins zurück.
+The client sends a SYN packet to the server to request a connection.
+The server responds with a SYN-ACK packet. This means it acknowledges the request with an ACK and inquires with a SYN whether the client is (still) ready to establish the connection. To make it clear that the ACK in the SYN-ACK packet refers to the original SYN packet, the individual packets are assigned a sequence number. The ACK returns the sequence number of the SYN packet plus one.
 
-Dieser Vorgang kann mit Wireshark beobachtet werden. Dafür braucht es
-einen kombinierten Wireshark Anzeigefilter. Als Beispiel wird der
-Verbindungsaufbau zwischen dem lokalen Rechner und der Website von
-www.deutschegrammophon.com betrachtet. Der erste Teil des Filters soll
-nur jene Pakete anzeigen, welche mit der IP-Adresse des Servers von
-www.deutschegrammophon.com (85.236.46.65) kommunizieren. Dieser Filter lautet
+This process can be observed with Wireshark. For this, a combined Wireshark display filter is needed. As an example, the connection establishment between the local computer and the website of www.deutschegrammophon.com is considered. The first part of the filter should only display those packets that communicate with the IP address of the server of www.deutschegrammophon.com (85.236.46.65). This filter is
 
 ```wireshark
 ip.addr == 85.236.46.65
 ```
 
-Dieser Filter alleine zeigt jedoch noch zu viele Pakete an.
+This sole filter, however, still shows too many packets.
 
 ![ip.addr Filter](ws_ip-addr-Filter.png)
 
-Um die Resultate weiter einzuschränken sollen nur jene Pakete angezeigt
-werden, welche entweder das SYN-Flag oder das ACK-Flag (oder beides)
-gesetzt haben. Dies kann mit folgendem Filter erreicht werden:
+To further narrow down the results, only those packets should be displayed that have either the SYN flag or the ACK flag (or both) set. This can be achieved with the following filter:
 
 ```wireshark
 ip.addr == 85.236.46.65 and (tcp.flags.syn == 1 or tcp.flags.ack == 1 )
 ```
 
-Das sind allerdings immer noch zu viele Pakete. Daher sollen nur jene
-Pakete angezeigt werden, welche die Antworten auf eine SYN-Anfrage sind.
-Das kann erreicht werden, in dem ein Paket mit dem SYN-Flag mit der
-rechten Maustaste angeklickt wird und die Option "Follow" > "TCP Stream"
-ausgewählt wird. Dadurch wird der gesamte TCP-Stream, in dem dieses
-Paket steht, (die aufeinanderfolgenden Pakete) angezeigt. Der Filter
-wird automatisch angepasst.
+Still, this shows way too many packets. Therefore, only those packets
+should be displayed that are the responses to a SYN request. This can be
+achieved by right-clicking on a packet with the SYN flag and selecting
+the "Follow" > "TCP Stream" option. This will display the entire TCP
+stream in which this packet is located (the consecutive packets). The
+filter will be automatically adjusted. 
 
-Das folgende Listing zeigt den ganzen Filterbefehl für die Anzeige der
-Pakete, die zu diesem TCP-Stream gehören:
+The following listing shows the entire filter command for displaying the
+packets belonging to this TCP stream:
 
 ```wireshark
 ip.addr == 85.236.46.65 and (tcp.flags.syn == 1 or tcp.flags.ack == 1) and !(tcp.stream eq 8)
@@ -242,12 +223,12 @@ ip.addr == 85.236.46.65 and (tcp.flags.syn == 1 or tcp.flags.ack == 1) and !(tcp
 
 ![Three-Way Handshake Pakete](ws_three-way-handshake.png)
 
-Dass die Pakte die Kommunikationsfolge des Three-Way Handshakes zeigen,
-ist an den gesetzten Flags zu erkennen. Im ersten Schritt sendet der
-Client ein SYN-Paket, worauf der Server mit einem SYN-ACK-Paket
-antwortet. Der Client bestätigt dies mit einem ACK-Paket. Diese drei
-Schritte sind im Wireshark-Filter sichtbar. Gut zu erkennen sind die
-jeweiligen Portnummern, die in den TCP-Paketen verwendet werden.
+That the packets show the communication sequence of the Three-Way
+Handshake can be seen from the set flags. In the first step, the client
+sends a SYN packet, to which the server responds with a SYN-ACK packet.
+The client confirms this with an ACK packet. These three steps are
+visible in the Wireshark filter. The respective port numbers used in the
+TCP packets are clearly recognizable. 
 
-Anschliessend an diesen "Three-Way Handshake" kann der Client mit dem
-Server kommunizieren.
+Following this "Three-Way Handshake", the client can communicate with the
+server.
