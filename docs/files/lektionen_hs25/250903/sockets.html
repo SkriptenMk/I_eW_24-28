@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jacques Mock Schindler">
 
-<title>Autumn Term Materials 2025/2026 – Computer Science Course Materials for School Year 2025/26 (2eW)</title>
+<title>6 Python Sockets Example – Computer Science Course Materials for School Year 2025/26 (2eW)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,28 +21,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,67 +103,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -139,7 +115,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Computer Science Course Materials for School Year 2025/26 (2eW)</span>
     </a>
   </div>
@@ -150,7 +126,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -159,15 +135,15 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-materials">    
         <li>
-    <a class="dropdown-item" href="../files/HS_24.html">
+    <a class="dropdown-item" href="../../../files/HS_24.html">
  <span class="dropdown-text">Autumn Term 2024/2025</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../files/FS_25.html">
+    <a class="dropdown-item" href="../../../files/FS_25.html">
  <span class="dropdown-text">Spring Term 2025</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../files/HS_25.html">
+    <a class="dropdown-item" href="../../../files/HS_25.html">
  <span class="dropdown-text">Autumn Term 2025/2026</span></a>
   </li>  
     </ul>
@@ -183,22 +159,41 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#communication-structure" id="toc-communication-structure" class="nav-link active" data-scroll-target="#communication-structure">Communication Structure</a></li>
+  <li><a href="#server-code" id="toc-server-code" class="nav-link" data-scroll-target="#server-code">Server Code</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/250903/sockets.md" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/edit/main/files/lektionen_hs25/250903/sockets.md" target="_blank" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Autumn Term Materials 2025/2026</h1>
+<h1 class="title">6 Python Sockets Example</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jacques Mock Schindler </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">03.09.2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -208,242 +203,71 @@ window.Quarto = {
 </header>
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-    <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-      <option value="" disabled="" selected="" hidden="">Order By</option>
-      <option value="index" data-direction="asc">Default</option>
-      <option value="listing-date-sort" data-direction="asc">
-        Date - Oldest
-      </option>
-      <option value="listing-date-sort" data-direction="desc">
-        Date - Newest
-      </option>
-      <option value="listing-title-sort" data-direction="asc">
-        Title
-      </option>
-      <option value="listing-author" data-direction="asc">
-        Author
-      </option>
-    </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
+<p>In this section, we will explore how to create a simple client-server application using Python sockets. This example will demonstrate the basic concepts of socket programming, including how to establish a connection, and send and receive data.</p>
+<div class="callout callout-style-simple callout-note callout-titled" title="Network Socket">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<table class="quarto-listing-table table">
-<thead>
-<tr>
+<div class="callout-title-container flex-fill">
+Network Socket
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A network socket is a software structure within a network node of a computer network that serves as an endpoint for sending and receiving data across the network.</p>
+</div>
+</div>
+<section id="communication-structure" class="level2">
+<h2 class="anchored" data-anchor-id="communication-structure">Communication Structure</h2>
+<p>The example will consist of a server that listens for incoming connections and a client that connects to the server. The communication will be modelled as a kind of chat service.</p>
+</section>
+<section id="server-code" class="level2">
+<h2 class="anchored" data-anchor-id="server-code">Server Code</h2>
+<p>Below is the working code example for the server:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># socket_server.py</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> socket</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="kw">def</span> server_program():</span>
+<span id="cb1-6"><a href="#cb1-6"></a>    <span class="co"># define host name and port</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>    host <span class="op">=</span> <span class="st">'localhost'</span>    <span class="co"># for coummunication on the local machine</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>    port <span class="op">=</span> <span class="dv">5000</span>           <span class="co"># initiate port no above 1024</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>    </span>
+<span id="cb1-10"><a href="#cb1-10"></a>    <span class="co"># create socket</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>    server_socket <span class="op">=</span> socket.socket()</span>
+<span id="cb1-12"><a href="#cb1-12"></a>    </span>
+<span id="cb1-13"><a href="#cb1-13"></a>    <span class="co"># bind the socket to the host and port</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a>    server_socket.bind((host, port))</span>
+<span id="cb1-15"><a href="#cb1-15"></a>    </span>
+<span id="cb1-16"><a href="#cb1-16"></a>    <span class="co"># set the server to listen for connections</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a>    server_socket.listen(<span class="dv">2</span>) <span class="co"># max 2 clients can connect</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a>    </span>
+<span id="cb1-19"><a href="#cb1-19"></a>    <span class="co"># accept new connection from client</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a>    conn, address <span class="op">=</span> server_socket.accept()</span>
+<span id="cb1-21"><a href="#cb1-21"></a>    <span class="bu">print</span>(<span class="st">"Connection from: "</span> <span class="op">+</span> <span class="bu">str</span>(address))</span>
+<span id="cb1-22"><a href="#cb1-22"></a>    </span>
+<span id="cb1-23"><a href="#cb1-23"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb1-24"><a href="#cb1-24"></a>        <span class="co"># receive data stream. it won't accept data packet greater than 1024 bytes</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a>        data <span class="op">=</span> conn.recv(<span class="dv">1024</span>).decode()</span>
+<span id="cb1-26"><a href="#cb1-26"></a>        <span class="cf">if</span> <span class="kw">not</span> data:</span>
+<span id="cb1-27"><a href="#cb1-27"></a>            <span class="co"># if data is not received break</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a>            <span class="cf">break</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a>        <span class="bu">print</span>(<span class="st">"Recived from connected client: "</span> <span class="op">+</span> <span class="bu">str</span>(data))</span>
+<span id="cb1-30"><a href="#cb1-30"></a>        <span class="co"># prompt the user to enter a message</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a>        data <span class="op">=</span> <span class="bu">input</span>(<span class="st">' -&gt; '</span>)</span>
+<span id="cb1-32"><a href="#cb1-32"></a>        <span class="co"># send data to the client as bytes</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a>        conn.send(data.encode())</span>
+<span id="cb1-34"><a href="#cb1-34"></a>        </span>
+<span id="cb1-35"><a href="#cb1-35"></a>    <span class="co"># close the connection</span></span>
+<span id="cb1-36"><a href="#cb1-36"></a>    conn.close()</span>
+<span id="cb1-37"><a href="#cb1-37"></a>    </span>
+<span id="cb1-38"><a href="#cb1-38"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb1-39"><a href="#cb1-39"></a>    server_program()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<th>
-<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
-</th>
 
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
-</th>
+</section>
 
-<th>
-<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
-</th>
-
-</tr>
-</thead>
-<tbody class="list">
-
-<tr data-index="0" data-listing-date-sort="1755640800000" data-listing-file-modified-sort="1755171831414" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="729" data-listing-title-sort="1 Computer Networks" data-listing-filename-sort="networks.qmd">
-<td>
-<span class="listing-date">20.08.2025</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/250820/networks.html" class="title listing-title">1 Computer Networks</a>
-</td>
-<td>
-<span class="listing-author">Jacques Mock Schindler</span>
-</td>
-
-</tr>
-
-<tr data-index="1" data-listing-date-sort="1755640800000" data-listing-file-modified-sort="1755172689060" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="372" data-listing-title-sort="2 IP Addresses and DNS" data-listing-filename-sort="tcpip.qmd">
-<td>
-<span class="listing-date">20.08.2025</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/250820/tcpip.html" class="title listing-title">2 IP Addresses and DNS</a>
-</td>
-<td>
-<span class="listing-author">Jacques Mock Schindler</span>
-</td>
-
-</tr>
-
-<tr data-index="2" data-listing-date-sort="1755640800000" data-listing-file-modified-sort="1755174610863" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="834" data-listing-title-sort="3 Network Address Translation (NAT)" data-listing-filename-sort="nat.qmd">
-<td>
-<span class="listing-date">20.08.2025</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/250820/nat.html" class="title listing-title">3 Network Address Translation (NAT)</a>
-</td>
-<td>
-<span class="listing-author">Jacques Mock Schindler</span>
-</td>
-
-</tr>
-
-<tr data-index="3" data-listing-date-sort="1755640800000" data-listing-file-modified-sort="1755690735656" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="587" data-listing-title-sort="4 Top-level domains and their allocation" data-listing-filename-sort="tld.qmd">
-<td>
-<span class="listing-date">20.08.2025</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/250820/tld.html" class="title listing-title">4 Top-level domains and their allocation</a>
-</td>
-<td>
-<span class="listing-author">Jacques Mock Schindler</span>
-</td>
-
-</tr>
-
-<tr data-index="4" data-listing-date-sort="1756245600000" data-listing-file-modified-sort="1756038337935" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1398" data-listing-title-sort="5 Monitoring Internet connections" data-listing-filename-sort="three_way_handshake.md">
-<td>
-<span class="listing-date">27.08.2025</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/250827/three_way_handshake.html" class="title listing-title">5 Monitoring Internet connections</a>
-</td>
-<td>
-<span class="listing-author">Jacques Mock Schindler</span>
-</td>
-
-</tr>
-
-<tr data-index="5" data-listing-date-sort="1756850400000" data-listing-file-modified-sort="1756817461711" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="413" data-listing-title-sort="6 Python Sockets Example" data-listing-filename-sort="sockets.md">
-<td>
-<span class="listing-date">03.09.2025</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/250903/sockets.html" class="title listing-title">6 Python Sockets Example</a>
-</td>
-<td>
-<span class="listing-author">Jacques Mock Schindler</span>
-</td>
-
-</tr>
-
-<tr data-index="6" data-listing-file-modified-sort="1756038337935" data-listing-filename-sort="schema_three-way-handshake.png">
-<td>
-<span class="listing-date">&nbsp;</span>
-</td>
-<td>
-<a href="../files\lektionen_hs25\250827\schema_three-way-handshake.png" class="title listing-title">&nbsp;</a>
-</td>
-<td>
-<span class="listing-author">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="7" data-listing-file-modified-sort="1756038337935" data-listing-filename-sort="ws_anzeigefilter.png">
-<td>
-<span class="listing-date">&nbsp;</span>
-</td>
-<td>
-<a href="../files\lektionen_hs25\250827\ws_anzeigefilter.png" class="title listing-title">&nbsp;</a>
-</td>
-<td>
-<span class="listing-author">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="8" data-listing-file-modified-sort="1756038337935" data-listing-filename-sort="ws_dns_query.png">
-<td>
-<span class="listing-date">&nbsp;</span>
-</td>
-<td>
-<a href="../files\lektionen_hs25\250827\ws_dns_query.png" class="title listing-title">&nbsp;</a>
-</td>
-<td>
-<span class="listing-author">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="9" data-listing-file-modified-sort="1756038337935" data-listing-filename-sort="ws_ip-addr-Filter.png">
-<td>
-<span class="listing-date">&nbsp;</span>
-</td>
-<td>
-<a href="../files\lektionen_hs25\250827\ws_ip-addr-Filter.png" class="title listing-title">&nbsp;</a>
-</td>
-<td>
-<span class="listing-author">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="10" data-listing-file-modified-sort="1756038337935" data-listing-filename-sort="ws_selected_package.png">
-<td>
-<span class="listing-date">&nbsp;</span>
-</td>
-<td>
-<a href="../files\lektionen_hs25\250827\ws_selected_package.png" class="title listing-title">&nbsp;</a>
-</td>
-<td>
-<span class="listing-author">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="11" data-listing-file-modified-sort="1756038337935" data-listing-filename-sort="ws_start_window.png">
-<td>
-<span class="listing-date">&nbsp;</span>
-</td>
-<td>
-<a href="../files\lektionen_hs25\250827\ws_start_window.png" class="title listing-title">&nbsp;</a>
-</td>
-<td>
-<span class="listing-author">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="12" data-listing-file-modified-sort="1756038337935" data-listing-filename-sort="ws_three-way-handshake.png">
-<td>
-<span class="listing-date">&nbsp;</span>
-</td>
-<td>
-<a href="../files\lektionen_hs25\250827\ws_three-way-handshake.png" class="title listing-title">&nbsp;</a>
-</td>
-<td>
-<span class="listing-author">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="13" data-listing-file-modified-sort="1756817492021" data-listing-filename-sort="sockets.html">
-<td>
-<span class="listing-date">&nbsp;</span>
-</td>
-<td>
-<a href="../files\lektionen_hs25\250903\sockets.html" class="title listing-title">&nbsp;</a>
-</td>
-<td>
-<span class="listing-author">&nbsp;</span>
-</td>
-
-</tr>
-
-</tbody>
-</table>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -848,4 +672,4 @@ window.Quarto = {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/HS_25.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/edit/main/files/HS_25.qmd" target="_blank" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/250903/sockets.md" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/edit/main/files/lektionen_hs25/250903/sockets.md" target="_blank" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

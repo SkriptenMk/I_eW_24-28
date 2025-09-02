@@ -459,7 +459,7 @@
     "href": "files/HS_25.html",
     "title": "Autumn Term Materials 2025/2026",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\n20.08.2025\n\n\n1 Computer Networks\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n20.08.2025\n\n\n2 IP Addresses and DNS\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n20.08.2025\n\n\n3 Network Address Translation (NAT)\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n20.08.2025\n\n\n4 Top-level domains and their allocation\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n27.08.2025\n\n\n5 Monitoring Internet connections\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\n20.08.2025\n\n\n1 Computer Networks\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n20.08.2025\n\n\n2 IP Addresses and DNS\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n20.08.2025\n\n\n3 Network Address Translation (NAT)\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n20.08.2025\n\n\n4 Top-level domains and their allocation\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n27.08.2025\n\n\n5 Monitoring Internet connections\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n03.09.2025\n\n\n6 Python Sockets Example\n\n\nJacques Mock Schindler\n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "files/FS_25.html",
@@ -775,5 +775,26 @@
     "title": "Bedingungen in Python",
     "section": "",
     "text": "from pytamaro.de import (\n    gelb, schwarz,\n    rechteck,\n    neben, ueber,\n    zeige_grafik,\n)\n\n\ngelbes = rechteck(20, 20, gelb)\nschwarzes = rechteck(20, 20, schwarz)\n\n\nungerade_reihe = gelbes\n\nfor i in range(2, 9):\n    if i % 2 == 0:\n        ungerade_reihe = neben(ungerade_reihe, schwarzes)\n        print(i)\n    else:\n        ungerade_reihe = neben(ungerade_reihe, gelbes)\n\nzeige_grafik(ungerade_reihe)\n\n2\n4\n6\n8"
+  },
+  {
+    "objectID": "files/lektionen_hs25/250903/sockets.html",
+    "href": "files/lektionen_hs25/250903/sockets.html",
+    "title": "6 Python Sockets Example",
+    "section": "",
+    "text": "In this section, we will explore how to create a simple client-server application using Python sockets. This example will demonstrate the basic concepts of socket programming, including how to establish a connection, and send and receive data."
+  },
+  {
+    "objectID": "files/lektionen_hs25/250903/sockets.html#communication-structure",
+    "href": "files/lektionen_hs25/250903/sockets.html#communication-structure",
+    "title": "6 Python Sockets Example",
+    "section": "Communication Structure",
+    "text": "Communication Structure\nThe example will consist of a server that listens for incoming connections and a client that connects to the server. The communication will be modelled as a kind of chat service."
+  },
+  {
+    "objectID": "files/lektionen_hs25/250903/sockets.html#server-code",
+    "href": "files/lektionen_hs25/250903/sockets.html#server-code",
+    "title": "6 Python Sockets Example",
+    "section": "Server Code",
+    "text": "Server Code\nBelow is the working code example for the server:\n# socket_server.py\n\nimport socket\n\ndef server_program():\n    # define host name and port\n    host = 'localhost'    # for coummunication on the local machine\n    port = 5000           # initiate port no above 1024\n    \n    # create socket\n    server_socket = socket.socket()\n    \n    # bind the socket to the host and port\n    server_socket.bind((host, port))\n    \n    # set the server to listen for connections\n    server_socket.listen(2) # max 2 clients can connect\n    \n    # accept new connection from client\n    conn, address = server_socket.accept()\n    print(\"Connection from: \" + str(address))\n    \n    while True:\n        # receive data stream. it won't accept data packet greater than 1024 bytes\n        data = conn.recv(1024).decode()\n        if not data:\n            # if data is not received break\n            break\n        print(\"Recived from connected client: \" + str(data))\n        # prompt the user to enter a message\n        data = input(' -&gt; ')\n        # send data to the client as bytes\n        conn.send(data.encode())\n        \n    # close the connection\n    conn.close()\n    \nif __name__ == '__main__':\n    server_program()"
   }
 ]
