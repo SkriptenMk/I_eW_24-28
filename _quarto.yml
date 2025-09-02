@@ -27,13 +27,15 @@ format:
       - brand
     css: styles.css
     toc: true
+    code-line-numbers: true
   pdf:
     pdf-engine: xelatex
     mainfont: Arial
     fontsize: 11pt
     documentclass: article
     classoption: a4paper
-    toc: false    
+    toc: false   
+    code-line-numbers: true 
   
 
 
