@@ -1,35 +1,34 @@
 ---
-title: "6 Python Sockets Example"
+title: "6 Python Sockets: A Simple Client-Server Example"
 date: 2025-09-03
 date-format: DD.MM.YYYY
 author: "Jacques Mock Schindler"
 ---
 
-In this section, we will explore how to create a simple client-server
-application using Python sockets. This example will demonstrate the
+In this section, we explore how to create a simple client-server
+application using Python sockets. This example will demonstrate the 
 basic concepts of socket programming, including how to establish a
-connection, and send and receive data.
+connection and send and receive data.
 
 :::{.callout-note title="Network Socket" appearance="simple"}
-A network socket is a software structure within a network node of a
-computer network that serves as an endpoint for sending and receiving
-data across the network.
+A network socket is an endpoint within a host used to send and receive
+data over a network. 
 :::
 
 ## Communication Structure
 
 The example will consist of a server that listens for incoming
-connections and a client that connects to the server. The communication
-will be modelled as a kind of chat service.
+connections and a client that connects to the server. We will model the
+communication as a simple chat service. 
 
 ## Server Code
 
-To run the following example code there is no virtual environment
-required. The example uses just core Python libraries.  
+You don't need a virtual environment. The example uses only the Python
+standard library.   
 Below is the working code example for the
 <a
 href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/250903/socket_server.py"
-download="socket_server.py">socket server:</a>
+download="socket_server.py">socket server</a>:
 
 ```python
 # socket_server.py
@@ -38,8 +37,8 @@ import socket
 
 def server_program():
     # define host name and port
-    host = 'localhost'    # for coummunication on the local machine
-    port = 5000           # initiate port no above 1024
+    host = 'localhost'    # for communication on the local machine
+    port = 5000           # use a port number above 1024
     
     # create socket
     server_socket = socket.socket()
@@ -48,19 +47,19 @@ def server_program():
     server_socket.bind((host, port))
     
     # set the server to listen for connections
-    server_socket.listen(2) # max 2 clients can connect
+    server_socket.listen(2) # start listening with a backlog of 2 (max queued connections)
     
     # accept new connection from client
     conn, address = server_socket.accept()
     print("Connection from: " + str(address))
     
     while True:
-        # receive data stream. it won't accept data packet greater than 1024 bytes
+        # receive up to 1024 bytes per call
         data = conn.recv(1024).decode()
         if not data:
-            # if data is not received break
+            # if no data is received, break
             break
-        print("Recived from connected client: " + str(data))
+        print("Received from connected client: " + str(data))
         # prompt the user to enter a message
         data = input(' -> ')
         # send data to the client as bytes
@@ -80,16 +79,14 @@ script is located and run the following command:
 python socket_server.py
 ```
 
-What happens if you do so will be explained in the following sections.
+What happens when you do so is explained in the following sections.
 
-The code consist of two main parts: the `server_program` function and
-the `if __name__ == '__main__':` block. The `server_program` function
+The code consists of two main parts: the `server_program` function and
+the `if __name__ == '__main__'` block. The `server_program` function
 contains the main logic for the server, while the `if` block is used to
 execute the server code when the script is run directly.
 
-When the script is run, the first thing that happens is the import of
-the `socket` module, which provides the necessary functions and classes
-for working with sockets in Python.
+When you run the script, Python first imports the `socket` module.
 
 Next, the `server_program` function is called. Inside this function, the
 first thing that happens is the definition of the host address and the
@@ -98,34 +95,36 @@ machine. `localhost` is equivalent to the IPv4 address `127.0.0.1`.
 This means that the server will only accept connections from
 clients running on the same machine. This is a simulation of a network
 on the local machine.  
-On line #11, the `server_socket` is created using the `socket.socket()`
+On line 11, the `server_socket` is created using the `socket.socket()`
 function, which creates a new socket object. This socket will be used
 to listen for incoming connections from clients. To make the connection
-work the `server_socket` must be bound to the host and port using the
-`bind()` method (line #14). Next, the server is set to listen for
-incoming connections with the `listen()` method (line #17). The server
-can accept a maximum of 2 clients at a time. This limit is set to
-prevent the server from being overwhelmed by too many connections at
-once. The `accept()` method is used to accept a new connection from a
-client. It gets the tuple `(conn, address)` where `conn` is a new
-socket object that can be used to communicate with the client, and
-`address` is the address of the client. On line #21, a message is
-printed to show the address of the connected client.  
-On line #23, the server enters a loop where it waits for data from the
-client. The `recv()` method is used to receive data from the client. The
-length of the data that can be received is limited to 1024 bytes. If the
-client sends more data than this, it will be truncated. If no data is
+work, the `server_socket` must be bound to the host and port using the
+`bind()` method (on line 14). Next, the server is set to listen for
+incoming connections with the `listen()` method (on line 17). he server
+sets a backlog of 2 pending connections. The code, however, accepts
+exactly one client connection (accept() is called once). To handle
+multiple clients, call accept() in a loop and use threads or asyncio.
+This limit is set to prevent the server from being overwhelmed by too
+many connections at once. The `accept()` method is used to accept a new
+connection from a client. This method returns a tuple containing two
+items: conn, a new socket object for client communication, and address,
+the client's address. On line 21, a message is printed to show the
+address of the
+connected client.   
+On line 23, the server enters a loop where it waits for data from the
+client. The `recv()` method is used to receive data from the client.
+Each recv() call reads up to 1024 bytes; additional data remains in the
+buffer and can be read by subsequent calls. If no data is
 received, the server breaks out of the loop and closes the connection.
 If the server receives data, it prints the data to the console and then
-prompts the user to enter a response (line #31). The response is sent
+prompts the user to enter a response (on line 31). The response is sent
 back to the client using the `send()` method.
 
 ## Client Code
 
 Below is the working code of the
 <a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/250903/socket_client.py">
-client example:
-</a>
+client example</a>:
 
 ```python
 # socket_client.py
@@ -134,7 +133,7 @@ import socket
 
 def client_program():
     # define host name and port (of the server to connect to)
-    host = 'localhost'  # as both code is running on same pc
+    host = 'localhost'  # as both pieces of code are running on the same machine
     port = 5000         # socket server port number
     
     # create socket
@@ -166,7 +165,7 @@ if __name__ == '__main__':
     client_program()
 ```
 
-To run this script directly, it is the same as for the server script.
+To run this script, follow the same steps as for the server script.
 Open a terminal in the directory where the script is located and run the
 following command: 
 
@@ -174,8 +173,10 @@ following command:
 python socket_client.py
 ```
 
-If the script runs, the first thing that happens is the import of the
-`socket` module.
+Start the server before the client. If the server is not running,
+client_socket.connect(...) will raise a ConnectionRefusedError. 
+
+When you run the script, Python first imports the `socket` module.
 
 Next, the `client_program` function is called. Inside this function, the
 first thing that happens is the definition of the host address and the
@@ -193,5 +194,32 @@ prompts the user to enter a message, which is then sent to the server
 using the `send()` method. The client also waits for a response from
 the server using the `recv()` method.
 
-If the user enters 'bye', the client will exit the loop and close the
+If the user enters `bye`, the client will exit the loop and close the
 connection to the server.
+
+
+## Conclusion
+
+The presented code examples illustrate how Python's built-in socket
+module (standard library) enables straightforward implementation of
+networked applications without requiring external dependencies. The
+tutorial's focus on localhost communication provides a safe, controlled
+environment for experimentation and learning, while the bidirectional
+message exchange demonstrates real-world communication patterns found
+in production systems.
+
+Key achievements of this implementation include:
+- Successful establishment of TCP socket connections between separate
+  processes
+- Implementation of message-based communication with proper
+  encoding/decoding
+- Demonstration of connection lifecycle management from establishment to
+  termination
+- Creation of a simple command-line interface for both server and client
+  applications
+
+The knowledge gained from this tutorial serves as a solid foundation for
+developing more sophisticated networked applications. Future
+enhancements could include implementing multithreading for concurrent
+client handling, adding error handling and reconnection logic, or
+expanding the communication protocol to support structured data formats. 
