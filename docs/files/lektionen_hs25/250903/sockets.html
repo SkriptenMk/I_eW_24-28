@@ -223,7 +223,8 @@ Network Socket
 </section>
 <section id="server-code" class="level2">
 <h2 class="anchored" data-anchor-id="server-code">Server Code</h2>
-<p>Below is the working code example for the server:</p>
+<p>To run the following example code there is no virtual environment required. The example uses just core Python libraries.<br>
+Below is the working code example for the server:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># socket_server.py</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> socket</span>
@@ -263,6 +264,12 @@ Network Socket
 <span id="cb1-37"><a href="#cb1-37"></a>    </span>
 <span id="cb1-38"><a href="#cb1-38"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
 <span id="cb1-39"><a href="#cb1-39"></a>    server_program()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To run the script directly, open a terminal in the directory where the script is located and run the following command:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">python</span> socket_server.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>What happens if you do so will be explained in the following sections.</p>
+<p>The code consist of two main parts: the <code>server_program</code> function and the <code>if __name__ == '__main__':</code> block. The <code>server_program</code> function contains the main logic for the server, while the <code>if</code> block is used to execute the server code when the script is run directly.</p>
+<p>When the script is run, the first thing that happens is the import of the <code>socket</code> module, which provides the necessary functions and classes for working with sockets in Python.</p>
+<p>Next, the <code>server_program</code> function is called. Inside this function, the first thing that happens is the definition of the host address and the port number. <code>localhost</code> is a special address that refers to the local machine. This means that the server will only accept connections from clients running on the same machine. This is a simulation of a network on the local machine.</p>
 
 
 </section>

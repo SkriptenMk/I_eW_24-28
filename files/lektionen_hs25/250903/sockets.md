@@ -27,6 +27,8 @@ will be modelled as a kind of chat service.
 
 ## Server Code
 
+To run the following example code there is no virtual environment
+required. The example uses just core Python libraries.  
 Below is the working code example for the server:
 
 ```python
@@ -70,3 +72,28 @@ def server_program():
 if __name__ == '__main__':
     server_program()
 ```
+
+To run the script directly, open a terminal in the directory where the
+script is located and run the following command: 
+
+```bash
+python socket_server.py
+```
+
+What happens if you do so will be explained in the following sections.
+
+The code consist of two main parts: the `server_program` function and
+the `if __name__ == '__main__':` block. The `server_program` function
+contains the main logic for the server, while the `if` block is used to
+execute the server code when the script is run directly.
+
+When the script is run, the first thing that happens is the import of
+the `socket` module, which provides the necessary functions and classes
+for working with sockets in Python.
+
+Next, the `server_program` function is called. Inside this function, the
+first thing that happens is the definition of the host address and the
+port number. `localhost` is a special address that refers to the local
+machine. This means that the server will only accept connections from
+clients running on the same machine. This is a simulation of a network
+on the local machine.
