@@ -26,7 +26,10 @@ will be modelled as a kind of chat service.
 
 To run the following example code there is no virtual environment
 required. The example uses just core Python libraries.  
-Below is the working code example for the server:
+Below is the working code example for the
+<a
+href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/250903/socket_server.py"
+download="socket_server.py">socket server:</a>
 
 ```python
 # socket_server.py
@@ -119,7 +122,10 @@ back to the client using the `send()` method.
 
 ## Client Code
 
-Below is the working code of the client example:
+Below is the working code of the
+<a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/250903/socket_client.py">
+client example:
+</a>
 
 ```python
 # socket_client.py
