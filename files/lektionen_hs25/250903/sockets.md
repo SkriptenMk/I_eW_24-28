@@ -28,7 +28,7 @@ standard library.
 Below is the working code example for the
 <a
 href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/250903/socket_server.py"
-download="socket_server.py">socket server</a>:
+download="socket_server.py" target="_blank">socket server</a>:
 
 ```python
 # socket_server.py
