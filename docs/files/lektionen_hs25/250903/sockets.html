@@ -169,7 +169,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#client-code" id="toc-client-code" class="nav-link" data-scroll-target="#client-code">Client Code</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/250903/sockets.md" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/edit/main/files/lektionen_hs25/250903/sockets.md" target="_blank" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="sockets.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/250903/sockets.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/edit/main/files/lektionen_hs25/250903/sockets.qmd" target="_blank" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="sockets.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -243,79 +243,125 @@ Below is the working code example for the <a href="https://github.com/SkriptenMk
 <span id="cb1-14"><a href="#cb1-14"></a>    server_socket.bind((host, port))</span>
 <span id="cb1-15"><a href="#cb1-15"></a>    </span>
 <span id="cb1-16"><a href="#cb1-16"></a>    <span class="co"># set the server to listen for connections</span></span>
-<span id="cb1-17"><a href="#cb1-17"></a>    server_socket.listen(<span class="dv">2</span>) <span class="co"># start listening with a backlog of 2 (max queued connections)</span></span>
-<span id="cb1-18"><a href="#cb1-18"></a>    </span>
-<span id="cb1-19"><a href="#cb1-19"></a>    <span class="co"># accept new connection from client</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a>    conn, address <span class="op">=</span> server_socket.accept()</span>
-<span id="cb1-21"><a href="#cb1-21"></a>    <span class="bu">print</span>(<span class="st">"Connection from: "</span> <span class="op">+</span> <span class="bu">str</span>(address))</span>
-<span id="cb1-22"><a href="#cb1-22"></a>    </span>
-<span id="cb1-23"><a href="#cb1-23"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb1-24"><a href="#cb1-24"></a>        <span class="co"># receive up to 1024 bytes per call</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a>        data <span class="op">=</span> conn.recv(<span class="dv">1024</span>).decode()</span>
-<span id="cb1-26"><a href="#cb1-26"></a>        <span class="cf">if</span> <span class="kw">not</span> data:</span>
-<span id="cb1-27"><a href="#cb1-27"></a>            <span class="co"># if no data is received, break</span></span>
-<span id="cb1-28"><a href="#cb1-28"></a>            <span class="cf">break</span></span>
-<span id="cb1-29"><a href="#cb1-29"></a>        <span class="bu">print</span>(<span class="st">"Received from connected client: "</span> <span class="op">+</span> <span class="bu">str</span>(data))</span>
-<span id="cb1-30"><a href="#cb1-30"></a>        <span class="co"># prompt the user to enter a message</span></span>
-<span id="cb1-31"><a href="#cb1-31"></a>        data <span class="op">=</span> <span class="bu">input</span>(<span class="st">' -&gt; '</span>)</span>
-<span id="cb1-32"><a href="#cb1-32"></a>        <span class="co"># send data to the client as bytes</span></span>
-<span id="cb1-33"><a href="#cb1-33"></a>        conn.send(data.encode())</span>
-<span id="cb1-34"><a href="#cb1-34"></a>        </span>
-<span id="cb1-35"><a href="#cb1-35"></a>    <span class="co"># close the connection</span></span>
-<span id="cb1-36"><a href="#cb1-36"></a>    conn.close()</span>
-<span id="cb1-37"><a href="#cb1-37"></a>    </span>
-<span id="cb1-38"><a href="#cb1-38"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
-<span id="cb1-39"><a href="#cb1-39"></a>    server_program()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-17"><a href="#cb1-17"></a>    server_socket.listen(<span class="dv">2</span>) <span class="co"># start listening </span></span>
+<span id="cb1-18"><a href="#cb1-18"></a>                            <span class="co"># with a backlog of 2 </span></span>
+<span id="cb1-19"><a href="#cb1-19"></a>                            <span class="co"># (max queued connections)</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a>    </span>
+<span id="cb1-21"><a href="#cb1-21"></a>    <span class="co"># accept new connection from client</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a>    conn, address <span class="op">=</span> server_socket.accept()</span>
+<span id="cb1-23"><a href="#cb1-23"></a>    <span class="bu">print</span>(<span class="st">"Connection from: "</span> <span class="op">+</span> <span class="bu">str</span>(address))</span>
+<span id="cb1-24"><a href="#cb1-24"></a>    </span>
+<span id="cb1-25"><a href="#cb1-25"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb1-26"><a href="#cb1-26"></a>        <span class="co"># receive up to 1024 bytes per call</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a>        data <span class="op">=</span> conn.recv(<span class="dv">1024</span>).decode()</span>
+<span id="cb1-28"><a href="#cb1-28"></a>        <span class="cf">if</span> <span class="kw">not</span> data:</span>
+<span id="cb1-29"><a href="#cb1-29"></a>            <span class="co"># if no data is received, break</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a>            <span class="cf">break</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a>        <span class="bu">print</span>(<span class="st">"Received from connected client: "</span> <span class="op">+</span> <span class="bu">str</span>(data))</span>
+<span id="cb1-32"><a href="#cb1-32"></a>        <span class="co"># prompt the user to enter a message</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a>        data <span class="op">=</span> <span class="bu">input</span>(<span class="st">' -&gt; '</span>)</span>
+<span id="cb1-34"><a href="#cb1-34"></a>        <span class="co"># send data to the client as bytes</span></span>
+<span id="cb1-35"><a href="#cb1-35"></a>        conn.send(data.encode())</span>
+<span id="cb1-36"><a href="#cb1-36"></a>        </span>
+<span id="cb1-37"><a href="#cb1-37"></a>    <span class="co"># close the connection</span></span>
+<span id="cb1-38"><a href="#cb1-38"></a>    conn.close()</span>
+<span id="cb1-39"><a href="#cb1-39"></a>    </span>
+<span id="cb1-40"><a href="#cb1-40"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb1-41"><a href="#cb1-41"></a>    server_program()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To run the script directly, open a terminal in the directory where the script is located and run the following command:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">python</span> socket_server.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>python socket_server.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>What happens when you do so is explained in the following sections.</p>
 <p>The code consists of two main parts: the <code>server_program</code> function and the <code>if __name__ == '__main__'</code> block. The <code>server_program</code> function contains the main logic for the server, while the <code>if</code> block is used to execute the server code when the script is run directly.</p>
 <p>When you run the script, Python first imports the <code>socket</code> module.</p>
-<p>Next, the <code>server_program</code> function is called. Inside this function, the first thing that happens is the definition of the host address and the port number. <code>localhost</code> is a special address that refers to the local machine. <code>localhost</code> is equivalent to the IPv4 address <code>127.0.0.1</code>. This means that the server will only accept connections from clients running on the same machine. This is a simulation of a network on the local machine.<br>
-On line 11, the <code>server_socket</code> is created using the <code>socket.socket()</code> function, which creates a new socket object. This socket will be used to listen for incoming connections from clients. To make the connection work, the <code>server_socket</code> must be bound to the host and port using the <code>bind()</code> method (on line 14). Next, the server is set to listen for incoming connections with the <code>listen()</code> method (on line 17). he server sets a backlog of 2 pending connections. The code, however, accepts exactly one client connection (accept() is called once). To handle multiple clients, call accept() in a loop and use threads or asyncio. This limit is set to prevent the server from being overwhelmed by too many connections at once. The <code>accept()</code> method is used to accept a new connection from a client. This method returns a tuple containing two items: conn, a new socket object for client communication, and address, the client’s address. On line 21, a message is printed to show the address of the connected client.<br>
-On line 23, the server enters a loop where it waits for data from the client. The <code>recv()</code> method is used to receive data from the client. Each recv() call reads up to 1024 bytes; additional data remains in the buffer and can be read by subsequent calls. If no data is received, the server breaks out of the loop and closes the connection. If the server receives data, it prints the data to the console and then prompts the user to enter a response (on line 31). The response is sent back to the client using the <code>send()</code> method.</p>
+<div id="369da45e" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> socket</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Next, the <code>server_program</code> function is called. Inside this function, the first thing that happens is the definition of the host address and the port number. <code>localhost</code> is a special address that refers to the local machine. <code>localhost</code> is equivalent to the IPv4 address <code>127.0.0.1</code>. This means that the server will only accept connections from clients running on the same machine. This is a simulation of a network on the local machine.</p>
+<div id="c3b8883b" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> server_program():</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># define host name and port</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    host <span class="op">=</span> <span class="st">'localhost'</span>    <span class="co"># for communication on the local machine</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    port <span class="op">=</span> <span class="dv">5000</span>           <span class="co"># use a port number above 1024</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Below, the <code>server_socket</code> is created using the <code>socket.socket()</code> function, which creates a new socket object.</p>
+<div id="8ddd407d" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>server_socket <span class="op">=</span> socket.socket()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This socket will be used to listen for incoming connections from clients. To make the connection work, the <code>server_socket</code> must be bound to the host and port using the <code>bind()</code>.</p>
+<div id="48d9777b" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>server_socket.bind((host, port))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Next, the server is set to listen for incoming connections with the <code>listen()</code> method.</p>
+<div id="e4067ce4" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>server_socket.listen(<span class="dv">2</span>) <span class="co"># start listening </span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                        <span class="co"># with a backlog of 2 </span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                        <span class="co"># (max queued connections)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The server sets a backlog of 2 pending connections. The code, however, accepts exactly one client connection (accept() is called once). To handle multiple clients, call accept() in a loop and use threads or asyncio. This limit is set to prevent the server from being overwhelmed by too many connections at once. The <code>accept()</code> method is used to accept a new connection from a client. This method returns a tuple containing two items: conn, a new socket object for client communication, and address, the client’s address. The next chunk shows, how a message is printed to show the address of the connected client.</p>
+<div id="0d68f7ca" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>conn, address <span class="op">=</span> server_socket.accept()</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Connection from: "</span> <span class="op">+</span> <span class="bu">str</span>(address))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The while loop lets the server wait for data from the client. The <code>recv()</code> method is used to receive data from the client. Each <code>recv()</code> call reads up to 1024 bytes; additional data remains in the buffer and can be read by subsequent calls. If no data is received, the server breaks out of the loop and closes the connection.</p>
+<div id="e8b20821" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>        <span class="co"># receive up to 1024 bytes per call</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        data <span class="op">=</span> conn.recv(<span class="dv">1024</span>).decode()</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> data:</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>            <span class="co"># if no data is received, break</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If the server receives data, it prints the data to the console and then prompts the user to enter a response. The response is sent back to the client using the <code>send()</code> method.</p>
+<div id="04754386" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Received from connected client: "</span> <span class="op">+</span> <span class="bu">str</span>(data))</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>        <span class="co"># prompt the user to enter a message</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        data <span class="op">=</span> <span class="bu">input</span>(<span class="st">' -&gt; '</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        <span class="co"># send data to the client as bytes</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        conn.send(data.encode())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="client-code" class="level2">
 <h2 class="anchored" data-anchor-id="client-code">Client Code</h2>
 <p>Below is the working code of the <a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/250903/socket_client.py"> client example</a>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># socket_client.py</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="im">import</span> socket</span>
-<span id="cb3-4"><a href="#cb3-4"></a></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="kw">def</span> client_program():</span>
-<span id="cb3-6"><a href="#cb3-6"></a>    <span class="co"># define host name and port (of the server to connect to)</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a>    host <span class="op">=</span> <span class="st">'localhost'</span>  <span class="co"># as both pieces of code are running on the same machine</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a>    port <span class="op">=</span> <span class="dv">5000</span>         <span class="co"># socket server port number</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a>    </span>
-<span id="cb3-10"><a href="#cb3-10"></a>    <span class="co"># create socket</span></span>
-<span id="cb3-11"><a href="#cb3-11"></a>    client_socket <span class="op">=</span> socket.socket()</span>
-<span id="cb3-12"><a href="#cb3-12"></a>    </span>
-<span id="cb3-13"><a href="#cb3-13"></a>    <span class="co"># connect to the server</span></span>
-<span id="cb3-14"><a href="#cb3-14"></a>    client_socket.<span class="ex">connect</span>((host, port))</span>
-<span id="cb3-15"><a href="#cb3-15"></a>    </span>
-<span id="cb3-16"><a href="#cb3-16"></a>    <span class="co"># prompt the user to enter a message</span></span>
-<span id="cb3-17"><a href="#cb3-17"></a>    message <span class="op">=</span> <span class="bu">input</span>(<span class="st">" -&gt; "</span>)  <span class="co"># take input</span></span>
-<span id="cb3-18"><a href="#cb3-18"></a>    </span>
-<span id="cb3-19"><a href="#cb3-19"></a>    <span class="co"># message loop</span></span>
-<span id="cb3-20"><a href="#cb3-20"></a>    <span class="cf">while</span> message.lower().strip() <span class="op">!=</span> <span class="st">'bye'</span>:</span>
-<span id="cb3-21"><a href="#cb3-21"></a>        <span class="co"># send message to the server as bytes</span></span>
-<span id="cb3-22"><a href="#cb3-22"></a>        client_socket.send(message.encode())</span>
-<span id="cb3-23"><a href="#cb3-23"></a>        </span>
-<span id="cb3-24"><a href="#cb3-24"></a>        <span class="co"># receive response from the server</span></span>
-<span id="cb3-25"><a href="#cb3-25"></a>        data <span class="op">=</span> client_socket.recv(<span class="dv">1024</span>).decode()</span>
-<span id="cb3-26"><a href="#cb3-26"></a>        </span>
-<span id="cb3-27"><a href="#cb3-27"></a>        <span class="bu">print</span>(<span class="st">'Received from server: '</span> <span class="op">+</span> data)</span>
-<span id="cb3-28"><a href="#cb3-28"></a>        </span>
-<span id="cb3-29"><a href="#cb3-29"></a>        <span class="co"># prompt the user to enter a new message</span></span>
-<span id="cb3-30"><a href="#cb3-30"></a>        message <span class="op">=</span> <span class="bu">input</span>(<span class="st">" -&gt; "</span>)  <span class="co"># take new input</span></span>
-<span id="cb3-31"><a href="#cb3-31"></a>        </span>
-<span id="cb3-32"><a href="#cb3-32"></a>    <span class="co"># close the connection</span></span>
-<span id="cb3-33"><a href="#cb3-33"></a>    client_socket.close()</span>
-<span id="cb3-34"><a href="#cb3-34"></a>    </span>
-<span id="cb3-35"><a href="#cb3-35"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
-<span id="cb3-36"><a href="#cb3-36"></a>    client_program()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># socket_client.py</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="im">import</span> socket</span>
+<span id="cb11-4"><a href="#cb11-4"></a></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="kw">def</span> client_program():</span>
+<span id="cb11-6"><a href="#cb11-6"></a>    <span class="co"># define host name and port (of the server to connect to)</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a>    host <span class="op">=</span> <span class="st">'localhost'</span>  <span class="co"># as both pieces of code are </span></span>
+<span id="cb11-8"><a href="#cb11-8"></a>                        <span class="co"># running on the same machine</span></span>
+<span id="cb11-9"><a href="#cb11-9"></a>    port <span class="op">=</span> <span class="dv">5000</span>         <span class="co"># socket server port number</span></span>
+<span id="cb11-10"><a href="#cb11-10"></a>    </span>
+<span id="cb11-11"><a href="#cb11-11"></a>    <span class="co"># create socket</span></span>
+<span id="cb11-12"><a href="#cb11-12"></a>    client_socket <span class="op">=</span> socket.socket()</span>
+<span id="cb11-13"><a href="#cb11-13"></a>    </span>
+<span id="cb11-14"><a href="#cb11-14"></a>    <span class="co"># connect to the server</span></span>
+<span id="cb11-15"><a href="#cb11-15"></a>    client_socket.<span class="ex">connect</span>((host, port))</span>
+<span id="cb11-16"><a href="#cb11-16"></a>    </span>
+<span id="cb11-17"><a href="#cb11-17"></a>    <span class="co"># prompt the user to enter a message</span></span>
+<span id="cb11-18"><a href="#cb11-18"></a>    message <span class="op">=</span> <span class="bu">input</span>(<span class="st">" -&gt; "</span>)  <span class="co"># take input</span></span>
+<span id="cb11-19"><a href="#cb11-19"></a>    </span>
+<span id="cb11-20"><a href="#cb11-20"></a>    <span class="co"># message loop</span></span>
+<span id="cb11-21"><a href="#cb11-21"></a>    <span class="cf">while</span> message.lower().strip() <span class="op">!=</span> <span class="st">'bye'</span>:</span>
+<span id="cb11-22"><a href="#cb11-22"></a>        <span class="co"># send message to the server as bytes</span></span>
+<span id="cb11-23"><a href="#cb11-23"></a>        client_socket.send(message.encode())</span>
+<span id="cb11-24"><a href="#cb11-24"></a>        </span>
+<span id="cb11-25"><a href="#cb11-25"></a>        <span class="co"># receive response from the server</span></span>
+<span id="cb11-26"><a href="#cb11-26"></a>        data <span class="op">=</span> client_socket.recv(<span class="dv">1024</span>).decode()</span>
+<span id="cb11-27"><a href="#cb11-27"></a>        </span>
+<span id="cb11-28"><a href="#cb11-28"></a>        <span class="bu">print</span>(<span class="st">'Received from server: '</span> <span class="op">+</span> data)</span>
+<span id="cb11-29"><a href="#cb11-29"></a>        </span>
+<span id="cb11-30"><a href="#cb11-30"></a>        <span class="co"># prompt the user to enter a new message</span></span>
+<span id="cb11-31"><a href="#cb11-31"></a>        message <span class="op">=</span> <span class="bu">input</span>(<span class="st">" -&gt; "</span>)  <span class="co"># take new input</span></span>
+<span id="cb11-32"><a href="#cb11-32"></a>        </span>
+<span id="cb11-33"><a href="#cb11-33"></a>    <span class="co"># close the connection</span></span>
+<span id="cb11-34"><a href="#cb11-34"></a>    client_socket.close()</span>
+<span id="cb11-35"><a href="#cb11-35"></a>    </span>
+<span id="cb11-36"><a href="#cb11-36"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb11-37"><a href="#cb11-37"></a>    client_program()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To run this script, follow the same steps as for the server script. Open a terminal in the directory where the script is located and run the following command:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="ex">python</span> socket_client.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="ex">python</span> socket_client.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Start the server before the client. If the server is not running, client_socket.connect(…) will raise a ConnectionRefusedError.</p>
 <p>When you run the script, Python first imports the <code>socket</code> module.</p>
 <p>Next, the <code>client_program</code> function is called. Inside this function, the first thing that happens is the definition of the host address and the port number. Here, the host address and the port number have to be the ones defined in the server script.</p>
@@ -326,7 +372,13 @@ On line 23, the server enters a loop where it waits for data from the client. Th
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>The presented code examples illustrate how Python’s built-in socket module (standard library) enables straightforward implementation of networked applications without requiring external dependencies. The tutorial’s focus on localhost communication provides a safe, controlled environment for experimentation and learning, while the bidirectional message exchange demonstrates real-world communication patterns found in production systems.</p>
-<p>Key achievements of this implementation include: - Successful establishment of TCP socket connections between separate processes - Implementation of message-based communication with proper encoding/decoding - Demonstration of connection lifecycle management from establishment to termination - Creation of a simple command-line interface for both server and client applications</p>
+<p>Key achievements of this implementation include:</p>
+<ul>
+<li>Successful establishment of TCP socket connections between separate processes</li>
+<li>Implementation of message-based communication with proper encoding/decoding</li>
+<li>Demonstration of connection lifecycle management from establishment to termination</li>
+<li>Creation of a simple command-line interface for both server and client applications</li>
+</ul>
 <p>The knowledge gained from this tutorial serves as a solid foundation for developing more sophisticated networked applications. Future enhancements could include implementing multithreading for concurrent client handling, adding error handling and reconnection logic, or expanding the communication protocol to support structured data formats.</p>
 
 
@@ -737,4 +789,4 @@ On line 23, the server enters a loop where it waits for data from the client. Th
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/250903/sockets.md" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/edit/main/files/lektionen_hs25/250903/sockets.md" target="_blank" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/250903/sockets.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/edit/main/files/lektionen_hs25/250903/sockets.qmd" target="_blank" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

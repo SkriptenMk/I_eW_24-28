@@ -30,12 +30,17 @@ format:
     code-line-numbers: true
   pdf:
     pdf-engine: xelatex
+    pdf-engine-opts:
+      - -shell-escape
     mainfont: Arial
     fontsize: 11pt
-    documentclass: article
+    documentclass: scrartcl
     classoption: a4paper
     toc: false   
     code-line-numbers: true 
+    listings-package:
+      columns: fullflexible
+      break-at-whitespace: true
   
 
 
