@@ -13,9 +13,9 @@ expected during the course of the semester.
 | Date | Topic |
 | :--- | :--- |
 | 20.08.2025 | Networks: TCP/IP |
-| 03.09.2025 | Networks: Wireshark |
-| 10.09.2025 | Networks: Exercise |
-| 17.09.2025 | Cryptology: Caesar |
+| 27.08.2025 | Networks: Wireshark |
+| 03.09.2025 | Networks: Exercise |
+| 10.09.2025 | Cryptology: Caesar |
 | 24.09.2025 | Cryptology: Vigenère Chiffre |
 | 22.10.2025 | Test |
 | 29.10.2025 | Cryptology: Break Vigenère |
