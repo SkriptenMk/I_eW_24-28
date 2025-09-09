@@ -5,7 +5,7 @@ project:
 website:
   title: "Computer Science Course Materials for School Year 2025/26   (2eW)"
   repo-url: https://github.com/SkriptenMk/I_eW_24-28
-  repo-actions: [source, edit, issue]
+  repo-actions: [source, issue]
   repo-link-target: _blank
   navbar:
     right:
