@@ -372,40 +372,173 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>The graphic shows that for a text length of 13,343 letters, the distribution in a literary text is almost identical to the general frequency distribution in the English language. Die Grafik zeigt, dass bei einer Textlänge von 13’343 Buchstaben die Verteilung in einem literarischen Text nahezu identisch ist, mit der allgemeinen Häufigkeitsverteilung in der deutschen Sprache.</p>
-<p>Die nächste Grafik zeigt, was mit der Verteilung der Buchstaben geschieht, wenn der gleiche Text mit einer Caesar-Chiffre verschlüsselt worden ist.</p>
-<p><img src="cipher.svg" class="img-fluid"></p>
-<p>Es ist deutlich zu erkennen, dass die Verteilung dem gleichen Muster folgt - verschoben um fünf Positionen. Diese Auswertung ermöglicht die Entschlüsselung des Textes, ohne alle möglichen Schlüsselalphabete durchzuprobieren.</p>
+<p>The graphic shows that for a text length of 57,891 letters, the distribution in a literary text is almost identical to the general frequency distribution in the English language.</p>
+<p>The following graphic shows what happens to the distribution of letters when the same text is encrypted with a Caesar cipher.</p>
+<div id="0b564f84" class="cell" data-execution_count="23">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> caesar(text : <span class="bu">str</span>, shift : <span class="bu">int</span>, encrypt<span class="op">=</span><span class="va">True</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb2-2"><a href="#cb2-2"></a>    text <span class="op">=</span> text.upper()</span>
+<span id="cb2-3"><a href="#cb2-3"></a>    result <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>    </span>
+<span id="cb2-5"><a href="#cb2-5"></a>    <span class="cf">if</span> encrypt:</span>
+<span id="cb2-6"><a href="#cb2-6"></a>        <span class="cf">for</span> char <span class="kw">in</span> text:</span>
+<span id="cb2-7"><a href="#cb2-7"></a>            shifted <span class="op">=</span> (<span class="bu">ord</span>(char) <span class="op">-</span> <span class="bu">ord</span>(<span class="st">'A'</span>) <span class="op">+</span> shift) <span class="op">%</span> <span class="dv">26</span> <span class="op">+</span> <span class="bu">ord</span>(<span class="st">'A'</span>)</span>
+<span id="cb2-8"><a href="#cb2-8"></a>            result <span class="op">+=</span> <span class="bu">chr</span>(shifted)</span>
+<span id="cb2-9"><a href="#cb2-9"></a>    <span class="cf">else</span>:</span>
+<span id="cb2-10"><a href="#cb2-10"></a>        <span class="cf">for</span> char <span class="kw">in</span> text:</span>
+<span id="cb2-11"><a href="#cb2-11"></a>            shifted <span class="op">=</span> (<span class="bu">ord</span>(char) <span class="op">-</span> <span class="bu">ord</span>(<span class="st">'A'</span>) <span class="op">-</span> shift) <span class="op">%</span> <span class="dv">26</span> <span class="op">+</span> <span class="bu">ord</span>(<span class="st">'A'</span>)</span>
+<span id="cb2-12"><a href="#cb2-12"></a>            result <span class="op">+=</span> <span class="bu">chr</span>(shifted)</span>
+<span id="cb2-13"><a href="#cb2-13"></a>            </span>
+<span id="cb2-14"><a href="#cb2-14"></a>    <span class="cf">return</span> result</span>
+<span id="cb2-15"><a href="#cb2-15"></a></span>
+<span id="cb2-16"><a href="#cb2-16"></a></span>
+<span id="cb2-17"><a href="#cb2-17"></a>ciphered_revelation <span class="op">=</span> caesar(cleaned_revelation, <span class="dv">6</span>, encrypt<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-18"><a href="#cb2-18"></a>frequency_enyrpyted_revelation <span class="op">=</span> letter_frequency(ciphered_revelation)</span>
+<span id="cb2-19"><a href="#cb2-19"></a>dft[<span class="st">'Revelation Frequency Encrypted'</span>] <span class="op">=</span> pd.Series(frequency_enyrpyted_revelation)</span>
+<span id="cb2-20"><a href="#cb2-20"></a></span>
+<span id="cb2-21"><a href="#cb2-21"></a><span class="co"># --- Erstellen Sie das Side-by-Side-Balkendiagramm ---</span></span>
+<span id="cb2-22"><a href="#cb2-22"></a><span class="co"># Legen Sie die Breite der Balken fest</span></span>
+<span id="cb2-23"><a href="#cb2-23"></a>bar_width <span class="op">=</span> <span class="fl">0.35</span></span>
+<span id="cb2-24"><a href="#cb2-24"></a></span>
+<span id="cb2-25"><a href="#cb2-25"></a><span class="co"># Verwenden Sie den Index des transponierten DataFrames (dft)</span></span>
+<span id="cb2-26"><a href="#cb2-26"></a>x <span class="op">=</span> np.arange(<span class="bu">len</span>(dft.index))</span>
+<span id="cb2-27"><a href="#cb2-27"></a></span>
+<span id="cb2-28"><a href="#cb2-28"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">7</span>))</span>
+<span id="cb2-29"><a href="#cb2-29"></a></span>
+<span id="cb2-30"><a href="#cb2-30"></a><span class="co"># Zeichnen Sie die Balken für die beiden Spalten aus dft</span></span>
+<span id="cb2-31"><a href="#cb2-31"></a>ax.bar(x <span class="op">-</span> bar_width<span class="op">/</span><span class="dv">2</span>, dft[<span class="st">'Standard Frequency'</span>], bar_width, label<span class="op">=</span><span class="st">'Standard Frequency'</span>)</span>
+<span id="cb2-32"><a href="#cb2-32"></a>ax.bar(x <span class="op">+</span> bar_width<span class="op">/</span><span class="dv">2</span>, dft[<span class="st">'Revelation Frequency Encrypted'</span>], bar_width, label<span class="op">=</span><span class="st">'Revelation Frequency Encrypted'</span>)</span>
+<span id="cb2-33"><a href="#cb2-33"></a></span>
+<span id="cb2-34"><a href="#cb2-34"></a>ax.set_xticks(x)</span>
+<span id="cb2-35"><a href="#cb2-35"></a>ax.set_xticklabels(dft.index)</span>
+<span id="cb2-36"><a href="#cb2-36"></a></span>
+<span id="cb2-37"><a href="#cb2-37"></a>ax.set_xlabel(<span class="st">'Letters'</span>)</span>
+<span id="cb2-38"><a href="#cb2-38"></a>ax.set_ylabel(<span class="st">'Frequency (%)'</span>)</span>
+<span id="cb2-39"><a href="#cb2-39"></a>ax.set_title(<span class="st">'Comparison of Letter Frequencies of the Encrypted Text'</span>)</span>
+<span id="cb2-40"><a href="#cb2-40"></a>ax.legend()</span>
+<span id="cb2-41"><a href="#cb2-41"></a>plt.tight_layout()</span>
+<span id="cb2-42"><a href="#cb2-42"></a></span>
+<span id="cb2-43"><a href="#cb2-43"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="viginere_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>It is clearly visible that the distribution follows the same pattern - shifted by six positions. This analysis allows the decryption of the text without having to try all possible key alphabets.</p>
 <section id="vigenère-chiffre" class="level2">
 <h2 class="anchored" data-anchor-id="vigenère-chiffre">Vigenère Chiffre</h2>
-<p>Bei der Vigenère Chiffre handelt es sich um eine polyalphabetische Chiffre. Das Verfahren ist nach Blaise de Vigenère (1523 - 1596) benannt. polyalphabetisch heisst, dass zur Verschlüsselung nicht eine Verschiebung vorgenommen wird sondern - nach jedem Buchstaben wechselnd - mehrere Verschiebungen vorgenommen werden.</p>
-<p>Um das zu erreichen, verwendet man ein sogenanntes Vigenère-Quadrat wie unten abgebildet.</p>
+<p>The Vigenère Cipher is a polyalphabetic cipher. The method is named after Blaise de Vigenère (1523 - 1596). Polyalphabetic means that not one shift is used for encryption, but - changing after each letter - several shifts are used.</p>
+<p>To achieve this, a so-called Vigenère square is used as shown below.</p>
 <p><img src="vigenere_square_shading.svg" class="img-fluid"></p>
-<p>Für die Verschlüsselung eines Klartextes braucht das Vigenère Verfahren ein Schlüsselwort. Das Schlüsselwort sollte möglichst lang sein. Das folgende Beispiel soll zeigen, wie das Vigenère Verfahren funktioniert. Der zu verschlüsselnde Klartext lautet ‘Kryptologie ist spannend’ und der Schlüssel ‘Buelrain’. Als Hilfestellung werden Text und Schlüssel in einer Tabelle dargestellt.</p>
-<pre><code>kryptologieistspannend
-buelrainbuelrainbuelra</code></pre>
-<p>Der Schlüssel wir dabei ohne Wortabstand so oft wiederholt, bis die Buchstabenfolge des Schlüssels gleich lang ist, wie die Buchstabenfolge, welche zu verschlüsseln ist.<br>
-Als nächstes wird der zu verschlüsselnde Buchstabe in der Kopfzeile des Vigenère Quadrates gesucht. Damit wird die Spalte mit dem verschobenen Alphabet identifiziert. Der chiffrierte Buchstaben ergibt sich, indem in der Spalte mit den Zeilenköpfen der unter dem zu chiffrierenden Buchstaben befindliche Buchstabe des Schlüssels gesucht wird. Der Schnittpunkt der Zeile mit der vorher gefundenen Spalte entspricht dem chiffrierten Buchstaben.</p>
-<pre><code>kryptologieistspannend
-buelrainbuelrainbuelra
+<p>To encrypt a plaintext, the Vigenère method requires a keyword. The keyword should be as long as possible. The following example is intended to show how the Vigenère method works. The plaintext to be encrypted is ‘Cryptology is amazing’ and the key is ‘Buelrain’.<br>
+As an aid, text and key are presented in a table.</p>
+<pre><code>cryptologyisamazing
+buelrainbuelrainbue</code></pre>
+<p>The key is repeated without spaces until the letter sequence of the key is as long as the letter sequence to be encrypted.</p>
+<p>Next the letter to be encrypted is searched in the header of the Vigenère square. This identifies the column with the shifted alphabet. The encrypted letter is obtained by searching in the column with the row headers the letter of the key located under the letter to be encrypted. The intersection of the row with the previously found column corresponds to the encrypted letter.</p>
+<pre><code>cryptologyisamazing
+buelrainbuelrainbue
 
-LLCAKOTBHCITJTACBHRPED</code></pre>
-<p>Alternativ kann eine Verschlüsselung mit der Vigenère Chiffre auch mit modularer Arithmetik umgesetzt werde. Dazu wird jedem Buchstaben ein Zahlenwert nach dem Muster <span class="math inline">\(a = 0, b = 1, ... , z = 25\)</span> zugewiesen. Die Verschlüsselung erfolgt anschliessend nach der ‘Formel’ <span class="math inline">\(C_i = (P_i + K_i) mod 26\)</span> Wobei die Buchstaben <span class="math inline">\(C\)</span> für den chiffrierten Text, <span class="math inline">\(P\)</span> für den Klartext (Englisch <em>plain text</em>) und <span class="math inline">\(K\)</span> für den Schlüssel (Englisch <em>key</em>) stehen. Der Index <span class="math inline">\(_i\)</span> steht für den <span class="math inline">\(i\)</span>-ten Buchstaben in der Textfolge.</p>
-<p>Das obige Beispiel stellt sich dann folgendermassen dar:</p>
-<pre><code> k  r  y  p  t  o  l  o  g  i  e  i  s  t  s  p  a  n  n  e  n  d
-10 17 24 15 19 14 11 14 06 08 04 08 18 19 18 15 00 13 13 04 13 03
- b  u  e  l  r  a  i  n  b  u  e  l  r  a  i  n  b  u  e  l  r  a
-01 20 04 11 17 00 08 13 01 20 04 11 17 00 08 13 01 20 04 11 17 00
+DLCAKOTBHSMDRMIMJHR</code></pre>
+<p>On a computer, the Vigenère cipher can be implemented by using modular arithmetic. To do this, each letter is assigned a numerical value according to the pattern <span class="math inline">\(a = 0, b = 1, ... , z = 25\)</span>. The encryption is then performed according to the ‘formula’ <span class="math inline">\(C_i = (P_i + K_i) mod 26\)</span> where the letters <span class="math inline">\(C\)</span> stand for the ciphertext, <span class="math inline">\(P\)</span> for the plaintext and <span class="math inline">\(K\)</span> for the key. The index <span class="math inline">\(_i\)</span> stands for the <span class="math inline">\(i\)</span>-th letter in the text sequence.</p>
+<p>The example above can be illustrated as follows.</p>
+<pre><code> c  r  y  p  t  o  l  o  g  i  e  s  a  m  a  z  i  n  g
+02 17 24 15 19 14 11 14 06 08 04 18 00 12 00 25 08 13 06
+ b  u  e  l  r  a  i  n  b  u  e  l  r  a  i  n  b  u  e
+01 20 04 11 17 00 08 13 01 20 04 11 17 00 08 13 01 20 04
 
-11 37 28 26 36 14 19 27 07 28 08 19 35 19 26 28 01 33 17 15 30 03
+03 37 28 26 36 14 19 27 07 28 08 29 17 12 08 38 09 33 10
 
-11 11 02 00 10 14 19 01 07 02 08 19 09 19 00 02 01 07 17 15 04 03
- L  L  C  A  K  O  T  B  H  C  I  T  J  T  A  C  B  H  R  P  E  D</code></pre>
-<p>Für die Entschlüsselung wird die ‘Formel’ folgendermassen umgekehrt: <span class="math inline">\(P_i = (C_i - K_i + 26) mod 26\)</span>. Die Addition von 26 in der Klammer erfolgt, um negative Zahlen zu vermeiden.</p>
-<p>Wie sich die Vigenère Verschlüsselung auf die Verteilung der Buchstaben auswirkt, kann untenstehender Grafik entnommen werden.</p>
-<p><img src="vigenere.svg" class="img-fluid"></p>
-<p>Wie unschwer zu erkennen ist, stellt sich die Verteilung der Buchstaben in einem polyalphabetisch verschlüsselten Text deutlich anders dar, als dies in normalen Text der Fall ist. Die Vigenère Chiffre galt daher während ungefähr 300 Jahren als ‘la chiffre indéchiffrable’.</p>
-<p>Ein Spezialfall der Vigenère Chiffre ist tatsächlich nicht zu entschlüsseln. Das ist dann der Fall, wenn der Schlüssel länger ist als der Klartext. Man spricht in diesem Fall vom One-Time Pad.</p>
+03 11 02 00 10 14 19 01 07 02 08 19 09 19 00 02 01 07 17
+ D  L  C  A  K  O  T  B  H  C  I  T  J  T  A  C  B  H  R</code></pre>
+<p>For decryption, the same formula can be used, but with a minus instead of a plus (<span class="math inline">\(P_i = (C_i - K_i + 26) mod 26\)</span>). The addition of 26 in the brackets is used to avoid negative numbers.</p>
+<p>How the Vigenère cipher affects the distribution of letters can be seen in the graphic below.</p>
+<div id="ad7fd3ad" class="cell" data-execution_count="31">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">def</span> vigenere_chiffre(text: <span class="bu">str</span>, key: <span class="bu">str</span>, encrypt<span class="op">=</span><span class="va">True</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb6-2"><a href="#cb6-2"></a>    <span class="co">"""</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co">    Implementiert die Vigenère-Verschlüsselung für einen gegebenen Klartext und</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co">    Schlüssel.</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="co">    </span></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="co">    Args:</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="co">        klartext (str): Der zu verschlüsselnde Text schluessel (str): Das</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="co">        Schlüsselwort für die Verschlüsselung</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="co">    </span></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="co">    Returns:</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a><span class="co">        str: Der verschlüsselte Text</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="co">    """</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a>    </span>
+<span id="cb6-14"><a href="#cb6-14"></a>    <span class="co"># initialisiere den resultierenden Text</span></span>
+<span id="cb6-15"><a href="#cb6-15"></a>    resulting_text <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb6-16"><a href="#cb6-16"></a>    </span>
+<span id="cb6-17"><a href="#cb6-17"></a>    <span class="co"># bestimme die Schlüssellänge für die anschliessende Modulo-Operation</span></span>
+<span id="cb6-18"><a href="#cb6-18"></a>    key_length <span class="op">=</span> <span class="bu">len</span>(key)</span>
+<span id="cb6-19"><a href="#cb6-19"></a>    </span>
+<span id="cb6-20"><a href="#cb6-20"></a>    <span class="co"># itererie über den Eingabetext unter gleichzeitiger Erfassung des Index</span></span>
+<span id="cb6-21"><a href="#cb6-21"></a>    <span class="cf">for</span> i, char <span class="kw">in</span> <span class="bu">enumerate</span>(text):</span>
+<span id="cb6-22"><a href="#cb6-22"></a>        <span class="co"># berechne den Zahlwert des Buchstabens aus der ascii Tabelle</span></span>
+<span id="cb6-23"><a href="#cb6-23"></a>        char_no <span class="op">=</span> <span class="bu">ord</span>(char) <span class="op">-</span> <span class="dv">97</span></span>
+<span id="cb6-24"><a href="#cb6-24"></a>        key_no <span class="op">=</span> <span class="bu">ord</span>(key[i <span class="op">%</span> key_length]) <span class="op">-</span> <span class="dv">97</span></span>
+<span id="cb6-25"><a href="#cb6-25"></a>        </span>
+<span id="cb6-26"><a href="#cb6-26"></a>        <span class="cf">if</span> encrypt <span class="op">==</span> <span class="va">True</span>:</span>
+<span id="cb6-27"><a href="#cb6-27"></a>            <span class="co"># berechne den Zahlwert des verschlüsselten Buchstabens</span></span>
+<span id="cb6-28"><a href="#cb6-28"></a>            ciph_no <span class="op">=</span> (char_no <span class="op">+</span> key_no) <span class="op">%</span> <span class="dv">26</span></span>
+<span id="cb6-29"><a href="#cb6-29"></a>        <span class="cf">else</span>:</span>
+<span id="cb6-30"><a href="#cb6-30"></a>            <span class="co"># berechne den Zahlwert des entschlüsselten Buchstabens</span></span>
+<span id="cb6-31"><a href="#cb6-31"></a>            ciph_no <span class="op">=</span> (char_no <span class="op">+</span> (<span class="dv">26</span> <span class="op">-</span> key_no)) <span class="op">%</span> <span class="dv">26</span></span>
+<span id="cb6-32"><a href="#cb6-32"></a>            </span>
+<span id="cb6-33"><a href="#cb6-33"></a>         <span class="co"># übernehme das Zeichen aufgrund seines Zahlwertes aus der ascii Tabelle  </span></span>
+<span id="cb6-34"><a href="#cb6-34"></a>        ciph <span class="op">=</span> <span class="bu">chr</span>(ciph_no <span class="op">+</span> <span class="dv">97</span>)</span>
+<span id="cb6-35"><a href="#cb6-35"></a>        </span>
+<span id="cb6-36"><a href="#cb6-36"></a>        <span class="co"># füge den Buchstaben am resultierenden Text an</span></span>
+<span id="cb6-37"><a href="#cb6-37"></a>        resulting_text <span class="op">+=</span> ciph</span>
+<span id="cb6-38"><a href="#cb6-38"></a>    <span class="cf">return</span> resulting_text</span>
+<span id="cb6-39"><a href="#cb6-39"></a></span>
+<span id="cb6-40"><a href="#cb6-40"></a>revelation_vigenere <span class="op">=</span> vigenere_chiffre(cleaned_revelation.lower(), <span class="st">'buelrain'</span>, encrypt<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-41"><a href="#cb6-41"></a></span>
+<span id="cb6-42"><a href="#cb6-42"></a>revelation_vigenere_frequency <span class="op">=</span> letter_frequency(revelation_vigenere.upper())</span>
+<span id="cb6-43"><a href="#cb6-43"></a>dft[<span class="st">'Revelation Frequency Vigenere'</span>] <span class="op">=</span> pd.Series(revelation_vigenere_frequency)</span>
+<span id="cb6-44"><a href="#cb6-44"></a></span>
+<span id="cb6-45"><a href="#cb6-45"></a><span class="co"># --- Erstellen Sie das Side-by-Side-Balkendiagramm ---</span></span>
+<span id="cb6-46"><a href="#cb6-46"></a><span class="co"># Legen Sie die Breite der Balken fest</span></span>
+<span id="cb6-47"><a href="#cb6-47"></a>bar_width <span class="op">=</span> <span class="fl">0.35</span></span>
+<span id="cb6-48"><a href="#cb6-48"></a></span>
+<span id="cb6-49"><a href="#cb6-49"></a><span class="co"># Verwenden Sie den Index des transponierten DataFrames (dft)</span></span>
+<span id="cb6-50"><a href="#cb6-50"></a>x <span class="op">=</span> np.arange(<span class="bu">len</span>(dft.index))</span>
+<span id="cb6-51"><a href="#cb6-51"></a></span>
+<span id="cb6-52"><a href="#cb6-52"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">7</span>))</span>
+<span id="cb6-53"><a href="#cb6-53"></a></span>
+<span id="cb6-54"><a href="#cb6-54"></a><span class="co"># Zeichnen Sie die Balken für die beiden Spalten aus dft</span></span>
+<span id="cb6-55"><a href="#cb6-55"></a>ax.bar(x <span class="op">-</span> bar_width<span class="op">/</span><span class="dv">2</span>, dft[<span class="st">'Standard Frequency'</span>], bar_width, label<span class="op">=</span><span class="st">'Standard Frequency'</span>)</span>
+<span id="cb6-56"><a href="#cb6-56"></a>ax.bar(x <span class="op">+</span> bar_width<span class="op">/</span><span class="dv">2</span>, dft[<span class="st">'Revelation Frequency Vigenere'</span>], bar_width, label<span class="op">=</span><span class="st">'Revelation Frequency Vigénere'</span>)</span>
+<span id="cb6-57"><a href="#cb6-57"></a></span>
+<span id="cb6-58"><a href="#cb6-58"></a>ax.set_xticks(x)</span>
+<span id="cb6-59"><a href="#cb6-59"></a>ax.set_xticklabels(dft.index)</span>
+<span id="cb6-60"><a href="#cb6-60"></a></span>
+<span id="cb6-61"><a href="#cb6-61"></a>ax.set_xlabel(<span class="st">'Letters'</span>)</span>
+<span id="cb6-62"><a href="#cb6-62"></a>ax.set_ylabel(<span class="st">'Frequency (%)'</span>)</span>
+<span id="cb6-63"><a href="#cb6-63"></a>ax.set_title(<span class="st">'Comparison of Letter Frequencies of the Vigénere Encrypted Text'</span>)</span>
+<span id="cb6-64"><a href="#cb6-64"></a>ax.legend()</span>
+<span id="cb6-65"><a href="#cb6-65"></a>plt.tight_layout()</span>
+<span id="cb6-66"><a href="#cb6-66"></a></span>
+<span id="cb6-67"><a href="#cb6-67"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="viginere_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>It is quite obvious that the distribution of letters in a polyalphabetically encrypted text is significantly different from that in normal text. The Vigenère cipher was therefore considered ‘la chiffre indéchiffrable’ for about 300 years.</p>
+<p>However, a special case of the Vigenère cipher is actually not decipherable. This is the case when the key is longer than the plaintext. This is called the “One-Time Pad”.</p>
 
 
 </section>
