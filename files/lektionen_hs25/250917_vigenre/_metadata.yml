@@ -1,0 +1,10 @@
+title: "9 Polyalphabetic Ciphers"
+author: "Jacques Mock Schindler"
+date: 2025-09-17
+date-format: DD.MM.YYYY
+format:
+  html:
+    code-fold: true
+  pdf:
+    execute:
+      echo: false
