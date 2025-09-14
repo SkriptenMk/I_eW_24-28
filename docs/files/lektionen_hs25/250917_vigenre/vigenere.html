@@ -8,7 +8,7 @@
 
 <meta name="author" content="Jacques Mock Schindler">
 
-<title>Weaknesses of Monoalphabetic Ciphers – Computer Science Course Materials for School Year 2025/26 (2eW)</title>
+<title>9 Polyalphabetic Ciphers – Computer Science Course Materials for School Year 2025/26 (2eW)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -193,7 +193,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#vigenère-chiffre" id="toc-vigenère-chiffre" class="nav-link active" data-scroll-target="#vigenère-chiffre">Vigenère Chiffre</a></li>
+  <li><a href="#weaknesses-of-monoalphabetic-ciphers" id="toc-weaknesses-of-monoalphabetic-ciphers" class="nav-link active" data-scroll-target="#weaknesses-of-monoalphabetic-ciphers">Weaknesses of Monoalphabetic Ciphers</a></li>
+  <li><a href="#vigenère-chiffre" id="toc-vigenère-chiffre" class="nav-link" data-scroll-target="#vigenère-chiffre">Vigenère Chiffre</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/250917_vigenre/vigenere.ipynb" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="vigenere.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
@@ -202,7 +203,8 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Weaknesses of Monoalphabetic Ciphers</h1>
+<h1 class="title">9 Polyalphabetic Ciphers</h1>
+<p class="subtitle lead">Vigenère Cipher</p>
 </div>
 
 
@@ -231,6 +233,8 @@ window.Quarto = {
 </header>
 
 
+<section id="weaknesses-of-monoalphabetic-ciphers" class="level2">
+<h2 class="anchored" data-anchor-id="weaknesses-of-monoalphabetic-ciphers">Weaknesses of Monoalphabetic Ciphers</h2>
 <p>As early as the 9th century, the great weakness of monoalphabetic ciphers (Caesar cipher) was recognized in the Islamic world. The distribution of letters follows a specific but constant pattern in every language. As explained in the last section, the letter ‘e’ is by far the most common letter in the English language.</p>
 <p>To demonstrate that this applies to any given (longer) texts, the text of the <a href="https://thekingsbible.com/Bible/66/1" target="_blank"> Book of Revelations from the King James Bible </a> was analyzed. The resulting distribution of letters was plotted against the distribution from the table. The result is shown in the figure below.</p>
 <div id="a728e7bf" class="cell" data-tags="[&quot;hide_input&quot;]" data-execution_count="19">
@@ -429,6 +433,7 @@ window.Quarto = {
 </div>
 </div>
 <p>It is clearly visible that the distribution follows the same pattern - shifted by six positions. This analysis allows the decryption of the text without having to try all possible key alphabets.</p>
+</section>
 <section id="vigenère-chiffre" class="level2">
 <h2 class="anchored" data-anchor-id="vigenère-chiffre">Vigenère Chiffre</h2>
 <p>The Vigenère Cipher is a polyalphabetic cipher. The method is named after Blaise de Vigenère (1523 - 1596). Polyalphabetic means that not one shift is used for encryption, but - changing after each letter - several shifts are used.</p>
