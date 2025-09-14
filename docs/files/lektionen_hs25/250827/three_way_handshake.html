@@ -172,7 +172,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#monitoring-of-the-connection-establishment" id="toc-monitoring-of-the-connection-establishment" class="nav-link" data-scroll-target="#monitoring-of-the-connection-establishment">Monitoring of the Connection Establishment</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/250827/three_way_handshake.md" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/edit/main/files/lektionen_hs25/250827/three_way_handshake.md" target="_blank" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="three_way_handshake.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/250827/three_way_handshake.md" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="three_way_handshake.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -233,7 +233,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>The corresponding filter for DNS queries to a given website is</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dns.qry.name == "www.example.com"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1"></a>dns.qry.name == "www.example.com"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The filter command used is relatively easy to understand. The first thing to note here is the protocol being filtered. Because the filtering is based on DNS queries, this is <code>dns</code>. <code>dns</code> alone would already be a valid filter. However, this would then display all DNS packets . The filter is therefore supplemented to <code>dns.qry.name</code>, where <code>qry</code> is short for query. The addition <code>name</code> stands for the domain name that is being queried. <code>==</code> is the logical operator used for filtering and means ‘is equal to’ in this case. The string being searched for is between the quotation marks. If the page was accessed exactly once during recording, the filter will display two packets: one DNS query and one DNS response. If the page was accessed multiple times during recording, the filter will display multiple packets.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -255,39 +255,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>That it is the details of the selected packet that are shown in the image is evident from the matching packet number. The lines in the detail view correspond to the individual protocol header fields of the selected packet. This also reflects the TCP/IP layering model.</p>
 <p>The detail view can be expanded by clicking on the triangles at the beginning of the individual protocol header fields. This will display further information about the respective fields. However, only the summaries of the header fields are explained here.</p>
 <p>In this example, the content of the Internet layer header is explained first.</p>
-<pre class="text"><code>
-Internet Protocol Version 4, Src: 192.168.1.108, Dst: 192.168.1.1
-</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2"></a>Internet Protocol Version 4, Src: 192.168.1.108, Dst: 192.168.1.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In the summary, the source and destination addresses of the IP packet are displayed. In this case, these are the private IP addresses 192.168.1.108 and 192.168.1.1. 192.168.1.108 is the source address, identifiable by the abbreviation “Src”, and 192.168.1.1 is the destination address, identifiable by the abbreviation “Dst”. Both devices are thus located in the same LAN. The computer with the IP address 192.168.1.1 is the router. This device establishes the Internet connection and can answer DNS queries from its cache.</p>
 <p>In the header for the User Datagram Protocol (UDP), the source and destination ports are displayed.</p>
-<pre class="text"><code>User Datagram Protocol, Src Port: 53586, Dst Port: 53</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>User Datagram Protocol, Src Port: 53586, Dst Port: 53</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The source port was automatically chosen as 53586, well above the so-called “Well-Known Ports” (0-1023). The “Well-Known Ports” are ports that are used by certain applications or services by default. Accordingly, the destination port was set to 53, as this is the default port for DNS queries. A list of “Well-Known Ports” can be found in the <a href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml" target="_blank"> official IANA port database</a>. The source port allows the destination system to send the response back to the correct sender.</p>
 <p>NAT devices (see <a href="../../../files/lektionen_hs25/250820/nat.html">Section Network Address Translation (NAT)</a>) use this port information for the mapping between private and public addresses.</p>
 <p>The layer displayed at the bottom of the detail view contains the actual request for the translation of the domain name into an IP address.</p>
-<pre class="text"><code>Domain Name System (query)
-    Transaction ID: 0x1f7a
-    Flags: 0x0100 Standard query
-    Questions: 1
-    Answer RRs: 0
-    Authority RRs: 0
-    Additional RRs: 0
-    Queries
-        www.deutschegrammophon.com: type A, class IN
-    [Response In: 723]</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>Domain Name System (query)</span>
+<span id="cb4-2"><a href="#cb4-2"></a>    Transaction ID: 0x1f7a</span>
+<span id="cb4-3"><a href="#cb4-3"></a>    Flags: 0x0100 Standard query</span>
+<span id="cb4-4"><a href="#cb4-4"></a>    Questions: 1</span>
+<span id="cb4-5"><a href="#cb4-5"></a>    Answer RRs: 0</span>
+<span id="cb4-6"><a href="#cb4-6"></a>    Authority RRs: 0</span>
+<span id="cb4-7"><a href="#cb4-7"></a>    Additional RRs: 0</span>
+<span id="cb4-8"><a href="#cb4-8"></a>    Queries</span>
+<span id="cb4-9"><a href="#cb4-9"></a>        www.deutschegrammophon.com: type A, class IN</span>
+<span id="cb4-10"><a href="#cb4-10"></a>    [Response In: 723]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For this reason, this part of the analysis is also unfolded here. Under the keyword <code>Queries</code>, the requested address <code>www.deutschegrammophon.com</code> is displayed. The keyword <code>type A</code> indicates that this is a request for an IPv4 address. IPv4 addresses are designated with <code>A</code>, while IPv6 addresses are designated with <code>AAAA</code>. The last element in this line is the class of the request, in this case <code>IN</code> for the Internet. Although today almost exclusively the Internet is used as a network type, the field for the class (IN) is still part of every DNS request for historical reasons.</p>
 <p>The corresponding content of the response looks as follows:</p>
-<pre class="text"><code>Domain Name System (response)
-    Transaction ID: 0x1f7a
-    Flags: 0x8180 Standard query response, No error
-    Questions: 1
-    Answer RRs: 1
-    Authority RRs: 0
-    Additional RRs: 0
-    Queries
-        www.deutschegrammophon.com: type A, class IN
-    Answers
-        www.deutschegrammophon.com: type A, class IN, addr 85.236.46.65
-</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>Domain Name System (response)</span>
+<span id="cb5-2"><a href="#cb5-2"></a>    Transaction ID: 0x1f7a</span>
+<span id="cb5-3"><a href="#cb5-3"></a>    Flags: 0x8180 Standard query response, No error</span>
+<span id="cb5-4"><a href="#cb5-4"></a>    Questions: 1</span>
+<span id="cb5-5"><a href="#cb5-5"></a>    Answer RRs: 1</span>
+<span id="cb5-6"><a href="#cb5-6"></a>    Authority RRs: 0</span>
+<span id="cb5-7"><a href="#cb5-7"></a>    Additional RRs: 0</span>
+<span id="cb5-8"><a href="#cb5-8"></a>    Queries</span>
+<span id="cb5-9"><a href="#cb5-9"></a>        www.deutschegrammophon.com: type A, class IN</span>
+<span id="cb5-10"><a href="#cb5-10"></a>    Answers</span>
+<span id="cb5-11"><a href="#cb5-11"></a>        www.deutschegrammophon.com: type A, class IN, addr 85.236.46.65</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The packet repeats the question and provides the answer from the DNS server. The domain name <code>www.deutschegrammophon.com</code> is associated with the IPv4 address <code>85.236.46.65</code>.</p>
 <p>This allows the connection to the website <code>www.deutschegrammophon.com</code> to be established.</p>
 </section>
@@ -304,7 +302,7 @@ The following illustration shows a schematic representation of the “Three-Way 
 </div>
 <p>The client sends a SYN packet to the server to request a connection. The server responds with a SYN-ACK packet. This means it acknowledges the request with an ACK and inquires with a SYN whether the client is (still) ready to establish the connection. To make it clear that the ACK in the SYN-ACK packet refers to the original SYN packet, the individual packets are assigned a sequence number. The ACK returns the sequence number of the SYN packet plus one.</p>
 <p>This process can be observed with Wireshark. For this, a combined Wireshark display filter is needed. As an example, the connection establishment between the local computer and the website of www.deutschegrammophon.com is considered. The first part of the filter should only display those packets that communicate with the IP address of the server of www.deutschegrammophon.com (85.236.46.65). This filter is</p>
-<pre class="wireshark"><code>ip.addr == 85.236.46.65</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource wireshark number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>ip.addr == 85.236.46.65</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This sole filter, however, still shows too many packets.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -313,13 +311,13 @@ The following illustration shows a schematic representation of the “Three-Way 
 </figure>
 </div>
 <p>To further narrow down the results, only those packets should be displayed that have either the SYN flag or the ACK flag (or both) set. This can be achieved with the following filter:</p>
-<pre class="wireshark"><code>ip.addr == 85.236.46.65 and 
-  (tcp.flags.syn == 1 or tcp.flags.ack == 1 )</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource wireshark number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href="#cb7-1"></a>ip.addr == 85.236.46.65 and </span>
+<span id="cb7-2"><a href="#cb7-2"></a>  (tcp.flags.syn == 1 or tcp.flags.ack == 1 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Still, this shows way too many packets. Therefore, only those packets should be displayed that are the responses to a SYN request. This can be achieved by right-clicking on a packet with the SYN flag and selecting the “Follow” &gt; “TCP Stream” option. This will display the entire TCP stream in which this packet is located (the consecutive packets). The filter will be automatically adjusted.</p>
 <p>The following listing shows the entire filter command for displaying the packets belonging to this TCP stream:</p>
-<pre class="wireshark"><code>ip.addr == 85.236.46.65 and 
-  (tcp.flags.syn == 1 or tcp.flags.ack == 1) and
-  !(tcp.stream eq 8)</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource wireshark number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>ip.addr == 85.236.46.65 and </span>
+<span id="cb8-2"><a href="#cb8-2"></a>  (tcp.flags.syn == 1 or tcp.flags.ack == 1) and</span>
+<span id="cb8-3"><a href="#cb8-3"></a>  !(tcp.stream eq 8)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="ws_three-way-handshake.png" class="img-fluid figure-img"></p>
@@ -737,4 +735,4 @@ The following illustration shows a schematic representation of the “Three-Way 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/250827/three_way_handshake.md" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/edit/main/files/lektionen_hs25/250827/three_way_handshake.md" target="_blank" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/250827/three_way_handshake.md" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

@@ -21,6 +21,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -169,15 +204,15 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Legen Sie im Ordner Informatik einen Unterordner 240904 an.</p></li>
 <li><p>Klicken Sie den neuen Ordner 240904 mit der rechten Maustaste an und wählen sie aus dem Kontextmenü weitere Optionen aus. In den weiteren Optionen wählen Sie <code>In Terminal öffnen</code>.</p></li>
 <li><p>Im neuen Terminal erstellen Sie eine Python Virtual Environment.</p>
-<pre class="shell"><code>...\240904&gt; python -m venv venv</code></pre></li>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>...\240904&gt; python -m venv venv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Starten Sie die Python Virtual Environment.</p>
-<pre class="shell"><code>...\240904&gt; venv\Scripts\activate</code></pre></li>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>...\240904&gt; venv\Scripts\activate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Installieren Sie in dieser Python Virtual Environment die Pakete <code>jupyter</code> und <code>pytamaro</code>.</p>
-<pre class="shell"><code>...\240904&gt; python -m pip install jupyter pytamaro</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>...\240904&gt; python -m pip install jupyter pytamaro</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Dieser Vorgang dauert einige Minuten.</p></li>
 <li><p>Jetzt können Sie unter dem Link <a href="https://colab.research.google.com/github/I-eW-24-28/Script/blob/main/docs/240904/schweizerfahne.ipynb">Arbeitsblatt</a> das vorbereitete Jupyter Notebook in den neuen Ordner 240904 herunterladen.</p></li>
 <li><p>Starten Sie Jupyter Notebook</p>
-<pre class="shell"><code>...\240904&gt; jupyter notebook</code></pre></li>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>...\240904&gt; jupyter notebook</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Öffnen Sie das Jupyter Notebook mit Doppelklick auf den Dateinamen <code>schweizerfahne.ipynb</code></p></li>
 <li><p>Folgen Sie den Anleitungen im Arbeitsblatt.</p></li>
 </ol>
@@ -590,4 +625,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs24/240904/problemloesung.md" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/edit/main/files/lektionen_hs24/240904/problemloesung.md" target="_blank" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs24/240904/problemloesung.md" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

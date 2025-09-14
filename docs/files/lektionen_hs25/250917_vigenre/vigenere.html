@@ -237,7 +237,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="weaknesses-of-monoalphabetic-ciphers">Weaknesses of Monoalphabetic Ciphers</h2>
 <p>As early as the 9th century, the great weakness of monoalphabetic ciphers (Caesar cipher) was recognized in the Islamic world. The distribution of letters follows a specific but constant pattern in every language. As explained in the last section, the letter ‘e’ is by far the most common letter in the English language.</p>
 <p>To demonstrate that this applies to any given (longer) texts, the text of the <a href="https://thekingsbible.com/Bible/66/1" target="_blank"> Book of Revelations from the King James Bible </a> was analyzed. The resulting distribution of letters was plotted against the distribution from the table. The result is shown in the figure below.</p>
-<div id="a728e7bf" class="cell" data-tags="[&quot;hide_input&quot;]" data-execution_count="19">
+<div id="a728e7bf" class="cell" data-tags="[&quot;hide_input&quot;]" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> string</span>
@@ -377,7 +377,7 @@ window.Quarto = {
 </div>
 <p>The graphic shows that for a text length of 57,891 letters, the distribution in a literary text is almost identical to the general frequency distribution in the English language.</p>
 <p>The following graphic shows what happens to the distribution of letters when the same text is encrypted with a Caesar cipher.</p>
-<div id="0b564f84" class="cell" data-execution_count="23">
+<div id="0b564f84" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> caesar(text : <span class="bu">str</span>, shift : <span class="bu">int</span>, encrypt<span class="op">=</span><span class="va">True</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
@@ -462,7 +462,7 @@ DLCAKOTBHSMDRMIMJHR</code></pre>
  D  L  C  A  K  O  T  B  H  C  I  T  J  T  A  C  B  H  R</code></pre>
 <p>For decryption, the same formula can be used, but with a minus instead of a plus (<span class="math inline">\(P_i = (C_i - K_i + 26) mod 26\)</span>). The addition of 26 in the brackets is used to avoid negative numbers.</p>
 <p>How the Vigenère cipher affects the distribution of letters can be seen in the graphic below.</p>
-<div id="ad7fd3ad" class="cell" data-execution_count="31">
+<div id="ad7fd3ad" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">def</span> vigenere_chiffre(text: <span class="bu">str</span>, key: <span class="bu">str</span>, encrypt<span class="op">=</span><span class="va">True</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
@@ -520,14 +520,14 @@ DLCAKOTBHSMDRMIMJHR</code></pre>
 <span id="cb6-53"><a href="#cb6-53"></a></span>
 <span id="cb6-54"><a href="#cb6-54"></a><span class="co"># Zeichnen Sie die Balken für die beiden Spalten aus dft</span></span>
 <span id="cb6-55"><a href="#cb6-55"></a>ax.bar(x <span class="op">-</span> bar_width<span class="op">/</span><span class="dv">2</span>, dft[<span class="st">'Standard Frequency'</span>], bar_width, label<span class="op">=</span><span class="st">'Standard Frequency'</span>)</span>
-<span id="cb6-56"><a href="#cb6-56"></a>ax.bar(x <span class="op">+</span> bar_width<span class="op">/</span><span class="dv">2</span>, dft[<span class="st">'Revelation Frequency Vigenere'</span>], bar_width, label<span class="op">=</span><span class="st">'Revelation Frequency Vigénere'</span>)</span>
+<span id="cb6-56"><a href="#cb6-56"></a>ax.bar(x <span class="op">+</span> bar_width<span class="op">/</span><span class="dv">2</span>, dft[<span class="st">'Revelation Frequency Vigenere'</span>], bar_width, label<span class="op">=</span><span class="st">'Revelation Frequency Vigenère'</span>)</span>
 <span id="cb6-57"><a href="#cb6-57"></a></span>
 <span id="cb6-58"><a href="#cb6-58"></a>ax.set_xticks(x)</span>
 <span id="cb6-59"><a href="#cb6-59"></a>ax.set_xticklabels(dft.index)</span>
 <span id="cb6-60"><a href="#cb6-60"></a></span>
 <span id="cb6-61"><a href="#cb6-61"></a>ax.set_xlabel(<span class="st">'Letters'</span>)</span>
 <span id="cb6-62"><a href="#cb6-62"></a>ax.set_ylabel(<span class="st">'Frequency (%)'</span>)</span>
-<span id="cb6-63"><a href="#cb6-63"></a>ax.set_title(<span class="st">'Comparison of Letter Frequencies of the Vigénere Encrypted Text'</span>)</span>
+<span id="cb6-63"><a href="#cb6-63"></a>ax.set_title(<span class="st">'Comparison of Letter Frequencies of the Vigenère Encrypted Text'</span>)</span>
 <span id="cb6-64"><a href="#cb6-64"></a>ax.legend()</span>
 <span id="cb6-65"><a href="#cb6-65"></a>plt.tight_layout()</span>
 <span id="cb6-66"><a href="#cb6-66"></a></span>
