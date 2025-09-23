@@ -859,5 +859,26 @@
     "title": "Bedingungen in Python",
     "section": "",
     "text": "from pytamaro.de import (\n    gelb, schwarz,\n    rechteck,\n    neben, ueber,\n    zeige_grafik,\n)\n\n\ngelbes = rechteck(20, 20, gelb)\nschwarzes = rechteck(20, 20, schwarz)\n\n\nungerade_reihe = gelbes\n\nfor i in range(2, 9):\n    if i % 2 == 0:\n        ungerade_reihe = neben(ungerade_reihe, schwarzes)\n        print(i)\n    else:\n        ungerade_reihe = neben(ungerade_reihe, gelbes)\n\nzeige_grafik(ungerade_reihe)\n\n2\n4\n6\n8"
+  },
+  {
+    "objectID": "files/lektionen_hs25/250924_break_vienere/break.html",
+    "href": "files/lektionen_hs25/250924_break_vienere/break.html",
+    "title": "10 Breaking the Vigenère Cipher",
+    "section": "",
+    "text": "The crucial weakness of the Vigenère cipher was discovered independently by two men in the midst of the 19th century. One of them was Charles Babbage, a British polymath. He discovered the weakness in order to win a bet. The other was Friedrich Wilhelm Kasiski, who was a retired Major of the Prussian army. Who, after retirement, spent his time writing.\nThe method of breaking the Vigenère cipher is named after Prussian Major Kasiski."
+  },
+  {
+    "objectID": "files/lektionen_hs25/250924_break_vienere/break.html#the-kasiski-method---summary",
+    "href": "files/lektionen_hs25/250924_break_vienere/break.html#the-kasiski-method---summary",
+    "title": "10 Breaking the Vigenère Cipher",
+    "section": "The Kasiski Method - Summary",
+    "text": "The Kasiski Method - Summary\nThe Kasiski method is a technique for breaking the Vigenère cipher by exploiting repeated patterns in the ciphertext. Here’s how it works:\n\nKey Principle\nWhen the same plaintext sequence is encrypted with the same portion of the key, it produces identical ciphertext sequences. By finding these repetitions, we can determine the key length.\n\n\nStep-by-Step Process\n\nFind Repeated Sequences\n\nScan the ciphertext for identical sequences of 3+ characters\nRecord the positions where these sequences occur\n\nCalculate Distances\n\nMeasure the distance between repeated sequences\nThe key length must be a divisor of these distances\n\nDetermine Key Length\n\nFind the Greatest Common Divisor (GCD) of all distances\nOr look for the most frequent common factor\nThis gives you the probable key length\n\nFrequency Analysis\n\nDivide the ciphertext into groups based on the key length\nEach group was encrypted with the same key character\nApply frequency analysis to each group separately\nMatch letter frequencies to expected language patterns\n\n\n\n\nExample\nIf “THE” appears multiple times in plaintext at positions where the key repeats, the corresponding ciphertext sequences will be identical. If these sequences are 10 positions apart, the key length is likely a divisor of 10 (1, 2, 5 or 10).\nFor a contrived example, if the plaintext is “the codes in the word and the message”, and the key is “crypt”, then we’d get the following ciphertext.\np: t h e c o d e s i n t h e w o r d a n d t h e m\nk: c r y p t c r y p t c r y p t c r y p t c r y p\nc: V Y C r h f v q x g V Y C l h t u y c w V Y C b\nNote that the ciphertext pattern VYC occurs three times in the ciphertext, and each time there is a distance of 10 letters between the beginning of one VYC and the next. This happens because the same pattern of plaintext, “the”, lines up with the same part of the key, “cry”, each time, resulting in the same ciphertext. The repetition of the keyword is the liability here. The ciphertext duplicates are all 10 letters apart. Babbage and Kasiski reasoned that this implies the length of the key is a factor of 10. The factors of 10 are 10, 5, and 2. One could argue that a key of length 2 is too short to provide much security, so that a key of length 5 or 10 is more reasonable. A key of length 10 is unlikely to have as many repetitions in such a short piece of ciphertext, so a key of length 5 is where the cryptanalyst will begin their work.\nA key of length 5 means that the 1st, 6th, 11th, 16th, etc., letters are all enciphered using the same key letter and hence the same alphabet from the Vigenère table. Similarly, the 2nd, 7th, 12th, 17th, etc. letters are all enciphered with the next key alphabet. So if we break up the cryptogram into 5 groups of letters we then have 5 monoalphabetic substitution ciphertexts. We can then do a frequency analysis of each group and solve each group separately. And in a standard shifted alphabet as in the normal Vigenère table, if we can find a single cipher alphabet letter we then have the entire alphabet.1\n\n\nWhy It Works\nThe Vigenère cipher’s weakness lies in key repetition. Once the key length is known, the cipher becomes multiple simple Caesar ciphers that can be broken using frequency analysis."
+  },
+  {
+    "objectID": "files/lektionen_hs25/250924_break_vienere/break.html#footnotes",
+    "href": "files/lektionen_hs25/250924_break_vienere/break.html#footnotes",
+    "title": "10 Breaking the Vigenère Cipher",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nDooley, John F. History of Cryptography and Cryptanalysis: Codes, Ciphers, and Their Algorithms. History of Computing. Cham: Springer International Publishing, 2024. https://doi.org/10.1007/978-3-031-67485-3. p. 76.↩︎"
   }
 ]
