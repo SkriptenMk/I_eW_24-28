@@ -1,0 +1,9 @@
+author: "Jacques Mock Schindler"
+date: 2025-09-24
+date-format: DD.MM.YYYY
+format:
+  html:
+    code-fold: true
+  pdf:
+    execute:
+      echo: false
