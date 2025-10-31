@@ -36,7 +36,8 @@ format:
     fontsize: 11pt
     documentclass: scrartcl
     classoption: a4paper
-    toc: false   
+    toc: false
+    include-in-header: preamble.tex
     code-line-numbers: true 
     listings-package:
       columns: fullflexible

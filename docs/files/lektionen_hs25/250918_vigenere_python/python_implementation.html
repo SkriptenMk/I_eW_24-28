@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.9.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -68,14 +68,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../../">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-5d254f1e278c2921d96b26102a150bb1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-985b28ec037abca086789749d85d0073.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -118,7 +119,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -226,8 +227,8 @@ window.Quarto = {
 
 
 <p>This notebook presents a possible implementation of the Vigenère cipher in Python.</p>
-<div id="c1fd7eb8" class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> vigenere(text: <span class="bu">str</span>, key: <span class="bu">str</span>, mode: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<div id="c1fd7eb8" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> vigenere(text: <span class="bu">str</span>, key: <span class="bu">str</span>, mode: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
 <span id="cb1-2"><a href="#cb1-2"></a>    <span class="co">"""Encrypts or decrypts a given text using the Vigenère cipher.</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="co">    The function processes a string of uppercase alphabetic characters</span></span>
@@ -289,40 +290,40 @@ window.Quarto = {
 <span id="cb1-60"><a href="#cb1-60"></a>            <span class="co"># Convert the resulting number back to an uppercase </span></span>
 <span id="cb1-61"><a href="#cb1-61"></a>            <span class="co"># character and append it.</span></span>
 <span id="cb1-62"><a href="#cb1-62"></a>            plain <span class="op">+=</span> <span class="bu">chr</span>(plain_num <span class="op">+</span> <span class="bu">ord</span>(<span class="st">'A'</span>))</span>
-<span id="cb1-63"><a href="#cb1-63"></a>        <span class="cf">return</span> plain</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-63"><a href="#cb1-63"></a>        <span class="cf">return</span> plain</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The <code>vigenere()</code> function is explained in detail below.</p>
 <p>The function signature</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> vigenere(text: <span class="bu">str</span>, key: <span class="bu">str</span>, mode: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> vigenere(text: <span class="bu">str</span>, key: <span class="bu">str</span>, mode: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>shows that the function expects three parameters: * <code>text</code>: The string to be encrypted or decrypted. * <code>key</code>: The key for encryption or decryption as a string. * <code>mode</code>: The mode that specifies whether the text should be encrypted or decrypted. Possible values are <code>'encrypt'</code> for encryption and <code>'decrypt'</code> for decryption (although this is not directly apparent from the signature).</p>
 <p>Following the signature is a detailed docstring that describes the function and its parameters. Although written in English, it is self-explanatory.</p>
 <p>The docstring is followed by a check to see if valid values were passed for the <code>mode</code> parameter. If not, a <code>ValueError</code> exception is raised.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="cf">if</span> mode <span class="kw">not</span> <span class="kw">in</span> [<span class="st">'encrypt'</span>, <span class="st">'decrypt'</span>]:</span>
-<span id="cb3-2"><a href="#cb3-2"></a>    <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Mode must be 'encrypt' or 'decrypt'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="cf">if</span> mode <span class="kw">not</span> <span class="kw">in</span> [<span class="st">'encrypt'</span>, <span class="st">'decrypt'</span>]:</span>
+<span id="cb3-2"><a href="#cb3-2"></a>    <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Mode must be 'encrypt' or 'decrypt'"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>To perform this check, the allowed values are provided in a list. It then checks if the value assigned to <code>mode</code> is contained in the list. If this is not the case, an error message is displayed and the function’s execution is terminated.</p>
 <p>If the <code>mode</code> parameter contains a valid value, the actual function logic comes into play.</p>
 <p>First, the length of the key is assigned to the variable <code>key_length</code> in</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>key_length <span class="op">=</span> <span class="bu">len</span>(key)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>key_length <span class="op">=</span> <span class="bu">len</span>(key)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This information will be needed later to iterate over the key’s text in a special type of loop.</p>
 <p>After this assignment, the function splits into the encryption and decryption branches.</p>
 <p>First, the encryption - initiated with <code>if mode == 'encrypt':</code> - is considered.</p>
 <p>Inside this block, an empty string <code>cipher</code> is first initialized, which will later hold the encrypted characters.</p>
 <p>Then, a <code>for</code> loop is used to iterate over the text to be encrypted.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="cf">for</span> i, char <span class="kw">in</span> <span class="bu">enumerate</span>(text):</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="cf">for</span> i, char <span class="kw">in</span> <span class="bu">enumerate</span>(text):</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>In this loop, the <code>enumerate()</code> function is used. This function returns a tuple consisting of the index and the respective element of the structure being iterated over. The values of the tuple are assigned to the variables <code>i</code> and <code>char</code>.</p>
 <p>The variables <code>i</code> and <code>char</code> are used inside the loop to convert the individual characters of the text into a number.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>    char_num <span class="op">=</span> <span class="bu">ord</span>(char) <span class="op">-</span> <span class="bu">ord</span>(<span class="st">'A'</span>)</span>
-<span id="cb6-2"><a href="#cb6-2"></a>    key_num <span class="op">=</span> <span class="bu">ord</span>(key[i <span class="op">%</span> key_length]) <span class="op">-</span> <span class="bu">ord</span>(<span class="st">'A'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>    char_num <span class="op">=</span> <span class="bu">ord</span>(char) <span class="op">-</span> <span class="bu">ord</span>(<span class="st">'A'</span>)</span>
+<span id="cb6-2"><a href="#cb6-2"></a>    key_num <span class="op">=</span> <span class="bu">ord</span>(key[i <span class="op">%</span> key_length]) <span class="op">-</span> <span class="bu">ord</span>(<span class="st">'A'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The <code>ord()</code> function converts a letter into the corresponding number from the ASCII table. To ensure the numbers are in the range of 0 to 25, the ASCII value of the letter ‘A’ is subtracted. The letter ‘A’ is used because the characters to be encrypted are specified in uppercase.<br>
 Since the key can be shorter than the text to be encrypted, <code>i % key_length</code> is used to iterate over the key. The modulo operator <code>%</code> ensures that the index value of the used index always stays between 0 and the length of the key <code>key_length</code>. This ensures that the key is started again from the beginning once the end of the key is reached. The individual letters of the key are then processed in the same way as the letters of the text.</p>
 <p>After the letters of the text and the key have been converted into numbers, the actual encryption is performed according to the formula <span class="math inline">\(C_i = (P_i + K_i)\ mod\ 26\)</span>.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>    cipher_num <span class="op">=</span> (char_num <span class="op">+</span> key_num) <span class="op">%</span> <span class="dv">26</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>    cipher_num <span class="op">=</span> (char_num <span class="op">+</span> key_num) <span class="op">%</span> <span class="dv">26</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The numerical values of the encrypted text are then converted back into letters and appended to the string <code>cipher</code>. For this, the <code>chr()</code> function is used, which converts a number into the corresponding letter of the ASCII table. Since the numerical values are in the range of 0 to 25, the ASCII value of the letter ‘A’ is added.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>    cipher <span class="op">+=</span> <span class="bu">chr</span>(cipher_num <span class="op">+</span> <span class="bu">ord</span>(<span class="st">'A'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>    cipher <span class="op">+=</span> <span class="bu">chr</span>(cipher_num <span class="op">+</span> <span class="bu">ord</span>(<span class="st">'A'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The string stored under <code>cipher</code> is returned at the end of the block.</p>
 <p>In the second block, the decryption - initiated with <code>else:</code> - is performed. The process is very similar to that of encryption, however, the inverse formula (<span class="math inline">\(P_i = (C_i - K_i + 26)\ mod\ 26\)</span>) is used here.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>    plain_num <span class="op">=</span> (char_num <span class="op">-</span> key_num <span class="op">+</span> <span class="dv">26</span>) <span class="op">%</span> <span class="dv">26</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>    plain <span class="op">+=</span> <span class="bu">chr</span>(plain_num <span class="op">+</span> <span class="bu">ord</span>(<span class="st">'A'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>    plain_num <span class="op">=</span> (char_num <span class="op">-</span> key_num <span class="op">+</span> <span class="dv">26</span>) <span class="op">%</span> <span class="dv">26</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>    plain <span class="op">+=</span> <span class="bu">chr</span>(plain_num <span class="op">+</span> <span class="bu">ord</span>(<span class="st">'A'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Everything else corresponds to the procedure for encryption.</p>
 
 
@@ -379,13 +380,14 @@ Since the key can be shorter than the text to be encrypted, <code>i % key_length
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

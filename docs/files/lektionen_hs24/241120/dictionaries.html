@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.9.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -68,14 +68,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../../">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-5d254f1e278c2921d96b26102a150bb1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-985b28ec037abca086789749d85d0073.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -209,42 +210,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="erstellen-eines-python-dictionary" class="level2">
 <h2 class="anchored" data-anchor-id="erstellen-eines-python-dictionary">Erstellen eines Python Dictionary</h2>
 <p>Das folgende Listing zeigt ein einfaches Beispiel für ein Python Dictionary.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>definitions <span class="op">=</span> {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>definitions <span class="op">=</span> {</span>
 <span id="cb1-2"><a href="#cb1-2"></a>    <span class="st">'list'</span>: <span class="st">'Eine Python-Liste ist eine geordnete Ablage von Werten von beliebiger Länge.'</span>,</span>
 <span id="cb1-3"><a href="#cb1-3"></a>    <span class="st">'dictionary'</span>: <span class="st">'Ein dictionary in Python bietet die Möglichkeit, key-value Paare abzulegen.'</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Die <em>key - value</em> Paare werden für die Erstellung eines Python Dictionary in geschweifte Klammern geschrieben. Die Verbindung von Schlüssel und Wert erfolgt durch die Verbindung mit einem Doppelpunkt (<code>key: value</code>). Als Schlüssel eignen sich dabei Strings, Tupel (werden noch erklärt), sowie Ganzzahlen. Wichtig ist, dass die Schlüssel aus unveränderlichen Datentypen bestehen.<br>
 Um die Lesbarkeit des Codes zu verbessern, hat es sich als gängige Praxis etabliert, die Variabel, welcher das Dictionary zugewiesen wird auf einer separaten Zeile zu schreiben und anschliessend für jedes <em>key - value</em> Paar eine neue Zeile zu verwenden. Mehrere Elemente werden durch Kommata abgegrenzt.</p>
 </section>
 <section id="zugriff-auf-ein-element-in-einem-python-dictionary" class="level2">
 <h2 class="anchored" data-anchor-id="zugriff-auf-ein-element-in-einem-python-dictionary">Zugriff auf ein Element in einem Python Dictionary</h2>
 <p>Um auf einen Eintrag in einem Dictionary zuzugreifen, verwendet man die Variabel mit anschliessenden eckigen Klammern, in denen der Schlüssel steht.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>definitions[<span class="st">'list'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>definitions[<span class="st">'list'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Das obige Listing gibt entsprechend den dem Schlüssel <code>list</code> zugewiesenen Wert aus.</p>
 </section>
 <section id="direkt-über-ein-python-dictionary-iterieren" class="level2">
 <h2 class="anchored" data-anchor-id="direkt-über-ein-python-dictionary-iterieren">Direkt über ein Python Dictionary iterieren</h2>
 <p>Um über die Elemente eines Dictionary zu iterieren gibt es verschiedene Möglichkeiten. Die einfachste Möglichkeit bietet ein <em>for-loop</em>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="cf">for</span> key <span class="kw">in</span> definitions:</span>
-<span id="cb3-2"><a href="#cb3-2"></a>    <span class="bu">print</span>(definitions[key])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="cf">for</span> key <span class="kw">in</span> definitions:</span>
+<span id="cb3-2"><a href="#cb3-2"></a>    <span class="bu">print</span>(definitions[key])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Diese Möglichkeit hat allerdings den Nachteil, dass nur der Wert und nicht der dazugehörige Schlüssel ausgegeben wird. Um dies zu korrigieren, muss der print()-Befehl angepasst werden.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="cf">for</span> key <span class="kw">in</span> definitions:</span>
-<span id="cb4-2"><a href="#cb4-2"></a>    <span class="bu">print</span>(key <span class="op">+</span> <span class="st">': '</span> <span class="op">+</span> definitions[key])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="cf">for</span> key <span class="kw">in</span> definitions:</span>
+<span id="cb4-2"><a href="#cb4-2"></a>    <span class="bu">print</span>(key <span class="op">+</span> <span class="st">': '</span> <span class="op">+</span> definitions[key])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Alternativ kann auch ein f-String verwendet werden.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="cf">for</span> key <span class="kw">in</span> definitions:</span>
-<span id="cb5-2"><a href="#cb5-2"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>definitions[key]<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="cf">for</span> key <span class="kw">in</span> definitions:</span>
+<span id="cb5-2"><a href="#cb5-2"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>definitions[key]<span class="sc">}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="über-ein-python-dictionary-iterieren-mit-der-.items-methode" class="level2">
 <h2 class="anchored" data-anchor-id="über-ein-python-dictionary-iterieren-mit-der-.items-methode">Über ein Python Dictionary iterieren mit der .items() Methode</h2>
 <p>Eine weitere Möglichkeit bietet eine in die Datenstruktur der Python Dictionaries integrierte Funktion.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>definitions.items()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>definitions.items()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Diese Zeile gibt alle Elemente (<em>items</em>) des Dictionary aus.</p>
 <p>Wenn die Darstellung noch etwas schöner sein soll, kann der Befehl mit einem <em>for-loop</em> kombiniert werden.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="cf">for</span> item <span class="kw">in</span> definitions.items():</span>
-<span id="cb7-2"><a href="#cb7-2"></a>    <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="cf">for</span> item <span class="kw">in</span> definitions.items():</span>
+<span id="cb7-2"><a href="#cb7-2"></a>    <span class="bu">print</span>(item)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Um die Elemente nach Schlüssel und Wert getrennt auszugeben, kann der <em>for-loop</em> folgendermassen angepasst werden:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="cf">for</span> item, value <span class="kw">in</span> definitions.items():</span>
-<span id="cb8-2"><a href="#cb8-2"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="cf">for</span> item, value <span class="kw">in</span> definitions.items():</span>
+<span id="cb8-2"><a href="#cb8-2"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Die hier dargelegten theoretischen Ausführungen können in diesem <a href="https://colab.research.google.com/github/I-eW-24-28/Script/blob/main/docs/241120/arbeitsblatt_dictionaries.ipynb" target="_blank"> Arbeitsblatt </a> eingeübt werden. <a href="https://colab.research.google.com/github/I-eW-24-28/Script/blob/main/docs/241120/arbeitsblatt_dictionaries_musterloesung.ipynb" target="_blank"> Die Musterlösung zum Arbeitsblatt ist hier verlinkt. </a></p>
 
 
@@ -302,13 +303,14 @@ Um die Lesbarkeit des Codes zu verbessern, hat es sich als gängige Praxis etabl
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

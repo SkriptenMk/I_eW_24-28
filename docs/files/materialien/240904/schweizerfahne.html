@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.9.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -67,14 +67,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../../">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-5d254f1e278c2921d96b26102a150bb1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-985b28ec037abca086789749d85d0073.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -201,22 +202,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://pytamaro.readthedocs.io/en/stable/German/index.html">Hier geht es zur online Anleitung für PyTamaro.</a></p>
 <p>Als Beispiel für die Vorgehnsweise wird hier die Französische Trikolore gezeichnet. Das Seitenverhältnis der Trikolore ist 2 zu 3.</p>
 <div id="cell-4" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Import der erforderlichen Libraries (nur einmal pro Notebook nötig)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Import der erforderlichen Libraries (nur einmal pro Notebook nötig)</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">from</span> pytamaro.de <span class="im">import</span> (</span>
 <span id="cb1-3"><a href="#cb1-3"></a>    rot, blau, weiss,</span>
 <span id="cb1-4"><a href="#cb1-4"></a>    rechteck, kreis_sektor, ellipse,</span>
 <span id="cb1-5"><a href="#cb1-5"></a>    drehe, neben, ueber,</span>
 <span id="cb1-6"><a href="#cb1-6"></a>    zeige_grafik</span>
-<span id="cb1-7"><a href="#cb1-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Als erstes werden die einzelnen Rechtecke gezeichnet.</p>
-<div id="cell-6" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>bleu <span class="op">=</span> rechteck(<span class="dv">10</span>, <span class="dv">20</span>, blau)</span>
+<div id="cell-6" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>bleu <span class="op">=</span> rechteck(<span class="dv">10</span>, <span class="dv">20</span>, blau)</span>
 <span id="cb2-2"><a href="#cb2-2"></a>zeige_grafik(bleu)</span>
 <span id="cb2-3"><a href="#cb2-3"></a>blanc <span class="op">=</span> rechteck(<span class="dv">10</span>, <span class="dv">20</span>, weiss)</span>
 <span id="cb2-4"><a href="#cb2-4"></a>zeige_grafik(blanc)</span>
 <span id="cb2-5"><a href="#cb2-5"></a>rouge <span class="op">=</span> rechteck(<span class="dv">10</span>, <span class="dv">20</span>, rot)</span>
-<span id="cb2-6"><a href="#cb2-6"></a>zeige_grafik(rouge)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-6"><a href="#cb2-6"></a>zeige_grafik(rouge)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -240,11 +241,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Anschliessend werden die Einzelteile zusammengesetzt.</p>
-<div id="cell-8" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>zweidrittel <span class="op">=</span> neben(bleu, blanc)</span>
+<div id="cell-8" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>zweidrittel <span class="op">=</span> neben(bleu, blanc)</span>
 <span id="cb3-2"><a href="#cb3-2"></a>zeige_grafik(zweidrittel)</span>
 <span id="cb3-3"><a href="#cb3-3"></a>trikolore <span class="op">=</span> neben(zweidrittel, rouge)</span>
-<span id="cb3-4"><a href="#cb3-4"></a>zeige_grafik(trikolore)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-4"><a href="#cb3-4"></a>zeige_grafik(trikolore)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -282,32 +283,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="umsetzung-in-pytamaro" class="level3">
 <h3 class="anchored" data-anchor-id="umsetzung-in-pytamaro">Umsetzung in PyTamaro</h3>
-<div id="cell-13" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Hier das rote Rechteck zeichnen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-13" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Hier das rote Rechteck zeichnen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-14" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Hier das blaue Rechteck zeichnen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-14" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Hier das blaue Rechteck zeichnen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-15" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Hier den roten Viertelkreis zeichnen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-15" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Hier den roten Viertelkreis zeichnen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-16" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Hier den blauen Viertelkreis zeichnen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-16" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Hier den blauen Viertelkreis zeichnen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-17" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># hier die obere Hälfte zusammensetzen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-17" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># hier die obere Hälfte zusammensetzen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-18" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># hier die untere Hälfte zusammensetzen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-18" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># hier die untere Hälfte zusammensetzen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-19" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># hir das ganze Wappen zusammensetzen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-19" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># hir das ganze Wappen zusammensetzen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="code-aufräumen-refactoring" class="level3">
 <h3 class="anchored" data-anchor-id="code-aufräumen-refactoring">Code Aufräumen (Refactoring)</h3>
 <p>Die Erste Aufgabe beim Programmieren ist sicher die Lösung des konkreten Problems. Eng damit Verbunden ist allerdings auch die übersichtliche Darstellung des Programms. Dabei ist insbesondere darauf zu achten, das Wiederholungen so weit wie möglich vermieden werden. Unten steht der bereinigte Code der verwendet wurde, um das Tessiner Wappen zu zeichnen.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>rotes_rechteck <span class="op">=</span> rechteck(<span class="dv">10</span>, <span class="dv">15</span>, rot)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>rotes_rechteck <span class="op">=</span> rechteck(<span class="dv">10</span>, <span class="dv">15</span>, rot)</span>
 <span id="cb11-2"><a href="#cb11-2"></a>blaues_rechteck <span class="op">=</span> rechteck(<span class="dv">10</span>, <span class="dv">15</span>, blau)</span>
 <span id="cb11-3"><a href="#cb11-3"></a>roter_viertelkreis <span class="op">=</span> kreis_sektor(<span class="dv">10</span>, <span class="dv">90</span>, rot)</span>
 <span id="cb11-4"><a href="#cb11-4"></a>roter_viertelkreis <span class="op">=</span> drehe(<span class="dv">180</span>, roter_viertelkreis)</span>
@@ -316,10 +317,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-7"><a href="#cb11-7"></a>obere_haelfte <span class="op">=</span> neben(rotes_rechteck, blaues_rechteck)</span>
 <span id="cb11-8"><a href="#cb11-8"></a>untere_haelfte <span class="op">=</span> neben(roter_viertelkreis, blauer_viertelkreis)</span>
 <span id="cb11-9"><a href="#cb11-9"></a>ti <span class="op">=</span> ueber(obere_haelfte, untere_haelfte)</span>
-<span id="cb11-10"><a href="#cb11-10"></a>zeige_grafik(ti)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-10"><a href="#cb11-10"></a>zeige_grafik(ti)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Dieser Code soll nun so bereinigt werden, dass Wiederholungen vermieden werden. Dabei soll allerdings dessen Verständlichkeit nicht leiden.</p>
-<div id="cell-21" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># hier kommt der "aufgeräumte Code"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-21" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># hier kommt der "aufgeräumte Code"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
@@ -330,14 +331,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Basierend auf diesen Vorgaben soll die Schweizerfahne gezeichnet werden.</p>
 <section id="umsetzung-in-pytamaro-1" class="level3">
 <h3 class="anchored" data-anchor-id="umsetzung-in-pytamaro-1">Umsetzung in PyTamaro</h3>
-<div id="cell-24" class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="im">from</span> pytamaro.de <span class="im">import</span> (</span>
+<div id="cell-24" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="im">from</span> pytamaro.de <span class="im">import</span> (</span>
 <span id="cb13-2"><a href="#cb13-2"></a>    ueberlagere,</span>
 <span id="cb13-3"><a href="#cb13-3"></a>    rgb_farbe</span>
-<span id="cb13-4"><a href="#cb13-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-4"><a href="#cb13-4"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-25" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># hier kommt der Code für die Schweizerfahne</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># hier kommt der Code für die Schweizerfahne</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 
@@ -396,13 +397,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.9.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -68,14 +68,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../../">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-5d254f1e278c2921d96b26102a150bb1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-985b28ec037abca086789749d85d0073.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -118,7 +119,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -193,7 +194,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#python-implementation" id="toc-python-implementation" class="nav-link active" data-scroll-target="#python-implementation">Python Implementation</a>
+  <li><a href="#ressourcen" id="toc-ressourcen" class="nav-link active" data-scroll-target="#ressourcen">Ressourcen</a></li>
+  <li><a href="#python-implementation" id="toc-python-implementation" class="nav-link" data-scroll-target="#python-implementation">Python Implementation</a>
   <ul class="collapse">
   <li><a href="#simple-naïve-implementation" id="toc-simple-naïve-implementation" class="nav-link" data-scroll-target="#simple-naïve-implementation">Simple (naïve) Implementation</a></li>
   <li><a href="#enhanced-implementation" id="toc-enhanced-implementation" class="nav-link" data-scroll-target="#enhanced-implementation">Enhanced Implementation</a></li>
@@ -242,31 +244,38 @@ window.Quarto = {
 
 <p>In cryptography, encryption is the process of transforming information in a way that, ideally, only authorised parties can decode. This process converts the original representation of the information, known as plaintext, into an alternative form known as ciphertext. Despite its goal, encryption does not itself prevent interference but denies the intelligible content to a would-be interceptor.<br>
 <em>From <a href="https://en.wikipedia.org/wiki/Encryption">Wikipedia</a></em></p>
+<section id="ressourcen" class="level2">
+<h2 class="anchored" data-anchor-id="ressourcen">Ressourcen</h2>
+<p><a href="cipher.txt">cipher.txt</a> — verschlüsselter Text</p>
+<p><a href="input.txt">input.txt</a> — Klartext-Eingabe</p>
+<p><a href="caesar_sandbox.pdf">caesar_sandbox.pdf</a> — PDF (Sandbox)</p>
+<p><a href="caesar_chiffre.ipynb">caesar_chiffre.ipynb</a> — Jupyter Notebook</p>
 <p>The first example of a cipher we will look at is the Caesar cipher.</p>
 <p>The Caesar cipher is a simple substitution encryption technique in which each letter of the text to be encrypted is replaced by a letter a fixed number of positions away in the alphabet. For example, using a right letter shift of four, <code>A</code> would be replaced by <code>E</code>, and the word <code>CIPHER</code> would become <code>GMTLIV</code>. The technique is named after Julius Caesar, who used it in his letters. The simplicity of the Caesar cipher makes it a popular source for recreational cryptograms.<br>
 <em>From <a href="https://www.britannica.com/topic/Caesar-cipher">Encyclopedia Britannica</a></em></p>
+</section>
 <section id="python-implementation" class="level2">
 <h2 class="anchored" data-anchor-id="python-implementation">Python Implementation</h2>
 <p>To implement the Caesar cipher in Python, we build on the string methods offered by Python. The <code>ord</code> function returns the <a href="https://home.unicode.org/" target="_blank"> Unicode </a> code point for a given character, and the <code>chr</code> function returns the character that corresponds to a given Unicode code point.</p>
-<div id="cell-4" class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># What is the Unicode code point of the character 'A'?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-5" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># What is the Unicode code point of the character 'A'?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="simple-naïve-implementation" class="level3">
 <h3 class="anchored" data-anchor-id="simple-naïve-implementation">Simple (naïve) Implementation</h3>
 <p>First, we define a function that encrypts a given plaintext by shifting each letter by a specified number of positions in the alphabet.</p>
-<div id="cell-7" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>plain <span class="op">=</span> <span class="st">"CIPHER"</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>shift <span class="op">=</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-8" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>plain <span class="op">=</span> <span class="st">"CIPHER"</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>shift <span class="op">=</span> <span class="dv">4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-8" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">def</span> caesar_encode(plain, shift):</span>
+<div id="cell-9" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">def</span> caesar_encode(plain, shift):</span>
 <span id="cb3-2"><a href="#cb3-2"></a>    cipher <span class="op">=</span> <span class="st">""</span></span>
 <span id="cb3-3"><a href="#cb3-3"></a>    </span>
 <span id="cb3-4"><a href="#cb3-4"></a>    <span class="cf">for</span> char <span class="kw">in</span> plain:</span>
 <span id="cb3-5"><a href="#cb3-5"></a>        shifted <span class="op">=</span> <span class="bu">ord</span>(char) <span class="op">+</span> shift</span>
 <span id="cb3-6"><a href="#cb3-6"></a>        cipher <span class="op">+=</span> <span class="bu">chr</span>(shifted)</span>
 <span id="cb3-7"><a href="#cb3-7"></a>        </span>
-<span id="cb3-8"><a href="#cb3-8"></a>    <span class="cf">return</span> cipher</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-8"><a href="#cb3-8"></a>    <span class="cf">return</span> cipher</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="enhanced-implementation" class="level3">
@@ -282,34 +291,34 @@ x' = (x + n) \mod 26
 x' = x \oplus_{26} n
 \]</span></p>
 <p>Let’s implement this in Python:</p>
-<div id="cell-11" class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">def</span> caesar_encrypt_mod(plain, shift):</span>
+<div id="cell-12" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">def</span> caesar_encrypt_mod(plain, shift):</span>
 <span id="cb4-2"><a href="#cb4-2"></a>    cipher <span class="op">=</span> <span class="st">""</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a>    </span>
 <span id="cb4-4"><a href="#cb4-4"></a>    <span class="cf">for</span> char <span class="kw">in</span> plain:</span>
 <span id="cb4-5"><a href="#cb4-5"></a>        shifted <span class="op">=</span> (<span class="bu">ord</span>(char) <span class="op">-</span> <span class="bu">ord</span>(<span class="st">'A'</span>) <span class="op">+</span> shift) <span class="op">%</span> <span class="dv">26</span> <span class="op">+</span> <span class="bu">ord</span>(<span class="st">'A'</span>)</span>
 <span id="cb4-6"><a href="#cb4-6"></a>        cipher <span class="op">+=</span> <span class="bu">chr</span>(shifted)</span>
 <span id="cb4-7"><a href="#cb4-7"></a>        </span>
-<span id="cb4-8"><a href="#cb4-8"></a>    <span class="cf">return</span> cipher</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-8"><a href="#cb4-8"></a>    <span class="cf">return</span> cipher</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Because</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="bu">ord</span>(<span class="st">'A'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="bu">ord</span>(<span class="st">'A'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>returns 65, we need to subtract 65 from the result of <code>ord('A')</code> to get 0. This gives us the 0-based index of the letter in the alphabet, which is useful for our calculations.</p>
 <p>Hence the calculation shown above.</p>
 <p>For the decryption, we can simply subtract the shift value instead of adding it:</p>
-<div id="cell-14" class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">def</span> caesar_decrypt_mod(plain, shift):</span>
+<div id="cell-15" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">def</span> caesar_decrypt_mod(plain, shift):</span>
 <span id="cb6-2"><a href="#cb6-2"></a>    cipher <span class="op">=</span> <span class="st">""</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a>    </span>
 <span id="cb6-4"><a href="#cb6-4"></a>    <span class="cf">for</span> char <span class="kw">in</span> plain:</span>
 <span id="cb6-5"><a href="#cb6-5"></a>        shifted <span class="op">=</span> (<span class="bu">ord</span>(char) <span class="op">-</span> <span class="bu">ord</span>(<span class="st">'A'</span>) <span class="op">-</span> shift) <span class="op">%</span> <span class="dv">26</span> <span class="op">+</span> <span class="bu">ord</span>(<span class="st">'A'</span>)</span>
 <span id="cb6-6"><a href="#cb6-6"></a>        cipher <span class="op">+=</span> <span class="bu">chr</span>(shifted)</span>
 <span id="cb6-7"><a href="#cb6-7"></a>        </span>
-<span id="cb6-8"><a href="#cb6-8"></a>    <span class="cf">return</span> cipher</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-8"><a href="#cb6-8"></a>    <span class="cf">return</span> cipher</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>For convenience, we implement one function for both encryption and decryption.</p>
-<div id="cell-16" class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">def</span> caesar(text : <span class="bu">str</span>, shift : <span class="bu">int</span>, encrypt<span class="op">=</span><span class="va">True</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<div id="cell-17" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">def</span> caesar(text : <span class="bu">str</span>, shift : <span class="bu">int</span>, encrypt<span class="op">=</span><span class="va">True</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
 <span id="cb7-2"><a href="#cb7-2"></a>    text <span class="op">=</span> text.upper()</span>
 <span id="cb7-3"><a href="#cb7-3"></a>    result <span class="op">=</span> <span class="st">""</span></span>
 <span id="cb7-4"><a href="#cb7-4"></a>    </span>
@@ -322,7 +331,7 @@ x' = x \oplus_{26} n
 <span id="cb7-11"><a href="#cb7-11"></a>            shifted <span class="op">=</span> (<span class="bu">ord</span>(char) <span class="op">-</span> <span class="bu">ord</span>(<span class="st">'A'</span>) <span class="op">-</span> shift) <span class="op">%</span> <span class="dv">26</span> <span class="op">+</span> <span class="bu">ord</span>(<span class="st">'A'</span>)</span>
 <span id="cb7-12"><a href="#cb7-12"></a>            result <span class="op">+=</span> <span class="bu">chr</span>(shifted)</span>
 <span id="cb7-13"><a href="#cb7-13"></a>            </span>
-<span id="cb7-14"><a href="#cb7-14"></a>    <span class="cf">return</span> result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-14"><a href="#cb7-14"></a>    <span class="cf">return</span> result</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
@@ -331,11 +340,11 @@ x' = x \oplus_{26} n
 <p>There are two main methods to break a Caesar cipher: 1. Brute Force Attack: Try all possible shifts (1-25) and see which one produces a meaningful result. 2. Frequency Analysis: Analyse the frequency of letters in the ciphertext and compare it to the expected frequency of letters in the language.</p>
 <section id="brute-force-attack" class="level3">
 <h3 class="anchored" data-anchor-id="brute-force-attack">Brute Force Attack</h3>
-<div id="cell-20" class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">def</span> caesar_bruteforce(ciphertext: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<div id="cell-21" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">def</span> caesar_bruteforce(ciphertext: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
 <span id="cb8-2"><a href="#cb8-2"></a>    <span class="cf">for</span> shift <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">26</span>):</span>
 <span id="cb8-3"><a href="#cb8-3"></a>        decrypted_text <span class="op">=</span> caesar(ciphertext, shift, encrypt<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb8-4"><a href="#cb8-4"></a>        <span class="bu">print</span>(<span class="ss">f"Shift </span><span class="sc">{</span>shift<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>decrypted_text<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a href="#cb8-4"></a>        <span class="bu">print</span>(<span class="ss">f"Shift </span><span class="sc">{</span>shift<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>decrypted_text<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="frequency-analysis" class="level3">
@@ -458,8 +467,8 @@ x' = x \oplus_{26} n
 </table>
 <p>Therefore, we need a function that counts the frequency of each letter in the ciphertext. The result should be a dictionary where the keys are the letters and the values are the counts of each letter. Or even better, the frequencies in percent.</p>
 <p>To keep things simple, we assume that the input text only contains uppercase letters from <code>A</code> to <code>Z</code> and no spaces or punctuation.</p>
-<div id="cell-23" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">def</span> letter_frequency(text: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">dict</span>:</span>
+<div id="cell-24" class="cell" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">def</span> letter_frequency(text: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">dict</span>:</span>
 <span id="cb9-2"><a href="#cb9-2"></a>    frequency <span class="op">=</span> {}</span>
 <span id="cb9-3"><a href="#cb9-3"></a>    total_letters <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb9-4"><a href="#cb9-4"></a>    </span>
@@ -474,12 +483,12 @@ x' = x \oplus_{26} n
 <span id="cb9-13"><a href="#cb9-13"></a>        frequency[key] <span class="op">=</span> (value <span class="op">/</span> total_letters) <span class="op">*</span> <span class="dv">100</span></span>
 <span id="cb9-14"><a href="#cb9-14"></a>        </span>
 <span id="cb9-15"><a href="#cb9-15"></a>           </span>
-<span id="cb9-16"><a href="#cb9-16"></a>    <span class="cf">return</span> frequency</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-16"><a href="#cb9-16"></a>    <span class="cf">return</span> frequency</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>After finding the most frequent letter in the ciphertext, we can assume that it corresponds to the letter ‘E’ in the plaintext. By calculating the shift needed to convert the most frequent letter to ‘E’, we can then decrypt the entire ciphertext using that shift value.</p>
-<div id="cell-25" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">def</span> find_shift(char: <span class="bu">str</span>, e <span class="op">=</span> <span class="st">'E'</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
-<span id="cb10-2"><a href="#cb10-2"></a>    <span class="cf">return</span> (<span class="bu">ord</span>(char) <span class="op">-</span> <span class="bu">ord</span>(e)) <span class="op">%</span> <span class="dv">26</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-26" class="cell" data-execution_count="24">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">def</span> find_shift(char: <span class="bu">str</span>, e <span class="op">=</span> <span class="st">'E'</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb10-2"><a href="#cb10-2"></a>    <span class="cf">return</span> (<span class="bu">ord</span>(char) <span class="op">-</span> <span class="bu">ord</span>(e)) <span class="op">%</span> <span class="dv">26</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>After guessing the shift, we can use our existing <code>caesar</code> function to decrypt the ciphertext. We can call the function with the encrypted text and the guessed shift value to obtain the original plaintext.</p>
 <p>If needed, the implementation of the <code>find_shift</code> function can exchange the default value for the most frequent letter to another letter.</p>
@@ -540,13 +549,14 @@ x' = x \oplus_{26} n
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

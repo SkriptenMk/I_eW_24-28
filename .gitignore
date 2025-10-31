@@ -1,3 +1,11 @@
 /.quarto/
 /.venv/
 /lektionen/*
+**/*.quarto_ipynb
+
+# macOS Finder metadata
+.DS_Store
+
+# Quarto freeze and notebook checkpoints
+docs/.quarto/
+**/.ipynb_checkpoints/

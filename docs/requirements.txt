@@ -1,0 +1,9 @@
+pdfplumber
+pdfminer.six
+pillow
+pandas
+numpy
+matplotlib
+pytamaro
+# optional: add other common notebook deps if desired
+# jupyter, nbconvert and ipykernel are already installed in the Dockerfile
