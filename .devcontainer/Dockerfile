@@ -105,4 +105,9 @@ USER $USERNAME
 
 ENV PATH="/home/$USERNAME/.local/bin:${PATH}"
 
+# Register a user kernel for notebooks so VS Code can select it by name
+# This runs as the non-root `vscode` user and writes the kernel spec into
+# the user's Jupyter data directory under /home/vscode/.local/share/jupyter/kernels
+RUN python3 -m ipykernel install --user --name quarto --display-name "Python (quarto)" || true
+
 CMD ["bash"]
