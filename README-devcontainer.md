@@ -26,6 +26,8 @@ quarto preview
 quarto render
 
 # nur eine Datei rendern (mit Ausführung der Code-Chunks)
+quarto render index.qmd --execute --no-cache
+
 quarto render files/lektionen_hs25/251105_symetricencryption/symetricencryption.qmd --execute --no-cache
 
 #weitere Dateien nach docs kopieren (Dateien zum Download)

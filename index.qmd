@@ -19,7 +19,7 @@ expected during the course of the semester.
 | 24.09.2025 | Cryptology: Vigenère Chiffre |
 | 22.10.2025 | Test |
 | 29.10.2025 | Cryptology: Break Vigenère |
-| 05.11.2025 | [Cryptology: Symmetric encryption methods](files/lektionen_hs25/251105/symetricencryption.html) |
+| 05.11.2025 | [Cryptology: Symmetric encryption methods](files/lektionen_hs25/251105_symetricencryption/symetricencryption.html) |
 | 12.11.2025 | Cryptology: RSA |
 | 19.11.2025 | Cryptology: digital Signatures |
 | 26.11.2025 | AI: Kind of a Definition |
