@@ -197,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="6ad000a0" class="cell">
+<div id="6ad000a0" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> string</span>
@@ -210,10 +210,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8"></a><span class="im">from</span> typing <span class="im">import</span> Optional</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="017cc88b" class="cell">
+<div id="017cc88b" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> pdf_reader(path : <span class="bu">str</span>, start : <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span>, end : <span class="bu">int</span> <span class="op">=</span> <span class="va">None</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> pdf_reader(path: <span class="bu">str</span>, start: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span>, end: <span class="bu">int</span> <span class="op">=</span> <span class="va">None</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
 <span id="cb2-2"><a href="#cb2-2"></a>    <span class="cf">with</span> pdfplumber.<span class="bu">open</span>(path) <span class="im">as</span> pdf:</span>
 <span id="cb2-3"><a href="#cb2-3"></a>        pages <span class="op">=</span> pdf.pages</span>
 <span id="cb2-4"><a href="#cb2-4"></a>        text <span class="op">=</span> <span class="st">""</span></span>
@@ -222,196 +222,102 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-7"><a href="#cb2-7"></a>        <span class="cf">for</span> i, pg <span class="kw">in</span> <span class="bu">enumerate</span>(pages):</span>
 <span id="cb2-8"><a href="#cb2-8"></a>            <span class="cf">if</span> i <span class="op">&gt;=</span> start <span class="kw">and</span> i <span class="op">&lt;</span> end:</span>
 <span id="cb2-9"><a href="#cb2-9"></a>                text <span class="op">+=</span> pages[i].extract_text() <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a>    </span>
-<span id="cb2-11"><a href="#cb2-11"></a>    <span class="cf">return</span> text</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-10"><a href="#cb2-10"></a>    <span class="cf">return</span> text</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="3fd28fc3" class="cell">
+<div id="3fd28fc3" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">def</span> file_reader(path : <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a>    <span class="cf">with</span> <span class="bu">open</span>(path, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>) <span class="im">as</span> f:</span>
-<span id="cb3-4"><a href="#cb3-4"></a>        text <span class="op">=</span> f.read()</span>
-<span id="cb3-5"><a href="#cb3-5"></a></span>
-<span id="cb3-6"><a href="#cb3-6"></a>    <span class="cf">return</span> text</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">def</span> text_cleaning(text: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb3-2"><a href="#cb3-2"></a>    clean <span class="op">=</span> text.upper()</span>
+<span id="cb3-3"><a href="#cb3-3"></a>    clean <span class="op">=</span> clean.replace(<span class="st">'Ä'</span>, <span class="st">'AE'</span>).replace(<span class="st">'Ö'</span>, <span class="st">'OE'</span>).replace(<span class="st">'Ü'</span>, <span class="st">'UE'</span>).replace(<span class="st">'ß'</span>, <span class="st">'SS'</span>)</span>
+<span id="cb3-4"><a href="#cb3-4"></a>    clean <span class="op">=</span> clean.replace(<span class="st">' '</span>, <span class="st">''</span>)</span>
+<span id="cb3-5"><a href="#cb3-5"></a>    cleaned_text <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>    <span class="cf">for</span> c <span class="kw">in</span> clean:</span>
+<span id="cb3-7"><a href="#cb3-7"></a>        <span class="cf">if</span> c.isalpha():</span>
+<span id="cb3-8"><a href="#cb3-8"></a>            cleaned_text <span class="op">+=</span> c</span>
+<span id="cb3-9"><a href="#cb3-9"></a>    <span class="cf">return</span> cleaned_text</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="2b306893" class="cell">
+<div id="19406c4b" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">def</span> file_writer(path : <span class="bu">str</span>, text : <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
-<span id="cb4-2"><a href="#cb4-2"></a>    i <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a>    grouped_text <span class="op">=</span> <span class="st">""</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a>    <span class="cf">for</span> c <span class="kw">in</span> text:</span>
-<span id="cb4-5"><a href="#cb4-5"></a>        i <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a>        <span class="cf">if</span> i <span class="op">%</span> <span class="dv">50</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb4-7"><a href="#cb4-7"></a>            grouped_text <span class="op">+=</span> c <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a>        <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb4-9"><a href="#cb4-9"></a>            grouped_text <span class="op">+=</span> c <span class="op">+</span> <span class="st">" "</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a>        <span class="cf">else</span>:</span>
-<span id="cb4-11"><a href="#cb4-11"></a>            grouped_text <span class="op">+=</span> c</span>
-<span id="cb4-12"><a href="#cb4-12"></a>        </span>
-<span id="cb4-13"><a href="#cb4-13"></a>    <span class="cf">with</span> <span class="bu">open</span>(path, mode<span class="op">=</span><span class="st">'w'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>) <span class="im">as</span> f:</span>
-<span id="cb4-14"><a href="#cb4-14"></a>        f.write(grouped_text)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">def</span> vigenere(text: <span class="bu">str</span>, key: <span class="bu">str</span>, mode: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb4-2"><a href="#cb4-2"></a>    <span class="cf">if</span> mode <span class="kw">not</span> <span class="kw">in</span> [<span class="st">'encrypt'</span>, <span class="st">'decrypt'</span>]:</span>
+<span id="cb4-3"><a href="#cb4-3"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Mode must be 'encrypt' or 'decrypt'"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4"></a>    key_length <span class="op">=</span> <span class="bu">len</span>(key)</span>
+<span id="cb4-5"><a href="#cb4-5"></a>    <span class="cf">if</span> mode <span class="op">==</span> <span class="st">'encrypt'</span>:</span>
+<span id="cb4-6"><a href="#cb4-6"></a>        cipher <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>        <span class="cf">for</span> i, char <span class="kw">in</span> <span class="bu">enumerate</span>(text):</span>
+<span id="cb4-8"><a href="#cb4-8"></a>            char_num <span class="op">=</span> <span class="bu">ord</span>(char) <span class="op">-</span> <span class="bu">ord</span>(<span class="st">'A'</span>)</span>
+<span id="cb4-9"><a href="#cb4-9"></a>            key_num <span class="op">=</span> <span class="bu">ord</span>(key[i <span class="op">%</span> key_length]) <span class="op">-</span> <span class="bu">ord</span>(<span class="st">'A'</span>)</span>
+<span id="cb4-10"><a href="#cb4-10"></a>            cipher_num <span class="op">=</span> (char_num <span class="op">+</span> key_num) <span class="op">%</span> <span class="dv">26</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a>            cipher <span class="op">+=</span> <span class="bu">chr</span>(cipher_num <span class="op">+</span> <span class="bu">ord</span>(<span class="st">'A'</span>))</span>
+<span id="cb4-12"><a href="#cb4-12"></a>        <span class="cf">return</span> cipher</span>
+<span id="cb4-13"><a href="#cb4-13"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-14"><a href="#cb4-14"></a>        plain <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a>        <span class="cf">for</span> i, char <span class="kw">in</span> <span class="bu">enumerate</span>(text):</span>
+<span id="cb4-16"><a href="#cb4-16"></a>            char_num <span class="op">=</span> <span class="bu">ord</span>(char) <span class="op">-</span> <span class="bu">ord</span>(<span class="st">'A'</span>)</span>
+<span id="cb4-17"><a href="#cb4-17"></a>            key_num <span class="op">=</span> <span class="bu">ord</span>(key[i <span class="op">%</span> key_length]) <span class="op">-</span> <span class="bu">ord</span>(<span class="st">'A'</span>)</span>
+<span id="cb4-18"><a href="#cb4-18"></a>            plain_num <span class="op">=</span> (char_num <span class="op">-</span> key_num) <span class="op">%</span> <span class="dv">26</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a>            plain <span class="op">+=</span> <span class="bu">chr</span>(plain_num <span class="op">+</span> <span class="bu">ord</span>(<span class="st">'A'</span>))</span>
+<span id="cb4-20"><a href="#cb4-20"></a>        <span class="cf">return</span> plain</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="19406c4b" class="cell">
+<div id="83d16f7c" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">def</span> text_cleaning(text : <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
-<span id="cb5-2"><a href="#cb5-2"></a>    clean <span class="op">=</span> text.upper() <span class="op">\</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a>                .replace(<span class="st">'Ä'</span>, <span class="st">'AE'</span>) <span class="op">\</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a>                .replace(<span class="st">'Ö'</span>, <span class="st">'OE'</span>) <span class="op">\</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a>                .replace(<span class="st">'Ü'</span>, <span class="st">'UE'</span>) <span class="op">\</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a>                .replace(<span class="st">'ß'</span>, <span class="st">'SS'</span>) <span class="op">\</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a>                .replace(<span class="st">' '</span>, <span class="st">''</span>) <span class="op">\</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a></span>
-<span id="cb5-9"><a href="#cb5-9"></a>    cleaned_text <span class="op">=</span> <span class="st">''</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a></span>
-<span id="cb5-11"><a href="#cb5-11"></a>    <span class="cf">for</span> c <span class="kw">in</span> clean:</span>
-<span id="cb5-12"><a href="#cb5-12"></a>        <span class="cf">if</span> c.isalpha():</span>
-<span id="cb5-13"><a href="#cb5-13"></a>            cleaned_text <span class="op">+=</span> c</span>
-<span id="cb5-14"><a href="#cb5-14"></a>    </span>
-<span id="cb5-15"><a href="#cb5-15"></a>    <span class="cf">return</span> cleaned_text</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">def</span> _get_factors(n):</span>
+<span id="cb5-2"><a href="#cb5-2"></a>    factors <span class="op">=</span> <span class="bu">set</span>()</span>
+<span id="cb5-3"><a href="#cb5-3"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="bu">int</span>(math.sqrt(n)) <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb5-4"><a href="#cb5-4"></a>        <span class="cf">if</span> n <span class="op">%</span> i <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb5-5"><a href="#cb5-5"></a>            factors.add(i)</span>
+<span id="cb5-6"><a href="#cb5-6"></a>            factors.add(n <span class="op">//</span> i)</span>
+<span id="cb5-7"><a href="#cb5-7"></a>    <span class="cf">if</span> n <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb5-8"><a href="#cb5-8"></a>        factors.add(n)</span>
+<span id="cb5-9"><a href="#cb5-9"></a>    <span class="cf">return</span> <span class="bu">list</span>(factors)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="83d16f7c" class="cell">
+<div id="e2bc02af" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">def</span> vigenere(text: <span class="bu">str</span>, key: <span class="bu">str</span>, mode: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
-<span id="cb6-2"><a href="#cb6-2"></a>    <span class="co">"""Encrypts or decrypts a given text using the Vigenère cipher.</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="co">    The function processes a string of uppercase alphabetic characters</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="co">    using a provided key for encryption or decryption.</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="co">    Args:</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a><span class="co">        text: The string to be encrypted or decrypted. It should only contain</span></span>
-<span id="cb6-9"><a href="#cb6-9"></a><span class="co">              uppercase alphabetic characters (A-Z).</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a><span class="co">        key: The key for the cipher. It should also only contain</span></span>
-<span id="cb6-11"><a href="#cb6-11"></a><span class="co">             uppercase alphabetic characters (A-Z).</span></span>
-<span id="cb6-12"><a href="#cb6-12"></a><span class="co">        mode: The operation to perform, must be 'encrypt' or 'decrypt'.</span></span>
-<span id="cb6-13"><a href="#cb6-13"></a></span>
-<span id="cb6-14"><a href="#cb6-14"></a><span class="co">    Returns:</span></span>
-<span id="cb6-15"><a href="#cb6-15"></a><span class="co">        The resulting ciphertext or plaintext.</span></span>
-<span id="cb6-16"><a href="#cb6-16"></a></span>
-<span id="cb6-17"><a href="#cb6-17"></a><span class="co">    Raises:</span></span>
-<span id="cb6-18"><a href="#cb6-18"></a><span class="co">        ValueError: If the mode is not 'encrypt' or 'decrypt'.</span></span>
-<span id="cb6-19"><a href="#cb6-19"></a><span class="co">    """</span></span>
-<span id="cb6-20"><a href="#cb6-20"></a></span>
-<span id="cb6-21"><a href="#cb6-21"></a>    <span class="co"># Ensure the mode is valid before proceeding.</span></span>
-<span id="cb6-22"><a href="#cb6-22"></a>    <span class="cf">if</span> mode <span class="kw">not</span> <span class="kw">in</span> [<span class="st">'encrypt'</span>, <span class="st">'decrypt'</span>]:</span>
-<span id="cb6-23"><a href="#cb6-23"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Mode must be 'encrypt' or 'decrypt'"</span>)</span>
-<span id="cb6-24"><a href="#cb6-24"></a>    </span>
-<span id="cb6-25"><a href="#cb6-25"></a>    key_length <span class="op">=</span> <span class="bu">len</span>(key)</span>
-<span id="cb6-26"><a href="#cb6-26"></a>    </span>
-<span id="cb6-27"><a href="#cb6-27"></a>    <span class="cf">if</span> mode <span class="op">==</span> <span class="st">'encrypt'</span>:</span>
-<span id="cb6-28"><a href="#cb6-28"></a>       cipher <span class="op">=</span> <span class="st">''</span></span>
-<span id="cb6-29"><a href="#cb6-29"></a>       <span class="co"># Iterate through each character of the input text.</span></span>
-<span id="cb6-30"><a href="#cb6-30"></a>       <span class="cf">for</span> i, char <span class="kw">in</span> <span class="bu">enumerate</span>(text):</span>
-<span id="cb6-31"><a href="#cb6-31"></a>           <span class="co"># Convert the current text character and the corresponding key </span></span>
-<span id="cb6-32"><a href="#cb6-32"></a>           <span class="co"># character to a number (0-25).</span></span>
-<span id="cb6-33"><a href="#cb6-33"></a>           <span class="co"># The key character is determined using modulo to cycle through </span></span>
-<span id="cb6-34"><a href="#cb6-34"></a>           <span class="co"># the key.</span></span>
-<span id="cb6-35"><a href="#cb6-35"></a>           char_num <span class="op">=</span> <span class="bu">ord</span>(char) <span class="op">-</span> <span class="bu">ord</span>(<span class="st">'A'</span>)</span>
-<span id="cb6-36"><a href="#cb6-36"></a>           key_num <span class="op">=</span> <span class="bu">ord</span>(key[i <span class="op">%</span> key_length]) <span class="op">-</span> <span class="bu">ord</span>(<span class="st">'A'</span>)</span>
-<span id="cb6-37"><a href="#cb6-37"></a>           </span>
-<span id="cb6-38"><a href="#cb6-38"></a>           <span class="co"># Calculate the new character's number using the Vigenère encryption formula.</span></span>
-<span id="cb6-39"><a href="#cb6-39"></a>           <span class="co"># The modulo operator ensures the result stays within the range 0-25.</span></span>
-<span id="cb6-40"><a href="#cb6-40"></a>           cipher_num <span class="op">=</span> (char_num <span class="op">+</span> key_num) <span class="op">%</span> <span class="dv">26</span></span>
-<span id="cb6-41"><a href="#cb6-41"></a>           </span>
-<span id="cb6-42"><a href="#cb6-42"></a>           <span class="co"># Convert the resulting number back to an uppercase character and append it.</span></span>
-<span id="cb6-43"><a href="#cb6-43"></a>           cipher <span class="op">+=</span> <span class="bu">chr</span>(cipher_num <span class="op">+</span> <span class="bu">ord</span>(<span class="st">'A'</span>))</span>
-<span id="cb6-44"><a href="#cb6-44"></a>       <span class="cf">return</span> cipher  </span>
-<span id="cb6-45"><a href="#cb6-45"></a>    <span class="cf">else</span>:  <span class="co"># mode == 'decrypt'</span></span>
-<span id="cb6-46"><a href="#cb6-46"></a>        plain <span class="op">=</span> <span class="st">''</span></span>
-<span id="cb6-47"><a href="#cb6-47"></a>        <span class="co"># Iterate through each character of the input text.</span></span>
-<span id="cb6-48"><a href="#cb6-48"></a>        <span class="cf">for</span> i, char <span class="kw">in</span> <span class="bu">enumerate</span>(text):</span>
-<span id="cb6-49"><a href="#cb6-49"></a>            <span class="co"># Convert the current text character and the corresponding key </span></span>
-<span id="cb6-50"><a href="#cb6-50"></a>            <span class="co"># character to a number (0-25).</span></span>
-<span id="cb6-51"><a href="#cb6-51"></a>            char_num <span class="op">=</span> <span class="bu">ord</span>(char) <span class="op">-</span> <span class="bu">ord</span>(<span class="st">'A'</span>)</span>
-<span id="cb6-52"><a href="#cb6-52"></a>            key_num <span class="op">=</span> <span class="bu">ord</span>(key[i <span class="op">%</span> key_length]) <span class="op">-</span> <span class="bu">ord</span>(<span class="st">'A'</span>)</span>
-<span id="cb6-53"><a href="#cb6-53"></a>            </span>
-<span id="cb6-54"><a href="#cb6-54"></a>            <span class="co"># Calculate the new character's number using the Vigenère </span></span>
-<span id="cb6-55"><a href="#cb6-55"></a>            <span class="co"># decryption formula.</span></span>
-<span id="cb6-56"><a href="#cb6-56"></a>            <span class="co"># The modulo operator handles negative results, ensuring the </span></span>
-<span id="cb6-57"><a href="#cb6-57"></a>            <span class="co"># result is correct.</span></span>
-<span id="cb6-58"><a href="#cb6-58"></a>            plain_num <span class="op">=</span> (char_num <span class="op">-</span> key_num) <span class="op">%</span> <span class="dv">26</span></span>
-<span id="cb6-59"><a href="#cb6-59"></a>            </span>
-<span id="cb6-60"><a href="#cb6-60"></a>            <span class="co"># Convert the resulting number back to an uppercase </span></span>
-<span id="cb6-61"><a href="#cb6-61"></a>            <span class="co"># character and append it.</span></span>
-<span id="cb6-62"><a href="#cb6-62"></a>            plain <span class="op">+=</span> <span class="bu">chr</span>(plain_num <span class="op">+</span> <span class="bu">ord</span>(<span class="st">'A'</span>))</span>
-<span id="cb6-63"><a href="#cb6-63"></a>        <span class="cf">return</span> plain</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">def</span> kasiski_test(ciphertext, min_seq_len<span class="op">=</span><span class="dv">3</span>, max_seq_len<span class="op">=</span><span class="dv">5</span>):</span>
+<span id="cb6-2"><a href="#cb6-2"></a>    sequences_positions <span class="op">=</span> defaultdict(<span class="bu">list</span>)</span>
+<span id="cb6-3"><a href="#cb6-3"></a>    <span class="cf">for</span> seq_len <span class="kw">in</span> <span class="bu">range</span>(min_seq_len, max_seq_len <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb6-4"><a href="#cb6-4"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(ciphertext) <span class="op">-</span> seq_len <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb6-5"><a href="#cb6-5"></a>            sequence <span class="op">=</span> ciphertext[i:i<span class="op">+</span>seq_len]</span>
+<span id="cb6-6"><a href="#cb6-6"></a>            sequences_positions[sequence].append(i)</span>
+<span id="cb6-7"><a href="#cb6-7"></a>    distances <span class="op">=</span> []</span>
+<span id="cb6-8"><a href="#cb6-8"></a>    <span class="cf">for</span> sequence, positions <span class="kw">in</span> sequences_positions.items():</span>
+<span id="cb6-9"><a href="#cb6-9"></a>        <span class="cf">if</span> <span class="bu">len</span>(positions) <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb6-10"><a href="#cb6-10"></a>            <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(positions) <span class="op">-</span> <span class="dv">1</span>):</span>
+<span id="cb6-11"><a href="#cb6-11"></a>                distance <span class="op">=</span> positions[i<span class="op">+</span><span class="dv">1</span>] <span class="op">-</span> positions[i]</span>
+<span id="cb6-12"><a href="#cb6-12"></a>                distances.append(distance)</span>
+<span id="cb6-13"><a href="#cb6-13"></a>    factor_counts <span class="op">=</span> defaultdict(<span class="bu">int</span>)</span>
+<span id="cb6-14"><a href="#cb6-14"></a>    <span class="cf">for</span> dist <span class="kw">in</span> distances:</span>
+<span id="cb6-15"><a href="#cb6-15"></a>        factors <span class="op">=</span> _get_factors(dist)</span>
+<span id="cb6-16"><a href="#cb6-16"></a>        <span class="cf">for</span> factor <span class="kw">in</span> factors:</span>
+<span id="cb6-17"><a href="#cb6-17"></a>            factor_counts[factor] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb6-18"><a href="#cb6-18"></a>    sorted_factor_counts <span class="op">=</span> <span class="bu">sorted</span>(factor_counts.items(), key<span class="op">=</span><span class="kw">lambda</span> item: item[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-19"><a href="#cb6-19"></a>    <span class="cf">return</span> <span class="bu">dict</span>(sorted_factor_counts)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="e2bc02af" class="cell">
+<div id="6349120e" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">def</span> _get_factors(n):</span>
-<span id="cb7-2"><a href="#cb7-2"></a>    <span class="co">"""</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="co">    Helper function to calculate all factors of a number n (greater than 2).</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="co">    </span></span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="co">    This function finds all positive divisors of a given number n using an</span></span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="co">    efficient algorithm that only iterates up to the square root of n.</span></span>
-<span id="cb7-7"><a href="#cb7-7"></a><span class="co">    </span></span>
-<span id="cb7-8"><a href="#cb7-8"></a><span class="co">    Args:</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a><span class="co">        n (int): The number whose factors should be found. </span></span>
-<span id="cb7-10"><a href="#cb7-10"></a><span class="co">                 Should be greater than 2 for meaningful results.</span></span>
-<span id="cb7-11"><a href="#cb7-11"></a><span class="co">    </span></span>
-<span id="cb7-12"><a href="#cb7-12"></a><span class="co">    Returns:</span></span>
-<span id="cb7-13"><a href="#cb7-13"></a><span class="co">        list: A list of all positive factors of n (except 1).</span></span>
-<span id="cb7-14"><a href="#cb7-14"></a><span class="co">              The order is not guaranteed.</span></span>
-<span id="cb7-15"><a href="#cb7-15"></a><span class="co">    </span></span>
-<span id="cb7-16"><a href="#cb7-16"></a><span class="co">    Example:</span></span>
-<span id="cb7-17"><a href="#cb7-17"></a><span class="co">        &gt;&gt;&gt; _get_factors(12)</span></span>
-<span id="cb7-18"><a href="#cb7-18"></a><span class="co">        [2, 3, 4, 6, 12]</span></span>
-<span id="cb7-19"><a href="#cb7-19"></a><span class="co">        &gt;&gt;&gt; _get_factors(17)</span></span>
-<span id="cb7-20"><a href="#cb7-20"></a><span class="co">        [17]  # Prime number only has itself as factor</span></span>
-<span id="cb7-21"><a href="#cb7-21"></a><span class="co">    """</span></span>
-<span id="cb7-22"><a href="#cb7-22"></a>    <span class="co"># Use set to automatically avoid duplicates</span></span>
-<span id="cb7-23"><a href="#cb7-23"></a>    factors <span class="op">=</span> <span class="bu">set</span>()</span>
-<span id="cb7-24"><a href="#cb7-24"></a>    </span>
-<span id="cb7-25"><a href="#cb7-25"></a>    <span class="co"># Only iterate up to square root for efficiency</span></span>
-<span id="cb7-26"><a href="#cb7-26"></a>    <span class="co"># Reason: If i is a factor, then n//i is also a factor</span></span>
-<span id="cb7-27"><a href="#cb7-27"></a>    <span class="co"># and one of them is ≤ sqrt(n), the other ≥ sqrt(n)</span></span>
-<span id="cb7-28"><a href="#cb7-28"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="bu">int</span>(math.sqrt(n)) <span class="op">+</span> <span class="dv">1</span>):</span>
-<span id="cb7-29"><a href="#cb7-29"></a>        <span class="co"># Check if i is a factor of n (remainder of division is 0)</span></span>
-<span id="cb7-30"><a href="#cb7-30"></a>        <span class="cf">if</span> n <span class="op">%</span> i <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb7-31"><a href="#cb7-31"></a>            <span class="co"># i is a factor - add to set</span></span>
-<span id="cb7-32"><a href="#cb7-32"></a>            factors.add(i)</span>
-<span id="cb7-33"><a href="#cb7-33"></a>            </span>
-<span id="cb7-34"><a href="#cb7-34"></a>            <span class="co"># The "partner factor" n//i is also a factor</span></span>
-<span id="cb7-35"><a href="#cb7-35"></a>            <span class="co"># Example: For n=12 and i=3, also 12//3=4 is a factor</span></span>
-<span id="cb7-36"><a href="#cb7-36"></a>            factors.add(n <span class="op">//</span> i)</span>
-<span id="cb7-37"><a href="#cb7-37"></a>    </span>
-<span id="cb7-38"><a href="#cb7-38"></a>    <span class="co"># The number itself is always a factor (except for n=1)</span></span>
-<span id="cb7-39"><a href="#cb7-39"></a>    <span class="co"># This condition is redundant since n &gt; 2 according to docstring</span></span>
-<span id="cb7-40"><a href="#cb7-40"></a>    <span class="cf">if</span> n <span class="op">&gt;</span> <span class="dv">1</span>:</span>
-<span id="cb7-41"><a href="#cb7-41"></a>        factors.add(n)</span>
-<span id="cb7-42"><a href="#cb7-42"></a>    </span>
-<span id="cb7-43"><a href="#cb7-43"></a>    <span class="co"># Convert set to list and return</span></span>
-<span id="cb7-44"><a href="#cb7-44"></a>    <span class="co"># Note: The order of elements is not guaranteed</span></span>
-<span id="cb7-45"><a href="#cb7-45"></a>    <span class="cf">return</span> <span class="bu">list</span>(factors)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Read and clean the PDF text (truncate to avoid huge outputs)</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>economist_plain <span class="op">=</span> pdf_reader(<span class="st">'economist.pdf'</span>)</span>
+<span id="cb7-3"><a href="#cb7-3"></a>economist_plain <span class="op">=</span> economist_plain.replace(<span class="st">'■'</span>, <span class="st">' '</span>).replace(<span class="st">'</span><span class="ch">\r</span><span class="st">'</span>, <span class="st">' '</span>)</span>
+<span id="cb7-4"><a href="#cb7-4"></a>economist_plain <span class="op">=</span> <span class="st">' '</span>.join(economist_plain.split())</span>
+<span id="cb7-5"><a href="#cb7-5"></a>economist_plain <span class="op">=</span> text_cleaning(economist_plain)[:<span class="dv">20000</span>]</span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="co"># show only the first 10 characters to avoid large verbatim output</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="bu">print</span>(economist_plain[:<span class="dv">10</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>BUSINESSHB</code></pre>
 </div>
-<div id="6349120e" class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">def</span> _get_factors(n):</span>
-<span id="cb8-2"><a href="#cb8-2"></a>    <span class="co">"""</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="co">    Hilfsfunktion zur Berechnung aller Teiler einer Zahl n (größer als 2).</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="co">    """</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a>    factors <span class="op">=</span> <span class="bu">set</span>()</span>
-<span id="cb8-6"><a href="#cb8-6"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="bu">int</span>(math.sqrt(n)) <span class="op">+</span> <span class="dv">1</span>):</span>
-<span id="cb8-7"><a href="#cb8-7"></a>        <span class="cf">if</span> n <span class="op">%</span> i <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb8-8"><a href="#cb8-8"></a>            factors.add(i)</span>
-<span id="cb8-9"><a href="#cb8-9"></a>            factors.add(n <span class="op">//</span> i)</span>
-<span id="cb8-10"><a href="#cb8-10"></a>    <span class="cf">if</span> n <span class="op">&gt;</span> <span class="dv">1</span>:</span>
-<span id="cb8-11"><a href="#cb8-11"></a>      factors.add(n)</span>
-<span id="cb8-12"><a href="#cb8-12"></a>    <span class="cf">return</span> <span class="bu">list</span>(factors)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 </div>
-<div id="f9f27586" class="cell">
+<div id="f9f27586" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">def</span> kasiski_test(ciphertext, min_seq_len<span class="op">=</span><span class="dv">3</span>, max_seq_len<span class="op">=</span><span class="dv">5</span>):</span>
@@ -498,7 +404,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-82"><a href="#cb9-82"></a>    <span class="cf">return</span> <span class="bu">dict</span>(sorted_factor_counts)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="39eefcc3" class="cell">
+<div id="39eefcc3" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">def</span> string_2_dataframe(text: <span class="bu">str</span>, n: <span class="bu">int</span>) <span class="op">-&gt;</span> Optional[pd.DataFrame]:</span>
@@ -580,7 +486,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-77"><a href="#cb10-77"></a>    <span class="cf">return</span> df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="ea6ac5fc" class="cell">
+<div id="ea6ac5fc" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">def</span> berechne_distanz_zu_e(dataframe: pd.DataFrame) <span class="op">-&gt;</span> pd.Series:</span>
@@ -669,7 +575,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-84"><a href="#cb11-84"></a>    <span class="cf">return</span> pd.Series(distanzen)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="9250bbde" class="cell">
+<div id="9250bbde" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>economist_plain <span class="op">=</span> pdf_reader(<span class="st">'economist.pdf'</span>)</span>
@@ -683,38 +589,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-9"><a href="#cb12-9"></a><span class="bu">print</span>(<span class="st">'len(economist_plain)='</span>, <span class="bu">len</span>(economist_plain))</span>
 <span id="cb12-10"><a href="#cb12-10"></a><span class="bu">print</span>(economist_plain[:<span class="dv">100</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>len(economist_plain)= 3631
+BUSINESSHBSTINGTHEPERVERSECONSEQUENCEOFAMERICASVISAFEESOFFSHORINGTOINDIAANDOTHERCOUNTRIESCOULDACCELE</code></pre>
 </div>
-<div id="747ba0f8" class="cell">
+</div>
+<div id="747ba0f8" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>economist_cipher <span class="op">=</span> vigenere(economist_plain, <span class="st">'bueli'</span>, <span class="st">'encrypt'</span>)</span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="co"># avoid printing the full cipher (very long unbroken token causes LaTeX errors)</span></span>
-<span id="cb13-3"><a href="#cb13-3"></a><span class="bu">print</span>(<span class="st">'len(economist_cipher)='</span>, <span class="bu">len</span>(economist_cipher))</span>
-<span id="cb13-4"><a href="#cb13-4"></a><span class="bu">print</span>(economist_cipher[:<span class="dv">10</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>economist_cipher <span class="op">=</span> vigenere(economist_plain, <span class="st">'bueli'</span>, <span class="st">'encrypt'</span>)</span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="co"># show only first 10 chars</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="bu">print</span>(economist_cipher[:<span class="dv">10</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>IUCZBLSCYP</code></pre>
 </div>
-<div id="ce830746" class="cell">
+</div>
+<div id="ce830746" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>key_lengths <span class="op">=</span> kasiski_test(economist_cipher, <span class="dv">3</span>, <span class="dv">10</span>)</span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="bu">print</span>(key_lengths)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>key_lengths <span class="op">=</span> kasiski_test(economist_cipher, <span class="dv">3</span>, <span class="dv">10</span>)</span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="co"># print only first 10 characters of the dict's string representation</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="bu">print</span>(<span class="bu">str</span>(key_lengths)[:<span class="dv">10</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>{5: 1589, </code></pre>
 </div>
-<div id="4900a2e9" class="cell">
+</div>
+<div id="4900a2e9" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>df <span class="op">=</span> string_2_dataframe(economist_cipher, <span class="dv">5</span>)</span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="bu">print</span>(<span class="st">'df.shape ='</span>, df.shape)</span>
-<span id="cb15-3"><a href="#cb15-3"></a><span class="co"># show only first few rows to avoid huge tables in outputs</span></span>
-<span id="cb15-4"><a href="#cb15-4"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>df <span class="op">=</span> string_2_dataframe(economist_cipher, <span class="dv">5</span>)</span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="co"># print only first 10 characters of the DataFrame head's string repr to avoid large output</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="bu">print</span>(<span class="bu">str</span>(df.head())[:<span class="dv">10</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Spalte_1</code></pre>
 </div>
-<div id="8b459959" class="cell">
+</div>
+<div id="8b459959" class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>shifts <span class="op">=</span> berechne_distanz_zu_e(df)</span>
-<span id="cb16-2"><a href="#cb16-2"></a>shifts</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>shifts <span class="op">=</span> berechne_distanz_zu_e(df)</span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="bu">print</span>(<span class="bu">str</span>(shifts)[:<span class="dv">10</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Spalte_1  </code></pre>
+</div>
 </div>
 
 

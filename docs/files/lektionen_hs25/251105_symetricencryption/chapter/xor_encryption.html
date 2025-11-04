@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>XOR-Verschlüsselung Schritt für Schritt – Computer Science Course Materials for School Year 2025/26 (2eW)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-5d254f1e278c2921d96b26102a150bb1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap-985b28ec037abca086789749d85d0073.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../../index.html">
+    <span class="navbar-title">Computer Science Course Materials for School Year 2025/26 (2eW)</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-materials" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Materials</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-materials">    
+        <li>
+    <a class="dropdown-item" href="../../../../files/HS_24.html">
+ <span class="dropdown-text">Autumn Term 2024/2025</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../files/FS_25.html">
+ <span class="dropdown-text">Spring Term 2025</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../files/HS_25.html">
+ <span class="dropdown-text">Autumn Term 2025/2026</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#was-ist-xor" id="toc-was-ist-xor" class="nav-link active" data-scroll-target="#was-ist-xor">Was ist XOR?</a></li>
+  <li><a href="#xor-verschlüsselung-von-hand-beispiel" id="toc-xor-verschlüsselung-von-hand-beispiel" class="nav-link" data-scroll-target="#xor-verschlüsselung-von-hand-beispiel">XOR-Verschlüsselung von Hand (Beispiel)</a></li>
+  <li><a href="#xor-entschüsselung-von-hand-beispiel" id="toc-xor-entschüsselung-von-hand-beispiel" class="nav-link" data-scroll-target="#xor-entschüsselung-von-hand-beispiel">XOR-Entschüsselung von Hand (Beispiel)</a></li>
+  <li><a href="#aufgabe-xor-entschlüsselung-von-hand" id="toc-aufgabe-xor-entschlüsselung-von-hand" class="nav-link" data-scroll-target="#aufgabe-xor-entschlüsselung-von-hand">Aufgabe: XOR-Entschlüsselung von Hand</a></li>
+  <li><a href="#aufgabe-xor-verschlüsselung-mit-python" id="toc-aufgabe-xor-verschlüsselung-mit-python" class="nav-link" data-scroll-target="#aufgabe-xor-verschlüsselung-mit-python">Aufgabe: XOR-Verschlüsselung mit Python</a>
+  <ul class="collapse">
+  <li><a href="#anwenden" id="toc-anwenden" class="nav-link" data-scroll-target="#anwenden">Anwenden:</a></li>
+  </ul></li>
+  <li><a href="#aufgabe-xor-entschlüsselung-mit-python" id="toc-aufgabe-xor-entschlüsselung-mit-python" class="nav-link" data-scroll-target="#aufgabe-xor-entschlüsselung-mit-python">Aufgabe: XOR-Entschlüsselung mit Python</a></li>
+  <li><a href="#aufgabe-eigenes-beispiel-mit-einem-schlüsselwort-mehrere-bytes" id="toc-aufgabe-eigenes-beispiel-mit-einem-schlüsselwort-mehrere-bytes" class="nav-link" data-scroll-target="#aufgabe-eigenes-beispiel-mit-einem-schlüsselwort-mehrere-bytes">Aufgabe: Eigenes Beispiel mit einem Schlüsselwort (mehrere Bytes)</a></li>
+  <li><a href="#aufgabe-gegenseitig-verschlüsseln-und-entschlüsseln" id="toc-aufgabe-gegenseitig-verschlüsseln-und-entschlüsseln" class="nav-link" data-scroll-target="#aufgabe-gegenseitig-verschlüsseln-und-entschlüsseln">Aufgabe: Gegenseitig Verschlüsseln und Entschlüsseln</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251105_symetricencryption/chapter/xor_encryption.ipynb" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="xor_encryption.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">XOR-Verschlüsselung Schritt für Schritt</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In diesem Jupyter Notebook wird die <strong>XOR-Verschlüsselung</strong> erklärt und angewendet:</p>
+<ol type="1">
+<li>XOR-Idee verstehen</li>
+<li><strong>XOR von Hand</strong> an einem einfachen Beispiel nachvollziehen</li>
+<li><strong>XOR mit Python</strong> programmieren</li>
+<li>Klartext als <strong>HEX</strong> und <strong>BIN</strong> darstellen</li>
+<li>Schlüssel als <strong>BIN</strong> zeigen</li>
+<li>XOR anwenden und Ergebnis als <strong>HEX</strong> ausgeben</li>
+</ol>
+<p>Alle Beispiele verwenden einfache Texte und kleine Schlüssel, damit man den Vorgang gut nachvollziehen kann.</p>
+<section id="was-ist-xor" class="level2">
+<h2 class="anchored" data-anchor-id="was-ist-xor">Was ist XOR?</h2>
+<p>XOR (“exclusive or”) ist eine <strong>logische Verknüpfung</strong> auf Bit-Ebene.<br> Sie kennen die Addition von zwei Zahlen 1+2=3<br> XOR wird nicht auf zwei dezimale Zahlen sonderen auf zwei Bits angewandt:<br> Bit A und Bit B. <br> Beide können 0 oder 1 sein.</p>
+<p>Regeln für XOR:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Bit-A</th>
+<th>Bit-B</th>
+<th>Ergebnis A XOR B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Und nun kann man XOR auch auf zwei Bitfolgen anwenden, wobei immer die beiden Bits an der gleichen Position verknüpft werden.</p>
+<p>Beispiel:</p>
+<pre><code>    0100'0100  (Bitfolge A -&gt; Buchstabe 'H')
+XOR 0100'1011  (Bitfolge B -&gt; Schlüssel Buchstabe 'K' )
+--------
+    0000'1111  (Ergebnis, das muss nicht einem Buchstaben
+                entsprechen!)</code></pre>
+</section>
+<section id="xor-verschlüsselung-von-hand-beispiel" class="level2">
+<h2 class="anchored" data-anchor-id="xor-verschlüsselung-von-hand-beispiel">XOR-Verschlüsselung von Hand (Beispiel)</h2>
+<ul>
+<li><strong>Klartext:</strong> <code>INFORMATIK</code></li>
+<li><strong>Schlüssel:</strong> ‘BYTE’</li>
+<li>Kodierung UTF8 (ein Byte pro Buchstabe</li>
+</ul>
+<ol type="1">
+<li>Klartext in Binär umwandeln INFORMATIK = <code>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</code></li>
+<li>Schlüssel in Binär umwandeln BYTE = <code>01000010 01011001 01010100 01000101</code></li>
+<li>Klartext und Schlüssel aufreihen, Schlüssel wird über die Länge des Klartexts wiederholt: <code>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</code> <code>01000010 01011001 01010100 01000101 01000010 01011001 01010100 01000101 01000010 01011001</code></li>
+<li>XOR bitweise anwenden <code>00001011 00010111 00010010 00001010 00010000 00010100 00010101 00010001 00001011 00010010</code> ACHTUNG : Die Bytes des Ergebnisses entsprechen nicht unbedingt druckbaren Zeichen! Man notiert das Ergebnis bin oder kompakter in HEX: <code>0B 17 12 0A 10 14 15 11 0B 12</code></li>
+</ol>
+</section>
+<section id="xor-entschüsselung-von-hand-beispiel" class="level2">
+<h2 class="anchored" data-anchor-id="xor-entschüsselung-von-hand-beispiel">XOR-Entschüsselung von Hand (Beispiel)</h2>
+<p><strong>Prinzip der Entschlüsselung:</strong><br> - Wenn man ein Bit mit einem Schlüsselbit per XOR verknüpft, kann man mit <strong>demselben Schlüssel</strong> wieder zurückrechnen.<br> - Also: <code>(Klartext XOR Schlüssel) XOR Schlüssel = Klartext</code>.</p>
+<ul>
+<li><strong>Verschlüsselt:</strong> <code>0B 17 12 0A 10 14 15 11 0B 12</code></li>
+<li><strong>Schlüssel:</strong> ‘BYTE’</li>
+<li>Kodierung UTF8 (ein Byte pro Buchstabe)</li>
+</ul>
+<ol type="1">
+<li>Verschlüsselten Text in Binär umwandeln <code>0B 17 12 0A 10 14 15 11 0B 12</code> = <code>00001011 00010111 00010010 00001010 00010000 00010100 00010101 00010001 00001011 00010010</code></li>
+<li>Schlüssel in Binär umwandeln BYTE = <code>01000010 01011001 01010100 01000101</code></li>
+<li>Verschlüsselten Text und Schlüssel aufreihen, Schlüssel wird über die Länge des verschlüsselten Texts wiederholt: <code>00001011 00010111 00010010 00001010 00010000 00010100 00010101 00010001 00001011 00010010</code> <code>01000010 01011001 01010100 01000101 01000010 01011001 01010100 01000101 01000010 01011001</code></li>
+<li>XOR bitweise anwenden <code>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</code></li>
+<li>Binär in Klartext umwandeln <code>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</code> = <code>INFORMATIK</code></li>
+</ol>
+<hr>
+</section>
+<section id="aufgabe-xor-entschlüsselung-von-hand" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-xor-entschlüsselung-von-hand">Aufgabe: XOR-Entschlüsselung von Hand</h2>
+<ul>
+<li>Nehmen Sie ein Wort mit 6-8 Buchstaben</li>
+<li>Notieren Sie es als Grossbuchstaben</li>
+<li>Wandeln Sie es in Binär um: <a href="chapter/ascii_utf.html">UTF-8 Tabelle</a><br> Hinweis, Sie können in der Tabelle die Ansicht auf <em>binary</em> umstellen.</li>
+<li>Nehmen Sie einen Schlüssel mit 2-4 Buchstaben</li>
+<li>Wandeln Sie den Schlüssel in Binär um</li>
+<li>Verschlüsseln Sie den Text mit dem Schlüssel per XOR</li>
+<li>Notieren Sie das Ergebnis in HEX</li>
+</ul>
+<p>Geben Sie den verschlüsselten Text und den Schlüssel an eine andere Person weiter.<br> Diese Person soll den Text per Hand wieder entschlüsseln.</p>
+<hr>
+</section>
+<section id="aufgabe-xor-verschlüsselung-mit-python" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-xor-verschlüsselung-mit-python">Aufgabe: XOR-Verschlüsselung mit Python</h2>
+<p>Zuerst definieren wir ein paar <strong>Hilfsfunktionen</strong>, um Texte in Bytes, Hex und Binärdarstellungen umzuwandeln und XOR anzuwenden.</p>
+<div id="28da4eb6" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> text_to_bytes(text: <span class="bu">str</span>, encoding: <span class="bu">str</span> <span class="op">=</span> <span class="st">'utf-8'</span>) <span class="op">-&gt;</span> <span class="bu">bytes</span>:</span>
+<span id="cb2-2"><a href="#cb2-2"></a>    <span class="co">"""Wandelt einen Text in eine Folge von einzlenen Bytes (UTF-8) um."""</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>    <span class="cf">return</span> text.encode(encoding)</span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="kw">def</span> bytes_to_hex(data: <span class="bu">bytes</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb2-6"><a href="#cb2-6"></a>    <span class="co">"""Gibt eine Folge von Bytes als Hex-String zurück (z.B. '48 45 4C')."""</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>    <span class="cf">return</span> <span class="st">' '</span>.join(<span class="ss">f'</span><span class="sc">{</span>b<span class="sc">:02X}</span><span class="ss">'</span> <span class="cf">for</span> b <span class="kw">in</span> data)</span>
+<span id="cb2-8"><a href="#cb2-8"></a></span>
+<span id="cb2-9"><a href="#cb2-9"></a></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="kw">def</span> bytes_to_bin(data: <span class="bu">bytes</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb2-11"><a href="#cb2-11"></a>    <span class="co">"""Gibt Bytes als Binär-String zurück (z.B. '01001000 01000101')."""</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a>    <span class="cf">return</span> <span class="st">' '</span>.join(<span class="ss">f'</span><span class="sc">{</span>b<span class="sc">:08b}</span><span class="ss">'</span> <span class="cf">for</span> b <span class="kw">in</span> data)</span>
+<span id="cb2-13"><a href="#cb2-13"></a></span>
+<span id="cb2-14"><a href="#cb2-14"></a></span>
+<span id="cb2-15"><a href="#cb2-15"></a><span class="kw">def</span> xor_bytes(data: <span class="bu">bytes</span>, key: <span class="bu">bytes</span>) <span class="op">-&gt;</span> <span class="bu">bytes</span>:</span>
+<span id="cb2-16"><a href="#cb2-16"></a>    <span class="co">"""XORt eine Daten-Bytefolge mit einem Schlüssel (der ggf. wiederholt wird)."""</span></span>
+<span id="cb2-17"><a href="#cb2-17"></a>    <span class="cf">if</span> <span class="kw">not</span> key:</span>
+<span id="cb2-18"><a href="#cb2-18"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Schlüssel darf nicht leer sein'</span>)</span>
+<span id="cb2-19"><a href="#cb2-19"></a>    key_len <span class="op">=</span> <span class="bu">len</span>(key)</span>
+<span id="cb2-20"><a href="#cb2-20"></a>    <span class="cf">return</span> <span class="bu">bytes</span>(b <span class="op">^</span> key[i <span class="op">%</span> key_len] <span class="cf">for</span> i, b <span class="kw">in</span> <span class="bu">enumerate</span>(data))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="anwenden" class="level3">
+<h3 class="anchored" data-anchor-id="anwenden">Anwenden:</h3>
+<p>Sie fangen mit einem einfachen Beispiel an:<br> Klartext: ‘ERAGON’<br> Schlüssel: ‘S’<br> Wie lautet der verschlüsselte Text in HEX?</p>
+<p>Umsetzung in Python: (nur die Ideen, nicht die komplette Lösung) Klartext als Variable Schlüssel als Variable</p>
+<p>Klartext in Bytes umwandeln und ausgeben<br> Ergebnis in HEX umwandeln und ausgeben<br> Ergebnis in Binär umwandeln und ausgeben<br></p>
+<p>Schlüssel in Bytes umwandeln und ausgeben<br> Ergebnis in HEX umwandeln und ausgeben<br> Ergebis in Binär umwandeln und ausgeben<br></p>
+<p>Klartext und Schlüssel per XOR verknüpfen<br> Ergebnis in Binär ausgeben<br> Ergebnis in HEX ausgeben<br></p>
+<div id="d6f77a63" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Programmieren Sie die obige XOR Verschlüsselung in Python.</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="bu">print</span>(<span class="st">"Meine Verschüsselung"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Meine Verschüsselung</code></pre>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="aufgabe-xor-entschlüsselung-mit-python" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-xor-entschlüsselung-mit-python">Aufgabe: XOR-Entschlüsselung mit Python</h2>
+<p>Schaffen Sie es den Ablauf für die Entsschlüsselung zu definieren und umzusetzen?<br> <strong>Geben Sie alle Zwischenergebnisse, HEX, BIN, Text … aus.</strong></p>
+<div id="6acb6a12" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Programmieren Sie die zur vorangehenden Aufgabe passend XOR Entschlüsselung in Python.</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="bu">print</span>(<span class="st">"Meine Entschlüsselung"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+<section id="aufgabe-eigenes-beispiel-mit-einem-schlüsselwort-mehrere-bytes" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-eigenes-beispiel-mit-einem-schlüsselwort-mehrere-bytes">Aufgabe: Eigenes Beispiel mit einem Schlüsselwort (mehrere Bytes)</h2>
+<p>Implementieren Sie eine eigenes Beispiel mit einem KEY aus mehreren Buchstaben.<br> Die Methode xor_bytes wird den Schlüssel über den Text <strong>zyklisch wiederholen</strong>. <strong>Geben Sie alle Zwischenergebnisse, HEX, BIN, Text … aus.</strong></p>
+<div id="3f4bc862" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">## XOR-Verschlüsselung mit Python</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="bu">print</span>(<span class="st">"Eingenes Beispiel"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+<section id="aufgabe-gegenseitig-verschlüsseln-und-entschlüsseln" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-gegenseitig-verschlüsseln-und-entschlüsseln">Aufgabe: Gegenseitig Verschlüsseln und Entschlüsseln</h2>
+<p>Tauschen Sie mit einem Partner einen Schlüssel aus.<br> Verschlüsseln Sie einen Text und schicken Sie nur den verschlüsselten Text.<br> Der Partner soll den Text mit dem Schlüssel wieder entschlüsseln.<br> Geben Sie alle Zwischenergebnisse, HEX, BIN, Text … aus.</p>
+<div id="93a2a59b" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Partenerarbeit</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="bu">print</span>(<span class="st">"Partenerarbeit"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Partenerarbeit</code></pre>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251105_symetricencryption/chapter/xor_encryption.ipynb" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

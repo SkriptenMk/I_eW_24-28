@@ -26,7 +26,7 @@ quarto preview
 quarto render
 
 #weitere Dateien nach docs kopieren (Dateien zum Download)
-python3 scripts/copy_notebooks_to_docs.py --dry-run --ext ipynb,txt,pdf
+python3 scripts/copy_notebooks_to_docs.py --ext ipynb,txt,pdf
 
 #Links auf `.ipynb`-Dateien fixen (Quarto ersetzt diese durch html links)
 #Achtung im Zusammenhang mit preview funktioniert das nicht, da preview Seite erst rendert, wenn sie im Browser geöffnet wird.

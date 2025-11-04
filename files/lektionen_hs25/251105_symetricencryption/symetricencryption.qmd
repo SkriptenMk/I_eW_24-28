@@ -1,0 +1,163 @@
+---
+title: "13 Symetric encryption"
+date: 2025-11-05
+date-format: DD.MM.YYYY
+author: "Peter Rutschmann"
+---
+
+## Symetrische Verschlüsselung
+
+Bei der **symmetrischen Verschlüsselung** wird **derselbe Schlüssel** sowohl zum **Verschlüsseln** als auch zum **Entschlüsseln** einer Nachricht verwendet.
+
+> Sender und Empfänger müssen denselben geheimen Schlüssel kennen und sicher austauschen.
+
+Sie konnten bereits Erfahrungen mit den beiden Verfahren **Ceasar-** und **Viegenere-Verschlüsselung** machen.
+
+- Beide Verfahren verwenden einen Schlüssel:
+     - Ceasar-Verschlüsselung: Zahl: um wieviele Buchstaben das Alphabet verschoben wird.
+     - Vigenere: Key-Wort: wie stark jeder Buchstabe einzeln verschoben wird.
+- Bei beiden Verfahren werden die Buchstaben nach einer bestimmten Regeln durch andere Buchstaben ersetzt. Dies nennt man **Substitution**.
+
+> Substitution bedeutet in der Kryptografie, dass Zeichen oder Bitmuster systematisch durch andere ersetzt werden – die Position bleibt gleich, nur der Inhalt ändert sich.
+
+---
+
+### Aufgabe warming up mit Ceasar
+
+```text
+Verschlüsselung: Ceasar
+Alphabet: abcdefghijklmnopqrstuvwxyz
+Key: 7
+Verschlüsselter Text: fqxjwfltsfzkijwoflijnsjsgqfzjsxyjnsknsijy
+
+Wie lautet der entschlüsselte Text?
+```
+::: {.callout-tip title="Lösung" collapse=true}
+alseragonaufderjagdeinenblauensteinfindet
+:::
+
+---
+
+### Aufgabe warming up mit Vigenere
+
+```text
+Verschlüsselung: Vigenere
+Alphabet: abcdefghijklmnopqrstuvwxyz
+Key: saphira
+Verschlüsselter Text: shcaminacwalrskdxlavrxuckmznwssyithwntpmjswicsmsefvtyivnveguezrv
+
+Wie lautet der entschlüsselte Text?
+```
+::: {.callout-tip title="Lösung" collapse=true}
+ahnternichtdassdieserfundeinesdracheneiesseinlebenveraendernwird
+:::
+
+---
+
+Die Caesar- und die Viegenere-Verschlüsselung lassen sich mit etwas Aufwand entschlüsseln, auch wenn man den Schlüssel nicht kennt.<br>
+Nutzt man einen Computer, so dauert das Knacken des Codes Bruchteile von Sekunden.
+
+Eine sichere Verschlüsselung muss also ein Verfahren anwenden, so dass man den verschlüsselten Inhalt ohne Kenntnisse des Schlüssels nicht innert nützlicher Zeit knacken kann.<br>
+Das ist eine Herausforderung, deren sich Mathematiker annehmen.
+
+## Symmetrische Verschlüsselungsverfahren in der Informatik
+
+Für die Informatik, sind Caesar und Vigenère nicht geeignet.<br>
+Computer können diese Codes in Sekunden durch Häufigkeitsanalyse oder Brute-Force entschlüsseln.
+
+Mögliche symetrische Verschlüsselungsverfahren der Informatik sind:
+
+
+| Verfahren                          | Beschreibung                                      | Autor                                   | Sicherheit                                         |
+|:-----------------------------------|:--------------------------------------------------|:----------------------------------------|:---------------------------------------------------|
+| 3DES (Triple DES)                  | Dreifache DES-Verschlüsselung                     | IBM (basiert auf DES)                   | Nicht mehr empfohlen (langsam, teilweise unsicher) |
+| AES (Advanced Encryption Standard) | Blockcipher, heute globaler Standard              | Joan Daemen & Vincent Rijmen (Rijndael) | Sehr sicher (empfohlen)                            |
+| Blowfish                           | Blockcipher, 64-bit Blockgröße                    | Bruce Schneier                          | Sicher, aber Blockgröße heute problematisch        |
+| Camellia                           | AES-ähnliche Blockcipher                          | Mitsubishi & NICT Japan                 | Sehr sicher, weniger verbreitet                    |
+| ChaCha20                           | Stromchiffre, modern & schnell                    | Daniel J. Bernstein                     | Sehr sicher, bevorzugt in TLS/HTTPS & VPNs         |
+| DES (Data Encryption Standard)     | Blockcipher, 56-bit Schlüssel                     | IBM (mit NSA Einfluss)                  | Unsicher (zu kurzer Schlüssel)                     |
+| IDEA                               | Blockcipher, 128-bit Schlüssel                    | Lai & Massey                            | Sicher, aber patentiert (lange Zeit)               |
+| RC4                                | Stromchiffre                                      | Ronald Rivest                           | Unsicher (nicht mehr verwenden)                    |
+| RC5                                | Blockcipher mit variabler Block- & Schlüssellänge | Ronald Rivest                           | Moderate Sicherheit (alt)                          |
+| RC6                                | AES-Finalist, Blockcipher                         | Ronald Rivest, RSA Labs                 | Sicher, aber weniger verbreitet als AES            |
+| Salsa20                            | Vorgänger von ChaCha20                            | Daniel J. Bernstein                     | Sehr sicher, performant                            |
+| Serpent                            | Blockcipher, AES-Finalist                         | Ross Anderson, Eli Biham, Lars Knudsen  | Sehr sicher, aber langsamer als AES                |
+| Twofish                            | Blockcipher, AES-Finalist                         | Bruce Schneier & Team                   | Sehr sicher, Alternative zu AES                    |
+
+## Binäre Darstellung einer Nachricht
+
+Alle digitalen Informationen sind binär.
+Texte, Bilder, Audio – alles wird im Computer als Folge von Nullen und Einsen gespeichert und verarbeitet.
+
+Digitale Verschlüsselungsverfahren arbeiten immer auf dieser binären Darstellung einer Nachricht – also auf Bits (0 und 1).<br>
+
+> Bit: 0 oder 1<br>
+> Nibble: 4 Bit: => 0000 bis 1111<br>
+> Byte: 8 Bit:   => 0000'0000 bis 1111'1111 (Das ' Zeichen hilft beim Lesen)
+
+Ein symetrisches Verschlüsselungsverfahren nimmt diese Bitfolgen als Eingabe (Klartext) und transformiert sie anhand des Schlüssel und seinem Algorythmus zu einer neuen Bitfolge (Geheimtext).
+
+Ein Text muss also als erstes in eine binäre Zeichenfolge umgewandelt werden.
+
+**Beispiel:**
+
+```text
+Klartext:         H       E        L        L        O
+Binär (UTF8): 01001000 01000101 01001100 01001100 01001111
+
+Verschlüsselt: 10111001 01101100 11010100 ...
+```
+
+### Binar versus Hexadezimal
+
+Menschen können Hexwerte einfacher erkennen und vergleichen als lange Bitfolgen.<br>
+Hexwerte sind Zahlen im 16er Format.<br>
+Speicheradressen, Farbwerte, Zeichencodes und verschlüsselte Daten werden fast immer in Hex dargestellt.
+
+```text
+Buchstabe: A
+UTF8-Code: 48 (hex), 72(dez), 01001000 (bin)
+```
+
+Die beiden Zeichen aus dem Hexwert entsprechen jeweils 4 Bit des Bytes.<br>
+Damit lässt sich eine Bitfolge einfach in einen Hexfolge umrechnen. (und umgekehrt)
+
+```text
+  4    8
+0100'1000
+```
+---
+
+## Aufgabe Textzeichen als hexadezimaler Code
+
+Welchem hexadezimalen Code entspricht das durchbare Zeichen B?<br>
+Dies ist in einer Tabelle fix festgelegt.
+
+Lesen Sie dazu: [Erklärung zu ASCII und UTF](chapter/ascii_utf.html)
+
+---
+
+## Aufgabe HEX-Code entschlüsseln
+
+Erinnern Sie sich noch? ... bei Ceasar und Vigenere werden Buchstaben nach einer bestimmten Regel durch andere ersetzt. Eine Substitution wird auch bei UTF8 angewandt. Allerdings ist der Schlüssel (UTF8 Codiertabelle) allen zugänglich.. eine Verschlüsselung ist es nicht.<br>
+[Liste der UTF8 Codierung](https://www.utf8-chartable.de/)
+
+```text
+Verschlüsselung: UTF()
+Key: https://www.utf8-chartable.de/
+Verschlüsselter Text: 65 69 6e 65 73 63 68 69 63 6b 73
+ 61 6c 68 61 66 74 65 77 65 6c 74 76 6f 6c 6c 65 72 6d
+ 61 67 69 65 75 6e 64 64 75 6e 6b 6c 65 72 6d 61 65 63
+ 68 74 65
+
+Wie lautet der entschlüsselte Text?
+```
+::: {.callout-tip title="Lösung" collapse=true}
+eineschicksalhafteweltvollermagieunddunklermaechte
+:::
+
+
+## Digitale Verschlüsselung mit XOR
+
+Es wird Zeit für ein erstes digitales Verschlüsselungsverfahren.<br>
+Lesen und lösen Sie dazu: [XOR-Verschlüsselung](chapter/xor_encryption.ipynb)
