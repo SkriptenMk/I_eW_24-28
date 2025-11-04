@@ -160,4 +160,9 @@ eineschicksalhafteweltvollermagieunddunklermaechte
 ## Digitale Verschlüsselung mit XOR
 
 Es wird Zeit für ein erstes digitales Verschlüsselungsverfahren.<br>
-Lesen und lösen Sie dazu: [XOR-Verschlüsselung](chapter/xor_encryption.ipynb)
+Lesen und lösen Sie dazu:
+
+<a href="https://skriptenmk.github.io/I_eW_24-28/files/lektionen_hs25/251105_symetricencryption/chapter/xor_encryption.ipynb" 
+   download="xor_encryption.ipynb">
+   Notebook herunterladen
+</a>

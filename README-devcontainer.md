@@ -25,6 +25,9 @@ quarto preview
 #Render nach docs
 quarto render
 
+# nur eine Datei rendern (mit Ausführung der Code-Chunks)
+quarto render files/lektionen_hs25/251105_symetricencryption/symetricencryption.qmd --execute --no-cache
+
 #weitere Dateien nach docs kopieren (Dateien zum Download)
 python3 scripts/copy_notebooks_to_docs.py --ext ipynb,txt,pdf
 
