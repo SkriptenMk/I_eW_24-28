@@ -175,6 +175,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#aufgabe-xor-entschlüsselung-mit-python" id="toc-aufgabe-xor-entschlüsselung-mit-python" class="nav-link" data-scroll-target="#aufgabe-xor-entschlüsselung-mit-python">Aufgabe: XOR-Entschlüsselung mit Python</a></li>
   <li><a href="#aufgabe-eigenes-beispiel-mit-einem-schlüsselwort-mehrere-bytes" id="toc-aufgabe-eigenes-beispiel-mit-einem-schlüsselwort-mehrere-bytes" class="nav-link" data-scroll-target="#aufgabe-eigenes-beispiel-mit-einem-schlüsselwort-mehrere-bytes">Aufgabe: Eigenes Beispiel mit einem Schlüsselwort (mehrere Bytes)</a></li>
   <li><a href="#aufgabe-gegenseitig-verschlüsseln-und-entschlüsseln" id="toc-aufgabe-gegenseitig-verschlüsseln-und-entschlüsseln" class="nav-link" data-scroll-target="#aufgabe-gegenseitig-verschlüsseln-und-entschlüsseln">Aufgabe: Gegenseitig Verschlüsseln und Entschlüsseln</a></li>
+  <li><a href="#aufgabe-unvollständiger-schlüssel" id="toc-aufgabe-unvollständiger-schlüssel" class="nav-link" data-scroll-target="#aufgabe-unvollständiger-schlüssel">Aufgabe: Unvollständiger Schlüssel</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251105_symetricencryption/chapter/xor_encryption.ipynb" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="xor_encryption.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
@@ -301,7 +302,7 @@ XOR 0100'1011  (Bitfolge B -&gt; Schlüssel Buchstabe 'K' )
 <section id="aufgabe-xor-verschlüsselung-mit-python" class="level2">
 <h2 class="anchored" data-anchor-id="aufgabe-xor-verschlüsselung-mit-python">Aufgabe: XOR-Verschlüsselung mit Python</h2>
 <p>Zuerst definieren wir ein paar <strong>Hilfsfunktionen</strong>, um Texte in Bytes, Hex und Binärdarstellungen umzuwandeln und XOR anzuwenden.</p>
-<div id="28da4eb6" class="cell" data-execution_count="6">
+<div id="28da4eb6" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> text_to_bytes(text: <span class="bu">str</span>, encoding: <span class="bu">str</span> <span class="op">=</span> <span class="st">'utf-8'</span>) <span class="op">-&gt;</span> <span class="bu">bytes</span>:</span>
 <span id="cb2-2"><a href="#cb2-2"></a>    <span class="co">"""Wandelt einen Text in eine Folge von einzlenen Bytes (UTF-8) um."""</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a>    <span class="cf">return</span> text.encode(encoding)</span>
@@ -330,7 +331,7 @@ XOR 0100'1011  (Bitfolge B -&gt; Schlüssel Buchstabe 'K' )
 <p>Klartext in Bytes umwandeln und ausgeben<br> Ergebnis in HEX umwandeln und ausgeben<br> Ergebnis in Binär umwandeln und ausgeben<br></p>
 <p>Schlüssel in Bytes umwandeln und ausgeben<br> Ergebnis in HEX umwandeln und ausgeben<br> Ergebis in Binär umwandeln und ausgeben<br></p>
 <p>Klartext und Schlüssel per XOR verknüpfen<br> Ergebnis in Binär ausgeben<br> Ergebnis in HEX ausgeben<br></p>
-<div id="d6f77a63" class="cell" data-execution_count="9">
+<div id="d6f77a63" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Programmieren Sie die obige XOR Verschlüsselung in Python.</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="bu">print</span>(<span class="st">"Meine Verschüsselung"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -343,29 +344,57 @@ XOR 0100'1011  (Bitfolge B -&gt; Schlüssel Buchstabe 'K' )
 <section id="aufgabe-xor-entschlüsselung-mit-python" class="level2">
 <h2 class="anchored" data-anchor-id="aufgabe-xor-entschlüsselung-mit-python">Aufgabe: XOR-Entschlüsselung mit Python</h2>
 <p>Schaffen Sie es den Ablauf für die Entsschlüsselung zu definieren und umzusetzen?<br> <strong>Geben Sie alle Zwischenergebnisse, HEX, BIN, Text … aus.</strong></p>
-<div id="6acb6a12" class="cell">
+<div id="6acb6a12" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Programmieren Sie die zur vorangehenden Aufgabe passend XOR Entschlüsselung in Python.</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="bu">print</span>(<span class="st">"Meine Entschlüsselung"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Meine Entschlüsselung</code></pre>
+</div>
 </div>
 <hr>
 </section>
 <section id="aufgabe-eigenes-beispiel-mit-einem-schlüsselwort-mehrere-bytes" class="level2">
 <h2 class="anchored" data-anchor-id="aufgabe-eigenes-beispiel-mit-einem-schlüsselwort-mehrere-bytes">Aufgabe: Eigenes Beispiel mit einem Schlüsselwort (mehrere Bytes)</h2>
 <p>Implementieren Sie eine eigenes Beispiel mit einem KEY aus mehreren Buchstaben.<br> Die Methode xor_bytes wird den Schlüssel über den Text <strong>zyklisch wiederholen</strong>. <strong>Geben Sie alle Zwischenergebnisse, HEX, BIN, Text … aus.</strong></p>
-<div id="3f4bc862" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">## XOR-Verschlüsselung mit Python</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="bu">print</span>(<span class="st">"Eingenes Beispiel"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="3f4bc862" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">## XOR-Verschlüsselung mit Python</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="bu">print</span>(<span class="st">"Eingenes Beispiel"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Eingenes Beispiel</code></pre>
+</div>
 </div>
 <hr>
 </section>
 <section id="aufgabe-gegenseitig-verschlüsseln-und-entschlüsseln" class="level2">
 <h2 class="anchored" data-anchor-id="aufgabe-gegenseitig-verschlüsseln-und-entschlüsseln">Aufgabe: Gegenseitig Verschlüsseln und Entschlüsseln</h2>
 <p>Tauschen Sie mit einem Partner einen Schlüssel aus.<br> Verschlüsseln Sie einen Text und schicken Sie nur den verschlüsselten Text.<br> Der Partner soll den Text mit dem Schlüssel wieder entschlüsseln.<br> Geben Sie alle Zwischenergebnisse, HEX, BIN, Text … aus.</p>
-<div id="93a2a59b" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Partenerarbeit</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="bu">print</span>(<span class="st">"Partenerarbeit"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="93a2a59b" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Partenerarbeit</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="bu">print</span>(<span class="st">"Partenerarbeit"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Partenerarbeit</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="aufgabe-unvollständiger-schlüssel" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-unvollständiger-schlüssel">Aufgabe: Unvollständiger Schlüssel</h2>
+<p>Idee:</p>
+<ul>
+<li>Bob und Anne haben eine mit XOR verschlüsselte Nachricht ausgetauscht.</li>
+<li>Eve hat die ganze verschlüsselte Nachricht abgefangen.</li>
+<li>Zudem hat Eve auf verbotenem Weg vom Schlüssel der gesammt Länge 5, die ersten 4 Bytes stehlen können.</li>
+</ul>
+<p>Schaffen Sie es Eve zu unterstützen und die ganze Nachricht zu entschlüsseln?</p>
+<ul>
+<li>Verschlüsselte Nachricht (HEX): 1f040215000d0b16041c1d03030c1b1c1d11141e09001d08061c1a1f021a01031404000f1f050706</li>
+<li>Bekannter Teil des Schlüssels (UTF8), 4 von 5 Buchstaben, der letzte Buchstabe fehlt: <strong>hmpa</strong></li>
+</ul>
+<div id="9f42f8de" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># hack the code</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="bu">print</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>&lt;function print&gt;</code></pre>
 </div>
 </div>
 
