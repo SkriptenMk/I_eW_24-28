@@ -27,13 +27,20 @@ Sie konnten bereits Erfahrungen mit den beiden Verfahren **Ceasar-** und **Viege
 ```text
 Verschlüsselung: Ceasar
 Alphabet: abcdefghijklmnopqrstuvwxyz
-Key: 7
+Key: 5
 Verschlüsselter Text: fqxjwfltsfzkijwoflijnsjsgqfzjsxyjnsknsijy
 
 Wie lautet der entschlüsselte Text?
 ```
 ::: {.callout-tip title="Lösung" collapse=true}
 alseragonaufderjagdeinenblauensteinfindet
+
+abcdefghijklmnopqrstuvwxyz
+12345abcdefghijklmnopqrstuvwxyz
+vwxyz
+
+fqxjwflts...
+alseragon --> als eragon
 :::
 
 ---
@@ -158,6 +165,8 @@ eineschicksalhafteweltvollermagieunddunklermaechte
 
 
 ## Digitale Verschlüsselung mit XOR
+
+<h5 id="digitale-verschluesselung-mit-xor"></h5>
 
 Es wird Zeit für ein erstes digitales Verschlüsselungsverfahren.<br>
 Lesen und lösen Sie dazu:

@@ -165,15 +165,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#was-ist-xor" id="toc-was-ist-xor" class="nav-link active" data-scroll-target="#was-ist-xor">Was ist XOR?</a></li>
-  <li><a href="#xor-verschlüsselung-von-hand-beispiel" id="toc-xor-verschlüsselung-von-hand-beispiel" class="nav-link" data-scroll-target="#xor-verschlüsselung-von-hand-beispiel">XOR-Verschlüsselung von Hand (Beispiel)</a></li>
-  <li><a href="#xor-entschüsselung-von-hand-beispiel" id="toc-xor-entschüsselung-von-hand-beispiel" class="nav-link" data-scroll-target="#xor-entschüsselung-von-hand-beispiel">XOR-Entschüsselung von Hand (Beispiel)</a></li>
-  <li><a href="#aufgabe-xor-entschlüsselung-von-hand" id="toc-aufgabe-xor-entschlüsselung-von-hand" class="nav-link" data-scroll-target="#aufgabe-xor-entschlüsselung-von-hand">Aufgabe: XOR-Entschlüsselung von Hand</a></li>
-  <li><a href="#aufgabe-xor-verschlüsselung-mit-python" id="toc-aufgabe-xor-verschlüsselung-mit-python" class="nav-link" data-scroll-target="#aufgabe-xor-verschlüsselung-mit-python">Aufgabe: XOR-Verschlüsselung mit Python</a>
-  <ul class="collapse">
-  <li><a href="#anwenden" id="toc-anwenden" class="nav-link" data-scroll-target="#anwenden">Anwenden:</a></li>
-  </ul></li>
-  <li><a href="#aufgabe-xor-entschlüsselung-mit-python" id="toc-aufgabe-xor-entschlüsselung-mit-python" class="nav-link" data-scroll-target="#aufgabe-xor-entschlüsselung-mit-python">Aufgabe: XOR-Entschlüsselung mit Python</a></li>
-  <li><a href="#aufgabe-eigenes-beispiel-mit-einem-schlüsselwort-mehrere-bytes" id="toc-aufgabe-eigenes-beispiel-mit-einem-schlüsselwort-mehrere-bytes" class="nav-link" data-scroll-target="#aufgabe-eigenes-beispiel-mit-einem-schlüsselwort-mehrere-bytes">Aufgabe: Eigenes Beispiel mit einem Schlüsselwort (mehrere Bytes)</a></li>
+  <li><a href="#xor-verschlüsselung" id="toc-xor-verschlüsselung" class="nav-link" data-scroll-target="#xor-verschlüsselung">XOR-Verschlüsselung</a></li>
+  <li><a href="#xor-entschlüsselung" id="toc-xor-entschlüsselung" class="nav-link" data-scroll-target="#xor-entschlüsselung">XOR-Entschlüsselung</a></li>
+  <li><a href="#aufgabe-entschlüsseln-sie-die-nachricht-von-hand" id="toc-aufgabe-entschlüsseln-sie-die-nachricht-von-hand" class="nav-link" data-scroll-target="#aufgabe-entschlüsseln-sie-die-nachricht-von-hand">Aufgabe: Entschlüsseln Sie die Nachricht von Hand</a></li>
+  <li><a href="#aufgabe-verschlüsselte-nachricht-austauschen" id="toc-aufgabe-verschlüsselte-nachricht-austauschen" class="nav-link" data-scroll-target="#aufgabe-verschlüsselte-nachricht-austauschen">Aufgabe: Verschlüsselte Nachricht austauschen</a></li>
+  <li><a href="#xor-verschlüsselung-mit-python" id="toc-xor-verschlüsselung-mit-python" class="nav-link" data-scroll-target="#xor-verschlüsselung-mit-python">XOR-Verschlüsselung mit Python</a></li>
+  <li><a href="#aufgabe-xor-verschlüsselung-mit-python-selber-anwenden" id="toc-aufgabe-xor-verschlüsselung-mit-python-selber-anwenden" class="nav-link" data-scroll-target="#aufgabe-xor-verschlüsselung-mit-python-selber-anwenden">Aufgabe: XOR-Verschlüsselung mit Python selber anwenden</a></li>
+  <li><a href="#aufgabe-xor-entschlüsselung-mit-python-selber-anwenden" id="toc-aufgabe-xor-entschlüsselung-mit-python-selber-anwenden" class="nav-link" data-scroll-target="#aufgabe-xor-entschlüsselung-mit-python-selber-anwenden">Aufgabe: XOR-Entschlüsselung mit Python selber anwenden</a></li>
+  <li><a href="#aufgabe-eigenes-beispiel-mit-einem-schlüsselwort" id="toc-aufgabe-eigenes-beispiel-mit-einem-schlüsselwort" class="nav-link" data-scroll-target="#aufgabe-eigenes-beispiel-mit-einem-schlüsselwort">Aufgabe: Eigenes Beispiel mit einem Schlüsselwort</a></li>
   <li><a href="#aufgabe-gegenseitig-verschlüsseln-und-entschlüsseln" id="toc-aufgabe-gegenseitig-verschlüsseln-und-entschlüsseln" class="nav-link" data-scroll-target="#aufgabe-gegenseitig-verschlüsseln-und-entschlüsseln">Aufgabe: Gegenseitig Verschlüsseln und Entschlüsseln</a></li>
   <li><a href="#aufgabe-unvollständiger-schlüssel" id="toc-aufgabe-unvollständiger-schlüssel" class="nav-link" data-scroll-target="#aufgabe-unvollständiger-schlüssel">Aufgabe: Unvollständiger Schlüssel</a></li>
   </ul>
@@ -202,18 +201,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>In diesem Jupyter Notebook wird die <strong>XOR-Verschlüsselung</strong> erklärt und angewendet:</p>
-<ol type="1">
+<ul>
+<li><ol type="1">
 <li>XOR-Idee verstehen</li>
-<li><strong>XOR von Hand</strong> an einem einfachen Beispiel nachvollziehen</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li><strong>XOR von Hand</strong> an einem einfachen Beispiel nachvollziehen<br></li>
+</ol></li>
+<li><ol start="3" type="1">
 <li><strong>XOR mit Python</strong> programmieren</li>
+</ol></li>
+<li><ol start="4" type="1">
 <li>Klartext als <strong>HEX</strong> und <strong>BIN</strong> darstellen</li>
+</ol></li>
+<li><ol start="5" type="1">
 <li>Schlüssel als <strong>BIN</strong> zeigen</li>
+</ol></li>
+<li><ol start="6" type="1">
 <li>XOR anwenden und Ergebnis als <strong>HEX</strong> ausgeben</li>
-</ol>
-<p>Alle Beispiele verwenden einfache Texte und kleine Schlüssel, damit man den Vorgang gut nachvollziehen kann.</p>
+</ol></li>
+</ul>
 <section id="was-ist-xor" class="level2">
 <h2 class="anchored" data-anchor-id="was-ist-xor">Was ist XOR?</h2>
-<p>XOR (“exclusive or”) ist eine <strong>logische Verknüpfung</strong> auf Bit-Ebene.<br> Sie kennen die Addition von zwei Zahlen 1+2=3<br> XOR wird nicht auf zwei dezimale Zahlen sonderen auf zwei Bits angewandt:<br> Bit A und Bit B. <br> Beide können 0 oder 1 sein.</p>
+<p>Sie kennen die Addition von zwei Zahlen 1+2=3<br></p>
+<p>XOR (“exclusive or”) ist eine <strong>logische Verknüpfung</strong> auf Bit-Ebene.<br> XOR wird nicht auf zwei dezimale Zahlen sonderen auf zwei Bits (zBps. Bit-A und Bit-B) angewandt<br> Beide können 0 oder 1 sein.</p>
 <p>Regeln für XOR:</p>
 <table class="caption-top table">
 <thead>
@@ -246,131 +257,278 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<p>Und nun kann man XOR auch auf zwei Bitfolgen anwenden, wobei immer die beiden Bits an der gleichen Position verknüpft werden.</p>
-<p>Beispiel:</p>
-<pre><code>    0100'0100  (Bitfolge A -&gt; Buchstabe 'H')
-XOR 0100'1011  (Bitfolge B -&gt; Schlüssel Buchstabe 'K' )
---------
-    0000'1111  (Ergebnis, das muss nicht einem Buchstaben
-                entsprechen!)</code></pre>
+<p>Man kann XOR auch auf zwei Bitfolgen anwenden, wobei immer die beiden Bits an der gleichen Position verknüpft werden.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>Beispiel:</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a>    0100'0100  (Bitfolge A -&gt; Buchstabe 'H')</span>
+<span id="cb1-4"><a href="#cb1-4"></a>XOR 0100'1011  (Bitfolge B -&gt; Schlüssel Buchstabe 'K' )</span>
+<span id="cb1-5"><a href="#cb1-5"></a>--------</span>
+<span id="cb1-6"><a href="#cb1-6"></a>    0000'1111  (Ergebnis, das muss nicht einem Buchstaben entsprechen!)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="xor-verschlüsselung-von-hand-beispiel" class="level2">
-<h2 class="anchored" data-anchor-id="xor-verschlüsselung-von-hand-beispiel">XOR-Verschlüsselung von Hand (Beispiel)</h2>
+<section id="xor-verschlüsselung" class="level2">
+<h2 class="anchored" data-anchor-id="xor-verschlüsselung">XOR-Verschlüsselung</h2>
 <ul>
-<li><strong>Klartext:</strong> <code>INFORMATIK</code></li>
-<li><strong>Schlüssel:</strong> ‘BYTE’</li>
-<li>Kodierung UTF8 (ein Byte pro Buchstabe</li>
-</ul>
-<ol type="1">
-<li>Klartext in Binär umwandeln INFORMATIK = <code>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</code></li>
-<li>Schlüssel in Binär umwandeln BYTE = <code>01000010 01011001 01010100 01000101</code></li>
-<li>Klartext und Schlüssel aufreihen, Schlüssel wird über die Länge des Klartexts wiederholt: <code>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</code> <code>01000010 01011001 01010100 01000101 01000010 01011001 01010100 01000101 01000010 01011001</code></li>
-<li>XOR bitweise anwenden <code>00001011 00010111 00010010 00001010 00010000 00010100 00010101 00010001 00001011 00010010</code> ACHTUNG : Die Bytes des Ergebnisses entsprechen nicht unbedingt druckbaren Zeichen! Man notiert das Ergebnis bin oder kompakter in HEX: <code>0B 17 12 0A 10 14 15 11 0B 12</code></li>
-</ol>
-</section>
-<section id="xor-entschüsselung-von-hand-beispiel" class="level2">
-<h2 class="anchored" data-anchor-id="xor-entschüsselung-von-hand-beispiel">XOR-Entschüsselung von Hand (Beispiel)</h2>
-<p><strong>Prinzip der Entschlüsselung:</strong><br> - Wenn man ein Bit mit einem Schlüsselbit per XOR verknüpft, kann man mit <strong>demselben Schlüssel</strong> wieder zurückrechnen.<br> - Also: <code>(Klartext XOR Schlüssel) XOR Schlüssel = Klartext</code>.</p>
-<ul>
-<li><strong>Verschlüsselt:</strong> <code>0B 17 12 0A 10 14 15 11 0B 12</code></li>
-<li><strong>Schlüssel:</strong> ‘BYTE’</li>
+<li><strong>Klartext:</strong> <em>INFORMATIK</em></li>
+<li><strong>Schlüssel:</strong> <em>BYTE</em></li>
 <li>Kodierung UTF8 (ein Byte pro Buchstabe)</li>
 </ul>
 <ol type="1">
-<li>Verschlüsselten Text in Binär umwandeln <code>0B 17 12 0A 10 14 15 11 0B 12</code> = <code>00001011 00010111 00010010 00001010 00010000 00010100 00010101 00010001 00001011 00010010</code></li>
-<li>Schlüssel in Binär umwandeln BYTE = <code>01000010 01011001 01010100 01000101</code></li>
-<li>Verschlüsselten Text und Schlüssel aufreihen, Schlüssel wird über die Länge des verschlüsselten Texts wiederholt: <code>00001011 00010111 00010010 00001010 00010000 00010100 00010101 00010001 00001011 00010010</code> <code>01000010 01011001 01010100 01000101 01000010 01011001 01010100 01000101 01000010 01011001</code></li>
-<li>XOR bitweise anwenden <code>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</code></li>
-<li>Binär in Klartext umwandeln <code>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</code> = <code>INFORMATIK</code></li>
+<li><p>Klartext <em>ÌNFORMATIK</em> in Binär umwandeln</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>   I        N        F        O         R       M        A        T        I        K</span>
+<span id="cb2-2"><a href="#cb2-2"></a>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Schlüssel <em>BYTE</em> in Binär umwandeln</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>   B        Y        T        E</span>
+<span id="cb3-2"><a href="#cb3-2"></a>01000010 01011001 01010100 01000101</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Klartext und Schlüssel aufreihen, Schlüssel wird über die Länge des Klartexts wiederholt:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>   I        N        F        O          R        M        A        T        I        K</span>
+<span id="cb4-2"><a href="#cb4-2"></a>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</span>
+<span id="cb4-3"><a href="#cb4-3"></a>   B        Y        T        E          B        Y        T        E        B        Y</span>
+<span id="cb4-4"><a href="#cb4-4"></a>01000010 01011001 01010100 01000101 01000010 01011001 01010100 01000101 01000010 01011001</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Bei den beiden obigen Bit-Muster XOR bitweise anwenden</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</span>
+<span id="cb5-2"><a href="#cb5-2"></a>01000010 01011001 01010100 01000101 01000010 01011001 01010100 01000101 01000010 01011001</span>
+<span id="cb5-3"><a href="#cb5-3"></a>-----------------------------------------------------------------------------------------</span>
+<span id="cb5-4"><a href="#cb5-4"></a>00001011 00010111 00010010 00001010 00010000 00010100 00010101 00010001 00001011 00010010</span>
+<span id="cb5-5"><a href="#cb5-5"></a>   0B       17       12       0A       10       14       15       11       0B       12</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>ACHTUNG:</strong> Die Bytes des Ergebnisses entsprechen nicht unbedingt druckbaren Zeichen!<br> Man notiert das Ergebnis bin oder kompakter in HEX: <strong><em>0B 17 12 0A 10 14 15 11 0B 12</em></strong></p></li>
+</ol>
+</section>
+<section id="xor-entschlüsselung" class="level2">
+<h2 class="anchored" data-anchor-id="xor-entschlüsselung">XOR-Entschlüsselung</h2>
+<p><strong>Prinzip der Entschlüsselung:</strong><br> - Man wendet auf den <em>verschlüsselten Text</em> den <em>gleichen Schlüssel</em> an. <br> - Wenn man ein Bit des <em>verschlüsselten Texts</em> mit einem <em>Bit des Schlüssels</em> per <em>XOR verknüpft</em>, erhält man das Bit des Klartexts zurück. <br> - Also: <em>(Klartext XOR Schlüssel) XOR Schlüssel = Klartext</em></p>
+<ul>
+<li><strong>Verschlüsselt:</strong> <em>0B 17 12 0A 10 14 15 11 0B 12</em></li>
+<li><strong>Schlüssel:</strong> <em>BYTE</em></li>
+<li>Kodierung UTF8 (ein Byte pro Buchstabe)</li>
+</ul>
+<ol type="1">
+<li><p>Verschlüsselten Text in Binär umwandeln</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>   0B       17       12       0A       10       14       15       11       0B       12</span>
+<span id="cb6-2"><a href="#cb6-2"></a>00001011 00010111 00010010 00001010 00010000 00010100 00010101 00010001 00001011 00010010</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Schlüssel in Binär umwandeln</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href="#cb7-1"></a>     B       Y        T        E</span>
+<span id="cb7-2"><a href="#cb7-2"></a> 01000010 01011001 01010100 01000101</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Verschlüsselten Text und Schlüssel aufreihen.<br> Schlüssel wird über die Länge des verschlüsselten Texts wiederholt:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>    I        N        F        O        R        M        A        T        I        K</span>
+<span id="cb8-2"><a href="#cb8-2"></a>00001011 00010111 00010010 00001010 00010000 00010100 00010101 00010001 00001011 00010010</span>
+<span id="cb8-3"><a href="#cb8-3"></a>    B        Y        T        E        B        Y        T        E        B        Y</span>
+<span id="cb8-4"><a href="#cb8-4"></a>01000010 01011001 01010100 01000101 01000010 01011001 01010100 01000101 01000010 01011001</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Bei den beiden obigen Bit-Muster bitweise XOR anwenden</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href="#cb9-1"></a>00001011 00010111 00010010 00001010 00010000 00010100 00010101 00010001 00001011 00010010</span>
+<span id="cb9-2"><a href="#cb9-2"></a>01000010 01011001 01010100 01000101 01000010 01011001 01010100 01000101 01000010 01011001</span>
+<span id="cb9-3"><a href="#cb9-3"></a>-----------------------------------------------------------------------------------------</span>
+<span id="cb9-4"><a href="#cb9-4"></a>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Binär in Klartext umwandeln</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href="#cb10-1"></a>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</span>
+<span id="cb10-2"><a href="#cb10-2"></a>   I        N         F       O        R        M        A        T        I        K</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ol>
 <hr>
 </section>
-<section id="aufgabe-xor-entschlüsselung-von-hand" class="level2">
-<h2 class="anchored" data-anchor-id="aufgabe-xor-entschlüsselung-von-hand">Aufgabe: XOR-Entschlüsselung von Hand</h2>
+<section id="aufgabe-entschlüsseln-sie-die-nachricht-von-hand" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-entschlüsseln-sie-die-nachricht-von-hand">Aufgabe: Entschlüsseln Sie die Nachricht von Hand</h2>
 <ul>
-<li>Nehmen Sie ein Wort mit 6-8 Buchstaben</li>
-<li>Notieren Sie es als Grossbuchstaben</li>
-<li>Wandeln Sie es in Binär um: <a href="chapter/ascii_utf.html">UTF-8 Tabelle</a><br> Hinweis, Sie können in der Tabelle die Ansicht auf <em>binary</em> umstellen.</li>
-<li>Nehmen Sie einen Schlüssel mit 2-4 Buchstaben</li>
-<li>Wandeln Sie den Schlüssel in Binär um</li>
-<li>Verschlüsseln Sie den Text mit dem Schlüssel per XOR</li>
-<li>Notieren Sie das Ergebnis in HEX</li>
+<li><p>Verschlüsselt: <em>01 1B 04 0A 0D 0C</em></p></li>
+<li><p>Schlüssel: <em>EI</em></p></li>
+<li><p>Wie lautet der Klartext?</p></li>
 </ul>
-<p>Geben Sie den verschlüsselten Text und den Schlüssel an eine andere Person weiter.<br> Diese Person soll den Text per Hand wieder entschlüsseln.</p>
+<details>
+<summary>
+Lösung.. nicht spicken :-)
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href="#cb11-1"></a>    01      1B       04       0A       0D       0C</span>
+<span id="cb11-2"><a href="#cb11-2"></a>00000001 00011011 00000100 00001010 00001101 00001100</span>
+<span id="cb11-3"><a href="#cb11-3"></a>    E       I        E        I        E        I</span>
+<span id="cb11-4"><a href="#cb11-4"></a>01000101 01001001 01000101 01001001 01000101 01001001</span>
+<span id="cb11-5"><a href="#cb11-5"></a>-----------------------------------------------------</span>
+<span id="cb11-6"><a href="#cb11-6"></a>01000100 01010010 01000001 01000011 01001000 01000101</span>
+<span id="cb11-7"><a href="#cb11-7"></a>   D        R        A        C        H        E</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <hr>
 </section>
-<section id="aufgabe-xor-verschlüsselung-mit-python" class="level2">
-<h2 class="anchored" data-anchor-id="aufgabe-xor-verschlüsselung-mit-python">Aufgabe: XOR-Verschlüsselung mit Python</h2>
-<p>Zuerst definieren wir ein paar <strong>Hilfsfunktionen</strong>, um Texte in Bytes, Hex und Binärdarstellungen umzuwandeln und XOR anzuwenden.</p>
+<section id="aufgabe-verschlüsselte-nachricht-austauschen" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-verschlüsselte-nachricht-austauschen">Aufgabe: Verschlüsselte Nachricht austauschen</h2>
+<ul>
+<li><p>Verschlüsseln Sie ein Wort mit 6 Buchstaben und einem Schlüssel mit 3 Buchstaben.</p></li>
+<li><p>Notieren Sie das Ergebnis in HEX.</p></li>
+<li><p>Geben Sie Ihrem Lernpartner den verschlüsselten Text und den Schlüssel weiter.</p></li>
+<li><p>Kann er den Klartext wiederherstellen?</p></li>
+</ul>
+<hr>
+</section>
+<section id="xor-verschlüsselung-mit-python" class="level2">
+<h2 class="anchored" data-anchor-id="xor-verschlüsselung-mit-python">XOR-Verschlüsselung mit Python</h2>
+<ul>
+<li>Vorgegeben ist die <strong>Hilfsfunktion</strong> <em>xor_bytes</em>, die zwei Byte-Arrays XOR-verknüpft.</li>
+<li>Weiter zeigt das Beispiel, wie man eine Text zerlegt und in Hex- und Binärdarstellungen ausgibt.</li>
+</ul>
 <div id="28da4eb6" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> text_to_bytes(text: <span class="bu">str</span>, encoding: <span class="bu">str</span> <span class="op">=</span> <span class="st">'utf-8'</span>) <span class="op">-&gt;</span> <span class="bu">bytes</span>:</span>
-<span id="cb2-2"><a href="#cb2-2"></a>    <span class="co">"""Wandelt einen Text in eine Folge von einzlenen Bytes (UTF-8) um."""</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a>    <span class="cf">return</span> text.encode(encoding)</span>
-<span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="kw">def</span> bytes_to_hex(data: <span class="bu">bytes</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
-<span id="cb2-6"><a href="#cb2-6"></a>    <span class="co">"""Gibt eine Folge von Bytes als Hex-String zurück (z.B. '48 45 4C')."""</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a>    <span class="cf">return</span> <span class="st">' '</span>.join(<span class="ss">f'</span><span class="sc">{</span>b<span class="sc">:02X}</span><span class="ss">'</span> <span class="cf">for</span> b <span class="kw">in</span> data)</span>
-<span id="cb2-8"><a href="#cb2-8"></a></span>
-<span id="cb2-9"><a href="#cb2-9"></a></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="kw">def</span> bytes_to_bin(data: <span class="bu">bytes</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
-<span id="cb2-11"><a href="#cb2-11"></a>    <span class="co">"""Gibt Bytes als Binär-String zurück (z.B. '01001000 01000101')."""</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a>    <span class="cf">return</span> <span class="st">' '</span>.join(<span class="ss">f'</span><span class="sc">{</span>b<span class="sc">:08b}</span><span class="ss">'</span> <span class="cf">for</span> b <span class="kw">in</span> data)</span>
-<span id="cb2-13"><a href="#cb2-13"></a></span>
-<span id="cb2-14"><a href="#cb2-14"></a></span>
-<span id="cb2-15"><a href="#cb2-15"></a><span class="kw">def</span> xor_bytes(data: <span class="bu">bytes</span>, key: <span class="bu">bytes</span>) <span class="op">-&gt;</span> <span class="bu">bytes</span>:</span>
-<span id="cb2-16"><a href="#cb2-16"></a>    <span class="co">"""XORt eine Daten-Bytefolge mit einem Schlüssel (der ggf. wiederholt wird)."""</span></span>
-<span id="cb2-17"><a href="#cb2-17"></a>    <span class="cf">if</span> <span class="kw">not</span> key:</span>
-<span id="cb2-18"><a href="#cb2-18"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Schlüssel darf nicht leer sein'</span>)</span>
-<span id="cb2-19"><a href="#cb2-19"></a>    key_len <span class="op">=</span> <span class="bu">len</span>(key)</span>
-<span id="cb2-20"><a href="#cb2-20"></a>    <span class="cf">return</span> <span class="bu">bytes</span>(b <span class="op">^</span> key[i <span class="op">%</span> key_len] <span class="cf">for</span> i, b <span class="kw">in</span> <span class="bu">enumerate</span>(data))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Starten Sie den Block einmal und schauen Sie die Ausgaben an</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="co"># XOR-Funktion fuer zwei bytes-arrays definieren</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="kw">def</span> xor_bytes(data: <span class="bu">bytes</span>, key: <span class="bu">bytes</span>) <span class="op">-&gt;</span> <span class="bu">bytes</span>:</span>
+<span id="cb12-5"><a href="#cb12-5"></a>    <span class="co">"""XORt eine Daten-Bytefolge mit einem Schlüssel (der ggf. wiederholt wird)."""</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a>    <span class="cf">if</span> <span class="kw">not</span> key:</span>
+<span id="cb12-7"><a href="#cb12-7"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Schlüssel darf nicht leer sein'</span>)</span>
+<span id="cb12-8"><a href="#cb12-8"></a>    key_len <span class="op">=</span> <span class="bu">len</span>(key)</span>
+<span id="cb12-9"><a href="#cb12-9"></a>    <span class="cf">return</span> <span class="bu">bytes</span>(b <span class="op">^</span> key[i <span class="op">%</span> key_len] <span class="cf">for</span> i, b <span class="kw">in</span> <span class="bu">enumerate</span>(data))</span>
+<span id="cb12-10"><a href="#cb12-10"></a></span>
+<span id="cb12-11"><a href="#cb12-11"></a>text <span class="op">=</span> <span class="st">"HALLO"</span></span>
+<span id="cb12-12"><a href="#cb12-12"></a><span class="bu">print</span>(<span class="st">"text "</span> <span class="op">+</span> text)</span>
+<span id="cb12-13"><a href="#cb12-13"></a></span>
+<span id="cb12-14"><a href="#cb12-14"></a><span class="co"># text als einzelne Buchstaben ausgeben</span></span>
+<span id="cb12-15"><a href="#cb12-15"></a><span class="bu">print</span>(<span class="st">"text als Buchstaben:"</span>, <span class="st">" "</span>.join(text))</span>
+<span id="cb12-16"><a href="#cb12-16"></a></span>
+<span id="cb12-17"><a href="#cb12-17"></a><span class="co"># text in einzelne Bytes zerlegen</span></span>
+<span id="cb12-18"><a href="#cb12-18"></a>textInBytes <span class="op">=</span> text.encode(<span class="st">"utf-8"</span>)</span>
+<span id="cb12-19"><a href="#cb12-19"></a></span>
+<span id="cb12-20"><a href="#cb12-20"></a><span class="co"># textInBytes in HEX ausgeben</span></span>
+<span id="cb12-21"><a href="#cb12-21"></a><span class="bu">print</span>(<span class="st">"textInBytes in HEX:"</span>, <span class="st">" "</span>.join(<span class="ss">f"</span><span class="sc">{</span>x<span class="sc">:02X}</span><span class="ss">"</span> <span class="cf">for</span> x <span class="kw">in</span> textInBytes))</span>
+<span id="cb12-22"><a href="#cb12-22"></a></span>
+<span id="cb12-23"><a href="#cb12-23"></a><span class="co"># textInBytes in BIN ausgeben</span></span>
+<span id="cb12-24"><a href="#cb12-24"></a><span class="bu">print</span>(<span class="st">"textInBytes in BIN:"</span>, <span class="st">" "</span>.join(<span class="ss">f"</span><span class="sc">{</span>x<span class="sc">:08b}</span><span class="ss">"</span> <span class="cf">for</span> x <span class="kw">in</span> textInBytes))</span>
+<span id="cb12-25"><a href="#cb12-25"></a></span>
+<span id="cb12-26"><a href="#cb12-26"></a><span class="co"># textInBytes wieder zu Buchstaben zusammensetzen</span></span>
+<span id="cb12-27"><a href="#cb12-27"></a><span class="bu">print</span>(<span class="st">"textInBytes wieder zu Text:"</span>, textInBytes.decode(<span class="st">"utf-8"</span>))</span>
+<span id="cb12-28"><a href="#cb12-28"></a></span>
+<span id="cb12-29"><a href="#cb12-29"></a><span class="bu">print</span>()</span>
+<span id="cb12-30"><a href="#cb12-30"></a><span class="co">#schluessel als Buchstaben oder direkt als Bytes definieren</span></span>
+<span id="cb12-31"><a href="#cb12-31"></a>schluessel <span class="op">=</span> <span class="st">"ADE"</span></span>
+<span id="cb12-32"><a href="#cb12-32"></a>schluesselInBytes <span class="op">=</span> <span class="bu">bytes</span>([<span class="bn">0x41</span>, <span class="bn">0x44</span>, <span class="bn">0x45</span>])</span>
+<span id="cb12-33"><a href="#cb12-33"></a><span class="bu">print</span>(<span class="st">"schluessel als Buchstaben: "</span> <span class="op">+</span> schluessel)</span>
+<span id="cb12-34"><a href="#cb12-34"></a></span>
+<span id="cb12-35"><a href="#cb12-35"></a><span class="co"># schluesselInBytes in HEX ausgeben</span></span>
+<span id="cb12-36"><a href="#cb12-36"></a><span class="bu">print</span>(<span class="st">"schluessel in HEX:"</span>, <span class="st">" "</span>.join(<span class="ss">f"</span><span class="sc">{</span>x<span class="sc">:02X}</span><span class="ss">"</span> <span class="cf">for</span> x <span class="kw">in</span> schluesselInBytes))</span>
+<span id="cb12-37"><a href="#cb12-37"></a></span>
+<span id="cb12-38"><a href="#cb12-38"></a><span class="co"># schluesselInBytes in BIN ausgeben</span></span>
+<span id="cb12-39"><a href="#cb12-39"></a><span class="bu">print</span>(<span class="st">"schluessel in BIN:"</span>, <span class="st">" "</span>.join(<span class="ss">f"</span><span class="sc">{</span>x<span class="sc">:08b}</span><span class="ss">"</span> <span class="cf">for</span> x <span class="kw">in</span> schluesselInBytes))</span>
+<span id="cb12-40"><a href="#cb12-40"></a></span>
+<span id="cb12-41"><a href="#cb12-41"></a><span class="bu">print</span>()</span>
+<span id="cb12-42"><a href="#cb12-42"></a><span class="co"># XOR-Operation durchfuehren</span></span>
+<span id="cb12-43"><a href="#cb12-43"></a>xorResultAlsBytes <span class="op">=</span> xor_bytes(textInBytes, schluesselInBytes)</span>
+<span id="cb12-44"><a href="#cb12-44"></a></span>
+<span id="cb12-45"><a href="#cb12-45"></a><span class="co"># xorResultAlsBytes in BIN ausgeben</span></span>
+<span id="cb12-46"><a href="#cb12-46"></a><span class="bu">print</span>(<span class="st">"xorResultAlsBytes in BIN:"</span>, <span class="st">" "</span>.join(<span class="ss">f"</span><span class="sc">{</span>x<span class="sc">:08b}</span><span class="ss">"</span> <span class="cf">for</span> x <span class="kw">in</span> xorResultAlsBytes))</span>
+<span id="cb12-47"><a href="#cb12-47"></a></span>
+<span id="cb12-48"><a href="#cb12-48"></a><span class="co"># xorResultAlsBytes in HEX ausgeben</span></span>
+<span id="cb12-49"><a href="#cb12-49"></a><span class="bu">print</span>(<span class="st">"xorResultAlsBytes in HEX:"</span>, <span class="st">" "</span>.join(<span class="ss">f"</span><span class="sc">{</span>x<span class="sc">:02X}</span><span class="ss">"</span> <span class="cf">for</span> x <span class="kw">in</span> xorResultAlsBytes))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>text HALLO
+text als Buchstaben: H A L L O
+textInBytes in HEX: 48 41 4C 4C 4F
+textInBytes in BIN: 01001000 01000001 01001100 01001100 01001111
+textInBytes wieder zu Text: HALLO
+
+schluessel als Buchstaben: ADE
+schluessel in HEX: 41 44 45
+schluessel in BIN: 01000001 01000100 01000101
+
+xorResultAlsBytes in BIN: 00001001 00000101 00001001 00001101 00001011
+xorResultAlsBytes in HEX: 09 05 09 0D 0B</code></pre>
 </div>
-<section id="anwenden" class="level3">
-<h3 class="anchored" data-anchor-id="anwenden">Anwenden:</h3>
-<p>Sie fangen mit einem einfachen Beispiel an:<br> Klartext: ‘ERAGON’<br> Schlüssel: ‘S’<br> Wie lautet der verschlüsselte Text in HEX?</p>
-<p>Umsetzung in Python: (nur die Ideen, nicht die komplette Lösung) Klartext als Variable Schlüssel als Variable</p>
-<p>Klartext in Bytes umwandeln und ausgeben<br> Ergebnis in HEX umwandeln und ausgeben<br> Ergebnis in Binär umwandeln und ausgeben<br></p>
-<p>Schlüssel in Bytes umwandeln und ausgeben<br> Ergebnis in HEX umwandeln und ausgeben<br> Ergebis in Binär umwandeln und ausgeben<br></p>
-<p>Klartext und Schlüssel per XOR verknüpfen<br> Ergebnis in Binär ausgeben<br> Ergebnis in HEX ausgeben<br></p>
+</div>
+<hr>
+</section>
+<section id="aufgabe-xor-verschlüsselung-mit-python-selber-anwenden" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-xor-verschlüsselung-mit-python-selber-anwenden">Aufgabe: XOR-Verschlüsselung mit Python selber anwenden</h2>
+<p>Sie fangen mit einem einfachen Beispiel an:<br> Klartext: ‘ERAGON’<br> Schlüssel: ‘SIR’<br> Wie lautet der verschlüsselte Text in HEX?</p>
+<p>Vorgehen für Umsetzung in Python:</p>
+<ul>
+<li><p>Klartext als Variable definieren</p></li>
+<li><p>Klartext als einzelne Buchstaben ausgeben</p></li>
+<li><p>Klartext in Bytes umwandeln und ausgeben</p></li>
+<li><p>Klarext_In_Bytes in HEX umwandeln und ausgeben</p></li>
+<li><p>Klarext_In_Bytes in Binär umwandeln und ausgeben<br><br></p></li>
+<li><p>Schlüssel als Variable definieren</p></li>
+<li><p>Schlüssel als einzelne Buchstaben ausgeben</p></li>
+<li><p>Schlüssel in Bytes umwandeln und ausgeben</p></li>
+<li><p>Schlüssel_In_Bytes in HEX umwandeln und ausgeben</p></li>
+<li><p>Schlüssel_In_Bytes in Binär umwandeln und ausgeben<br><br></p></li>
+<li><p>Klartext und Schlüssel per XOR verknüpfen</p></li>
+<li><p>XOR-Ergebnis in Binär ausgeben</p></li>
+<li><p>XOR-Ergebnis in HEX ausgeben</p></li>
+</ul>
 <div id="d6f77a63" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Programmieren Sie die obige XOR Verschlüsselung in Python.</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="bu">print</span>(<span class="st">"Meine Verschüsselung"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Programmieren Sie das Beschriebene in Python.</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="bu">print</span>(<span class="st">"Meine Verschüsselung"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Meine Verschüsselung</code></pre>
 </div>
 </div>
+<details>
+<summary>
+Lösung.. nicht spicken :-)
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb16-1"><a href="#cb16-1"></a>text = "ERAGON"</span>
+<span id="cb16-2"><a href="#cb16-2"></a>print("text " + text)</span>
+<span id="cb16-3"><a href="#cb16-3"></a>print("text als Buchstaben:", " ".join(text))</span>
+<span id="cb16-4"><a href="#cb16-4"></a>textInBytes = text.encode("utf-8")</span>
+<span id="cb16-5"><a href="#cb16-5"></a>print("textInBytes in HEX:", " ".join(f"{x:02X}" for x in textInBytes))</span>
+<span id="cb16-6"><a href="#cb16-6"></a>print("textInBytes in BIN:", " ".join(f"{x:08b}" for x in textInBytes))</span>
+<span id="cb16-7"><a href="#cb16-7"></a></span>
+<span id="cb16-8"><a href="#cb16-8"></a>print()</span>
+<span id="cb16-9"><a href="#cb16-9"></a>schluessel = "SIR"</span>
+<span id="cb16-10"><a href="#cb16-10"></a>print("schluessel " + schluessel)</span>
+<span id="cb16-11"><a href="#cb16-11"></a>print("schluessel als Buchstaben:", " ".join(schluessel))</span>
+<span id="cb16-12"><a href="#cb16-12"></a>schluesselInBytes = schluessel.encode("utf-8")</span>
+<span id="cb16-13"><a href="#cb16-13"></a>print("schluesselInBytes in HEX:", " ".join(f"{x:02X}" for x in schluesselInBytes))</span>
+<span id="cb16-14"><a href="#cb16-14"></a>print("schluesselInBytes in BIN:", " ".join(f"{x:08b}" for x in schluesselInBytes))</span>
+<span id="cb16-15"><a href="#cb16-15"></a></span>
+<span id="cb16-16"><a href="#cb16-16"></a>print()</span>
+<span id="cb16-17"><a href="#cb16-17"></a># XOR-Operation durchfuehren</span>
+<span id="cb16-18"><a href="#cb16-18"></a>xorResultAlsBytes = xor_bytes(textInBytes, schluesselInBytes)</span>
+<span id="cb16-19"><a href="#cb16-19"></a>print("xorResultAlsBytes in BIN:", " ".join(f"{x:08b}" for x in xorResultAlsBytes))</span>
+<span id="cb16-20"><a href="#cb16-20"></a>print("xorResultAlsBytes in HEX:", " ".join(f"{x:02X}" for x in xorResultAlsBytes))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <hr>
 </section>
-</section>
-<section id="aufgabe-xor-entschlüsselung-mit-python" class="level2">
-<h2 class="anchored" data-anchor-id="aufgabe-xor-entschlüsselung-mit-python">Aufgabe: XOR-Entschlüsselung mit Python</h2>
+<section id="aufgabe-xor-entschlüsselung-mit-python-selber-anwenden" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-xor-entschlüsselung-mit-python-selber-anwenden">Aufgabe: XOR-Entschlüsselung mit Python selber anwenden</h2>
 <p>Schaffen Sie es den Ablauf für die Entsschlüsselung zu definieren und umzusetzen?<br> <strong>Geben Sie alle Zwischenergebnisse, HEX, BIN, Text … aus.</strong></p>
 <div id="6acb6a12" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Programmieren Sie die zur vorangehenden Aufgabe passend XOR Entschlüsselung in Python.</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="bu">print</span>(<span class="st">"Meine Entschlüsselung"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Programmieren Sie die zur vorangehenden Aufgabe passend XOR Entschlüsselung in Python.</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="bu">print</span>(<span class="st">"Meine Entschlüsselung"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3"></a></span>
+<span id="cb17-4"><a href="#cb17-4"></a>encryptionInBytes <span class="op">=</span> <span class="bu">bytes</span>([<span class="bn">0x16</span>, <span class="bn">0x1B</span>, <span class="bn">0x13</span>, <span class="bn">0x14</span>, <span class="bn">0x06</span>, <span class="bn">0x1C</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Meine Entschlüsselung</code></pre>
 </div>
 </div>
+<details>
+<summary>
+Lösung.. nicht spicken :-)
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb19-1"><a href="#cb19-1"></a>encryptionInBytes = bytes([0x16, 0x1B, 0x13, 0x14, 0x06, 0x1C])</span>
+<span id="cb19-2"><a href="#cb19-2"></a></span>
+<span id="cb19-3"><a href="#cb19-3"></a>print("encryptionInBytes in BIN:", " ".join(f"{x:08b}" for x in encryptionInBytes))</span>
+<span id="cb19-4"><a href="#cb19-4"></a></span>
+<span id="cb19-5"><a href="#cb19-5"></a>schluessel = "SIR"</span>
+<span id="cb19-6"><a href="#cb19-6"></a>schluesselInBytes = schluessel.encode("utf-8")</span>
+<span id="cb19-7"><a href="#cb19-7"></a>print("schluesselInBytes in BIN:", " ".join(f"{x:08b}" for x in schluesselInBytes))</span>
+<span id="cb19-8"><a href="#cb19-8"></a></span>
+<span id="cb19-9"><a href="#cb19-9"></a>decryptionInBytes = xor_bytes(encryptionInBytes, schluesselInBytes)</span>
+<span id="cb19-10"><a href="#cb19-10"></a>print("decryptionInBytes in BIN:", " ".join(f"{x:08b}" for x in decryptionInBytes))</span>
+<span id="cb19-11"><a href="#cb19-11"></a>print(decryptionInBytes.decode("utf-8"))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <hr>
 </section>
-<section id="aufgabe-eigenes-beispiel-mit-einem-schlüsselwort-mehrere-bytes" class="level2">
-<h2 class="anchored" data-anchor-id="aufgabe-eigenes-beispiel-mit-einem-schlüsselwort-mehrere-bytes">Aufgabe: Eigenes Beispiel mit einem Schlüsselwort (mehrere Bytes)</h2>
-<p>Implementieren Sie eine eigenes Beispiel mit einem KEY aus mehreren Buchstaben.<br> Die Methode xor_bytes wird den Schlüssel über den Text <strong>zyklisch wiederholen</strong>. <strong>Geben Sie alle Zwischenergebnisse, HEX, BIN, Text … aus.</strong></p>
+<section id="aufgabe-eigenes-beispiel-mit-einem-schlüsselwort" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-eigenes-beispiel-mit-einem-schlüsselwort">Aufgabe: Eigenes Beispiel mit einem Schlüsselwort</h2>
+<p>Implementieren Sie eine eigenes Beispiel mit einem KEY aus mehreren Buchstaben.<br> <strong>Geben Sie alle Zwischenergebnisse, HEX, BIN, Text … aus.</strong></p>
 <div id="3f4bc862" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">## XOR-Verschlüsselung mit Python</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="bu">print</span>(<span class="st">"Eingenes Beispiel"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="co">## XOR-Verschlüsselung mit Python</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="bu">print</span>(<span class="st">"Eigenes Beispiel"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Eingenes Beispiel</code></pre>
+<pre><code>Eigenes Beispiel</code></pre>
 </div>
 </div>
 <hr>
 </section>
 <section id="aufgabe-gegenseitig-verschlüsseln-und-entschlüsseln" class="level2">
 <h2 class="anchored" data-anchor-id="aufgabe-gegenseitig-verschlüsseln-und-entschlüsseln">Aufgabe: Gegenseitig Verschlüsseln und Entschlüsseln</h2>
-<p>Tauschen Sie mit einem Partner einen Schlüssel aus.<br> Verschlüsseln Sie einen Text und schicken Sie nur den verschlüsselten Text.<br> Der Partner soll den Text mit dem Schlüssel wieder entschlüsseln.<br> Geben Sie alle Zwischenergebnisse, HEX, BIN, Text … aus.</p>
+<p>Tauschen Sie mit einem Partner einen Schlüssel aus.<br> Verschlüsseln Sie einen Text und geben Sie Ihrem Partner das verschlüsselte Ergebniss als HEX-Bytes<br> encryptionInBytes = bytes([0x16, 0x1B, ….<br> Der Partner soll den Text mit dem Schlüssel wieder entschlüsseln.<br> Geben Sie alle Zwischenergebnisse, HEX, BIN, Text … aus.</p>
 <div id="93a2a59b" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Partenerarbeit</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="bu">print</span>(<span class="st">"Partenerarbeit"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># Partenerarbeit</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="bu">print</span>(<span class="st">"Partenerarbeit"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Partenerarbeit</code></pre>
 </div>
@@ -391,10 +549,11 @@ XOR 0100'1011  (Bitfolge B -&gt; Schlüssel Buchstabe 'K' )
 <li>Bekannter Teil des Schlüssels (UTF8), 4 von 5 Buchstaben, der letzte Buchstabe fehlt: <strong>hmpa</strong></li>
 </ul>
 <div id="9f42f8de" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># hack the code</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="bu">print</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>&lt;function print&gt;</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># hack the code</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>encryptionInBytes <span class="op">=</span> <span class="bu">bytes</span>.fromhex(<span class="st">"1f040215000d0b16041c1d03030c1b1c1d11141e09001d08061c1a1f021a01031404000f1f050706"</span>)</span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="bu">print</span>(<span class="st">"encryptionInBytes in HEX:"</span>, <span class="st">" "</span>.join(<span class="ss">f"</span><span class="sc">{</span>x<span class="sc">:02X}</span><span class="ss">"</span> <span class="cf">for</span> x <span class="kw">in</span> encryptionInBytes))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>encryptionInBytes in HEX: 1F 04 02 15 00 0D 0B 16 04 1C 1D 03 03 0C 1B 1C 1D 11 14 1E 09 00 1D 08 06 1C 1A 1F 02 1A 01 03 14 04 00 0F 1F 05 07 06</code></pre>
 </div>
 </div>
 

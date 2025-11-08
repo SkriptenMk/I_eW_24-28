@@ -19,4 +19,5 @@
   "workspaceFolder": "/workspace",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
   "remoteUser": "vscode"
+    "runArgs": ["--name", "devcon_I_eW_24-28"],   // setup container name 
 }
