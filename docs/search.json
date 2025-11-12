@@ -126,6 +126,34 @@
     "text": "Digitale Verschlüsselung mit XOR\n\n\nEs wird Zeit für ein erstes digitales Verschlüsselungsverfahren. Lesen und lösen Sie dazu:\n Notebook herunterladen"
   },
   {
+    "objectID": "files/lektionen_hs25/251105_symetricencryption/symetricencryption.html#verfahren-der-digitalen-verschlüsselung",
+    "href": "files/lektionen_hs25/251105_symetricencryption/symetricencryption.html#verfahren-der-digitalen-verschlüsselung",
+    "title": "13 Symetric encryption",
+    "section": "Verfahren der digitalen Verschlüsselung",
+    "text": "Verfahren der digitalen Verschlüsselung\nDie Techniken der digitalen Verschlüsselung lassen sich unter Transformation als Oberbegriff zusammenfassen.\nEine Transformation kann aus diesens Schritten bestehen:\n\nSubstitution : Ersetzen von Symbolen durch andere Symbole\nTransposition/Permutation : Vertauschung von Zeichen oder Bits\nDiffusion : Streuung der Klartext-Information über viele Bits im Geheimtext\nKonfusion : Komplexe, nichtlineare Beziehung zwischen Schlüssel und Geheimtext\nRundensystem : Mehrfache Wiederholung von Substitution und Permutation\nKey Schedule : Algorithmus zur Ableitung von Rundenschlüsseln :\nBlockchiffre | Verschlüsselt Daten blockweise (z. B. 128 Bit bei AES)\nStromchiffre | Verschlüsselt Bit für Bit oder Byte für Byte\n\n\nSubstitution\n\nUTF8 wendet Substituation an, es ersetzt ein Buchstabe durch eine Bitfolge\nXOR wendet Substitution an, es ersetzt die Bits auf Grund des Schlüssel durch andere Bits.\n\n\n\nTransposition/Permutation\nA = 01000001 key = 3\nMeine eigene Regel:\n\nBuchstabencodierung UTF8, nur 7-Bit Buchstaben.\nRechtes, fehlende Bit mit 1 auffüllen\nTeile die Bitfolge in Gruppen von 3 bit. Ergänze die Folge mit 1, falls es nicht aufgeht.\nInnerhalb jeder 3er-Gruppe vertauschen wir die Positionen nach Muster (1,2,3) -&gt; (3,1,2)\n\n010 000 01 A\n010 000 011  auffüllen\n001 000 101 (1,2,3) -&gt; (3,1,2)\n\nAuflösen:\n001 000 101 \n010 000 011 (1,2,3) -&gt; (3,2,1)\n010 000 01  A"
+  },
+  {
+    "objectID": "files/lektionen_hs25/251105_symetricencryption/symetricencryption.html#aufgabe-anwenden-transponieren",
+    "href": "files/lektionen_hs25/251105_symetricencryption/symetricencryption.html#aufgabe-anwenden-transponieren",
+    "title": "13 Symetric encryption",
+    "section": "Aufgabe Anwenden Transponieren",
+    "text": "Aufgabe Anwenden Transponieren\n\nWenden Sie die obige Transposition auf einen 4 stellige Dezimale Zahl an.\nWandeln Sie die Zahl mit UTF8 in eine binäre Zahlenfolge um. (ergibt 4 Bytes)\nTransponieren Sie mit dem key=3 gemäss obiger Regel\nTauschen Sie das Ergebnis mit Ihrem Lernpartner aus, findet er die ursprüngliche Zahl heraus?"
+  },
+  {
+    "objectID": "files/lektionen_hs25/251105_symetricencryption/symetricencryption.html#aufgabe-anwenden-eines-mehrfachen-transponieren",
+    "href": "files/lektionen_hs25/251105_symetricencryption/symetricencryption.html#aufgabe-anwenden-eines-mehrfachen-transponieren",
+    "title": "13 Symetric encryption",
+    "section": "Aufgabe Anwenden eines mehrfachen Transponieren",
+    "text": "Aufgabe Anwenden eines mehrfachen Transponieren\n\nausprobieren: Permutation-Demo\nanalysieren Sie die Schritte\nnotieren Sie die Schritte auf.\nCodieren Sie einen von Ihnen gewählten Buchstaben und lassen Sie ihn von Ihrem Lernpartner decodieren."
+  },
+  {
+    "objectID": "files/lektionen_hs25/251105_symetricencryption/symetricencryption.html#anwendung-in-der-praxis-mit-beispiel-aes-verschlüsselung",
+    "href": "files/lektionen_hs25/251105_symetricencryption/symetricencryption.html#anwendung-in-der-praxis-mit-beispiel-aes-verschlüsselung",
+    "title": "13 Symetric encryption",
+    "section": "Anwendung in der Praxis mit Beispiel AES Verschlüsselung",
+    "text": "Anwendung in der Praxis mit Beispiel AES Verschlüsselung\nAES ist ein modernes Verschlüsselungsverfahren. AES verschlüsselt, indem es den Klartext blockweise (128 Bit) in mehreren Runden mit dem Schlüssel verarbeitet. In jeder Runde passieren vier Schritte:\n\nSubstitution: SubBytes -&gt; jedes Byte wird durch die S-Box ersetzt\nPermutation: ShiftRows -&gt; die Zeilen werden verschoben\nDiffusion: MixColumns -&gt; die Spalten werden gemischt.\nAddRoundKey → der Block wird mit dem Rundenschlüssel per XOR verknüpft.\nNach 10 (12 / 14) Runden entsteht der Geheimtext."
+  },
+  {
     "objectID": "files/lektionen_hs25/250924_break_vienere/break.html",
     "href": "files/lektionen_hs25/250924_break_vienere/break.html",
     "title": "11 Breaking the Vigenère Cipher",
