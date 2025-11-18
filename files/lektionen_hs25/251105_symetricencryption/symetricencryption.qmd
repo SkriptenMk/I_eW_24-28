@@ -163,17 +163,21 @@ Wie lautet der entschlüsselte Text?
 eineschicksalhafteweltvollermagieunddunklermaechte
 :::
 
+<h5 id="digitale-verschluesselung-mit-xor"></h5>
 
 ## Digitale Verschlüsselung mit XOR
-
-<h5 id="digitale-verschluesselung-mit-xor"></h5>
 
 Es wird Zeit für ein erstes digitales Verschlüsselungsverfahren.<br>
 Lesen und lösen Sie dazu:
 
+<a href="https://skriptenmk.github.io/I_eW_24-28/files/lektionen_hs25/251105_symetricencryption/chapter/HEXtoBIN.txt" 
+   download="HEXtoBIN.txt">
+   Umrechung HEX to BIN herunterladen
+</a>
+
 <a href="https://skriptenmk.github.io/I_eW_24-28/files/lektionen_hs25/251105_symetricencryption/chapter/xor_encryption.ipynb" 
    download="xor_encryption.ipynb">
-   Notebook herunterladen
+   Notebook zu XOR herunterladen
 </a>
 
 ## Verfahren der digitalen Verschlüsselung
@@ -194,7 +198,7 @@ Eine Transformation kann aus diesens Schritten bestehen:
 
 ### Substitution
 
-- UTF8 wendet Substituation an, es ersetzt ein Buchstabe durch eine Bitfolge
+- UTF8 wendet Substituation an, es ersetzt anhand der UTF8 Code-Tabled ein Buchstabe durch eine Bitfolge
 - **XOR** wendet Substitution an, es ersetzt die Bits auf Grund des Schlüssel durch andere Bits.
 
 ### Transposition/Permutation
@@ -223,7 +227,8 @@ Auflösen:
 ## Aufgabe Anwenden Transponieren
 
 - Wenden Sie die obige Transposition auf einen 4 stellige Dezimale Zahl an.
-- Wandeln Sie die Zahl mit UTF8 in eine binäre Zahlenfolge um. (ergibt 4 Bytes)
+- Wandeln Sie die Zifferen der Zahl mit UTF8 in eine binäre Zahlenfolge um. (ergibt 4 Bytes)<br/>
+  [Liste der UTF8 Codierung](https://www.utf8-chartable.de/)
 - Transponieren Sie mit dem key=3 gemäss obiger Regel
 - Tauschen Sie das Ergebnis mit Ihrem Lernpartner aus, findet er die ursprüngliche Zahl heraus?
 
@@ -232,10 +237,15 @@ Auflösen:
 - ausprobieren: [Permutation-Demo](chapter/permutation_demo.html)
 - analysieren Sie die Schritte
 - notieren Sie die Schritte auf.
-
-- Codieren Sie einen von Ihnen gewählten Buchstaben und lassen Sie ihn von Ihrem Lernpartner decodieren.
+- Codieren Sie einen von Ihnen gewählten Buchstaben.
+     - Buchstabe mit UTF8 Tabelle in Bits umwandeln.
+     - In der Permutations-Demo codieren, eigenen Schlüssel und Anzahl Runden wählen.
+     - Mit Lernpartner Codierten Code, Schlüssel und Anzahl Runden austauschen.
+     - Kann Ihr Lernpartner den richtigen Buchstaben herausfinden?
 
 ## Anwendung in der Praxis mit Beispiel AES Verschlüsselung
+
+### AES Verfahren
 
 **AES** ist ein modernes Verschlüsselungsverfahren.<br>
 AES verschlüsselt, indem es den Klartext blockweise (128 Bit) in mehreren Runden mit dem Schlüssel verarbeitet.<br>
@@ -246,3 +256,24 @@ In jeder Runde passieren vier Schritte:
 - Diffusion: MixColumns -> die Spalten werden gemischt.
 - AddRoundKey → der Block wird mit dem Rundenschlüssel per XOR verknüpft.
 - Nach 10 (12 / 14) Runden entsteht der Geheimtext.
+
+### AES Verfahren Demo
+
+Das sind einige Schritte. Die [_AWS web demo_](https://jrvidal.github.io/aes-demo/) zeigt das anschaulich.
+
+- Link anklicken, Random wählen, die Schritte beobachten.
+- Das Resultat auch wieder dekodieren.
+
+Eine [AES-Animation](https://legacy.cryptool.org/en/cto/aes-animation), die das Verfahren versucht zu verdeutlichen.
+
+- Probieren Sie es aus.
+
+### AES selber anwenden
+
+Laden Sie das Notebook herunter, um AES praktisch anzuwenden.<br>
+Lesen und lösen Sie:
+
+<a href="https://skriptenmk.github.io/I_eW_24-28/files/lektionen_hs25/251105_symetricencryption/chapter/aes_encryption.ipynb" 
+   download="aes_encryption.ipynb">
+   Notebook zu AES herunterladen
+</a>

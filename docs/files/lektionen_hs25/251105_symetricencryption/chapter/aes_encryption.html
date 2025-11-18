@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Autumn Term Materials 2025/2026 – Computer Science Course Materials for School Year 2025/26 (2eW)</title>
+<title>AES-Verschlüsselung anwenden – Computer Science Course Materials for School Year 2025/26 (2eW)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,29 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-5d254f1e278c2921d96b26102a150bb1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-985b28ec037abca086789749d85d0073.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-5d254f1e278c2921d96b26102a150bb1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap-985b28ec037abca086789749d85d0073.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,67 +103,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -140,7 +115,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../../index.html">
     <span class="navbar-title">Computer Science Course Materials for School Year 2025/26 (2eW)</span>
     </a>
   </div>
@@ -151,7 +126,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -160,15 +135,15 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-materials">    
         <li>
-    <a class="dropdown-item" href="../files/HS_24.html">
+    <a class="dropdown-item" href="../../../../files/HS_24.html">
  <span class="dropdown-text">Autumn Term 2024/2025</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../files/FS_25.html">
+    <a class="dropdown-item" href="../../../../files/FS_25.html">
  <span class="dropdown-text">Spring Term 2025</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../files/HS_25.html">
+    <a class="dropdown-item" href="../../../../files/HS_25.html">
  <span class="dropdown-text">Autumn Term 2025/2026</span></a>
   </li>  
     </ul>
@@ -185,14 +160,28 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="HS_25.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#aes-online-demo" id="toc-aes-online-demo" class="nav-link active" data-scroll-target="#aes-online-demo">AES Online Demo</a>
+  <ul class="collapse">
+  <li><a href="#erklärungen-zur-demo" id="toc-erklärungen-zur-demo" class="nav-link" data-scroll-target="#erklärungen-zur-demo">Erklärungen zur Demo:</a></li>
+  <li><a href="#aufgabe-aes-online-anwenden" id="toc-aufgabe-aes-online-anwenden" class="nav-link" data-scroll-target="#aufgabe-aes-online-anwenden">Aufgabe: AES Online anwenden</a></li>
+  </ul></li>
+  <li><a href="#aes-mit-python-anwenden" id="toc-aes-mit-python-anwenden" class="nav-link" data-scroll-target="#aes-mit-python-anwenden">AES mit Python anwenden</a>
+  <ul class="collapse">
+  <li><a href="#aufgabe-aes-mit-python-anwenden" id="toc-aufgabe-aes-mit-python-anwenden" class="nav-link" data-scroll-target="#aufgabe-aes-mit-python-anwenden">Aufgabe : AES mit Python anwenden</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251105_symetricencryption/chapter/aes_encryption.ipynb" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="aes_encryption.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Autumn Term Materials 2025/2026</h1>
+<h1 class="title">AES-Verschlüsselung anwenden</h1>
 </div>
 
 
@@ -209,281 +198,138 @@ window.Quarto = {
 </header>
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-    <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-      <option value="" disabled="" selected="" hidden="">Order By</option>
-      <option value="index" data-direction="asc">Default</option>
-      <option value="listing-date-sort" data-direction="asc">
-        Date - Oldest
-      </option>
-      <option value="listing-date-sort" data-direction="desc">
-        Date - Newest
-      </option>
-      <option value="listing-title-sort" data-direction="asc">
-        Title
-      </option>
-      <option value="listing-author" data-direction="asc">
-        Author
-      </option>
-    </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
+<p>In diesem Jupyter Notebook wird die <strong>AES-Verschlüsselung</strong> angewendet:</p>
+<ul>
+<li><ol type="1">
+<li>AES Online anwenden</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>AES mit Python anwenden</li>
+</ol></li>
+</ul>
+<section id="aes-online-demo" class="level2">
+<h2 class="anchored" data-anchor-id="aes-online-demo">AES Online Demo</h2>
+<p>Es gibt verschiedene Online-Demos, die die AES-Verschlüsselung anschaulich erklären und zeigen.<br> Hier eine davon:</p>
+<p>https://demo.kenhaggerty.com/demos/aescipher</p>
+<section id="erklärungen-zur-demo" class="level3">
+<h3 class="anchored" data-anchor-id="erklärungen-zur-demo">Erklärungen zur Demo:</h3>
+<ul>
+<li>Der Key muss geheim gehalten werden. Nur Sender um Empfänger dürfen ihn kennen.</li>
+<li>Der Key hat üblicherweise eine Länge von 128, 192 oder 256 Bit</li>
+<li>Der Key muss nicht ein lesbarer Text sein. Oft ist er eine Zufällige HEX-Folge</li>
+<li>BASE64 erlaubt es diese HEX-Folge in lesbare Zeichen zu kodieren, war die Übermittlung zBsp per Email vereinfacht.</li>
+<li>IV = Initialisierungsvektor, verhindert, dass bei gleichem Key und gleichem Plain-Text das Ergebnis gleich bleibt.<br> Der IV darf mit der verschlüsselten Nachricht übermittelt werden.</li>
+</ul>
+<hr>
+</section>
+<section id="aufgabe-aes-online-anwenden" class="level3">
+<h3 class="anchored" data-anchor-id="aufgabe-aes-online-anwenden">Aufgabe: AES Online anwenden</h3>
+<ul>
+<li><p>Verwenden Sie die oben angegebene Online-Demo</p></li>
+<li><p>Lässen Sie mit Refresh einen Key und IV generieren</p></li>
+<li><p>Schreiben Sie einen kurzen Klartext (Plain-Text)</p></li>
+<li><p>Codieren Sie den Text</p></li>
+<li><p>Halten Sie Key, IV, Plain-Text und Cipher-Text unten im Feld fest.<br><br></p></li>
+<li><p>Tauschen Sie den Codierten Text, den Schlüssel und den IV mit Ihrem Lernpartner aus</p></li>
+<li><p>Decodieren Sie den Codierten Text ihres Lernpartners mit den Angaben Ihres Lernpartners.</p></li>
+<li><p>Halten Sie Key, IV, Plain-Text und Cipher-Text unten im Feld fest.</p></li>
+</ul>
+<div id="5688e61f" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#&nbsp;Hier ihren Key, IV, Plain-Tet und Cipher-Text festhalten</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Hier die Angaben Ihres Lernpartners festhalten, inklusive Ihrer Decodierung</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<table class="quarto-listing-table table">
-<thead>
-<tr>
+<hr>
+</section>
+</section>
+<section id="aes-mit-python-anwenden" class="level2">
+<h2 class="anchored" data-anchor-id="aes-mit-python-anwenden">AES mit Python anwenden</h2>
+<p>Dieses Beispiel verwendet die Bibliothek <em>pycryptodome</em>.<br> Wenn Sie das Notebook im VSCode ausführen: - öffnen Sie ein Terminal (Menü von VSCode: Terminal -&gt; Neues Terminal)<br> - Geben Sie im Terminal folgendes ein und drücken Enter:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">/bin/python3</span> <span class="at">-m</span> pip install <span class="at">--user</span> pycryptodome</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Danach müssen Sie einen Restart mit dem Notebook durchführen.</p>
+<p>Alternative können Sie das Notebook im Colab ausführen, dort wird die Bibliothek direkt aus dem Notebook installiert:<br> https://colab.research.google.com/</p>
+<p>Führen Sie das folgenden Code aus.</p>
+<div id="c4c548eb" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="op">!</span>pip install pycryptodome</span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="im">from</span> Crypto.Cipher <span class="im">import</span> AES</span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="im">from</span> Crypto.Random <span class="im">import</span> get_random_bytes</span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="im">import</span> base64</span>
+<span id="cb3-6"><a href="#cb3-6"></a></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="co"># --- Hilfsfunktionen für Padding (PKCS#7) ---</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a></span>
+<span id="cb3-9"><a href="#cb3-9"></a>BLOCK_SIZE <span class="op">=</span> <span class="dv">16</span>  <span class="co"># AES-Blockgröße in Bytes</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="kw">def</span> pad(data: <span class="bu">bytes</span>) <span class="op">-&gt;</span> <span class="bu">bytes</span>:</span>
+<span id="cb3-12"><a href="#cb3-12"></a>    <span class="co">"""PKCS#7 Padding hinzufügen"""</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a>    padding_len <span class="op">=</span> BLOCK_SIZE <span class="op">-</span> (<span class="bu">len</span>(data) <span class="op">%</span> BLOCK_SIZE)</span>
+<span id="cb3-14"><a href="#cb3-14"></a>    <span class="cf">return</span> data <span class="op">+</span> <span class="bu">bytes</span>([padding_len]) <span class="op">*</span> padding_len</span>
+<span id="cb3-15"><a href="#cb3-15"></a></span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="kw">def</span> unpad(data: <span class="bu">bytes</span>) <span class="op">-&gt;</span> <span class="bu">bytes</span>:</span>
+<span id="cb3-17"><a href="#cb3-17"></a>    <span class="co">"""PKCS#7 Padding entfernen"""</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a>    padding_len <span class="op">=</span> data[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb3-19"><a href="#cb3-19"></a>    <span class="cf">return</span> data[:<span class="op">-</span>padding_len]</span>
+<span id="cb3-20"><a href="#cb3-20"></a></span>
+<span id="cb3-21"><a href="#cb3-21"></a><span class="co"># --- 1. Key und IV erzeugen ---</span></span>
+<span id="cb3-22"><a href="#cb3-22"></a></span>
+<span id="cb3-23"><a href="#cb3-23"></a>key <span class="op">=</span> get_random_bytes(<span class="dv">16</span>)  <span class="co"># 16 Bytes = 128 Bit (AES-128)</span></span>
+<span id="cb3-24"><a href="#cb3-24"></a>iv <span class="op">=</span> get_random_bytes(<span class="dv">16</span>)   <span class="co"># 16 Bytes IV für CBC</span></span>
+<span id="cb3-25"><a href="#cb3-25"></a></span>
+<span id="cb3-26"><a href="#cb3-26"></a><span class="co"># --- 2. Klartext vorbereiten ---</span></span>
+<span id="cb3-27"><a href="#cb3-27"></a></span>
+<span id="cb3-28"><a href="#cb3-28"></a>plaintext <span class="op">=</span> <span class="st">"Wir treffen uns mit Paul am Mittwoch in der Gruft"</span></span>
+<span id="cb3-29"><a href="#cb3-29"></a>plaintext_bytes <span class="op">=</span> plaintext.encode(<span class="st">"utf-8"</span>)</span>
+<span id="cb3-30"><a href="#cb3-30"></a></span>
+<span id="cb3-31"><a href="#cb3-31"></a><span class="co"># --- 3. Verschlüsseln (Encrypt) ---</span></span>
+<span id="cb3-32"><a href="#cb3-32"></a></span>
+<span id="cb3-33"><a href="#cb3-33"></a>cipher_encrypt <span class="op">=</span> AES.new(key, AES.MODE_CBC, iv)</span>
+<span id="cb3-34"><a href="#cb3-34"></a>ciphertext_bytes <span class="op">=</span> cipher_encrypt.encrypt(pad(plaintext_bytes))</span>
+<span id="cb3-35"><a href="#cb3-35"></a></span>
+<span id="cb3-36"><a href="#cb3-36"></a><span class="co"># --- 4. Für Transport/Anzeige in Base64 kodieren ---</span></span>
+<span id="cb3-37"><a href="#cb3-37"></a></span>
+<span id="cb3-38"><a href="#cb3-38"></a>key_b64 <span class="op">=</span> base64.b64encode(key).decode(<span class="st">"utf-8"</span>)</span>
+<span id="cb3-39"><a href="#cb3-39"></a>iv_b64 <span class="op">=</span> base64.b64encode(iv).decode(<span class="st">"utf-8"</span>)</span>
+<span id="cb3-40"><a href="#cb3-40"></a>ciphertext_b64 <span class="op">=</span> base64.b64encode(ciphertext_bytes).decode(<span class="st">"utf-8"</span>)</span>
+<span id="cb3-41"><a href="#cb3-41"></a></span>
+<span id="cb3-42"><a href="#cb3-42"></a><span class="bu">print</span>(<span class="st">"AES Key (Base64):     "</span>, key_b64)</span>
+<span id="cb3-43"><a href="#cb3-43"></a><span class="bu">print</span>(<span class="st">"AES IV  (Base64):     "</span>, iv_b64)</span>
+<span id="cb3-44"><a href="#cb3-44"></a><span class="bu">print</span>(<span class="st">"Ciphertext (Base64):  "</span>, ciphertext_b64)</span>
+<span id="cb3-45"><a href="#cb3-45"></a></span>
+<span id="cb3-46"><a href="#cb3-46"></a><span class="co"># --- 5. Entschlüsseln (Decrypt) ---</span></span>
+<span id="cb3-47"><a href="#cb3-47"></a></span>
+<span id="cb3-48"><a href="#cb3-48"></a><span class="co"># In der Praxis käme Key/IV z.B. aus Base64-Strings:</span></span>
+<span id="cb3-49"><a href="#cb3-49"></a>key_decoded <span class="op">=</span> base64.b64decode(key_b64)</span>
+<span id="cb3-50"><a href="#cb3-50"></a>iv_decoded <span class="op">=</span> base64.b64decode(iv_b64)</span>
+<span id="cb3-51"><a href="#cb3-51"></a>ciphertext_decoded <span class="op">=</span> base64.b64decode(ciphertext_b64)</span>
+<span id="cb3-52"><a href="#cb3-52"></a></span>
+<span id="cb3-53"><a href="#cb3-53"></a>cipher_decrypt <span class="op">=</span> AES.new(key_decoded, AES.MODE_CBC, iv_decoded)</span>
+<span id="cb3-54"><a href="#cb3-54"></a>decrypted_padded <span class="op">=</span> cipher_decrypt.decrypt(ciphertext_decoded)</span>
+<span id="cb3-55"><a href="#cb3-55"></a>decrypted <span class="op">=</span> unpad(decrypted_padded).decode(<span class="st">"utf-8"</span>)</span>
+<span id="cb3-56"><a href="#cb3-56"></a></span>
+<span id="cb3-57"><a href="#cb3-57"></a><span class="bu">print</span>(<span class="st">"Entschlüsselter Text: "</span>, decrypted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: pycryptodome in /home/vscode/.local/lib/python3.10/site-packages (3.23.0)
+AES Key (Base64):      xSWzpVy2pA/QauBbMmh71g==
+AES IV  (Base64):      9yZ90TPiJaYmY1wZnkHNIw==
+Ciphertext (Base64):   D/SaYU3roeqXFsB8F2XPIs5iEFeX9mzcEcTFvq/vleHue7Cxv1kHmq0Ch+XyT1M7ImUdWU2B1+iGg6YRBQyGJw==
+Entschlüsselter Text:  Wir treffen uns mit Paul am Mittwoch in der Gruft</code></pre>
+</div>
+</div>
+<hr>
+<section id="aufgabe-aes-mit-python-anwenden" class="level3">
+<h3 class="anchored" data-anchor-id="aufgabe-aes-mit-python-anwenden">Aufgabe : AES mit Python anwenden</h3>
+<p>Kopieren Sie den obigen Code.<br> Kodieren Sie einen kurzen Text.<br> Tauschen Sie den codierten Text, den Schlüssel und den IV mit Ihrem Lernpartner aus.<br> Decodieren Sie den codierten Text ihres Lernpartners mit den Angaben Ihres Lernpartners.</p>
+<div id="d6f77a63" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Mein eigenes Beispiel</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
-<th>
-<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
-</th>
 
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
-</th>
+</section>
+</section>
 
-<th>
-<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
-</th>
-
-</tr>
-</thead>
-<tbody class="list">
-
-<tr data-index="0" data-listing-date-sort="1755648000000" data-listing-file-modified-sort="1761041884108" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="729" data-listing-title-sort="1 Computer Networks" data-listing-filename-sort="networks.qmd">
-<td>
-<span class="listing-date">20.08.2025</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/250820/networks.html" class="title listing-title">1 Computer Networks</a>
-</td>
-<td>
-<span class="listing-author">Jacques Mock Schindler</span>
-</td>
-
-</tr>
-
-<tr data-index="1" data-listing-date-sort="1755648000000" data-listing-file-modified-sort="1761041884109" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="372" data-listing-title-sort="2 IP Addresses and DNS" data-listing-filename-sort="tcpip.qmd">
-<td>
-<span class="listing-date">20.08.2025</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/250820/tcpip.html" class="title listing-title">2 IP Addresses and DNS</a>
-</td>
-<td>
-<span class="listing-author">Jacques Mock Schindler</span>
-</td>
-
-</tr>
-
-<tr data-index="2" data-listing-date-sort="1755648000000" data-listing-file-modified-sort="1761041884108" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="834" data-listing-title-sort="3 Network Address Translation (NAT)" data-listing-filename-sort="nat.qmd">
-<td>
-<span class="listing-date">20.08.2025</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/250820/nat.html" class="title listing-title">3 Network Address Translation (NAT)</a>
-</td>
-<td>
-<span class="listing-author">Jacques Mock Schindler</span>
-</td>
-
-</tr>
-
-<tr data-index="3" data-listing-date-sort="1755648000000" data-listing-file-modified-sort="1761041884109" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="587" data-listing-title-sort="4 Top-level domains and their allocation" data-listing-filename-sort="tld.qmd">
-<td>
-<span class="listing-date">20.08.2025</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/250820/tld.html" class="title listing-title">4 Top-level domains and their allocation</a>
-</td>
-<td>
-<span class="listing-author">Jacques Mock Schindler</span>
-</td>
-
-</tr>
-
-<tr data-index="4" data-listing-date-sort="1756252800000" data-listing-file-modified-sort="1761041884110" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1398" data-listing-title-sort="5 Monitoring Internet connections" data-listing-filename-sort="three_way_handshake.md">
-<td>
-<span class="listing-date">27.08.2025</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/250827/three_way_handshake.html" class="title listing-title">5 Monitoring Internet connections</a>
-</td>
-<td>
-<span class="listing-author">Jacques Mock Schindler</span>
-</td>
-
-</tr>
-
-<tr data-index="5" data-listing-date-sort="1756857600000" data-listing-file-modified-sort="1761041884112" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1783" data-listing-title-sort="6 Python Sockets: A Simple Client-Server Example" data-listing-filename-sort="sockets.qmd">
-<td>
-<span class="listing-date">03.09.2025</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/250903/sockets.html" class="title listing-title">6 Python Sockets: A Simple Client-Server Example</a>
-</td>
-<td>
-<span class="listing-author">Jacques Mock Schindler</span>
-</td>
-
-</tr>
-
-<tr data-index="6" data-listing-date-sort="1757462400000" data-listing-file-modified-sort="1761041884112" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="89" data-listing-title-sort="7 File Handling" data-listing-filename-sort="files.ipynb">
-<td>
-<span class="listing-date">10.09.2025</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/250910_file_handling/files.html" class="title listing-title">7 File Handling</a>
-</td>
-<td>
-<span class="listing-author">Jacques Mock Schindler</span>
-</td>
-
-</tr>
-
-<tr data-index="7" data-listing-date-sort="1757462400000" data-listing-file-modified-sort="1761944684414" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1057" data-listing-title-sort="8 Caesar Cipher" data-listing-filename-sort="caesar_chiffre.ipynb">
-<td>
-<span class="listing-date">10.09.2025</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/250910/caesar_chiffre.html" class="title listing-title">8 Caesar Cipher</a>
-</td>
-<td>
-<span class="listing-author">Jacques Mock Schindler</span>
-</td>
-
-</tr>
-
-<tr data-index="8" data-listing-date-sort="1758067200000" data-listing-file-modified-sort="1761940266082" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="719" data-listing-title-sort="9 Polyalphabetic Ciphers" data-listing-filename-sort="vigenere.ipynb">
-<td>
-<span class="listing-date">17.09.2025</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/250917_vigenre/vigenere.html" class="title listing-title">9 Polyalphabetic Ciphers</a>
-</td>
-<td>
-<span class="listing-author">Jacques Mock Schindler</span>
-</td>
-
-</tr>
-
-<tr data-index="9" data-listing-date-sort="1758585600000" data-listing-file-modified-sort="1761940272467" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="653" data-listing-title-sort="10 Vigenère Cipher Implementation in Python" data-listing-filename-sort="python_implementation.ipynb">
-<td>
-<span class="listing-date">23.09.2025</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/250918_vigenere_python/python_implementation.html" class="title listing-title">10 Vigenère Cipher Implementation in Python</a>
-</td>
-<td>
-<span class="listing-author">Jacques Mock Schindler</span>
-</td>
-
-</tr>
-
-<tr data-index="10" data-listing-date-sort="1758672000000" data-listing-file-modified-sort="1761041884115" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="701" data-listing-title-sort="11 Breaking the Vigenère Cipher" data-listing-filename-sort="break.ipynb">
-<td>
-<span class="listing-date">24.09.2025</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/250924_break_vienere/break.html" class="title listing-title">11 Breaking the Vigenère Cipher</a>
-</td>
-<td>
-<span class="listing-author">Jacques Mock Schindler</span>
-</td>
-
-</tr>
-
-<tr data-index="11" data-listing-date-sort="1758672000000" data-listing-file-modified-sort="1762285021957" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="12 Kasiski Test" data-listing-filename-sort="kasisky.ipynb">
-<td>
-<span class="listing-date">24.09.2025</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/250924_break_vienere/kasisky.html" class="title listing-title">12 Kasiski Test</a>
-</td>
-<td>
-<span class="listing-author">Jacques Mock Schindler</span>
-</td>
-
-</tr>
-
-<tr data-index="12" data-listing-date-sort="1762300800000" data-listing-file-modified-sort="1763495123388" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2462" data-listing-title-sort="13 Symetric encryption" data-listing-filename-sort="symetricencryption.qmd">
-<td>
-<span class="listing-date">05.11.2025</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/251105_symetricencryption/symetricencryption.html" class="title listing-title">13 Symetric encryption</a>
-</td>
-<td>
-<span class="listing-author">Peter Rutschmann</span>
-</td>
-
-</tr>
-
-<tr data-index="13" data-listing-date-sort="1762300800000" data-listing-file-modified-sort="1762150679485" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="354" data-listing-title-sort="13.1 ASCII und UTF" data-listing-filename-sort="ascii_utf.qmd">
-<td>
-<span class="listing-date">05.11.2025</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/251105_symetricencryption/chapter/ascii_utf.html" class="title listing-title">13.1 ASCII und UTF</a>
-</td>
-<td>
-<span class="listing-author">Peter Rutschmann</span>
-</td>
-
-</tr>
-
-<tr data-index="14" data-listing-file-modified-sort="1763498179093" data-listing-reading-time-sort="2" data-listing-word-count-sort="297" data-listing-title-sort="AES-Verschlüsselung anwenden" data-listing-filename-sort="aes_encryption.ipynb">
-<td>
-<span class="listing-date">&nbsp;</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/251105_symetricencryption/chapter/aes_encryption.html" class="title listing-title">AES-Verschlüsselung anwenden</a>
-</td>
-<td>
-<span class="listing-author">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="15" data-listing-file-modified-sort="1763493076216" data-listing-reading-time-sort="8" data-listing-word-count-sort="1529" data-listing-title-sort="LSG: Vigenère-Tabelle und Entschlüsselung" data-listing-filename-sort="vigenere_saphira_tabelleLSG.md">
-<td>
-<span class="listing-date">&nbsp;</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/251105_symetricencryption/chapter/vigenere_saphira_tabelleLSG.html" class="title listing-title">LSG: Vigenère-Tabelle und Entschlüsselung</a>
-</td>
-<td>
-<span class="listing-author">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="16" data-listing-file-modified-sort="1762958697398" data-listing-reading-time-sort="10" data-listing-word-count-sort="1859" data-listing-title-sort="XOR-Verschlüsselung Schritt für Schritt" data-listing-filename-sort="xor_encryption.ipynb">
-<td>
-<span class="listing-date">&nbsp;</span>
-</td>
-<td>
-<a href="../files/lektionen_hs25/251105_symetricencryption/chapter/xor_encryption.html" class="title listing-title">XOR-Verschlüsselung Schritt für Schritt</a>
-</td>
-<td>
-<span class="listing-author">&nbsp;</span>
-</td>
-
-</tr>
-
-</tbody>
-</table>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -889,4 +735,4 @@ window.Quarto = {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/HS_25.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251105_symetricencryption/chapter/aes_encryption.ipynb" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

@@ -1,4 +1,4 @@
-# Vigenère-Tabelle und Entschlüsselung
+# LSG: Vigenère-Tabelle und Entschlüsselung
 
 ## Gegebene Daten
 

@@ -185,7 +185,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#aufgabe-anwenden-transponieren" id="toc-aufgabe-anwenden-transponieren" class="nav-link" data-scroll-target="#aufgabe-anwenden-transponieren">Aufgabe Anwenden Transponieren</a></li>
   <li><a href="#aufgabe-anwenden-eines-mehrfachen-transponieren" id="toc-aufgabe-anwenden-eines-mehrfachen-transponieren" class="nav-link" data-scroll-target="#aufgabe-anwenden-eines-mehrfachen-transponieren">Aufgabe Anwenden eines mehrfachen Transponieren</a></li>
-  <li><a href="#anwendung-in-der-praxis-mit-beispiel-aes-verschlüsselung" id="toc-anwendung-in-der-praxis-mit-beispiel-aes-verschlüsselung" class="nav-link" data-scroll-target="#anwendung-in-der-praxis-mit-beispiel-aes-verschlüsselung">Anwendung in der Praxis mit Beispiel AES Verschlüsselung</a></li>
+  <li><a href="#anwendung-in-der-praxis-mit-beispiel-aes-verschlüsselung" id="toc-anwendung-in-der-praxis-mit-beispiel-aes-verschlüsselung" class="nav-link" data-scroll-target="#anwendung-in-der-praxis-mit-beispiel-aes-verschlüsselung">Anwendung in der Praxis mit Beispiel AES Verschlüsselung</a>
+  <ul class="collapse">
+  <li><a href="#aes-verfahren" id="toc-aes-verfahren" class="nav-link" data-scroll-target="#aes-verfahren">AES Verfahren</a></li>
+  <li><a href="#aes-verfahren-demo" id="toc-aes-verfahren-demo" class="nav-link" data-scroll-target="#aes-verfahren-demo">AES Verfahren Demo</a></li>
+  <li><a href="#aes-selber-anwenden" id="toc-aes-selber-anwenden" class="nav-link" data-scroll-target="#aes-selber-anwenden">AES selber anwenden</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251105_symetricencryption/symetricencryption.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="symetricencryption.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
@@ -458,13 +463,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<h5 id="digitale-verschluesselung-mit-xor" class="anchored">
+</h5>
 </section>
 <section id="digitale-verschlüsselung-mit-xor" class="level2">
 <h2 class="anchored" data-anchor-id="digitale-verschlüsselung-mit-xor">Digitale Verschlüsselung mit XOR</h2>
-<h5 id="digitale-verschluesselung-mit-xor" class="anchored">
-</h5>
 <p>Es wird Zeit für ein erstes digitales Verschlüsselungsverfahren.<br> Lesen und lösen Sie dazu:</p>
-<p><a href="https://skriptenmk.github.io/I_eW_24-28/files/lektionen_hs25/251105_symetricencryption/chapter/xor_encryption.ipynb" download="xor_encryption.ipynb"> Notebook herunterladen </a></p>
+<p><a href="https://skriptenmk.github.io/I_eW_24-28/files/lektionen_hs25/251105_symetricencryption/chapter/HEXtoBIN.txt" download="HEXtoBIN.txt"> Umrechung HEX to BIN herunterladen </a></p>
+<p><a href="https://skriptenmk.github.io/I_eW_24-28/files/lektionen_hs25/251105_symetricencryption/chapter/xor_encryption.ipynb" download="xor_encryption.ipynb"> Notebook zu XOR herunterladen </a></p>
 </section>
 <section id="verfahren-der-digitalen-verschlüsselung" class="level2">
 <h2 class="anchored" data-anchor-id="verfahren-der-digitalen-verschlüsselung">Verfahren der digitalen Verschlüsselung</h2>
@@ -483,7 +489,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="substitution" class="level3">
 <h3 class="anchored" data-anchor-id="substitution">Substitution</h3>
 <ul>
-<li>UTF8 wendet Substituation an, es ersetzt ein Buchstabe durch eine Bitfolge</li>
+<li>UTF8 wendet Substituation an, es ersetzt anhand der UTF8 Code-Tabled ein Buchstabe durch eine Bitfolge</li>
 <li><strong>XOR</strong> wendet Substitution an, es ersetzt die Bits auf Grund des Schlüssel durch andere Bits.</li>
 </ul>
 </section>
@@ -511,7 +517,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="aufgabe-anwenden-transponieren">Aufgabe Anwenden Transponieren</h2>
 <ul>
 <li>Wenden Sie die obige Transposition auf einen 4 stellige Dezimale Zahl an.</li>
-<li>Wandeln Sie die Zahl mit UTF8 in eine binäre Zahlenfolge um. (ergibt 4 Bytes)</li>
+<li>Wandeln Sie die Zifferen der Zahl mit UTF8 in eine binäre Zahlenfolge um. (ergibt 4 Bytes)<br> <a href="https://www.utf8-chartable.de/">Liste der UTF8 Codierung</a></li>
 <li>Transponieren Sie mit dem key=3 gemäss obiger Regel</li>
 <li>Tauschen Sie das Ergebnis mit Ihrem Lernpartner aus, findet er die ursprüngliche Zahl heraus?</li>
 </ul>
@@ -519,14 +525,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="aufgabe-anwenden-eines-mehrfachen-transponieren" class="level2">
 <h2 class="anchored" data-anchor-id="aufgabe-anwenden-eines-mehrfachen-transponieren">Aufgabe Anwenden eines mehrfachen Transponieren</h2>
 <ul>
-<li><p>ausprobieren: <a href="chapter/permutation_demo.html">Permutation-Demo</a></p></li>
-<li><p>analysieren Sie die Schritte</p></li>
-<li><p>notieren Sie die Schritte auf.</p></li>
-<li><p>Codieren Sie einen von Ihnen gewählten Buchstaben und lassen Sie ihn von Ihrem Lernpartner decodieren.</p></li>
+<li>ausprobieren: <a href="chapter/permutation_demo.html">Permutation-Demo</a></li>
+<li>analysieren Sie die Schritte</li>
+<li>notieren Sie die Schritte auf.</li>
+<li>Codieren Sie einen von Ihnen gewählten Buchstaben.
+<ul>
+<li>Buchstabe mit UTF8 Tabelle in Bits umwandeln.</li>
+<li>In der Permutations-Demo codieren, eigenen Schlüssel und Anzahl Runden wählen.</li>
+<li>Mit Lernpartner Codierten Code, Schlüssel und Anzahl Runden austauschen.</li>
+<li>Kann Ihr Lernpartner den richtigen Buchstaben herausfinden?</li>
+</ul></li>
 </ul>
 </section>
 <section id="anwendung-in-der-praxis-mit-beispiel-aes-verschlüsselung" class="level2">
 <h2 class="anchored" data-anchor-id="anwendung-in-der-praxis-mit-beispiel-aes-verschlüsselung">Anwendung in der Praxis mit Beispiel AES Verschlüsselung</h2>
+<section id="aes-verfahren" class="level3">
+<h3 class="anchored" data-anchor-id="aes-verfahren">AES Verfahren</h3>
 <p><strong>AES</strong> ist ein modernes Verschlüsselungsverfahren.<br> AES verschlüsselt, indem es den Klartext blockweise (128 Bit) in mehreren Runden mit dem Schlüssel verarbeitet.<br> In jeder Runde passieren vier Schritte:</p>
 <ul>
 <li>Substitution: SubBytes -&gt; jedes Byte wird durch die S-Box ersetzt</li>
@@ -535,8 +549,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>AddRoundKey → der Block wird mit dem Rundenschlüssel per XOR verknüpft.</li>
 <li>Nach 10 (12 / 14) Runden entsteht der Geheimtext.</li>
 </ul>
+</section>
+<section id="aes-verfahren-demo" class="level3">
+<h3 class="anchored" data-anchor-id="aes-verfahren-demo">AES Verfahren Demo</h3>
+<p>Das sind einige Schritte. Die <a href="https://jrvidal.github.io/aes-demo/"><em>AWS web demo</em></a> zeigt das anschaulich.</p>
+<ul>
+<li>Link anklicken, Random wählen, die Schritte beobachten.</li>
+<li>Das Resultat auch wieder dekodieren.</li>
+</ul>
+<p>Eine <a href="https://legacy.cryptool.org/en/cto/aes-animation">AES-Animation</a>, die das Verfahren versucht zu verdeutlichen.</p>
+<ul>
+<li>Probieren Sie es aus.</li>
+</ul>
+</section>
+<section id="aes-selber-anwenden" class="level3">
+<h3 class="anchored" data-anchor-id="aes-selber-anwenden">AES selber anwenden</h3>
+<p>Laden Sie das Notebook herunter, um AES praktisch anzuwenden.<br> Lesen und lösen Sie:</p>
+<p><a href="https://skriptenmk.github.io/I_eW_24-28/files/lektionen_hs25/251105_symetricencryption/chapter/aes_encryption.ipynb" download="aes_encryption.ipynb"> Notebook zu AES herunterladen </a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

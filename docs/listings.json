@@ -13,6 +13,28 @@
     ]
   },
   {
+    "listing": "/files/HS_25.html",
+    "items": [
+      "/files/lektionen_hs25/250820/networks.html",
+      "/files/lektionen_hs25/250820/tcpip.html",
+      "/files/lektionen_hs25/250820/nat.html",
+      "/files/lektionen_hs25/250820/tld.html",
+      "/files/lektionen_hs25/250827/three_way_handshake.html",
+      "/files/lektionen_hs25/250903/sockets.html",
+      "/files/lektionen_hs25/250910_file_handling/files.html",
+      "/files/lektionen_hs25/250910/caesar_chiffre.html",
+      "/files/lektionen_hs25/250917_vigenre/vigenere.html",
+      "/files/lektionen_hs25/250918_vigenere_python/python_implementation.html",
+      "/files/lektionen_hs25/250924_break_vienere/break.html",
+      "/files/lektionen_hs25/250924_break_vienere/kasisky.html",
+      "/files/lektionen_hs25/251105_symetricencryption/symetricencryption.html",
+      "/files/lektionen_hs25/251105_symetricencryption/chapter/ascii_utf.html",
+      "/files/lektionen_hs25/251105_symetricencryption/chapter/aes_encryption.html",
+      "/files/lektionen_hs25/251105_symetricencryption/chapter/vigenere_saphira_tabelleLSG.html",
+      "/files/lektionen_hs25/251105_symetricencryption/chapter/xor_encryption.html"
+    ]
+  },
+  {
     "listing": "/files/HS_24.html",
     "items": [
       "/files/lektionen_hs24/240821/einfuehrung.html",
@@ -30,27 +52,6 @@
       "/files/lektionen_hs24/241218/lernziele.html",
       "/files/lektionen_hs24/250115/binary_search_tree.html",
       "/files/lektionen_hs24/250122/speicherstrukturen.html"
-    ]
-  },
-  {
-    "listing": "/files/HS_25.html",
-    "items": [
-      "/files/lektionen_hs25/250820/networks.html",
-      "/files/lektionen_hs25/250820/tcpip.html",
-      "/files/lektionen_hs25/250820/nat.html",
-      "/files/lektionen_hs25/250820/tld.html",
-      "/files/lektionen_hs25/250827/three_way_handshake.html",
-      "/files/lektionen_hs25/250903/sockets.html",
-      "/files/lektionen_hs25/250910_file_handling/files.html",
-      "/files/lektionen_hs25/250910/caesar_chiffre.html",
-      "/files/lektionen_hs25/250917_vigenre/vigenere.html",
-      "/files/lektionen_hs25/250918_vigenere_python/python_implementation.html",
-      "/files/lektionen_hs25/250924_break_vienere/break.html",
-      "/files/lektionen_hs25/250924_break_vienere/kasisky.html",
-      "/files/lektionen_hs25/251105_symetricencryption/symetricencryption.html",
-      "/files/lektionen_hs25/251105_symetricencryption/chapter/ascii_utf.html",
-      "/files/lektionen_hs25/251105_symetricencryption/chapter/vigenere_saphira_tabelleLSG.html",
-      "/files/lektionen_hs25/251105_symetricencryption/chapter/xor_encryption.html"
     ]
   }
 ]
