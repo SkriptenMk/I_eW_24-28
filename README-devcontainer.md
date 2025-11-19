@@ -19,25 +19,28 @@ Die Details sind weiter unten erklärt.
 Alle Befehle im Terminal von VSCode ausführen.
 
 ```bash
-#Preview starten
+#Preview starten, um während der Entwicklung die Seite im Browser zu sehen
 quarto preview
 
-#Render nach docs
+# Seite auf github publizieren, folgende Schritte sind notwendig:
+# ----------------------------
+# 1. Render nach docs
 quarto render
 
-# nur eine Datei rendern (mit Ausführung der Code-Chunks)
-quarto render index.qmd --execute --no-cache
-
-quarto render files/lektionen_hs25/251105_symetricencryption/symetricencryption.qmd --execute --no-cache
-
-quarto render files/lektionen_hs25/251105_symetricencryption/chapter/xor_encryption.ipynb --execute --no-cache
-
-#weitere Dateien nach docs kopieren (Dateien zum Download)
+# 2. weitere Dateien nach docs kopieren (Dateien zum Download)
 python3 scripts/copy_notebooks_to_docs.py --ext ipynb,txt,pdf
 
-#Links auf `.ipynb`-Dateien fixen (Quarto ersetzt diese durch html links)
+# 3. Links auf `.ipynb`-Dateien fixen (Quarto ersetzt diese durch html links)
 #Achtung im Zusammenhang mit preview funktioniert das nicht, da preview Seite erst rendert, wenn sie im Browser geöffnet wird.
 python3 scripts/fix_notebook_links.py
+
+# Weitere Möglichkeiten...
+
+# Beispiele, wenn nur eine Datei ge-rendert werden soll
+quarto render index.qmd --execute --no-cache
+quarto render files/lektionen_hs25/251105_symetricencryption/symetricencryption.qmd --execute --no-cache
+quarto render files/lektionen_hs25/251105_symetricencryption/chapter/xor_encryption.ipynb --execute --no-cache
+
 ```
 
 ## Details zum Devcontainer
