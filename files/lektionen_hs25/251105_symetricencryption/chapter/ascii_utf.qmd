@@ -1,10 +1,9 @@
 ---
-title: "13.1 ASCII und UTF"
+title: "13.1 ASCII and UTF"
 date: 2025-11-05
 date-format: DD.MM.YYYY
 author: "Peter Rutschmann"
 ---
-
 
 ## ASCII und UTF (Text <--> binär)
 

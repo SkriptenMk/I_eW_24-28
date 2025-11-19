@@ -195,25 +195,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="kurzanleitung">Kurzanleitung</h2>
 <p>Das ist nur eine kurze Anleitung.<br> Die Details sind weiter unten erklärt.</p>
 <p>Alle Befehle im Terminal von VSCode ausführen.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#Preview starten</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#Preview starten, um während der Entwicklung die Seite im Browser zu sehen</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="ex">quarto</span> preview</span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="co">#Render nach docs</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="ex">quarto</span> render</span>
-<span id="cb1-6"><a href="#cb1-6"></a></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="co"># nur eine Datei rendern (mit Ausführung der Code-Chunks)</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="ex">quarto</span> render index.qmd <span class="at">--execute</span> <span class="at">--no-cache</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="ex">quarto</span> render files/lektionen_hs25/251105_symetricencryption/symetricencryption.qmd <span class="at">--execute</span> <span class="at">--no-cache</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Seite auf github publizieren, folgende Schritte sind notwendig:</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co"># ----------------------------</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="co"># 1. Render nach docs</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="ex">quarto</span> render</span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># 2. weitere Dateien nach docs kopieren (Dateien zum Download)</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="ex">python3</span> scripts/copy_notebooks_to_docs.py <span class="at">--ext</span> ipynb,txt,pdf</span>
 <span id="cb1-11"><a href="#cb1-11"></a></span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="ex">quarto</span> render files/lektionen_hs25/251105_symetricencryption/chapter/xor_encryption.ipynb <span class="at">--execute</span> <span class="at">--no-cache</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="co">#weitere Dateien nach docs kopieren (Dateien zum Download)</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="ex">python3</span> scripts/copy_notebooks_to_docs.py <span class="at">--ext</span> ipynb,txt,pdf</span>
-<span id="cb1-16"><a href="#cb1-16"></a></span>
-<span id="cb1-17"><a href="#cb1-17"></a><span class="co">#Links auf `.ipynb`-Dateien fixen (Quarto ersetzt diese durch html links)</span></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="co">#Achtung im Zusammenhang mit preview funktioniert das nicht, da preview Seite erst rendert, wenn sie im Browser geöffnet wird.</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="ex">python3</span> scripts/fix_notebook_links.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="co"># 3. Links auf `.ipynb`-Dateien fixen (Quarto ersetzt diese durch html links)</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="co">#Achtung im Zusammenhang mit preview funktioniert das nicht, da preview Seite erst rendert, wenn sie im Browser geöffnet wird.</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="ex">python3</span> scripts/fix_notebook_links.py</span>
+<span id="cb1-15"><a href="#cb1-15"></a></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="co"># Weitere Möglichkeiten...</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># Beispiele, wenn nur eine Datei ge-rendert werden soll</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="ex">quarto</span> render index.qmd <span class="at">--execute</span> <span class="at">--no-cache</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="ex">quarto</span> render files/lektionen_hs25/251105_symetricencryption/symetricencryption.qmd <span class="at">--execute</span> <span class="at">--no-cache</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="ex">quarto</span> render files/lektionen_hs25/251105_symetricencryption/chapter/xor_encryption.ipynb <span class="at">--execute</span> <span class="at">--no-cache</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="details-zum-devcontainer" class="level2">
 <h2 class="anchored" data-anchor-id="details-zum-devcontainer">Details zum Devcontainer</h2>

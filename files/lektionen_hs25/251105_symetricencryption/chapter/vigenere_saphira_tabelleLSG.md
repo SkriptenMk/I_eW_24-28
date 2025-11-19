@@ -1,3 +1,10 @@
+---
+title: "13.2 Vigenère Warmingup Solution"
+date: 2025-11-05
+date-format: DD.MM.YYYY
+author: "Peter Rutschmann"
+---
+
 # LSG: Vigenère-Tabelle und Entschlüsselung
 
 ## Gegebene Daten

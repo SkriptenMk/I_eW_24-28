@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Peter Rutschmann">
 
-<title>XOR-Verschlüsselung Schritt für Schritt – Computer Science Course Materials for School Year 2025/26 (2eW)</title>
+<title>14.1 XOR encryption step by step – Computer Science Course Materials for School Year 2025/26 (2eW)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -164,7 +165,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#was-ist-xor" id="toc-was-ist-xor" class="nav-link active" data-scroll-target="#was-ist-xor">Was ist XOR?</a></li>
+  <li><a href="#xor-verschlüsselung-schritt-für-schritt" id="toc-xor-verschlüsselung-schritt-für-schritt" class="nav-link active" data-scroll-target="#xor-verschlüsselung-schritt-für-schritt">XOR-Verschlüsselung Schritt für Schritt</a>
+  <ul class="collapse">
+  <li><a href="#was-ist-xor" id="toc-was-ist-xor" class="nav-link" data-scroll-target="#was-ist-xor">Was ist XOR?</a></li>
   <li><a href="#xor-verschlüsselung" id="toc-xor-verschlüsselung" class="nav-link" data-scroll-target="#xor-verschlüsselung">XOR-Verschlüsselung</a></li>
   <li><a href="#xor-entschlüsselung" id="toc-xor-entschlüsselung" class="nav-link" data-scroll-target="#xor-entschlüsselung">XOR-Entschlüsselung</a></li>
   <li><a href="#aufgabe-entschlüsseln-sie-die-nachricht-von-hand" id="toc-aufgabe-entschlüsseln-sie-die-nachricht-von-hand" class="nav-link" data-scroll-target="#aufgabe-entschlüsseln-sie-die-nachricht-von-hand">Aufgabe: Entschlüsseln Sie die Nachricht von Hand</a></li>
@@ -175,22 +178,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#aufgabe-eigenes-beispiel-mit-einem-schlüsselwort" id="toc-aufgabe-eigenes-beispiel-mit-einem-schlüsselwort" class="nav-link" data-scroll-target="#aufgabe-eigenes-beispiel-mit-einem-schlüsselwort">Aufgabe: Eigenes Beispiel mit einem Schlüsselwort</a></li>
   <li><a href="#aufgabe-gegenseitig-verschlüsseln-und-entschlüsseln" id="toc-aufgabe-gegenseitig-verschlüsseln-und-entschlüsseln" class="nav-link" data-scroll-target="#aufgabe-gegenseitig-verschlüsseln-und-entschlüsseln">Aufgabe: Gegenseitig Verschlüsseln und Entschlüsseln</a></li>
   <li><a href="#aufgabe-unvollständiger-schlüssel" id="toc-aufgabe-unvollständiger-schlüssel" class="nav-link" data-scroll-target="#aufgabe-unvollständiger-schlüssel">Aufgabe: Unvollständiger Schlüssel</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251105_symetricencryption/chapter/xor_encryption.ipynb" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="xor_encryption.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251112_xorencryption/chapter/xor_encryption.ipynb" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="xor_encryption.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">XOR-Verschlüsselung Schritt für Schritt</h1>
+<h1 class="title">14.1 XOR encryption step by step</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Peter Rutschmann </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">12.11.2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -200,6 +216,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="xor-verschlüsselung-schritt-für-schritt" class="level1">
+<h1>XOR-Verschlüsselung Schritt für Schritt</h1>
 <p>In diesem Jupyter Notebook wird die <strong>XOR-Verschlüsselung</strong> erklärt und angewendet:</p>
 <ul>
 <li><ol type="1">
@@ -558,6 +576,7 @@ Lösung.. nicht spicken :-)
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -966,4 +985,4 @@ Lösung.. nicht spicken :-)
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251105_symetricencryption/chapter/xor_encryption.ipynb" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251112_xorencryption/chapter/xor_encryption.ipynb" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

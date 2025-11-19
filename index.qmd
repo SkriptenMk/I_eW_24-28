@@ -20,8 +20,8 @@ expected during the course of the semester.
 | 22.10.2025 | Test |
 | 29.10.2025 | Cryptology: Break Vigenère |
 | 05.11.2025 | [Cryptology: Symmetric encryption methods](files/lektionen_hs25/251105_symetricencryption/symetricencryption.html) |
-| 12.11.2025 | [Cryptology: Symmetric encryption XOR](files/lektionen_hs25/251105_symetricencryption/symetricencryption.html#digitale-verschluesselung-mit-xor) |
-| 19.11.2025 | [Cryptology: Symmetric encryption AES](files/lektionen_hs25/251105_symetricencryption/symetricencryption.html#digitale-verschluesselung-mit-aes) |
+| 12.11.2025 | [Cryptology: Symmetric encryption XOR](files/lektionen_hs25/251112_xorencryption/xorencryption.html) |
+| 19.11.2025 | [Cryptology: Symmetric encryption AES](files/lektionen_hs25/251119_aesencryption/aesencryption.html) |
 | 26.11.2025 | Cryptology: Asymetric encryption |
 | 03.12.2025 | AI |
 | 10.12.2025 | AI |
