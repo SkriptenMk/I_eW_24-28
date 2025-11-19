@@ -1,0 +1,1 @@
+see [Cryptology: Symmetric encryption XOR](files/lektionen_hs25/251105_symetricencryption/symetricencryption.html#digitale-verschluesselung-mit-xor)
