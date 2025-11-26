@@ -269,6 +269,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Transponieren Sie mit dem key=3 gemäss obiger Regel</li>
 <li>Tauschen Sie das Ergebnis mit Ihrem Lernpartner aus, findet er die ursprüngliche Zahl heraus?</li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>Aufgabe Anwenden Transponieren&lt;br/&gt;</span>
+<span id="cb2-2"><a href="#cb2-2"></a>Teillösung&lt;br/&gt;</span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a>Wie transponieren:&lt;br/&gt;</span>
+<span id="cb2-5"><a href="#cb2-5"></a>Nr: 1 2 3&lt;br/&gt;</span>
+<span id="cb2-6"><a href="#cb2-6"></a>Bit 0 1 0&lt;br/&gt;</span>
+<span id="cb2-7"><a href="#cb2-7"></a>Regel Reihenfolge 1,2,3 wird neu 3,1,2&lt;br/&gt;</span>
+<span id="cb2-8"><a href="#cb2-8"></a>Nr: 3 1 2&lt;br/&gt;</span>
+<span id="cb2-9"><a href="#cb2-9"></a>Bit 0 0 1&lt;br/&gt;</span>
+<span id="cb2-10"><a href="#cb2-10"></a></span>
+<span id="cb2-11"><a href="#cb2-11"></a>Meine vierstellige Zahl:</span>
+<span id="cb2-12"><a href="#cb2-12"></a>4589</span>
+<span id="cb2-13"><a href="#cb2-13"></a>Ziffern 4 5 8 9</span>
+<span id="cb2-14"><a href="#cb2-14"></a>und darunter binär nach UTF8</span>
+<span id="cb2-15"><a href="#cb2-15"></a></span>
+<span id="cb2-16"><a href="#cb2-16"></a>4          5          8        9</span>
+<span id="cb2-17"><a href="#cb2-17"></a>00110100'  00110101'  00111000</span>
+<span id="cb2-18"><a href="#cb2-18"></a></span>
+<span id="cb2-19"><a href="#cb2-19"></a>Regel für die Bits: (1,2,3) (3,1,2)&lt;br/&gt;</span>
+<span id="cb2-20"><a href="#cb2-20"></a>123 123 12 3 123 123 123</span>
+<span id="cb2-21"><a href="#cb2-21"></a>001 101 00'0 011 010 1'00 ...</span>
+<span id="cb2-22"><a href="#cb2-22"></a>312 312 31 2 312 321 3 21</span>
+<span id="cb2-23"><a href="#cb2-23"></a>100 110 00 0 101 001 010</span>
+<span id="cb2-24"><a href="#cb2-24"></a></span>
+<span id="cb2-25"><a href="#cb2-25"></a>Entschlüsseln</span>
+<span id="cb2-26"><a href="#cb2-26"></a>Regel für die Bits: (1,2,3) (3,1,2)</span>
+<span id="cb2-27"><a href="#cb2-27"></a>umgekehrt anwenden:</span>
+<span id="cb2-28"><a href="#cb2-28"></a>312 312 312 ...</span>
+<span id="cb2-29"><a href="#cb2-29"></a>100 110 000 ...</span>
+<span id="cb2-30"><a href="#cb2-30"></a>123 123 123 ...</span>
+<span id="cb2-31"><a href="#cb2-31"></a>001 101 000 ...</span>
+<span id="cb2-32"><a href="#cb2-32"></a>001101000 ...</span>
+<span id="cb2-33"><a href="#cb2-33"></a>-&gt;4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
 </section>
 <section id="aufgabe-anwenden-eines-mehrfachen-transponieren" class="level2">
 <h2 class="anchored" data-anchor-id="aufgabe-anwenden-eines-mehrfachen-transponieren">Aufgabe Anwenden eines mehrfachen Transponieren</h2>

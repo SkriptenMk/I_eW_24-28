@@ -59,6 +59,46 @@ Auflösen:
 - Transponieren Sie mit dem key=3 gemäss obiger Regel
 - Tauschen Sie das Ergebnis mit Ihrem Lernpartner aus, findet er die ursprüngliche Zahl heraus?
 
+
+::: {.callout-tip title="Lösung" collapse=true}
+```text
+Aufgabe Anwenden Transponieren<br/>
+Teillösung<br/>
+
+Wie transponieren:<br/>
+Nr: 1 2 3<br/>
+Bit 0 1 0<br/>
+Regel Reihenfolge 1,2,3 wird neu 3,1,2<br/>
+Nr: 3 1 2<br/>
+Bit 0 0 1<br/>
+
+Meine vierstellige Zahl:
+4589
+Ziffern 4 5 8 9
+und darunter binär nach UTF8
+
+4          5          8        9
+00110100'  00110101'  00111000
+
+Regel für die Bits: (1,2,3) (3,1,2)<br/>
+123 123 12 3 123 123 123
+001 101 00'0 011 010 1'00 ...
+312 312 31 2 312 321 3 21
+100 110 00 0 101 001 010
+
+Entschlüsseln
+Regel für die Bits: (1,2,3) (3,1,2)
+umgekehrt anwenden:
+312 312 312 ...
+100 110 000 ...
+123 123 123 ...
+001 101 000 ...
+001101000 ...
+->4
+```
+:::
+
+
 ## Aufgabe Anwenden eines mehrfachen Transponieren
 
 - ausprobieren: [Permutation-Demo](chapter/permutation_demo.html)
