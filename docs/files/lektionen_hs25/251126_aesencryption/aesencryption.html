@@ -8,7 +8,7 @@
 
 <meta name="author" content="Peter Rutschmann">
 
-<title>15.1 AES encryption practical – Computer Science Course Materials for School Year 2025/26 (2eW)</title>
+<title>15 AES encryption – Computer Science Course Materials for School Year 2025/26 (2eW)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,24 +59,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../../">
-<script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-5d254f1e278c2921d96b26102a150bb1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap-985b28ec037abca086789749d85d0073.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-5d254f1e278c2921d96b26102a150bb1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-985b28ec037abca086789749d85d0073.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../../../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -116,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Computer Science Course Materials for School Year 2025/26 (2eW)</span>
     </a>
   </div>
@@ -127,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -136,15 +136,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-materials">    
         <li>
-    <a class="dropdown-item" href="../../../../files/HS_24.html">
+    <a class="dropdown-item" href="../../../files/HS_24.html">
  <span class="dropdown-text">Autumn Term 2024/2025</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../../files/FS_25.html">
+    <a class="dropdown-item" href="../../../files/FS_25.html">
  <span class="dropdown-text">Spring Term 2025</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../../files/HS_25.html">
+    <a class="dropdown-item" href="../../../files/HS_25.html">
  <span class="dropdown-text">Autumn Term 2025/2026</span></a>
   </li>  
     </ul>
@@ -165,27 +165,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#aes-verschlüsselung-anwenden" id="toc-aes-verschlüsselung-anwenden" class="nav-link active" data-scroll-target="#aes-verschlüsselung-anwenden">AES-Verschlüsselung anwenden</a>
+  <li><a href="#aes-verschlüsselung" id="toc-aes-verschlüsselung" class="nav-link active" data-scroll-target="#aes-verschlüsselung">AES Verschlüsselung</a>
   <ul class="collapse">
-  <li><a href="#aes-online-demo" id="toc-aes-online-demo" class="nav-link" data-scroll-target="#aes-online-demo">AES Online Demo</a>
+  <li><a href="#verfahren-der-digitalen-verschlüsselung" id="toc-verfahren-der-digitalen-verschlüsselung" class="nav-link" data-scroll-target="#verfahren-der-digitalen-verschlüsselung">Verfahren der digitalen Verschlüsselung</a>
   <ul class="collapse">
-  <li><a href="#erklärungen-zur-demo" id="toc-erklärungen-zur-demo" class="nav-link" data-scroll-target="#erklärungen-zur-demo">Erklärungen zur Demo:</a></li>
-  <li><a href="#aufgabe-aes-online-anwenden" id="toc-aufgabe-aes-online-anwenden" class="nav-link" data-scroll-target="#aufgabe-aes-online-anwenden">Aufgabe: AES Online anwenden</a></li>
+  <li><a href="#substitution" id="toc-substitution" class="nav-link" data-scroll-target="#substitution">Substitution</a></li>
+  <li><a href="#transpositionpermutation" id="toc-transpositionpermutation" class="nav-link" data-scroll-target="#transpositionpermutation">Transposition/Permutation</a></li>
   </ul></li>
-  <li><a href="#aes-mit-python-anwenden" id="toc-aes-mit-python-anwenden" class="nav-link" data-scroll-target="#aes-mit-python-anwenden">AES mit Python anwenden</a>
+  <li><a href="#aufgabe-anwenden-transponieren" id="toc-aufgabe-anwenden-transponieren" class="nav-link" data-scroll-target="#aufgabe-anwenden-transponieren">Aufgabe Anwenden Transponieren</a></li>
+  <li><a href="#aufgabe-anwenden-eines-mehrfachen-transponieren" id="toc-aufgabe-anwenden-eines-mehrfachen-transponieren" class="nav-link" data-scroll-target="#aufgabe-anwenden-eines-mehrfachen-transponieren">Aufgabe Anwenden eines mehrfachen Transponieren</a></li>
+  <li><a href="#anwendung-in-der-praxis-mit-beispiel-aes-verschlüsselung" id="toc-anwendung-in-der-praxis-mit-beispiel-aes-verschlüsselung" class="nav-link" data-scroll-target="#anwendung-in-der-praxis-mit-beispiel-aes-verschlüsselung">Anwendung in der Praxis mit Beispiel AES Verschlüsselung</a>
   <ul class="collapse">
-  <li><a href="#aufgabe-aes-mit-python-anwenden" id="toc-aufgabe-aes-mit-python-anwenden" class="nav-link" data-scroll-target="#aufgabe-aes-mit-python-anwenden">Aufgabe : AES mit Python anwenden</a></li>
+  <li><a href="#aes-verfahren" id="toc-aes-verfahren" class="nav-link" data-scroll-target="#aes-verfahren">AES Verfahren</a></li>
+  <li><a href="#aes-verfahren-demo" id="toc-aes-verfahren-demo" class="nav-link" data-scroll-target="#aes-verfahren-demo">AES Verfahren Demo</a></li>
+  <li><a href="#aes-selber-anwenden" id="toc-aes-selber-anwenden" class="nav-link" data-scroll-target="#aes-selber-anwenden">AES selber anwenden</a></li>
   </ul></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251119_aesencryption/chapter/aes_encryption.ipynb" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="aes_encryption.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251126_aesencryption/aesencryption.md" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="aesencryption.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">15.1 AES encryption practical</h1>
+<h1 class="title">15 AES encryption</h1>
 </div>
 
 
@@ -202,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">19.11.2025</p>
+      <p class="date">26.11.2025</p>
     </div>
   </div>
   
@@ -214,134 +218,102 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="aes-verschlüsselung-anwenden" class="level1">
-<h1>AES-Verschlüsselung anwenden</h1>
-<p>In diesem Jupyter Notebook wird die <strong>AES-Verschlüsselung</strong> angewendet:</p>
+<section id="aes-verschlüsselung" class="level1">
+<h1>AES Verschlüsselung</h1>
+<section id="verfahren-der-digitalen-verschlüsselung" class="level2">
+<h2 class="anchored" data-anchor-id="verfahren-der-digitalen-verschlüsselung">Verfahren der digitalen Verschlüsselung</h2>
+<p>Die Techniken der digitalen Verschlüsselung lassen sich unter <em>Transformation</em> als Oberbegriff zusammenfassen.</p>
+<p>Eine Transformation kann aus diesens Schritten bestehen:</p>
 <ul>
-<li><ol type="1">
-<li>AES Online anwenden</li>
-</ol></li>
-<li><ol start="2" type="1">
-<li>AES mit Python anwenden</li>
-</ol></li>
+<li><p><strong>Substitution</strong> : Ersetzen von Symbolen durch andere Symbole</p></li>
+<li><p><strong>Transposition/Permutation</strong> : Vertauschung von Zeichen oder Bits</p></li>
+<li><p><strong>Diffusion</strong> : Streuung der Klartext-Information über viele Bits im Geheimtext</p></li>
+<li><p><strong>Konfusion</strong> : Komplexe, nichtlineare Beziehung zwischen Schlüssel und Geheimtext</p></li>
+<li><p><strong>Rundensystem</strong> : Mehrfache Wiederholung von Substitution und Permutation</p></li>
+<li><p><strong>Key Schedule</strong> : Algorithmus zur Ableitung von Rundenschlüsseln :</p></li>
+<li><p><strong>Blockchiffre</strong> | Verschlüsselt Daten blockweise (z. B. 128 Bit bei AES)</p></li>
+<li><p><strong>Stromchiffre</strong> | Verschlüsselt Bit für Bit oder Byte für Byte</p></li>
 </ul>
-<section id="aes-online-demo" class="level2">
-<h2 class="anchored" data-anchor-id="aes-online-demo">AES Online Demo</h2>
-<p>Es gibt verschiedene Online-Demos, die die AES-Verschlüsselung anschaulich erklären und zeigen.<br> Hier eine davon:</p>
-<p>https://demo.kenhaggerty.com/demos/aescipher</p>
-<section id="erklärungen-zur-demo" class="level3">
-<h3 class="anchored" data-anchor-id="erklärungen-zur-demo">Erklärungen zur Demo:</h3>
+<section id="substitution" class="level3">
+<h3 class="anchored" data-anchor-id="substitution">Substitution</h3>
 <ul>
-<li>Der Key muss geheim gehalten werden. Nur Sender um Empfänger dürfen ihn kennen.</li>
-<li>Der Key hat üblicherweise eine Länge von 128, 192 oder 256 Bit</li>
-<li>Der Key muss nicht ein lesbarer Text sein. Oft ist er eine Zufällige HEX-Folge</li>
-<li>BASE64 erlaubt es diese HEX-Folge in lesbare Zeichen zu kodieren, war die Übermittlung zBsp per Email vereinfacht.</li>
-<li>IV = Initialisierungsvektor, verhindert, dass bei gleichem Key und gleichem Plain-Text das Ergebnis gleich bleibt.<br> Der IV darf mit der verschlüsselten Nachricht übermittelt werden.</li>
+<li>UTF8 wendet Substituation an, es ersetzt anhand der UTF8 Code-Tabled ein Buchstabe durch eine Bitfolge</li>
+<li><strong>XOR</strong> wendet Substitution an, es ersetzt die Bits auf Grund des Schlüssel durch andere Bits.</li>
 </ul>
-<hr>
 </section>
-<section id="aufgabe-aes-online-anwenden" class="level3">
-<h3 class="anchored" data-anchor-id="aufgabe-aes-online-anwenden">Aufgabe: AES Online anwenden</h3>
+<section id="transpositionpermutation" class="level3">
+<h3 class="anchored" data-anchor-id="transpositionpermutation">Transposition/Permutation</h3>
+<p>A = 01000001<br> key = 3</p>
+<p>Meine eigene Regel:</p>
 <ul>
-<li><p>Verwenden Sie die oben angegebene Online-Demo</p></li>
-<li><p>Lässen Sie mit Refresh einen Key und IV generieren</p></li>
-<li><p>Schreiben Sie einen kurzen Klartext (Plain-Text)</p></li>
-<li><p>Codieren Sie den Text</p></li>
-<li><p>Halten Sie Key, IV, Plain-Text und Cipher-Text unten im Feld fest.<br><br></p></li>
-<li><p>Tauschen Sie den Codierten Text, den Schlüssel und den IV mit Ihrem Lernpartner aus</p></li>
-<li><p>Decodieren Sie den Codierten Text ihres Lernpartners mit den Angaben Ihres Lernpartners.</p></li>
-<li><p>Halten Sie Key, IV, Plain-Text und Cipher-Text unten im Feld fest.</p></li>
+<li>Buchstabencodierung UTF8, nur 7-Bit Buchstaben.</li>
+<li>Rechtes, fehlende Bit mit 1 auffüllen</li>
+<li>Teile die Bitfolge in Gruppen von 3 bit. Ergänze die Folge mit 1, falls es nicht aufgeht.</li>
+<li>Innerhalb jeder 3er-Gruppe vertauschen wir die Positionen nach Muster (1,2,3) -&gt; (3,1,2)</li>
 </ul>
-<div id="5688e61f" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#&nbsp;Hier ihren Key, IV, Plain-Tet und Cipher-Text festhalten</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Hier die Angaben Ihres Lernpartners festhalten, inklusive Ihrer Decodierung</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<hr>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>010 000 01 A</span>
+<span id="cb1-2"><a href="#cb1-2"></a>010 000 011  auffüllen</span>
+<span id="cb1-3"><a href="#cb1-3"></a>001 000 101 (1,2,3) -&gt; (3,1,2)</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a>Auflösen:</span>
+<span id="cb1-6"><a href="#cb1-6"></a>001 000 101 </span>
+<span id="cb1-7"><a href="#cb1-7"></a>010 000 011 (1,2,3) -&gt; (3,2,1)</span>
+<span id="cb1-8"><a href="#cb1-8"></a>010 000 01  A</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="aes-mit-python-anwenden" class="level2">
-<h2 class="anchored" data-anchor-id="aes-mit-python-anwenden">AES mit Python anwenden</h2>
-<p>Dieses Beispiel verwendet die Bibliothek <em>pycryptodome</em>.<br> Wenn Sie das Notebook im VSCode ausführen: - öffnen Sie ein Terminal (Menü von VSCode: Terminal -&gt; Neues Terminal)<br> - Geben Sie im Terminal folgendes ein und drücken Enter:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">/bin/python3</span> <span class="at">-m</span> pip install <span class="at">--user</span> pycryptodome</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Danach müssen Sie einen Restart mit dem Notebook durchführen.</p>
-<p>Alternative können Sie das Notebook im Colab ausführen, dort wird die Bibliothek direkt aus dem Notebook installiert:<br> https://colab.research.google.com/</p>
-<p>Starten Sie danach den folgenden Code-Block.<br> Welcher Schritt ergibt welchen Output?</p>
-<div id="c4c548eb" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="op">!</span>pip install pycryptodome</span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="im">from</span> Crypto.Cipher <span class="im">import</span> AES</span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="im">from</span> Crypto.Random <span class="im">import</span> get_random_bytes</span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="im">import</span> base64</span>
-<span id="cb3-6"><a href="#cb3-6"></a></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="co"># --- Hilfsfunktionen für Padding (PKCS#7) ---</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a></span>
-<span id="cb3-9"><a href="#cb3-9"></a>BLOCK_SIZE <span class="op">=</span> <span class="dv">16</span>  <span class="co"># AES-Blockgröße in Bytes</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a></span>
-<span id="cb3-11"><a href="#cb3-11"></a><span class="kw">def</span> pad(data: <span class="bu">bytes</span>) <span class="op">-&gt;</span> <span class="bu">bytes</span>:</span>
-<span id="cb3-12"><a href="#cb3-12"></a>    <span class="co">"""PKCS#7 Padding hinzufügen"""</span></span>
-<span id="cb3-13"><a href="#cb3-13"></a>    padding_len <span class="op">=</span> BLOCK_SIZE <span class="op">-</span> (<span class="bu">len</span>(data) <span class="op">%</span> BLOCK_SIZE)</span>
-<span id="cb3-14"><a href="#cb3-14"></a>    <span class="cf">return</span> data <span class="op">+</span> <span class="bu">bytes</span>([padding_len]) <span class="op">*</span> padding_len</span>
-<span id="cb3-15"><a href="#cb3-15"></a></span>
-<span id="cb3-16"><a href="#cb3-16"></a><span class="kw">def</span> unpad(data: <span class="bu">bytes</span>) <span class="op">-&gt;</span> <span class="bu">bytes</span>:</span>
-<span id="cb3-17"><a href="#cb3-17"></a>    <span class="co">"""PKCS#7 Padding entfernen"""</span></span>
-<span id="cb3-18"><a href="#cb3-18"></a>    padding_len <span class="op">=</span> data[<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb3-19"><a href="#cb3-19"></a>    <span class="cf">return</span> data[:<span class="op">-</span>padding_len]</span>
-<span id="cb3-20"><a href="#cb3-20"></a></span>
-<span id="cb3-21"><a href="#cb3-21"></a><span class="co"># --- 1. Key und IV erzeugen ---</span></span>
-<span id="cb3-22"><a href="#cb3-22"></a></span>
-<span id="cb3-23"><a href="#cb3-23"></a>key <span class="op">=</span> get_random_bytes(<span class="dv">16</span>)  <span class="co"># 16 Bytes = 128 Bit (AES-128)</span></span>
-<span id="cb3-24"><a href="#cb3-24"></a>iv <span class="op">=</span> get_random_bytes(<span class="dv">16</span>)   <span class="co"># 16 Bytes IV für CBC</span></span>
-<span id="cb3-25"><a href="#cb3-25"></a></span>
-<span id="cb3-26"><a href="#cb3-26"></a><span class="co"># --- 2. Klartext vorbereiten ---</span></span>
-<span id="cb3-27"><a href="#cb3-27"></a></span>
-<span id="cb3-28"><a href="#cb3-28"></a>plaintext <span class="op">=</span> <span class="st">"Wir treffen uns mit Paul am Mittwoch in der Gruft"</span></span>
-<span id="cb3-29"><a href="#cb3-29"></a>plaintext_bytes <span class="op">=</span> plaintext.encode(<span class="st">"utf-8"</span>)</span>
-<span id="cb3-30"><a href="#cb3-30"></a></span>
-<span id="cb3-31"><a href="#cb3-31"></a><span class="co"># --- 3. Verschlüsseln (Encrypt) ---</span></span>
-<span id="cb3-32"><a href="#cb3-32"></a></span>
-<span id="cb3-33"><a href="#cb3-33"></a>cipher_encrypt <span class="op">=</span> AES.new(key, AES.MODE_CBC, iv)</span>
-<span id="cb3-34"><a href="#cb3-34"></a>ciphertext_bytes <span class="op">=</span> cipher_encrypt.encrypt(pad(plaintext_bytes))</span>
-<span id="cb3-35"><a href="#cb3-35"></a></span>
-<span id="cb3-36"><a href="#cb3-36"></a><span class="co"># --- 4. Für Transport/Anzeige in Base64 kodieren ---</span></span>
-<span id="cb3-37"><a href="#cb3-37"></a></span>
-<span id="cb3-38"><a href="#cb3-38"></a>key_b64 <span class="op">=</span> base64.b64encode(key).decode(<span class="st">"utf-8"</span>)</span>
-<span id="cb3-39"><a href="#cb3-39"></a>iv_b64 <span class="op">=</span> base64.b64encode(iv).decode(<span class="st">"utf-8"</span>)</span>
-<span id="cb3-40"><a href="#cb3-40"></a>ciphertext_b64 <span class="op">=</span> base64.b64encode(ciphertext_bytes).decode(<span class="st">"utf-8"</span>)</span>
-<span id="cb3-41"><a href="#cb3-41"></a></span>
-<span id="cb3-42"><a href="#cb3-42"></a><span class="bu">print</span>(<span class="st">"AES Key (Base64):     "</span>, key_b64)</span>
-<span id="cb3-43"><a href="#cb3-43"></a><span class="bu">print</span>(<span class="st">"AES IV  (Base64):     "</span>, iv_b64)</span>
-<span id="cb3-44"><a href="#cb3-44"></a><span class="bu">print</span>(<span class="st">"Ciphertext (Base64):  "</span>, ciphertext_b64)</span>
-<span id="cb3-45"><a href="#cb3-45"></a></span>
-<span id="cb3-46"><a href="#cb3-46"></a><span class="co"># --- 5. Entschlüsseln (Decrypt) ---</span></span>
-<span id="cb3-47"><a href="#cb3-47"></a></span>
-<span id="cb3-48"><a href="#cb3-48"></a><span class="co"># In der Praxis käme Key/IV z.B. aus Base64-Strings:</span></span>
-<span id="cb3-49"><a href="#cb3-49"></a>key_decoded <span class="op">=</span> base64.b64decode(key_b64)</span>
-<span id="cb3-50"><a href="#cb3-50"></a>iv_decoded <span class="op">=</span> base64.b64decode(iv_b64)</span>
-<span id="cb3-51"><a href="#cb3-51"></a>ciphertext_decoded <span class="op">=</span> base64.b64decode(ciphertext_b64)</span>
-<span id="cb3-52"><a href="#cb3-52"></a></span>
-<span id="cb3-53"><a href="#cb3-53"></a>cipher_decrypt <span class="op">=</span> AES.new(key_decoded, AES.MODE_CBC, iv_decoded)</span>
-<span id="cb3-54"><a href="#cb3-54"></a>decrypted_padded <span class="op">=</span> cipher_decrypt.decrypt(ciphertext_decoded)</span>
-<span id="cb3-55"><a href="#cb3-55"></a>decrypted <span class="op">=</span> unpad(decrypted_padded).decode(<span class="st">"utf-8"</span>)</span>
-<span id="cb3-56"><a href="#cb3-56"></a></span>
-<span id="cb3-57"><a href="#cb3-57"></a><span class="bu">print</span>(<span class="st">"Entschlüsselter Text: "</span>, decrypted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: pycryptodome in /home/vscode/.local/lib/python3.10/site-packages (3.23.0)
-AES Key (Base64):      xSWzpVy2pA/QauBbMmh71g==
-AES IV  (Base64):      9yZ90TPiJaYmY1wZnkHNIw==
-Ciphertext (Base64):   D/SaYU3roeqXFsB8F2XPIs5iEFeX9mzcEcTFvq/vleHue7Cxv1kHmq0Ch+XyT1M7ImUdWU2B1+iGg6YRBQyGJw==
-Entschlüsselter Text:  Wir treffen uns mit Paul am Mittwoch in der Gruft</code></pre>
-</div>
-</div>
-<hr>
-<section id="aufgabe-aes-mit-python-anwenden" class="level3">
-<h3 class="anchored" data-anchor-id="aufgabe-aes-mit-python-anwenden">Aufgabe : AES mit Python anwenden</h3>
-<p>Kopieren Sie den obigen Code.<br> Kodieren Sie einen kurzen Text.<br> Tauschen Sie den codierten Text, den Schlüssel und den IV mit Ihrem Lernpartner aus.<br> Decodieren Sie den codierten Text ihres Lernpartners mit den Angaben Ihres Lernpartners.</p>
-<div id="d6f77a63" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Mein eigenes Beispiel</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<section id="aufgabe-anwenden-transponieren" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-anwenden-transponieren">Aufgabe Anwenden Transponieren</h2>
+<ul>
+<li>Wenden Sie die obige Transposition auf einen 4 stellige Dezimale Zahl an.</li>
+<li>Wandeln Sie die Zifferen der Zahl mit UTF8 in eine binäre Zahlenfolge um. (ergibt 4 Bytes)<br> <a href="https://www.utf8-chartable.de/">Liste der UTF8 Codierung</a></li>
+<li>Transponieren Sie mit dem key=3 gemäss obiger Regel</li>
+<li>Tauschen Sie das Ergebnis mit Ihrem Lernpartner aus, findet er die ursprüngliche Zahl heraus?</li>
+</ul>
+</section>
+<section id="aufgabe-anwenden-eines-mehrfachen-transponieren" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-anwenden-eines-mehrfachen-transponieren">Aufgabe Anwenden eines mehrfachen Transponieren</h2>
+<ul>
+<li>ausprobieren: <a href="chapter/permutation_demo.html">Permutation-Demo</a></li>
+<li>analysieren Sie die Schritte</li>
+<li>notieren Sie die Schritte auf.</li>
+<li>Codieren Sie einen von Ihnen gewählten Buchstaben.
+<ul>
+<li>Buchstabe mit UTF8 Tabelle in Bits umwandeln.</li>
+<li>In der Permutations-Demo codieren, eigenen Schlüssel und Anzahl Runden wählen.</li>
+<li>Mit Lernpartner Codierten Code, Schlüssel und Anzahl Runden austauschen.</li>
+<li>Kann Ihr Lernpartner den richtigen Buchstaben herausfinden?</li>
+</ul></li>
+</ul>
+</section>
+<section id="anwendung-in-der-praxis-mit-beispiel-aes-verschlüsselung" class="level2">
+<h2 class="anchored" data-anchor-id="anwendung-in-der-praxis-mit-beispiel-aes-verschlüsselung">Anwendung in der Praxis mit Beispiel AES Verschlüsselung</h2>
+<section id="aes-verfahren" class="level3">
+<h3 class="anchored" data-anchor-id="aes-verfahren">AES Verfahren</h3>
+<p><strong>AES</strong> ist ein modernes Verschlüsselungsverfahren.<br> AES verschlüsselt, indem es den Klartext blockweise (128 Bit) in mehreren Runden mit dem Schlüssel verarbeitet.<br> In jeder Runde passieren vier Schritte:</p>
+<ul>
+<li>Substitution: SubBytes -&gt; jedes Byte wird durch die S-Box ersetzt</li>
+<li>Permutation: ShiftRows -&gt; die Zeilen werden verschoben</li>
+<li>Diffusion: MixColumns -&gt; die Spalten werden gemischt.</li>
+<li>AddRoundKey → der Block wird mit dem Rundenschlüssel per XOR verknüpft.</li>
+<li>Nach 10 (12 / 14) Runden entsteht der Geheimtext.</li>
+</ul>
+</section>
+<section id="aes-verfahren-demo" class="level3">
+<h3 class="anchored" data-anchor-id="aes-verfahren-demo">AES Verfahren Demo</h3>
+<p>Das sind einige Schritte. Die <a href="https://jrvidal.github.io/aes-demo/"><em>AWS web demo</em></a> zeigt das anschaulich.</p>
+<ul>
+<li>Link anklicken, Random wählen, die Schritte beobachten.</li>
+<li>Das Resultat auch wieder dekodieren.</li>
+</ul>
+<p>Eine <a href="https://legacy.cryptool.org/en/cto/aes-animation">AES-Animation</a>, die das Verfahren versucht zu verdeutlichen.</p>
+<ul>
+<li>Probieren Sie es aus.</li>
+</ul>
+</section>
+<section id="aes-selber-anwenden" class="level3">
+<h3 class="anchored" data-anchor-id="aes-selber-anwenden">AES selber anwenden</h3>
+<p>Laden Sie das Notebook herunter, um AES praktisch anzuwenden.<br> Lesen und lösen Sie:</p>
+<p><a href="https://skriptenmk.github.io/I_eW_24-28/files/lektionen_hs25/251126_aesencryption/chapter/aes_encryption.ipynb" download="aes_encryption.ipynb"> Notebook zu AES herunterladen </a></p>
 
 
 </section>
@@ -754,4 +726,4 @@ Entschlüsselter Text:  Wir treffen uns mit Paul am Mittwoch in der Gruft</code>
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251119_aesencryption/chapter/aes_encryption.ipynb" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251126_aesencryption/aesencryption.md" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

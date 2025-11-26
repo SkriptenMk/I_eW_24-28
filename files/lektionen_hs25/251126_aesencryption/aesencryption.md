@@ -1,6 +1,6 @@
 ---
 title: "15 AES encryption"
-date: 2025-11-19
+date: 2025-11-26
 date-format: DD.MM.YYYY
 author: "Peter Rutschmann"
 ---
@@ -100,7 +100,7 @@ Eine [AES-Animation](https://legacy.cryptool.org/en/cto/aes-animation), die das 
 Laden Sie das Notebook herunter, um AES praktisch anzuwenden.<br>
 Lesen und lösen Sie:
 
-<a href="https://skriptenmk.github.io/I_eW_24-28/files/lektionen_hs25/251119_aesencryption/chapter/aes_encryption.ipynb" 
+<a href="https://skriptenmk.github.io/I_eW_24-28/files/lektionen_hs25/251126_aesencryption/chapter/aes_encryption.ipynb" 
    download="aes_encryption.ipynb">
    Notebook zu AES herunterladen
 </a>
