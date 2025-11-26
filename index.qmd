@@ -25,7 +25,7 @@ expected during the course of the semester.
 | 26.11.2025 | [Cryptology: Symmetric encryption AES](files/lektionen_hs25/251126_aesencryption/aesencryption.html) |
 | 03.12.2025 | Cryptology: Asymetric encryption |
 | 10.12.2025 | Cryptology: Signature |
-| 17.12.2025 | Test zu Cryptology / anschl. Start mit AI|
+| 17.12.2025 | [Test zu Cryptology](files/lektionen_hs25/251217/KannListe.md) / anschl. Start mit AI|
 | 07.01.2026 | AI |
 | 14.01.2026 | AI |
 | 21.01.2026 | AI |
