@@ -274,37 +274,37 @@ Below is the working code example for the <a href="https://github.com/SkriptenMk
 <p>What happens when you do so is explained in the following sections.</p>
 <p>The code consists of two main parts: the <code>server_program</code> function and the <code>if __name__ == '__main__'</code> block. The <code>server_program</code> function contains the main logic for the server, while the <code>if</code> block is used to execute the server code when the script is run directly.</p>
 <p>When you run the script, Python first imports the <code>socket</code> module.</p>
-<div id="dcc76a24" class="cell" data-execution_count="1">
+<div id="0f31af7b" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> socket</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Next, the <code>server_program</code> function is called. Inside this function, the first thing that happens is the definition of the host address and the port number. <code>localhost</code> is a special address that refers to the local machine. <code>localhost</code> is equivalent to the IPv4 address <code>127.0.0.1</code>. This means that the server will only accept connections from clients running on the same machine. This is a simulation of a network on the local machine.</p>
-<div id="16752c23" class="cell" data-execution_count="2">
+<div id="2a25553c" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> server_program():</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># define host name and port</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    host <span class="op">=</span> <span class="st">'localhost'</span>    <span class="co"># for communication on the local machine</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    port <span class="op">=</span> <span class="dv">5000</span>           <span class="co"># use a port number above 1024</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Below, the <code>server_socket</code> is created using the <code>socket.socket()</code> function, which creates a new socket object.</p>
-<div id="5a24d627" class="cell" data-execution_count="3">
+<div id="d545c545" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>server_socket <span class="op">=</span> socket.socket()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This socket will be used to listen for incoming connections from clients. To make the connection work, the <code>server_socket</code> must be bound to the host and port using the <code>bind()</code>.</p>
-<div id="acdda138" class="cell" data-execution_count="4">
+<div id="0591342f" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>server_socket.bind((host, port))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Next, the server is set to listen for incoming connections with the <code>listen()</code> method.</p>
-<div id="9f48f713" class="cell" data-execution_count="5">
+<div id="0c6d6247" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>server_socket.listen(<span class="dv">2</span>) <span class="co"># start listening </span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                        <span class="co"># with a backlog of 2 </span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                        <span class="co"># (max queued connections)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The server sets a backlog of 2 pending connections. The code, however, accepts exactly one client connection (accept() is called once). To handle multiple clients, call accept() in a loop and use threads or asyncio. This limit is set to prevent the server from being overwhelmed by too many connections at once. The <code>accept()</code> method is used to accept a new connection from a client. This method returns a tuple containing two items: conn, a new socket object for client communication, and address, the client’s address. The next chunk shows, how a message is printed to show the address of the connected client.</p>
-<div id="44954bce" class="cell" data-execution_count="6">
+<div id="e18e191e" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>conn, address <span class="op">=</span> server_socket.accept()</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Connection from: "</span> <span class="op">+</span> <span class="bu">str</span>(address))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The while loop lets the server wait for data from the client. The <code>recv()</code> method is used to receive data from the client. Each <code>recv()</code> call reads up to 1024 bytes; additional data remains in the buffer and can be read by subsequent calls. If no data is received, the server breaks out of the loop and closes the connection.</p>
-<div id="333d8657" class="cell" data-execution_count="7">
+<div id="86387f36" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>        <span class="co"># receive up to 1024 bytes per call</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        data <span class="op">=</span> conn.recv(<span class="dv">1024</span>).decode()</span>
@@ -313,7 +313,7 @@ Below is the working code example for the <a href="https://github.com/SkriptenMk
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>If the server receives data, it prints the data to the console and then prompts the user to enter a response. The response is sent back to the client using the <code>send()</code> method.</p>
-<div id="361ffd3e" class="cell" data-execution_count="8">
+<div id="4873eb2d" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Received from connected client: "</span> <span class="op">+</span> <span class="bu">str</span>(data))</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>        <span class="co"># prompt the user to enter a message</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        data <span class="op">=</span> <span class="bu">input</span>(<span class="st">' -&gt; '</span>)</span>
