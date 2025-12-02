@@ -55,6 +55,12 @@ author: "Peter Rutschmann"
 - Ich kann eine Nachricht mit der AES Verschlüsselung verschlüsseln und entschlüsseln (mit Hilfsmittel).
 - Ich kann die Sicherheit der AES Verschlüsselung beurteilen.
 
+## Schlüsselaustausch
+
+- Ich kann das Problem des Schlüsselaustauschs erklären.
+- Ich kann die Bedetung des Schlüsselsaustausch bei HTTPS erklären.
+- Ich kann das Prinzip des Deffie-Hellman Verfahrens erklären.
+
 ## Asymetrische Verschlüsselung
 
 - Ich kann das Prinzip der asymmetrischen Verschlüsselung erklären.
