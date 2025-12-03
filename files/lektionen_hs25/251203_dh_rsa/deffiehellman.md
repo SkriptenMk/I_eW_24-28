@@ -86,5 +86,5 @@ Dies funktioniert deshalb, da mathematisch bewiesen werden kann dass:
 
 - 7^34 mod 17 = 15
 - 7^19 mod 17 = 3<br/><br/>
-- 15^19 mod 17 = 7^(34*19) = 9
-- 3^34 mod 17 = 7^(19*34) = 9
+- 15^19 mod 17 = 7^(34*19) mod 17= 9
+- 3^34 mod 17 = 7^(19*34) mod 17 = 9
