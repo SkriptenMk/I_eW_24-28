@@ -84,7 +84,32 @@ y = b^x mod m
 
 Dies funktioniert deshalb, da mathematisch bewiesen werden kann dass:
 
-- 7^34 mod 17 = 15
-- 7^19 mod 17 = 3<br/><br/>
-- 15^19 mod 17 = 7^(34*19) mod 17= 9
-- 3^34 mod 17 = 7^(19*34) mod 17 = 9
+-  7 Basiszahl
+- 17 abgemachte Modulozahl
+- 34 Alice secret key
+- 15 Alice public key
+- 19 Bob secret key
+- 3 Bob public key
+- 9 gemeinsamer geheimer Schlüssel
+
+
+A) Basizahl^AliceSecretKey mod Modulozahl = AlicePublicKey<br/>
+7^34 mod 17 = 15  <br/>
+
+B) Basizahl^BobSecretKey mod Modulozahl = BobPublicKey<br/>
+7^19 mod 17 = 3  <br/>
+
+C) AlicePublicKey^BobScretKey mod Modulozahl = geheimer Key<br/>
+15^19 mod 17 = 9  <br/>
+Nun kombiniere ich die Schritte A) und C) für den Beweis:<br/>
+(7^34)^19 mod 17 = 9   <br/>
+7^(34*19) mod 17 = 9   <br/>
+
+D) BobPublicKey^AliceScretKey mod Modulozahl = geheimer Key<br/>
+3^34 mod 17 = 9  <br/>
+Nun kombiniere ich die Schritte B) und D) für den Beweis:<br/>
+(7^19)^34 mod 17 = 9   <br>
+7^(19*34) mod 17 = 9   <br/>
+
+Es ist das Gleiche:
+7^(34*19) mod 17 = 9 = 7^(19*34) mod 17

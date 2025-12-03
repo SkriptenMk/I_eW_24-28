@@ -265,11 +265,21 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Dies funktioniert deshalb, da mathematisch bewiesen werden kann dass:</p>
 <ul>
-<li>7^34 mod 17 = 15</li>
-<li>7^19 mod 17 = 3<br><br></li>
-<li>15^19 mod 17 = 7^(34*19) mod 17= 9</li>
-<li>3^34 mod 17 = 7^(19*34) mod 17 = 9</li>
+<li>7 Basiszahl</li>
+<li>17 abgemachte Modulozahl</li>
+<li>34 Alice secret key</li>
+<li>15 Alice public key</li>
+<li>19 Bob secret key</li>
+<li>3 Bob public key</li>
+<li>9 gemeinsamer geheimer Schlüssel</li>
 </ul>
+<ol type="A">
+<li><p>Basizahl^AliceSecretKey mod Modulozahl = AlicePublicKey<br> 7^34 mod 17 = 15 <br></p></li>
+<li><p>Basizahl^BobSecretKey mod Modulozahl = BobPublicKey<br> 7^19 mod 17 = 3 <br></p></li>
+<li><p>AlicePublicKey^BobScretKey mod Modulozahl = geheimer Key<br> 15^19 mod 17 = 9 <br> Nun kombiniere ich die Schritte A) und C) für den Beweis:<br> (7<sup>34)</sup>19 mod 17 = 9 <br> 7^(34*19) mod 17 = 9 <br></p></li>
+<li><p>BobPublicKey^AliceScretKey mod Modulozahl = geheimer Key<br> 3^34 mod 17 = 9 <br> Nun kombiniere ich die Schritte B) und D) für den Beweis:<br> (7<sup>19)</sup>34 mod 17 = 9 <br> 7^(19*34) mod 17 = 9 <br></p></li>
+</ol>
+<p>Es ist das Gleiche: 7^(34<em>19) mod 17 = 9 = 7^(19</em>34) mod 17</p>
 
 
 </section>
