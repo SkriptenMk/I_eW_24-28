@@ -102,14 +102,14 @@ B) Basizahl^BobSecretKey mod Modulozahl = BobPublicKey<br/>
 C) AlicePublicKey^BobScretKey mod Modulozahl = geheimer Key<br/>
 15^19 mod 17 = 9  <br/>
 Nun kombiniere ich die Schritte A) und C) für den Beweis:<br/>
-(7^34)^19 mod 17 = 9   <br/>
+(7^34) ^19 mod 17 = 9   <br/>
 7^(34*19) mod 17 = 9   <br/>
 
 D) BobPublicKey^AliceScretKey mod Modulozahl = geheimer Key<br/>
 3^34 mod 17 = 9  <br/>
 Nun kombiniere ich die Schritte B) und D) für den Beweis:<br/>
-(7^19)^34 mod 17 = 9   <br>
+(7^19) ^34 mod 17 = 9   <br>
 7^(19*34) mod 17 = 9   <br/>
 
-Es ist das Gleiche:
-7^(34*19) mod 17 = 9 = 7^(19*34) mod 17
+Es ist das Gleiche:<br/>
+7^(34* 19) mod 17 = 9 = 7^(19*34) mod 17
