@@ -85,7 +85,7 @@ Und somit ist die Authentizität bewiesen, der Hashwert stammt wirklich von Ihne
 > Die Nachrichten haben beide die gleiche Signatur. Es ist also nur eine der beiden Nachrichten echt.<br/>
 > Doch welche der beiden Nachrichten stammt von Ihrer Lehrperson?<br/><br/>
 > Nachricht A: <br/>
-> _Heute ist der Untericht 10 Minuten früher fertig._
+> _Heute ist der Untericht 10 Minuten früher fertig._<br/>
 > Nachricht B:<br/>
 > _An der Lernkontrolle schenke ich Ihnen 0.1 Notenpunkte._<br/><br/>
 > 
