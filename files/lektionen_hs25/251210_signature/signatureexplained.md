@@ -123,18 +123,38 @@ qE9rNkV3142chHh+mrJE3MNIp18ooqTLZwGZeZ45c7jV3P2nF/aDlkI7yhnvCC5c
 
 ---
 
+> ## Aufgabe: Selber eine Signatur berechnen
+>
+> Tauschen Sie eine signierte Nachricht mit einem Lernpartner aus.
+> 
+> Die Webseite wo Sie die Signatur erstellen und überprüfen können:<br/>
+> [https://8gwifi.org/rsasignverifyfunctions.jsp](https://8gwifi.org/rsasignverifyfunctions.jsp)
+
+> 1. Generieren Sie neue Keys
+> 2. Schreiben Sie eine Message
+> 3. Berechnen Sie die Signatur.
+> 4. Senden Sie die Nachricht, die Signatur und Ihren Public Key an Ihren Lernpartner.
+> <br/>
+> 5. Ihr Lernpartner überprüft die Signatur mit Hilfe der Webseite der Nachricht.
+> 
+> Hat es funktioniert? ;-)
+
+---
+
 ## Email signieren und verifizieren
 
 Obwohl Signieren eigentlich ein sinnvoller Vorgang ist, wird es in der Praxis wenig angewandt.<br/>
 Der Einsatz bei Emails ist gutes Beispiel.<br/>
 Doch Achtung: Sucht man nach Anleitunge, dann findet man oft die Anleitung für eine Signatur wie zBsp:
+
 ```text
 ----
 Pionierpark Gmbh
 Peter Rutschmann
 Mobile: 079 123 45 67
 ---
-````
+```
+
 Das ist aber nicht die Art von Signatur, die hier gemeint ist.<br/>
 Es geht um eine digitale Signatur.
 
