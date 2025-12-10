@@ -160,11 +160,30 @@ Anleitungen findet man in der Dokumentationen des jeweiligen Programmes.
 > ### Schritte:
 > 1. Entscheiden Sie, ob Sie eine bestehende GMail-Adresse verwenden wollen, oder ob Sie eine neue GMail-Adresse erstellen wollen.
 > 2. Stellen Sie sicher, dass die **GMail-Adresse funktioniert**. Senden Sie sich eine EMail an Ihre GMail-Adresse und kontrollieren Sie, ob Sie die Nachricht empfangen. (Noch ohne Signatur)
+>
+>---
+>
 > 3. Nun folgen Sie der Anleitung für das **Installieren des Browserplugins** von flowcrypt:<br/> [https://flowcrypt.com/docs/getting-started/setup/install.html](https://flowcrypt.com/docs/getting-started/setup/install.html)<br/>Folgen Sie der Anleitung auch in Bezug auf das Erstellen eines Schlüsselpaares.
+>    - Das Plugin muss Zugriff auf Ihr GMail-Konto erhalten.
+>    - Und Sie müssen ein Key-Paar erstellen (public und private key).
+><img src="./setupflowcrypt.png" alt="setup" width="200">
+><img src="./setupflowcrypt2.png" alt="setup" width="200">
+>
+>---
+>
 > 4. ACHTUNG: flowcrypt hat zwei unterschiedliche Möglichkeiten<br/>
->    - EMail verschlüsseln
->   - EMail signieren --> das wollen wird.
-> 5. Folgen Sie der Anleitung für das Signieren. [https://flowcrypt.com/docs/getting-started/send-and-receive/send/send-signed-only-emails.html](https://flowcrypt.com/docs/getting-started/send-and-receive/send/send-signed-only-emails.html) <br/> Senden Sie eine signierte EMail an Ihre eigene GMail-Adresse. Kontrollieren Sie, ob Sie die signierte Nachricht empfangen.   
+>     - EMail verschlüsseln
+>     - EMail signieren --> **das wollen wir!!**
+> 5. Folgen Sie der Anleitung für das Signieren. [https://flowcrypt.com/docs/getting-started/send-and-receive/send/send-signed-only-emails.html](https://flowcrypt.com/docs/getting-started/send-and-receive/send/send-signed-only-emails.html) <br/> Senden Sie eine signierte EMail an Ihre eigene GMail-Adresse.
+><img src="./newmessage.png" alt="setup" width="200">
+><img src="./newmessage2.png" alt="setup" width="200"><br/>
+>Kontrollieren Sie, ob Sie die signierte Nachricht empfangen.
+><img src="./messagereceived.png" alt="setup" width="200">
+><img src="./messagecontent.png" alt="setup" width="100">
+><img src="./messagecontent2.png" alt="setup" width="400">
+>
+>---
+>
 > 6. Nun senden Sie eine EMail-Nachricht an Ihren Lernpartner, an dessen Gmail-Adresse.<br>Kann Ihr Lernpartner die Echtheit der Nachricht bestätigen?
 
 ---
