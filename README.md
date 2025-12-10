@@ -47,7 +47,7 @@ python3 scripts/fix_notebook_links.py
 
 Hinweis: Die DevContainer-Dockerfile pinnt eine Quarto-Version und lädt automatisch das passende .deb für die Container-Architektur (amd64/arm64). Wenn du die Dockerfile änderst, rebuild den Container.
 
-## Alternative: Manuell per Docker (ohne VS Code)
+# Alternative: Manuell per Docker (ohne VS Code)
 Im Ordner `.devcontainer` existiert ein Dockerfile. Beispiel (aus `.devcontainer/`):
 
 ```bash
