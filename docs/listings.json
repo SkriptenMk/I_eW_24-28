@@ -13,26 +13,6 @@
     ]
   },
   {
-    "listing": "/files/HS_24.html",
-    "items": [
-      "/files/lektionen_hs24/240821/einfuehrung.html",
-      "/files/lektionen_hs24/240828/installationsanleitungen.html",
-      "/files/lektionen_hs24/240904/problemloesung.html",
-      "/files/lektionen_hs24/240911/Variablen.html",
-      "/files/lektionen_hs24/240918/main.html",
-      "/files/lektionen_hs24/240925/main.html",
-      "/files/lektionen_hs24/241023/main.html",
-      "/files/lektionen_hs24/241113/lists.html",
-      "/files/lektionen_hs24/241120/dictionaries.html",
-      "/files/lektionen_hs24/241127/selection_sort.html",
-      "/files/lektionen_hs24/241204/divide_and_conquer.html",
-      "/files/lektionen_hs24/241211/schneeflocke.html",
-      "/files/lektionen_hs24/241218/lernziele.html",
-      "/files/lektionen_hs24/250115/binary_search_tree.html",
-      "/files/lektionen_hs24/250122/speicherstrukturen.html"
-    ]
-  },
-  {
     "listing": "/files/HS_25.html",
     "items": [
       "/files/lektionen_hs25/250820/networks.html",
@@ -56,7 +36,28 @@
       "/files/lektionen_hs25/251126_aesencryption/chapter/aes_encryption.html",
       "/files/lektionen_hs25/251203_dh_rsa/deffiehellman.html",
       "/files/lektionen_hs25/251203_dh_rsa/rsaasymetricencryption.html",
-      "/files/lektionen_hs25/251217/KannListe.html"
+      "/files/lektionen_hs25/251217/KannListe.html",
+      "/files/lektionen_hs25/251210_signature/signatureexplained.html"
+    ]
+  },
+  {
+    "listing": "/files/HS_24.html",
+    "items": [
+      "/files/lektionen_hs24/240821/einfuehrung.html",
+      "/files/lektionen_hs24/240828/installationsanleitungen.html",
+      "/files/lektionen_hs24/240904/problemloesung.html",
+      "/files/lektionen_hs24/240911/Variablen.html",
+      "/files/lektionen_hs24/240918/main.html",
+      "/files/lektionen_hs24/240925/main.html",
+      "/files/lektionen_hs24/241023/main.html",
+      "/files/lektionen_hs24/241113/lists.html",
+      "/files/lektionen_hs24/241120/dictionaries.html",
+      "/files/lektionen_hs24/241127/selection_sort.html",
+      "/files/lektionen_hs24/241204/divide_and_conquer.html",
+      "/files/lektionen_hs24/241211/schneeflocke.html",
+      "/files/lektionen_hs24/241218/lernziele.html",
+      "/files/lektionen_hs24/250115/binary_search_tree.html",
+      "/files/lektionen_hs24/250122/speicherstrukturen.html"
     ]
   }
 ]

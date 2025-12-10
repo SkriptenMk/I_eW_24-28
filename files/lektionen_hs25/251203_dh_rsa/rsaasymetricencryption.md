@@ -41,27 +41,27 @@ Beispiel: RSA
 
 ---
 
-## RAS - Asymetrische Verschlüsselung
+## RSA - Asymetrische Verschlüsselung
 
 RSA (Rivest-Shamir-Adleman) ist ein weit verbreitetes asymetrisches Kryptosystem, das auf der mathematischen Schwierigkeit basiert, grosse Zahlen in ihre Primfaktoren zu zerlegen.
 Es wurde 1977 von Ron Rivest, Adi Shamir und Leonard Adleman entwickelt und ist eines der ersten praktischen Public-Key-Kryptosysteme.
 
-## RAS - das Prinzip
+## RSA - das Prinzip
 
-Das Prinzip von RAS zeigt dieses Arbeitsblatt.<br/>
+Das Prinzip von RSA zeigt dieses Arbeitsblatt.<br/>
 Laden Sie es herunter und lösen Sie es zusammen mit der Lehrperson.
 
 <a href="https://skriptenmk.github.io/I_eW_24-28/files/lektionen_hs25/251203_dh_rsa/chapter/RSARechnen.pdf" 
-   download="RASRechnen.pdf">
+   download="RSARechnen.pdf">
    Das Prinzip von RSA
 </a>
 
 ---
 
-## RAS - praktische Anwendung
+## RSA - praktische Anwendung
 
 > ### Aufgabe: Anwenden der RSA Asymetrischen Verschlüsselung
-> - Sie finden unter diesem Link eine Online-Version für die RAS Verschlüsseltung: [https://www.devglan.com/online-tools/rsa-encryption-decryption](https://www.devglan.com/online-tools/rsa-encryption-decryption)<br/><br/>
+> - Sie finden unter diesem Link eine Online-Version für die RSA Verschlüsseltung: [https://www.devglan.com/online-tools/rsa-encryption-decryption](https://www.devglan.com/online-tools/rsa-encryption-decryption)<br/><br/>
 > - Aufgabe 1)
 >     - Die Lehrperson hat eine Nachricht für alle Lernenden verschlüsselt.
 >     - Entschlüsseln Sie die Nachricht mit dem public key der Lehrperson.

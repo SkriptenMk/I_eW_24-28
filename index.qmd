@@ -23,8 +23,8 @@ expected during the course of the semester.
 | 12.11.2025 | [Cryptology: Symmetric encryption XOR](files/lektionen_hs25/251112_xorencryption/xorencryption.html) |
 | 19.11.2025 | Lehrerfortbildung |
 | 26.11.2025 | [Cryptology: Symmetric encryption AES](files/lektionen_hs25/251126_aesencryption/aesencryption.html) |
-| 03.12.2025 | [Cryptology: Diffie-Hellmann](files/lektionen_hs25/251203_dh_rsa/deffiehellman.md) / [RAS Asymetric encryption](files/lektionen_hs25/251203_dh_rsa/rsaasymetricencryption.md) |
-| 10.12.2025 | Cryptology: Signature |
+| 03.12.2025 | [Cryptology: Diffie-Hellmann](files/lektionen_hs25/251203_dh_rsa/deffiehellman.md) / [RSA Asymetric encryption](files/lektionen_hs25/251203_dh_rsa/rsaasymetricencryption.md) |
+| 10.12.2025 | [Cryptology: Signature](files/lektionen_hs25/251210_signature/signatureexplained.md) |
 | 17.12.2025 | [Test zu Cryptology](files/lektionen_hs25/251217/KannListe.md) / anschl. Start mit AI|
 | 07.01.2026 | AI |
 | 14.01.2026 | AI |
