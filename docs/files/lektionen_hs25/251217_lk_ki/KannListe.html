@@ -8,7 +8,7 @@
 
 <meta name="author" content="Peter Rutschmann">
 
-<title>18 Digitale Signaturen – Computer Science Course Materials for School Year 2025/26 (2eW)</title>
+<title>19 Kann-Liste Cryptologic – Computer Science Course Materials for School Year 2025/26 (2eW)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -165,27 +130,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#digitale-signaturen" id="toc-digitale-signaturen" class="nav-link active" data-scroll-target="#digitale-signaturen">Digitale Signaturen</a>
+  <li><a href="#kann-liste-cryptologic" id="toc-kann-liste-cryptologic" class="nav-link active" data-scroll-target="#kann-liste-cryptologic">Kann Liste Cryptologic</a>
   <ul class="collapse">
-  <li><a href="#szenario" id="toc-szenario" class="nav-link" data-scroll-target="#szenario">Szenario:</a></li>
-  <li><a href="#digitale-signaturen-erklärt" id="toc-digitale-signaturen-erklärt" class="nav-link" data-scroll-target="#digitale-signaturen-erklärt">Digitale Signaturen erklärt</a>
-  <ul class="collapse">
-  <li><a href="#wieso-nicht-einfach-mit-rsa-verschlüsseln" id="toc-wieso-nicht-einfach-mit-rsa-verschlüsseln" class="nav-link" data-scroll-target="#wieso-nicht-einfach-mit-rsa-verschlüsseln">Wieso nicht einfach mit RSA verschlüsseln?</a></li>
-  <li><a href="#wir-beweisen-die-integrität-mit-einem-hash" id="toc-wir-beweisen-die-integrität-mit-einem-hash" class="nav-link" data-scroll-target="#wir-beweisen-die-integrität-mit-einem-hash">Wir beweisen die Integrität mit einem Hash</a></li>
-  <li><a href="#wir-beweisen-die-authentizität-mit-asymetrischer-verschlüsselung" id="toc-wir-beweisen-die-authentizität-mit-asymetrischer-verschlüsselung" class="nav-link" data-scroll-target="#wir-beweisen-die-authentizität-mit-asymetrischer-verschlüsselung">Wir beweisen die Authentizität mit asymetrischer Verschlüsselung</a></li>
-  <li><a href="#der-komplette-ablauf" id="toc-der-komplette-ablauf" class="nav-link" data-scroll-target="#der-komplette-ablauf">Der komplette Ablauf</a></li>
-  </ul></li>
-  <li><a href="#email-signieren-und-verifizieren" id="toc-email-signieren-und-verifizieren" class="nav-link" data-scroll-target="#email-signieren-und-verifizieren">Email signieren und verifizieren</a></li>
+  <li><a href="#ceasar" id="toc-ceasar" class="nav-link" data-scroll-target="#ceasar">Ceasar</a></li>
+  <li><a href="#vigenere" id="toc-vigenere" class="nav-link" data-scroll-target="#vigenere">Vigenere</a></li>
+  <li><a href="#symmetrische-verschlüsselung" id="toc-symmetrische-verschlüsselung" class="nav-link" data-scroll-target="#symmetrische-verschlüsselung">Symmetrische Verschlüsselung</a></li>
+  <li><a href="#schlüsselaustausch" id="toc-schlüsselaustausch" class="nav-link" data-scroll-target="#schlüsselaustausch">Schlüsselaustausch</a></li>
+  <li><a href="#asymetrische-verschlüsselung" id="toc-asymetrische-verschlüsselung" class="nav-link" data-scroll-target="#asymetrische-verschlüsselung">Asymetrische Verschlüsselung</a></li>
+  <li><a href="#signatur" id="toc-signatur" class="nav-link" data-scroll-target="#signatur">Signatur</a></li>
+  <li><a href="#informationen-zur-lernkontrollen" id="toc-informationen-zur-lernkontrollen" class="nav-link" data-scroll-target="#informationen-zur-lernkontrollen">Informationen zur Lernkontrollen</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251210_signature/signatureexplained.md" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="signatureexplained.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251217_lk_ki/KannListe.md" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="KannListe.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">18 Digitale Signaturen</h1>
+<h1 class="title">19 Kann-Liste Cryptologic</h1>
 </div>
 
 
@@ -202,7 +165,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">10.12.2025</p>
+      <p class="date">17.12.2025</p>
     </div>
   </div>
   
@@ -214,156 +177,95 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="digitale-signaturen" class="level1">
-<h1>Digitale Signaturen</h1>
-<section id="szenario" class="level2">
-<h2 class="anchored" data-anchor-id="szenario">Szenario:</h2>
-<p>Mit einem Kunden in Kopenhagen Dänemark hat Ihre Firma einen Zusammenarbeitsvertrag vereinbart.<br> Der Vertrag ist verfasst und soll per Email verschickt werden.<br> Doch wie kann der Kunde sicher sein, dass der Vertrag von Ihrer Firma ist?<br> Und wie kann der Kunde sicher sein, dass der Vertrag unterwegs nicht verändert wurde?</p>
-<p>Einfach per Email zu verschicken ist keine sicher Lösung.<br> Und doch soll der Vertrag digital geschickt werden.<br> Der Papierweg per Post… ist auch nicht immer sicher.<br> Die Lösung heisst <strong>Digitale Signaturen</strong>.</p>
-</section>
-<section id="digitale-signaturen-erklärt" class="level2">
-<h2 class="anchored" data-anchor-id="digitale-signaturen-erklärt">Digitale Signaturen erklärt</h2>
-<p>Mit Digitale Signaturen wird sichergestellt, dass eine Nachricht <strong>echt</strong> ist und <strong>nicht verändert</strong> wurde.<br> Das wird mit zwei Begriffen verdeutlicht.</p>
-<ol type="1">
-<li><strong>Integrität</strong> – Die Nachricht wurde auf dem Weg zum Empfänger nicht manipuliert.</li>
-<li><strong>Authentizität</strong> – Die Nachricht stammt wirklich vom angegebenen Autor.</li>
-</ol>
-<section id="wieso-nicht-einfach-mit-rsa-verschlüsseln" class="level3">
-<h3 class="anchored" data-anchor-id="wieso-nicht-einfach-mit-rsa-verschlüsseln">Wieso nicht einfach mit RSA verschlüsseln?</h3>
-<p>RSA kann Daten nur bis zu einer maximalen Länge verschlüsseln, die der Schlüssellänge ( 2048 Bit = 256 Byte ) entspricht, abzüglich Füll- und Headerdaten (11 Byte für PKCS#1 v1.5-Füllung).<br> Daher ist es oft nicht möglich, Dateien direkt mit RSA zu verschlüsseln (und RSA ist dafür auch nicht ausgelegt).</p>
-<p>Ok man könnte mehrere RSA Schlüssel verwenden.<br> Doch das Berechnen der RSA Verschlüsselung ist aufwendig und für grosse Nachrichten ineffizient.<br> Mehrere RSA Schlüssel lösen das Problem nicht befriedigend.<br> Zudem muss ich nicht die Nachricht geheim halten, sondern nur sicherstellen, dass sie echt ist und nicht verändert wurde.</p>
-</section>
-<section id="wir-beweisen-die-integrität-mit-einem-hash" class="level3">
-<h3 class="anchored" data-anchor-id="wir-beweisen-die-integrität-mit-einem-hash">Wir beweisen die Integrität mit einem Hash</h3>
-<p>Es gibt verschiedene Algorithmen, die aus einer Nachricht einen sogenannten Hashwert berechnen können.<br> Beispiele sind SHA-256, SHA-3 oder Blake2.</p>
-<p>Das Merkmal des SHA-256 Hash Algorithmus ist, dass er aus einer <strong>Nachricht einen eindeutigen Wert fester Länge</strong> (256 Bit = 32 Byte) berechnet.<br> Nur mit der <strong>exakt gleichen Nachricht</strong> wird immer der <strong>exakt gleiche Hashwert</strong> berechnet.<br> Selbst ein einzelner geänderter Buchstabe oder ein einzelnes geändertes Bit ändert den Hashwert komplett.</p>
-<p>Beispiel:</p>
-<pre><code>"Hallo Welt"  a591a6d40bf42040...
-"Hallo welt"  7f83b1657ff1fc53...</code></pre>
-<p>Und es ist so gut wie unmöglich, zwei verschiedene Nachrichten zu finden, die den gleichen Hashwert ergeben (Kollisionsresistenz).</p>
-<p>Wenn also jemand den Vertrag ändert, dann schafft er es nicht, dass diese geänderte Nachricht den gleichen Hashwert hat wie das Original.<br> Damit können wir die Integrität sicherstellen.</p>
-</section>
-<section id="wir-beweisen-die-authentizität-mit-asymetrischer-verschlüsselung" class="level3">
-<h3 class="anchored" data-anchor-id="wir-beweisen-die-authentizität-mit-asymetrischer-verschlüsselung">Wir beweisen die Authentizität mit asymetrischer Verschlüsselung</h3>
-<p>Wenn Sie den Hashwert des Vertrags mit Ihrem privaten Schlüssel verschlüsseln, dann kann man nur mit Ihrem public key wieder den Hashwert entschlüsseln.<br> Und somit ist die Authentizität bewiesen, der Hashwert stammt wirklich von Ihnen.</p>
-</section>
-<section id="der-komplette-ablauf" class="level3">
-<h3 class="anchored">Der komplette Ablauf</h3>
-<ol type="1">
-<li>Sie erstellen den Vertrag als Textdatei (Ergebnis: contract.txt).</li>
-<li>Sie berechnen den Hashwert der Datei mit SHA-256 (Ergebnis: hash.txt).</li>
-<li>Sie verschlüsseln den Hashwert mit Ihrem privaten Schlüssel (Ergebnis: signature.sig).</li>
-<li>Sie schicken dem Kunden die drei Dateien: contract.txt, hash.txt, signature.sig <br><br></li>
-<li>Der Kunde berechnet den Hashwert der empfangenen contract.txt Datei mit SHA-256 (Ergebnis: hash2.txt).</li>
-<li>Der Kunde entschlüsselt die signature.sig Datei mit Ihrem public key und erhält den ursprünglichen Hashwert (Ergebnis: hash3.txt).</li>
-<li>Der Kunde vergleicht hash2.txt mit hash3.txt.</li>
-<li>Stimmen die beiden Hashwerte überein, ist die Nachricht echt und unverändert.</li>
-</ol>
-<hr>
-<blockquote class="blockquote">
-<h2 id="aufgabe-woher-bekommt-der-kunde-den-schlüssel" class="anchored" data-anchor-id="der-komplette-ablauf">Aufgabe woher bekommt der Kunde den Schlüssel?</h2>
-<p>Sie müssen also den Vertrag, den Hashwert und die Signatur dem Kunden schicken. Doch der Kunde braucht ja auch noch Ihren öffentlichen Schlüssel. Erklären Sie, wie der Kunde zu diesem Schlüssel kommt.</p>
-</blockquote>
-<hr>
-<blockquote class="blockquote">
-<h2 id="aufgabe-eine-signatur-überprüfen." class="anchored">Aufgabe Eine Signatur überprüfen.</h2>
-<p>Sie haben zwei Emails vermeintlich von Ihrer Lehrperson erhalten.<br> Doch war wirklich die Lehrperson der Absender, oder sind es Fakes?<br> Die Nachrichten haben beide die gleiche Signatur. Es ist also nur eine der beiden Nachrichten echt.<br> Doch welche der beiden Nachrichten stammt von Ihrer Lehrperson?<br><br> Nachricht A: <br> <em>Heute ist der Untericht 10 Minuten früher fertig.</em><br> Nachricht B:<br> <em>An der Lernkontrolle schenke ich Ihnen 0.1 Notenpunkte.</em><br><br></p>
-<p><strong>Signature:</strong></p>
-</blockquote>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>VcfxtxFNVwJQld0wdxRC2Nieyh/hH3h1EyV9L4bupo4L5oWPHBhGGObz57/Oic6wBAGixabM1t/mTOi67yPygJgFDc4ReNF0v+SuaC/ARGsQBDmb7Xk/NFGo3zkWXLLCMxpcV3sZP28W9MNoWjC7Z1Q76YC9R39eDRHICTcR++M=</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<blockquote class="blockquote">
-<p><strong>Public Key der Lehrperson:</strong></p>
-</blockquote>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>-----BEGIN PUBLIC KEY-----</span>
-<span id="cb3-2"><a href="#cb3-2"></a>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCHNLVYaNtGG20xv+mGI9pi9tX/</span>
-<span id="cb3-3"><a href="#cb3-3"></a>E+Fq0ShuB84X+zfM2sIjss45kHPigmQn47hd8EfCN7DhCe3ynHfPZUyRlMtJAB53</span>
-<span id="cb3-4"><a href="#cb3-4"></a>qE9rNkV3142chHh+mrJE3MNIp18ooqTLZwGZeZ45c7jV3P2nF/aDlkI7yhnvCC5c</span>
-<span id="cb3-5"><a href="#cb3-5"></a>2ZGB3kOXyVDBSBWWTwIDAQAB</span>
-<span id="cb3-6"><a href="#cb3-6"></a>-----END PUBLIC KEY----- </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<blockquote class="blockquote">
-<p><strong>KeySize:</strong> <em>1024 Bit</em><br> <strong>Signature Algorithm:</strong> <em>SHA256withRSA</em></p>
-<p>Nun brauchen Sie noch das Mittel, um die Signatur zu prüfen.<br> Zwar können Mail-Programme Signaturen prüfen, doch dieses Mal nutzen Sie eine Webseite, die das Technische mehr verdeutlicht.<br> Die Webseite wo Sie das Ganze überprüfen können:<br> <a href="https://8gwifi.org/rsasignverifyfunctions.jsp">https://8gwifi.org/rsasignverifyfunctions.jsp</a></p>
-<p>Auf der Seite den die Angaben verwenden:</p>
+<section id="kann-liste-cryptologic" class="level1">
+<h1>Kann Liste Cryptologic</h1>
+<section id="ceasar" class="level2">
+<h2 class="anchored" data-anchor-id="ceasar">Ceasar</h2>
 <ul>
-<li>Einmal durchführen für Nachricht A und einmal für Nachricht B:</li>
-<li>Signature Algorithm: SHA256withRSA</li>
-<li>Key Size: 1024</li>
-<li>Public Key: Den oben angegebenen Public Key</li>
-<li>Signature: Die oben angegebene Signature</li>
-<li>“Verify” anwenden</li>
+<li>Ich kann die Ceasar Verschlüsselung erklären (ZBsp. Verfahren, Prinzip, Schlüssel..)</li>
+<li>Ich kann eine Nachricht mit der Ceasar Verschlüsselung verschlüsseln und entschlüsseln.</li>
+<li>Ich kann die Sicherheit der Ceasar Verschlüsselung beurteilen.</li>
+<li>Ich kann eine Brute-Force-Attacke auf die Ceasar Verschlüsselung erklären und durchführen.</li>
 </ul>
-<p>Welche Nachricht stimmt mit der Signatur überein und ist somit echt?</p>
-</blockquote>
-<hr>
-<blockquote class="blockquote">
-<h2 id="aufgabe-selber-eine-signatur-berechnen" class="anchored">Aufgabe: Selber eine Signatur berechnen</h2>
-<p>Tauschen Sie eine signierte Nachricht mit einem Lernpartner aus.</p>
-<p>Die Webseite wo Sie die Signatur erstellen und überprüfen können:<br> <a href="https://8gwifi.org/rsasignverifyfunctions.jsp">https://8gwifi.org/rsasignverifyfunctions.jsp</a></p>
-</blockquote>
-<blockquote class="blockquote">
-<ol type="1">
-<li>Generieren Sie neue Keys</li>
-<li>Schreiben Sie eine Message</li>
-<li>Berechnen Sie die Signatur.</li>
-<li>Senden Sie die Nachricht, die Signatur und Ihren Public Key an Ihren Lernpartner. <br></li>
-<li>Ihr Lernpartner überprüft die Signatur mit Hilfe der Webseite der Nachricht.</li>
-</ol>
-<p>Hat es funktioniert? ;-)</p>
-</blockquote>
-<hr>
 </section>
-</section>
-<section id="email-signieren-und-verifizieren" class="level2">
-<h2 class="anchored" data-anchor-id="email-signieren-und-verifizieren">Email signieren und verifizieren</h2>
-<p>Obwohl Signieren eigentlich ein sinnvoller Vorgang ist, wird es in der Praxis wenig angewandt.<br> Der Einsatz bei Emails ist gutes Beispiel.<br> Doch Achtung: Sucht man nach Anleitunge, dann findet man oft die Anleitung für eine Signatur wie zBsp:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>----</span>
-<span id="cb4-2"><a href="#cb4-2"></a>Pionierpark Gmbh</span>
-<span id="cb4-3"><a href="#cb4-3"></a>Peter Rutschmann</span>
-<span id="cb4-4"><a href="#cb4-4"></a>Mobile: 079 123 45 67</span>
-<span id="cb4-5"><a href="#cb4-5"></a>---</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Das ist aber nicht die Art von Signatur, die hier gemeint ist.<br> Es geht um eine digitale Signatur.</p>
-<p>Es gibt verschiedene Standards, um Emails digital zu signieren.<br> Die bekanntesten sind PGP (Pretty Good Privacy) und S/MIME (Secure/Multipurpose Internet Mail Extensions).<br></p>
+<section id="vigenere" class="level2">
+<h2 class="anchored" data-anchor-id="vigenere">Vigenere</h2>
 <ul>
-<li>PGP ist ein Verschlüsselungsprogramm, das sowohl für die Verschlüsselung als auch für die digitale Signatur von Emails verwendet wird.<br> Mehr zu PGP: <a href="https://de.wikipedia.org/wiki/Pretty_Good_Privacy">https://de.wikipedia.org/wiki/Pretty_Good_Privacy</a></li>
-<li>S/MIME ist ein Standard für die Verschlüsselung und digitale Signatur von Emails, der auf Zertifikaten basiert.<br> Mehr zu S/MIME: <a href="https://de.wikipedia.org/wiki/S/MIME">https://de.wikipedia.org/wiki/S/MIME</a></li>
+<li>Ich kann den Unterschied zwischen monoalphabetischer und polyalphabetischer Verschlüsselung erklären.</li>
+<li>Ich kann die Vigenere Verschlüsselung erklären (ZBsp. Verfahren, Prinzip, Schlüssel..)</li>
+<li>Ich kann eine Nachricht mit der Vigenere Verschlüsselung verschlüsseln und entschlüsseln.</li>
+<li>Ich kann die Sicherheit der Vigenere Verschlüsselung beurteilen.</li>
+<li>Ich kann eine Kasiski-Attacke auf die Vigenere Verschlüsselung erklären und durchführen.</li>
 </ul>
-<p>Weiter hängt es davon ab, welches Email-Programm verwendet wird.<br> Beispiele: Outlook, Thunderbird, Gmail, Apple Mail, etc.<br> Anleitungen findet man in der Dokumentationen des jeweiligen Programmes.</p>
-<blockquote class="blockquote">
-<h2 id="aufgabe-email-signieren-mit-gmail" class="anchored">Aufgabe EMail signieren mit GMail</h2>
-<p>Damit wir gemeinsam das Signieren und Verifizieren von EMails üben können und nicht abhängig von individuellen EMail-Progammen der Lernenden sind, nutzen wir GMail.<br> Ein Vorteil ist auch, dass Sie keine bestehende EMail-Adresse verwenden müssen. Sie kommen sehr einfach zu einer neuen Gmail-Adresse.<br> Weiter können Sie <strong>über das Webinterface von GMail</strong> arbeiten, ohne ein EMail-Programm installieren zu müssen.<br><br> Allerdings <strong>brauchen Sie ein Browserplugin</strong>, das das Signieren und Verifizieren von Emails ermöglicht.<br></p>
-<h3 id="schritte" class="anchored">Schritte:</h3>
-<ol type="1">
-<li>Entscheiden Sie, ob Sie eine bestehende GMail-Adresse verwenden wollen, oder ob Sie eine neue GMail-Adresse erstellen wollen.</li>
-<li>Stellen Sie sicher, dass die <strong>GMail-Adresse funktioniert</strong>. Senden Sie sich eine EMail an Ihre GMail-Adresse und kontrollieren Sie, ob Sie die Nachricht empfangen. (Noch ohne Signatur)</li>
-</ol>
-<hr>
-<ol start="3" type="1">
-<li>Nun folgen Sie der Anleitung für das <strong>Installieren des Browserplugins</strong> von flowcrypt:<br> <a href="https://flowcrypt.com/docs/getting-started/setup/install.html">https://flowcrypt.com/docs/getting-started/setup/install.html</a><br>Folgen Sie der Anleitung auch in Bezug auf das Erstellen eines Schlüsselpaares.
+</section>
+<section id="symmetrische-verschlüsselung" class="level2">
+<h2 class="anchored" data-anchor-id="symmetrische-verschlüsselung">Symmetrische Verschlüsselung</h2>
 <ul>
-<li>Das Plugin muss Zugriff auf Ihr GMail-Konto erhalten.</li>
-<li>Und Sie müssen ein Key-Paar erstellen (public und private key). <img src="./setupflowcrypt.png" alt="setup" width="200"> <img src="./setupflowcrypt2.png" alt="setup" width="200"></li>
-</ul></li>
-</ol>
-<hr>
-<ol start="4" type="1">
-<li>ACHTUNG: flowcrypt hat zwei unterschiedliche Möglichkeiten<br>
+<li><p>Ich kann das Prinzip der symmetrischen Verschlüsselung erklären.</p></li>
+<li><p>Ich kann drei typische symmetrische Verschlüsselungsverfahren (aus der Informatik) nennen.</p></li>
+<li><p>Ich kann die binäre Darstellung einer Nachricht erklären.</p></li>
+<li><p>Ich kann den Unterschied zwischen Binär, Dezimal und Hexadezimal erklären.</p></li>
+<li><p>Ich kann den Zwecke von ASCII und UTF8 erklären.</p></li>
+<li><p>Ich kann eine Nachricht in Binär, Dezimal und Hexadezimal umwandeln und umgekehrt.<br> (mit Hilfe einer Tabelle)</p></li>
+<li><p>Ich kann die XOR Verschlüssel erklären (ZBsp. Verfahren, Prinzip, Schlüssel..)</p></li>
+<li><p>Ich kann eine Nachricht mit der XOR Verschlüsselung verschlüsseln und entschlüsseln.</p></li>
+<li><p>Ich kenne den Zusammenhang von Klartext, Schlüssel und Geheimtext bei der XOR Verschlüsselung.<br> (habe ich zwei davon, kenne ich den dritten. Egal welche zwei!)</p></li>
+<li><p>Ich kann die Sicherheit der XOR Verschlüsselung beurteilen.</p></li>
+<li><p>Ich kann mit einem umvollständigen Schlüssel eine teilweise Entschlüsselung durchführen. Und dann den Schlüssel ergänzen.</p></li>
+<li><p>Ich kann die AES Verschlüsselung erklären (ZBsp. Verfahren, Prinzip, Schlüssel..)</p></li>
+<li><p>Ich kann diese Verfahren erklären und anwenden</p>
 <ul>
-<li>EMail verschlüsseln</li>
-<li>EMail signieren –&gt; <strong>das wollen wir!!</strong></li>
+<li>Transformation</li>
+<li>Substitution</li>
+<li>Transposition/Permutation</li>
 </ul></li>
-<li>Folgen Sie der Anleitung für das Signieren. <a href="https://flowcrypt.com/docs/getting-started/send-and-receive/send/send-signed-only-emails.html">https://flowcrypt.com/docs/getting-started/send-and-receive/send/send-signed-only-emails.html</a> <br> Senden Sie eine signierte EMail an Ihre eigene GMail-Adresse. <img src="./newmessage.png" alt="setup" width="200"> <img src="./newmessage2.png" alt="setup" width="200"><br> Kontrollieren Sie, ob Sie die signierte Nachricht empfangen. <img src="./messagereceived.png" alt="setup" width="200"> <img src="./messagecontent.png" alt="setup" width="100"> <img src="./messagecontent2.png" alt="setup" width="400"></li>
-</ol>
-<hr>
-<ol start="6" type="1">
-<li>Nun senden Sie eine EMail-Nachricht an Ihren Lernpartner, an dessen Gmail-Adresse.<br>Kann Ihr Lernpartner die Echtheit der Nachricht bestätigen?</li>
-</ol>
-</blockquote>
-<hr>
-<blockquote class="blockquote">
-<h2 id="zusatz-aufgabe-email-signieren-mit-anderem-email-programm" class="anchored">Zusatz-Aufgabe:<br>EMail signieren mit anderem EMail-Programm</h2>
-<p>Wahrscheinlich verwenden Sie normalerweise ein anderes Email-Programm und andere Email-Adressen. Informieren Sie sich, ob und wie Sie mir Ihrem normalen Email-Programm Emails signieren und verifizieren können. Richten Sie die das Signieren und Verifizieren ein und testen Sie es mit einem Lernpartner.</p>
-</blockquote>
-<hr>
+<li><p>Ich kann diese Verfahren mit einem kurzen Satz erklären</p>
+<ul>
+<li>Diffusion</li>
+<li>Konfusion</li>
+<li>Rundensystem</li>
+<li>Key Schedule</li>
+<li>Blockchiffre</li>
+<li>Stromchiffre</li>
+</ul></li>
+<li><p>Ich kann eine Nachricht mit der AES Verschlüsselung verschlüsseln und entschlüsseln (mit Hilfsmittel).</p></li>
+<li><p>Ich kann die Sicherheit der AES Verschlüsselung beurteilen.</p></li>
+</ul>
+</section>
+<section id="schlüsselaustausch" class="level2">
+<h2 class="anchored" data-anchor-id="schlüsselaustausch">Schlüsselaustausch</h2>
+<ul>
+<li>Ich kann das Problem des Schlüsselaustauschs erklären.</li>
+<li>Ich kann die Bedetung des Schlüsselsaustausch bei HTTPS erklären.</li>
+<li>Ich kann das Prinzip des Deffie-Hellman Verfahrens erklären.</li>
+</ul>
+</section>
+<section id="asymetrische-verschlüsselung" class="level2">
+<h2 class="anchored" data-anchor-id="asymetrische-verschlüsselung">Asymetrische Verschlüsselung</h2>
+<ul>
+<li><p>Ich kann das Prinzip der asymmetrischen Verschlüsselung erklären.</p></li>
+<li><p>Ich kann die RSA erklären (ZBsp. Verfahren, Prinzip, Schlüssel..)</p></li>
+<li><p>Ich kann eine Nachricht mit der RSA Verschlüsselung verschlüsseln und entschlüsseln.</p></li>
+<li><p>Ich kann die Sicherheit der RSA Verschlüsselung beurteilen.</p></li>
+</ul>
+</section>
+<section id="signatur" class="level2">
+<h2 class="anchored" data-anchor-id="signatur">Signatur</h2>
+<ul>
+<li>Ich kann das Prinzip und die Funktionsweise einer digitalen Signatur erklären.</li>
+<li>Ich kann den Unterschied zwischen Verschlüsselung und Signatur erklären.</li>
+<li>Ich kann die Sicherheit einer digitalen Signatur beurteilen.</li>
+<li>Ich kann eine Signatur anwenden.</li>
+</ul>
+</section>
+<section id="informationen-zur-lernkontrollen" class="level2">
+<h2 class="anchored" data-anchor-id="informationen-zur-lernkontrollen">Informationen zur Lernkontrollen</h2>
+<ul>
+<li>Lösen auf Papier ohne Hilfsmittel (Taschenrechner, Smartphone, Laptop, Internet)</li>
+<li>UTF8, HEX, BIN, DEC Tabellen werden zur Verfügung gestellt.</li>
+<li>Sie dürfen einen einseitig von Hand geschriebenen Spickzettel mitbringen.</li>
+<li>Zeit der Lernkontrolle: ca. 30 Minuten</li>
+</ul>
 
 
 </section>
@@ -775,4 +677,4 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251210_signature/signatureexplained.md" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251217_lk_ki/KannListe.md" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

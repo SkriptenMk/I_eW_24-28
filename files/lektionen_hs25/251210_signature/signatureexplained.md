@@ -1,3 +1,11 @@
+---
+title: "18 Digitale Signaturen"
+date: 2025-12-10
+date-format: DD.MM.YYYY
+author: "Peter Rutschmann"
+
+---
+
 # Digitale Signaturen
 
 ## Szenario:

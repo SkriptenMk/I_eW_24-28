@@ -1,11 +1,11 @@
 ---
-title: "18 Kann-Liste Cryptografic"
+title: "19 Kann-Liste Cryptologic"
 date: 2025-12-17
 date-format: DD.MM.YYYY
 author: "Peter Rutschmann"
 ---
 
-# Kann Liste Cryptografic
+# Kann Liste Cryptologic
 
 ## Ceasar
 
