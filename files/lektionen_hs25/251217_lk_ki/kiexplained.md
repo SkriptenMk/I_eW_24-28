@@ -134,6 +134,7 @@ Beispiele
 - industrielle Anlagen
 
 Was sie können:
+
 - Maschinen steuern
 - auf Sensordaten reagieren
 - Prozesse optimieren
