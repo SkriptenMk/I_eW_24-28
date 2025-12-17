@@ -207,9 +207,9 @@ Aber es gibt einfachere Modelle, die uns dennoch einen einfachen Einblick geben 
 
 ---
 
-> ## Aufgabe: Rohes Sprachmodell
+> ## Aufgabe: Rohes Sprachmodell, Teil 1
 >
-> Der Markov-Text-Generator erzeugt Texte basierend auf der Wahrscheinlichkeit, mit der Wörter aufeinander folgen.
+> Entdecken Sie mit einfachen Sprachmodellen die Wirkung von Training zum Resultat.
 >
 > Das können Sie dabei erleben/ spühren / erforschen:
 >
@@ -217,11 +217,27 @@ Aber es gibt einfachere Modelle, die uns dennoch einen einfachen Einblick geben 
 >    - Generieren von neuen Texten basierend auf dem trainierten Modell
 >    - Allderings ist das Ergebnis sehr einfach und nicht so ausgefeilt wie bei modernen KIs.
 >
+> [Soekia](https://www.soekia.ch/GPT/) zeigt das Vorgehen sehr inuitiv.<br/>
+> Und Sie vorgegebene Trainingsdaten auswählen. Und dann das Modell ausprobieren.<br/>
+> Probieren Sie es aus mit verschiedenen Trainingsdaten.
+> Oder Sie geben selber Trainingsdaten vor. Und probieren die Wirkung aus.
+>
+> Eine gute spielersiche Möglichkeit ist der Einstieg mit TicTacToe.<br/>
+>
+>  <img src="./chapter/soekia.png" alt="Soekia TicTacToe Website" width="700"/>
+>
 > Was aber nicht erlebbar ist:
 >
 >    - Kein Dialog
 >    - Kein Kontextverständnis
 >.   - So sieht KI ohne Feinlenkung / Erziehung aus.
+
+---
+
+> ## Aufgabe: Rohes Sprachmodell, Teil 2
+>
+> Der Markov-Text-Generator ist ein andere Möglichkeit für ein "rohes Sprachmodell".<br/>
+> Von der Art und Weise vergleichbar mit dem Soekia Modell.<br/>
 >
 > Probieren Sie es aus: [markovtextgenerator](https://lehrertools.eu/ki)
 >
@@ -248,12 +264,13 @@ Zum Beispiel das Lied: _Auf der Mauer, auf der Lauer sitzt 'ne kleine Wanze. Auf
 >
 > **Möglichkeite um es auszuprobieren:**<br/>
 > 
-> Ein Playground von openai selber. Leider nur mit Kreditkarte: [OpenAI Playground](https://platform.openai.com/playground)<br/>
->
 > Hier kann man gleich loslegen, Text eingeben und das Modell das nächste Wort herausfinden lassen. [banana project](https://banana-projects-transformer-autocomplete.hf.space/doc/gpt2-large)<br/>
 >
-> Ein [Jupyter Notebook auf Colab](https://colab.research.google.com/github/ilopezfr/gpt-2/blob/master/gpt-2-playground_.ipynb?utm_source=chatgpt.com) mit GPT-2. Allerdings nicht ganz ohne. Genau lesen und den Anweisungen folgen.
+> Diese folgenden Links brauchen etwas mehr Aufwand. Da muss man sich richtig Zeit nehmen.(sprengt unseren Rahmen im Unterricht)<br/>
 >
+> - Ein Playground von openai selber. Leider nur mit Kreditkarte: [OpenAI Playground](https://platform.openai.com/playground)<br/>
+>
+> - Ein [Jupyter Notebook auf Colab](https://colab.research.google.com/github/ilopezfr/gpt-2/blob/master/gpt-2-playground_.ipynb?utm_source=chatgpt.com) mit GPT-2. Allerdings nicht ganz ohne. Genau lesen und den Anweisungen folgen.
 
 ---
 
