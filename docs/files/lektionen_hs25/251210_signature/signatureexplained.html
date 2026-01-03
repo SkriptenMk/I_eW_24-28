@@ -8,7 +8,7 @@
 
 <meta name="author" content="Peter Rutschmann">
 
-<title>15.1 AES encryption practical – Computer Science Course Materials for School Year 2025/26 (2eW)</title>
+<title>18 Digitale Signaturen – Computer Science Course Materials for School Year 2025/26 (2eW)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,24 +59,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../../">
-<script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-5d254f1e278c2921d96b26102a150bb1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap-985b28ec037abca086789749d85d0073.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-5d254f1e278c2921d96b26102a150bb1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-985b28ec037abca086789749d85d0073.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../../../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -116,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Computer Science Course Materials for School Year 2025/26 (2eW)</span>
     </a>
   </div>
@@ -127,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -136,15 +136,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-materials">    
         <li>
-    <a class="dropdown-item" href="../../../../files/HS_24.html">
+    <a class="dropdown-item" href="../../../files/HS_24.html">
  <span class="dropdown-text">Autumn Term 2024/2025</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../../files/FS_25.html">
+    <a class="dropdown-item" href="../../../files/FS_25.html">
  <span class="dropdown-text">Spring Term 2025</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../../files/HS_25.html">
+    <a class="dropdown-item" href="../../../files/HS_25.html">
  <span class="dropdown-text">Autumn Term 2025/2026</span></a>
   </li>  
     </ul>
@@ -165,27 +165,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#aes-verschlüsselung-anwenden" id="toc-aes-verschlüsselung-anwenden" class="nav-link active" data-scroll-target="#aes-verschlüsselung-anwenden">AES-Verschlüsselung anwenden</a>
+  <li><a href="#digitale-signaturen" id="toc-digitale-signaturen" class="nav-link active" data-scroll-target="#digitale-signaturen">Digitale Signaturen</a>
   <ul class="collapse">
-  <li><a href="#aes-online-demo" id="toc-aes-online-demo" class="nav-link" data-scroll-target="#aes-online-demo">AES Online Demo</a>
+  <li><a href="#szenario" id="toc-szenario" class="nav-link" data-scroll-target="#szenario">Szenario:</a></li>
+  <li><a href="#digitale-signaturen-erklärt" id="toc-digitale-signaturen-erklärt" class="nav-link" data-scroll-target="#digitale-signaturen-erklärt">Digitale Signaturen erklärt</a>
   <ul class="collapse">
-  <li><a href="#erklärungen-zur-demo" id="toc-erklärungen-zur-demo" class="nav-link" data-scroll-target="#erklärungen-zur-demo">Erklärungen zur Demo:</a></li>
-  <li><a href="#aufgabe-aes-online-anwenden" id="toc-aufgabe-aes-online-anwenden" class="nav-link" data-scroll-target="#aufgabe-aes-online-anwenden">Aufgabe: AES Online anwenden</a></li>
+  <li><a href="#wieso-nicht-einfach-mit-rsa-verschlüsseln" id="toc-wieso-nicht-einfach-mit-rsa-verschlüsseln" class="nav-link" data-scroll-target="#wieso-nicht-einfach-mit-rsa-verschlüsseln">Wieso nicht einfach mit RSA verschlüsseln?</a></li>
+  <li><a href="#wir-beweisen-die-integrität-mit-einem-hash" id="toc-wir-beweisen-die-integrität-mit-einem-hash" class="nav-link" data-scroll-target="#wir-beweisen-die-integrität-mit-einem-hash">Wir beweisen die Integrität mit einem Hash</a></li>
+  <li><a href="#wir-beweisen-die-authentizität-mit-asymetrischer-verschlüsselung" id="toc-wir-beweisen-die-authentizität-mit-asymetrischer-verschlüsselung" class="nav-link" data-scroll-target="#wir-beweisen-die-authentizität-mit-asymetrischer-verschlüsselung">Wir beweisen die Authentizität mit asymetrischer Verschlüsselung</a></li>
+  <li><a href="#der-komplette-ablauf" id="toc-der-komplette-ablauf" class="nav-link" data-scroll-target="#der-komplette-ablauf">Der komplette Ablauf</a></li>
   </ul></li>
-  <li><a href="#aes-mit-python-anwenden" id="toc-aes-mit-python-anwenden" class="nav-link" data-scroll-target="#aes-mit-python-anwenden">AES mit Python anwenden</a>
-  <ul class="collapse">
-  <li><a href="#aufgabe-aes-mit-python-anwenden" id="toc-aufgabe-aes-mit-python-anwenden" class="nav-link" data-scroll-target="#aufgabe-aes-mit-python-anwenden">Aufgabe : AES mit Python anwenden</a></li>
-  </ul></li>
+  <li><a href="#email-signieren-und-verifizieren" id="toc-email-signieren-und-verifizieren" class="nav-link" data-scroll-target="#email-signieren-und-verifizieren">Email signieren und verifizieren</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251119_aesencryption/chapter/aes_encryption.ipynb" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="aes_encryption.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251210_signature/signatureexplained.md" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="signatureexplained.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">15.1 AES encryption practical</h1>
+<h1 class="title">18 Digitale Signaturen</h1>
 </div>
 
 
@@ -202,7 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">19.11.2025</p>
+      <p class="date">10.12.2025</p>
     </div>
   </div>
   
@@ -214,137 +214,158 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="aes-verschlüsselung-anwenden" class="level1">
-<h1>AES-Verschlüsselung anwenden</h1>
-<p>In diesem Jupyter Notebook wird die <strong>AES-Verschlüsselung</strong> angewendet:</p>
+<section id="digitale-signaturen" class="level1">
+<h1>Digitale Signaturen</h1>
+<section id="szenario" class="level2">
+<h2 class="anchored" data-anchor-id="szenario">Szenario:</h2>
+<p>Mit einem Kunden in Kopenhagen Dänemark hat Ihre Firma einen Zusammenarbeitsvertrag vereinbart.<br> Der Vertrag ist verfasst und soll per Email verschickt werden.<br> Doch wie kann der Kunde sicher sein, dass der Vertrag von Ihrer Firma ist?<br> Und wie kann der Kunde sicher sein, dass der Vertrag unterwegs nicht verändert wurde?</p>
+<p>Einfach per Email zu verschicken ist keine sicher Lösung.<br> Und doch soll der Vertrag digital geschickt werden.<br> Der Papierweg per Post… ist auch nicht immer sicher.<br> Die Lösung heisst <strong>Digitale Signaturen</strong>.</p>
+</section>
+<section id="digitale-signaturen-erklärt" class="level2">
+<h2 class="anchored" data-anchor-id="digitale-signaturen-erklärt">Digitale Signaturen erklärt</h2>
+<p>Mit Digitale Signaturen wird sichergestellt, dass eine Nachricht <strong>echt</strong> ist und <strong>nicht verändert</strong> wurde.<br> Das wird mit zwei Begriffen verdeutlicht.</p>
+<ol type="1">
+<li><strong>Integrität</strong> – Die Nachricht wurde auf dem Weg zum Empfänger nicht manipuliert.</li>
+<li><strong>Authentizität</strong> – Die Nachricht stammt wirklich vom angegebenen Autor.</li>
+</ol>
+<section id="wieso-nicht-einfach-mit-rsa-verschlüsseln" class="level3">
+<h3 class="anchored" data-anchor-id="wieso-nicht-einfach-mit-rsa-verschlüsseln">Wieso nicht einfach mit RSA verschlüsseln?</h3>
+<p>RSA kann Daten nur bis zu einer maximalen Länge verschlüsseln, die der Schlüssellänge ( 2048 Bit = 256 Byte ) entspricht, abzüglich Füll- und Headerdaten (11 Byte für PKCS#1 v1.5-Füllung).<br> Daher ist es oft nicht möglich, Dateien direkt mit RSA zu verschlüsseln (und RSA ist dafür auch nicht ausgelegt).</p>
+<p>Ok man könnte mehrere RSA Schlüssel verwenden.<br> Doch das Berechnen der RSA Verschlüsselung ist aufwendig und für grosse Nachrichten ineffizient.<br> Mehrere RSA Schlüssel lösen das Problem nicht befriedigend.<br> Zudem muss ich nicht die Nachricht geheim halten, sondern nur sicherstellen, dass sie echt ist und nicht verändert wurde.</p>
+</section>
+<section id="wir-beweisen-die-integrität-mit-einem-hash" class="level3">
+<h3 class="anchored" data-anchor-id="wir-beweisen-die-integrität-mit-einem-hash">Wir beweisen die Integrität mit einem Hash</h3>
+<p>Es gibt verschiedene Algorithmen, die aus einer Nachricht einen sogenannten Hashwert berechnen können.<br> Beispiele sind SHA-256, SHA-3 oder Blake2.</p>
+<p>Das Merkmal des SHA-256 Hash Algorithmus ist, dass er aus einer <strong>Nachricht einen eindeutigen Wert fester Länge</strong> (256 Bit = 32 Byte) berechnet.<br> Nur mit der <strong>exakt gleichen Nachricht</strong> wird immer der <strong>exakt gleiche Hashwert</strong> berechnet.<br> Selbst ein einzelner geänderter Buchstabe oder ein einzelnes geändertes Bit ändert den Hashwert komplett.</p>
+<p>Beispiel:</p>
+<pre><code>"Hallo Welt"  a591a6d40bf42040...
+"Hallo welt"  7f83b1657ff1fc53...</code></pre>
+<p>Und es ist so gut wie unmöglich, zwei verschiedene Nachrichten zu finden, die den gleichen Hashwert ergeben (Kollisionsresistenz).</p>
+<p>Wenn also jemand den Vertrag ändert, dann schafft er es nicht, dass diese geänderte Nachricht den gleichen Hashwert hat wie das Original.<br> Damit können wir die Integrität sicherstellen.</p>
+</section>
+<section id="wir-beweisen-die-authentizität-mit-asymetrischer-verschlüsselung" class="level3">
+<h3 class="anchored" data-anchor-id="wir-beweisen-die-authentizität-mit-asymetrischer-verschlüsselung">Wir beweisen die Authentizität mit asymetrischer Verschlüsselung</h3>
+<p>Wenn Sie den Hashwert des Vertrags mit Ihrem privaten Schlüssel verschlüsseln, dann kann man nur mit Ihrem public key wieder den Hashwert entschlüsseln.<br> Und somit ist die Authentizität bewiesen, der Hashwert stammt wirklich von Ihnen.</p>
+</section>
+<section id="der-komplette-ablauf" class="level3">
+<h3 class="anchored">Der komplette Ablauf</h3>
+<ol type="1">
+<li>Sie erstellen den Vertrag als Textdatei (Ergebnis: contract.txt).</li>
+<li>Sie berechnen den Hashwert der Datei mit SHA-256 (Ergebnis: hash.txt).</li>
+<li>Sie verschlüsseln den Hashwert mit Ihrem privaten Schlüssel (Ergebnis: signature.sig).</li>
+<li>Sie schicken dem Kunden die drei Dateien: contract.txt, hash.txt, signature.sig <br><br></li>
+<li>Der Kunde berechnet den Hashwert der empfangenen contract.txt Datei mit SHA-256 (Ergebnis: hash2.txt).</li>
+<li>Der Kunde entschlüsselt die signature.sig Datei mit Ihrem public key und erhält den ursprünglichen Hashwert (Ergebnis: hash3.txt).</li>
+<li>Der Kunde vergleicht hash2.txt mit hash3.txt.</li>
+<li>Stimmen die beiden Hashwerte überein, ist die Nachricht echt und unverändert.</li>
+</ol>
+<hr>
+<blockquote class="blockquote">
+<h2 id="aufgabe-woher-bekommt-der-kunde-den-schlüssel" class="anchored" data-anchor-id="der-komplette-ablauf">Aufgabe woher bekommt der Kunde den Schlüssel?</h2>
+<p>Sie müssen also den Vertrag, den Hashwert und die Signatur dem Kunden schicken. Doch der Kunde braucht ja auch noch Ihren öffentlichen Schlüssel. Erklären Sie, wie der Kunde zu diesem Schlüssel kommt.</p>
+</blockquote>
+<hr>
+<blockquote class="blockquote">
+<h2 id="aufgabe-eine-signatur-überprüfen." class="anchored">Aufgabe Eine Signatur überprüfen.</h2>
+<p>Sie haben zwei Emails vermeintlich von Ihrer Lehrperson erhalten.<br> Doch war wirklich die Lehrperson der Absender, oder sind es Fakes?<br> Die Nachrichten haben beide die gleiche Signatur. Es ist also nur eine der beiden Nachrichten echt.<br> Doch welche der beiden Nachrichten stammt von Ihrer Lehrperson?<br><br> Nachricht A: <br> <em>Heute ist der Untericht 10 Minuten früher fertig.</em><br> Nachricht B:<br> <em>An der Lernkontrolle schenke ich Ihnen 0.1 Notenpunkte.</em><br><br></p>
+<p><strong>Signature:</strong></p>
+</blockquote>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>VcfxtxFNVwJQld0wdxRC2Nieyh/hH3h1EyV9L4bupo4L5oWPHBhGGObz57/Oic6wBAGixabM1t/mTOi67yPygJgFDc4ReNF0v+SuaC/ARGsQBDmb7Xk/NFGo3zkWXLLCMxpcV3sZP28W9MNoWjC7Z1Q76YC9R39eDRHICTcR++M=</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote class="blockquote">
+<p><strong>Public Key der Lehrperson:</strong></p>
+</blockquote>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>-----BEGIN PUBLIC KEY-----</span>
+<span id="cb3-2"><a href="#cb3-2"></a>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCHNLVYaNtGG20xv+mGI9pi9tX/</span>
+<span id="cb3-3"><a href="#cb3-3"></a>E+Fq0ShuB84X+zfM2sIjss45kHPigmQn47hd8EfCN7DhCe3ynHfPZUyRlMtJAB53</span>
+<span id="cb3-4"><a href="#cb3-4"></a>qE9rNkV3142chHh+mrJE3MNIp18ooqTLZwGZeZ45c7jV3P2nF/aDlkI7yhnvCC5c</span>
+<span id="cb3-5"><a href="#cb3-5"></a>2ZGB3kOXyVDBSBWWTwIDAQAB</span>
+<span id="cb3-6"><a href="#cb3-6"></a>-----END PUBLIC KEY----- </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote class="blockquote">
+<p><strong>KeySize:</strong> <em>1024 Bit</em><br> <strong>Signature Algorithm:</strong> <em>SHA256withRSA</em></p>
+<p>Nun brauchen Sie noch das Mittel, um die Signatur zu prüfen.<br> Zwar können Mail-Programme Signaturen prüfen, doch dieses Mal nutzen Sie eine Webseite, die das Technische mehr verdeutlicht.<br> Die Webseite wo Sie das Ganze überprüfen können:<br> <a href="https://8gwifi.org/rsasignverifyfunctions.jsp">https://8gwifi.org/rsasignverifyfunctions.jsp</a></p>
+<p>Auf der Seite den die Angaben verwenden:</p>
 <ul>
-<li><ol type="1">
-<li>AES Online anwenden</li>
-</ol></li>
-<li><ol start="2" type="1">
-<li>AES mit Python anwenden</li>
-</ol></li>
+<li>Einmal durchführen für Nachricht A und einmal für Nachricht B:</li>
+<li>Signature Algorithm: SHA256withRSA</li>
+<li>Key Size: 1024</li>
+<li>Public Key: Den oben angegebenen Public Key</li>
+<li>Signature: Die oben angegebene Signature</li>
+<li>“Verify” anwenden</li>
 </ul>
-<section id="aes-online-demo" class="level2">
-<h2 class="anchored" data-anchor-id="aes-online-demo">AES Online Demo</h2>
-<p>Es gibt verschiedene Online-Demos, die die AES-Verschlüsselung anschaulich erklären und zeigen.<br> Hier eine davon:</p>
-<p>https://demo.kenhaggerty.com/demos/aescipher</p>
-<section id="erklärungen-zur-demo" class="level3">
-<h3 class="anchored" data-anchor-id="erklärungen-zur-demo">Erklärungen zur Demo:</h3>
-<ul>
-<li>Der Key muss geheim gehalten werden. Nur Sender um Empfänger dürfen ihn kennen.</li>
-<li>Der Key hat üblicherweise eine Länge von 128, 192 oder 256 Bit</li>
-<li>Der Key muss nicht ein lesbarer Text sein. Oft ist er eine Zufällige HEX-Folge</li>
-<li>BASE64 erlaubt es diese HEX-Folge in lesbare Zeichen zu kodieren, war die Übermittlung zBsp per Email vereinfacht.</li>
-<li>IV = Initialisierungsvektor, verhindert, dass bei gleichem Key und gleichem Plain-Text das Ergebnis gleich bleibt.<br> Der IV darf mit der verschlüsselten Nachricht übermittelt werden.</li>
-</ul>
+<p>Welche Nachricht stimmt mit der Signatur überein und ist somit echt?</p>
+</blockquote>
+<hr>
+<blockquote class="blockquote">
+<h2 id="aufgabe-selber-eine-signatur-berechnen" class="anchored">Aufgabe: Selber eine Signatur berechnen</h2>
+<p>Tauschen Sie eine signierte Nachricht mit einem Lernpartner aus.</p>
+<p>Die Webseite wo Sie die Signatur erstellen und überprüfen können:<br> <a href="https://8gwifi.org/rsasignverifyfunctions.jsp">https://8gwifi.org/rsasignverifyfunctions.jsp</a></p>
+</blockquote>
+<blockquote class="blockquote">
+<ol type="1">
+<li>Generieren Sie neue Keys</li>
+<li>Schreiben Sie eine Message</li>
+<li>Berechnen Sie die Signatur.</li>
+<li>Senden Sie die Nachricht, die Signatur und Ihren Public Key an Ihren Lernpartner. <br></li>
+<li>Ihr Lernpartner überprüft die Signatur mit Hilfe der Webseite der Nachricht.</li>
+</ol>
+<p>Hat es funktioniert? ;-)</p>
+</blockquote>
 <hr>
 </section>
-<section id="aufgabe-aes-online-anwenden" class="level3">
-<h3 class="anchored" data-anchor-id="aufgabe-aes-online-anwenden">Aufgabe: AES Online anwenden</h3>
+</section>
+<section id="email-signieren-und-verifizieren" class="level2">
+<h2 class="anchored" data-anchor-id="email-signieren-und-verifizieren">Email signieren und verifizieren</h2>
+<p>Obwohl Signieren eigentlich ein sinnvoller Vorgang ist, wird es in der Praxis wenig angewandt.<br> Der Einsatz bei Emails ist gutes Beispiel.<br> Doch Achtung: Sucht man nach Anleitunge, dann findet man oft die Anleitung für eine Signatur wie zBsp:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>----</span>
+<span id="cb4-2"><a href="#cb4-2"></a>Pionierpark Gmbh</span>
+<span id="cb4-3"><a href="#cb4-3"></a>Peter Rutschmann</span>
+<span id="cb4-4"><a href="#cb4-4"></a>Mobile: 079 123 45 67</span>
+<span id="cb4-5"><a href="#cb4-5"></a>---</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Das ist aber nicht die Art von Signatur, die hier gemeint ist.<br> Es geht um eine digitale Signatur.</p>
+<p>Es gibt verschiedene Standards, um Emails digital zu signieren.<br> Die bekanntesten sind PGP (Pretty Good Privacy) und S/MIME (Secure/Multipurpose Internet Mail Extensions).<br></p>
 <ul>
-<li><p>Verwenden Sie die oben angegebene Online-Demo</p></li>
-<li><p>Lässen Sie mit Refresh einen Key und IV generieren</p></li>
-<li><p>Schreiben Sie einen kurzen Klartext (Plain-Text)</p></li>
-<li><p>Codieren Sie den Text</p></li>
-<li><p>Halten Sie Key, IV, Plain-Text und Cipher-Text unten im Feld fest.<br><br></p></li>
-<li><p>Tauschen Sie den Codierten Text, den Schlüssel und den IV mit Ihrem Lernpartner aus</p></li>
-<li><p>Decodieren Sie den Codierten Text ihres Lernpartners mit den Angaben Ihres Lernpartners.</p></li>
-<li><p>Halten Sie Key, IV, Plain-Text und Cipher-Text unten im Feld fest.</p></li>
+<li>PGP ist ein Verschlüsselungsprogramm, das sowohl für die Verschlüsselung als auch für die digitale Signatur von Emails verwendet wird.<br> Mehr zu PGP: <a href="https://de.wikipedia.org/wiki/Pretty_Good_Privacy">https://de.wikipedia.org/wiki/Pretty_Good_Privacy</a></li>
+<li>S/MIME ist ein Standard für die Verschlüsselung und digitale Signatur von Emails, der auf Zertifikaten basiert.<br> Mehr zu S/MIME: <a href="https://de.wikipedia.org/wiki/S/MIME">https://de.wikipedia.org/wiki/S/MIME</a></li>
 </ul>
-<div id="5688e61f" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#&nbsp;Hier ihren Key, IV, Plain-Tet und Cipher-Text festhalten</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Hier die Angaben Ihres Lernpartners festhalten, inklusive Ihrer Decodierung</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<p>Weiter hängt es davon ab, welches Email-Programm verwendet wird.<br> Beispiele: Outlook, Thunderbird, Gmail, Apple Mail, etc.<br> Anleitungen findet man in der Dokumentationen des jeweiligen Programmes.</p>
+<blockquote class="blockquote">
+<h2 id="aufgabe-email-signieren-mit-gmail" class="anchored">Aufgabe EMail signieren mit GMail</h2>
+<p>Damit wir gemeinsam das Signieren und Verifizieren von EMails üben können und nicht abhängig von individuellen EMail-Progammen der Lernenden sind, nutzen wir GMail.<br> Ein Vorteil ist auch, dass Sie keine bestehende EMail-Adresse verwenden müssen. Sie kommen sehr einfach zu einer neuen Gmail-Adresse.<br> Weiter können Sie <strong>über das Webinterface von GMail</strong> arbeiten, ohne ein EMail-Programm installieren zu müssen.<br><br> Allerdings <strong>brauchen Sie ein Browserplugin</strong>, das das Signieren und Verifizieren von Emails ermöglicht.<br></p>
+<h3 id="schritte" class="anchored">Schritte:</h3>
+<ol type="1">
+<li>Entscheiden Sie, ob Sie eine bestehende GMail-Adresse verwenden wollen, oder ob Sie eine neue GMail-Adresse erstellen wollen.</li>
+<li>Stellen Sie sicher, dass die <strong>GMail-Adresse funktioniert</strong>. Senden Sie sich eine EMail an Ihre GMail-Adresse und kontrollieren Sie, ob Sie die Nachricht empfangen. (Noch ohne Signatur)</li>
+</ol>
 <hr>
-</section>
-</section>
-<section id="aes-mit-python-anwenden" class="level2">
-<h2 class="anchored" data-anchor-id="aes-mit-python-anwenden">AES mit Python anwenden</h2>
-<p>Dieses Beispiel verwendet die Bibliothek <em>pycryptodome</em>.<br> Wenn Sie das Notebook im VSCode ausführen: - öffnen Sie ein Terminal (Menü von VSCode: Terminal -&gt; Neues Terminal)<br> - Geben Sie im Terminal folgendes ein und drücken Enter:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">/bin/python3</span> <span class="at">-m</span> pip install <span class="at">--user</span> pycryptodome</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Danach müssen Sie einen Restart mit dem Notebook durchführen.</p>
-<p>Alternative können Sie das Notebook im Colab ausführen, dort wird die Bibliothek direkt aus dem Notebook installiert:<br> https://colab.research.google.com/</p>
-<p>Starten Sie danach den folgenden Code-Block.<br> Welcher Schritt ergibt welchen Output?</p>
-<div id="c4c548eb" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="op">!</span>pip install pycryptodome</span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="im">from</span> Crypto.Cipher <span class="im">import</span> AES</span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="im">from</span> Crypto.Random <span class="im">import</span> get_random_bytes</span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="im">import</span> base64</span>
-<span id="cb3-6"><a href="#cb3-6"></a></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="co"># --- Hilfsfunktionen für Padding (PKCS#7) ---</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a></span>
-<span id="cb3-9"><a href="#cb3-9"></a>BLOCK_SIZE <span class="op">=</span> <span class="dv">16</span>  <span class="co"># AES-Blockgröße in Bytes</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a></span>
-<span id="cb3-11"><a href="#cb3-11"></a><span class="kw">def</span> pad(data: <span class="bu">bytes</span>) <span class="op">-&gt;</span> <span class="bu">bytes</span>:</span>
-<span id="cb3-12"><a href="#cb3-12"></a>    <span class="co">"""PKCS#7 Padding hinzufügen"""</span></span>
-<span id="cb3-13"><a href="#cb3-13"></a>    padding_len <span class="op">=</span> BLOCK_SIZE <span class="op">-</span> (<span class="bu">len</span>(data) <span class="op">%</span> BLOCK_SIZE)</span>
-<span id="cb3-14"><a href="#cb3-14"></a>    <span class="cf">return</span> data <span class="op">+</span> <span class="bu">bytes</span>([padding_len]) <span class="op">*</span> padding_len</span>
-<span id="cb3-15"><a href="#cb3-15"></a></span>
-<span id="cb3-16"><a href="#cb3-16"></a><span class="kw">def</span> unpad(data: <span class="bu">bytes</span>) <span class="op">-&gt;</span> <span class="bu">bytes</span>:</span>
-<span id="cb3-17"><a href="#cb3-17"></a>    <span class="co">"""PKCS#7 Padding entfernen"""</span></span>
-<span id="cb3-18"><a href="#cb3-18"></a>    padding_len <span class="op">=</span> data[<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb3-19"><a href="#cb3-19"></a>    <span class="cf">return</span> data[:<span class="op">-</span>padding_len]</span>
-<span id="cb3-20"><a href="#cb3-20"></a></span>
-<span id="cb3-21"><a href="#cb3-21"></a><span class="co"># --- 1. Key und IV erzeugen ---</span></span>
-<span id="cb3-22"><a href="#cb3-22"></a></span>
-<span id="cb3-23"><a href="#cb3-23"></a>key <span class="op">=</span> get_random_bytes(<span class="dv">16</span>)  <span class="co"># 16 Bytes = 128 Bit (AES-128)</span></span>
-<span id="cb3-24"><a href="#cb3-24"></a>iv <span class="op">=</span> get_random_bytes(<span class="dv">16</span>)   <span class="co"># 16 Bytes IV für CBC</span></span>
-<span id="cb3-25"><a href="#cb3-25"></a></span>
-<span id="cb3-26"><a href="#cb3-26"></a><span class="co"># --- 2. Klartext vorbereiten ---</span></span>
-<span id="cb3-27"><a href="#cb3-27"></a></span>
-<span id="cb3-28"><a href="#cb3-28"></a>plaintext <span class="op">=</span> <span class="st">"Wir treffen uns mit Paul am Mittwoch in der Gruft"</span></span>
-<span id="cb3-29"><a href="#cb3-29"></a>plaintext_bytes <span class="op">=</span> plaintext.encode(<span class="st">"utf-8"</span>)</span>
-<span id="cb3-30"><a href="#cb3-30"></a></span>
-<span id="cb3-31"><a href="#cb3-31"></a><span class="co"># --- 3. Verschlüsseln (Encrypt) ---</span></span>
-<span id="cb3-32"><a href="#cb3-32"></a></span>
-<span id="cb3-33"><a href="#cb3-33"></a>cipher_encrypt <span class="op">=</span> AES.new(key, AES.MODE_CBC, iv)</span>
-<span id="cb3-34"><a href="#cb3-34"></a>ciphertext_bytes <span class="op">=</span> cipher_encrypt.encrypt(pad(plaintext_bytes))</span>
-<span id="cb3-35"><a href="#cb3-35"></a></span>
-<span id="cb3-36"><a href="#cb3-36"></a><span class="co"># --- 4. Für Transport/Anzeige in Base64 kodieren ---</span></span>
-<span id="cb3-37"><a href="#cb3-37"></a></span>
-<span id="cb3-38"><a href="#cb3-38"></a>key_b64 <span class="op">=</span> base64.b64encode(key).decode(<span class="st">"utf-8"</span>)</span>
-<span id="cb3-39"><a href="#cb3-39"></a>iv_b64 <span class="op">=</span> base64.b64encode(iv).decode(<span class="st">"utf-8"</span>)</span>
-<span id="cb3-40"><a href="#cb3-40"></a>ciphertext_b64 <span class="op">=</span> base64.b64encode(ciphertext_bytes).decode(<span class="st">"utf-8"</span>)</span>
-<span id="cb3-41"><a href="#cb3-41"></a></span>
-<span id="cb3-42"><a href="#cb3-42"></a><span class="bu">print</span>(<span class="st">"AES Key (Base64):     "</span>, key_b64)</span>
-<span id="cb3-43"><a href="#cb3-43"></a><span class="bu">print</span>(<span class="st">"AES IV  (Base64):     "</span>, iv_b64)</span>
-<span id="cb3-44"><a href="#cb3-44"></a><span class="bu">print</span>(<span class="st">"Ciphertext (Base64):  "</span>, ciphertext_b64)</span>
-<span id="cb3-45"><a href="#cb3-45"></a></span>
-<span id="cb3-46"><a href="#cb3-46"></a><span class="co"># --- 5. Entschlüsseln (Decrypt) ---</span></span>
-<span id="cb3-47"><a href="#cb3-47"></a></span>
-<span id="cb3-48"><a href="#cb3-48"></a><span class="co"># In der Praxis käme Key/IV z.B. aus Base64-Strings:</span></span>
-<span id="cb3-49"><a href="#cb3-49"></a>key_decoded <span class="op">=</span> base64.b64decode(key_b64)</span>
-<span id="cb3-50"><a href="#cb3-50"></a>iv_decoded <span class="op">=</span> base64.b64decode(iv_b64)</span>
-<span id="cb3-51"><a href="#cb3-51"></a>ciphertext_decoded <span class="op">=</span> base64.b64decode(ciphertext_b64)</span>
-<span id="cb3-52"><a href="#cb3-52"></a></span>
-<span id="cb3-53"><a href="#cb3-53"></a>cipher_decrypt <span class="op">=</span> AES.new(key_decoded, AES.MODE_CBC, iv_decoded)</span>
-<span id="cb3-54"><a href="#cb3-54"></a>decrypted_padded <span class="op">=</span> cipher_decrypt.decrypt(ciphertext_decoded)</span>
-<span id="cb3-55"><a href="#cb3-55"></a>decrypted <span class="op">=</span> unpad(decrypted_padded).decode(<span class="st">"utf-8"</span>)</span>
-<span id="cb3-56"><a href="#cb3-56"></a></span>
-<span id="cb3-57"><a href="#cb3-57"></a><span class="bu">print</span>(<span class="st">"Entschlüsselter Text: "</span>, decrypted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: pycryptodome in /home/vscode/.local/lib/python3.10/site-packages (3.23.0)
-AES Key (Base64):      xSWzpVy2pA/QauBbMmh71g==
-AES IV  (Base64):      9yZ90TPiJaYmY1wZnkHNIw==
-Ciphertext (Base64):   D/SaYU3roeqXFsB8F2XPIs5iEFeX9mzcEcTFvq/vleHue7Cxv1kHmq0Ch+XyT1M7ImUdWU2B1+iGg6YRBQyGJw==
-Entschlüsselter Text:  Wir treffen uns mit Paul am Mittwoch in der Gruft</code></pre>
-</div>
-</div>
+<ol start="3" type="1">
+<li>Nun folgen Sie der Anleitung für das <strong>Installieren des Browserplugins</strong> von flowcrypt:<br> <a href="https://flowcrypt.com/docs/getting-started/setup/install.html">https://flowcrypt.com/docs/getting-started/setup/install.html</a><br>Folgen Sie der Anleitung auch in Bezug auf das Erstellen eines Schlüsselpaares.
+<ul>
+<li>Das Plugin muss Zugriff auf Ihr GMail-Konto erhalten.</li>
+<li>Und Sie müssen ein Key-Paar erstellen (public und private key). <img src="./setupflowcrypt.png" alt="setup" width="200"> <img src="./setupflowcrypt2.png" alt="setup" width="200"></li>
+</ul></li>
+</ol>
 <hr>
-<section id="aufgabe-aes-mit-python-anwenden" class="level3">
-<h3 class="anchored" data-anchor-id="aufgabe-aes-mit-python-anwenden">Aufgabe : AES mit Python anwenden</h3>
-<p>Kopieren Sie den obigen Code.<br> Kodieren Sie einen kurzen Text.<br> Tauschen Sie den codierten Text, den Schlüssel und den IV mit Ihrem Lernpartner aus.<br> Decodieren Sie den codierten Text ihres Lernpartners mit den Angaben Ihres Lernpartners.</p>
-<div id="d6f77a63" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Mein eigenes Beispiel</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<ol start="4" type="1">
+<li>ACHTUNG: flowcrypt hat zwei unterschiedliche Möglichkeiten<br>
+<ul>
+<li>EMail verschlüsseln</li>
+<li>EMail signieren –&gt; <strong>das wollen wir!!</strong></li>
+</ul></li>
+<li>Folgen Sie der Anleitung für das Signieren. <a href="https://flowcrypt.com/docs/getting-started/send-and-receive/send/send-signed-only-emails.html">https://flowcrypt.com/docs/getting-started/send-and-receive/send/send-signed-only-emails.html</a> <br> Senden Sie eine signierte EMail an Ihre eigene GMail-Adresse. <img src="./newmessage.png" alt="setup" width="200"> <img src="./newmessage2.png" alt="setup" width="200"><br> Kontrollieren Sie, ob Sie die signierte Nachricht empfangen. <img src="./messagereceived.png" alt="setup" width="200"> <img src="./messagecontent.png" alt="setup" width="100"> <img src="./messagecontent2.png" alt="setup" width="400"></li>
+</ol>
+<hr>
+<ol start="6" type="1">
+<li>Nun senden Sie eine EMail-Nachricht an Ihren Lernpartner, an dessen Gmail-Adresse.<br>Kann Ihr Lernpartner die Echtheit der Nachricht bestätigen?</li>
+</ol>
+</blockquote>
+<hr>
+<blockquote class="blockquote">
+<h2 id="zusatz-aufgabe-email-signieren-mit-anderem-email-programm" class="anchored">Zusatz-Aufgabe:<br>EMail signieren mit anderem EMail-Programm</h2>
+<p>Wahrscheinlich verwenden Sie normalerweise ein anderes Email-Programm und andere Email-Adressen. Informieren Sie sich, ob und wie Sie mir Ihrem normalen Email-Programm Emails signieren und verifizieren können. Richten Sie die das Signieren und Verifizieren ein und testen Sie es mit einem Lernpartner.</p>
+</blockquote>
+<hr>
 
 
-</section>
 </section>
 </section>
 
@@ -754,4 +775,4 @@ Entschlüsselter Text:  Wir treffen uns mit Paul am Mittwoch in der Gruft</code>
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251119_aesencryption/chapter/aes_encryption.ipynb" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SkriptenMk/I_eW_24-28/blob/main/files/lektionen_hs25/251210_signature/signatureexplained.md" target="_blank" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SkriptenMk/I_eW_24-28/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

@@ -1,6 +1,6 @@
 ---
 title: "15 AES encryption"
-date: 2025-11-19
+date: 2025-11-26
 date-format: DD.MM.YYYY
 author: "Peter Rutschmann"
 ---
@@ -47,7 +47,7 @@ Meine eigene Regel:
 
 Auflösen:
 001 000 101 
-010 000 011 (1,2,3) -> (3,2,1)
+010 000 011 (1,2,3) -> (3,1,2)
 010 000 01  A
 ```
 
@@ -58,6 +58,47 @@ Auflösen:
   [Liste der UTF8 Codierung](https://www.utf8-chartable.de/)
 - Transponieren Sie mit dem key=3 gemäss obiger Regel
 - Tauschen Sie das Ergebnis mit Ihrem Lernpartner aus, findet er die ursprüngliche Zahl heraus?
+
+
+::: {.callout-tip title="Lösung" collapse=true}
+```text
+Aufgabe Anwenden Transponieren
+gezeigt wird nur eine Teillösung
+
+Wie transponieren:
+Nr: 1 2 3
+Bit 0 1 0
+Regel Reihenfolge 1,2,3 wird neu 3,1,2
+Nr: 3 1 2
+Bit 0 0 1
+
+Meine vierstellige Zahl:
+4589
+Ziffern 4 5 8 9
+und darunter binär nach UTF8
+
+4          5          8         9
+00110100'  00110101'  00111000  ...
+
+Bits in 3er Gruppen transponieren:
+Der ' hilft zu sehen, wann die nächste Ziffer ( 4..5..8...9 ) beginnt.
+Regel für die Bits: (1,2,3) (3,1,2)
+123 123 12 3 123 123 123
+001 101 00'0 011 010 1'00 ...
+312 312 31 2 312 321 3 21
+100 110 00 0 101 001 010
+
+Entschlüsseln
+Regel für die Bits: (1,2,3) (3,1,2) ABER: umgekehrt anwenden!!
+312 312 312 ...
+100 110 000 ...
+123 123 123 ...
+001 101 000 ...
+Bits wieder zu einer 8er Gruppe zusammenfügen:
+00110100' 0 ...
+Und wieder mit UFT8 umwandeln --> Ziffer 4
+```
+:::
 
 ## Aufgabe Anwenden eines mehrfachen Transponieren
 
@@ -100,7 +141,7 @@ Eine [AES-Animation](https://legacy.cryptool.org/en/cto/aes-animation), die das 
 Laden Sie das Notebook herunter, um AES praktisch anzuwenden.<br>
 Lesen und lösen Sie:
 
-<a href="https://skriptenmk.github.io/I_eW_24-28/files/lektionen_hs25/251119_aesencryption/chapter/aes_encryption.ipynb" 
+<a href="https://skriptenmk.github.io/I_eW_24-28/files/lektionen_hs25/251126_aesencryption/chapter/aes_encryption.ipynb" 
    download="aes_encryption.ipynb">
    Notebook zu AES herunterladen
 </a>

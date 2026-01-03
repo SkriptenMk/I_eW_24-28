@@ -1,6 +1,8 @@
 # Quarto Website — Kurzanleitung zum Rendern
 
-Dieses Repository enthält Kursmaterialien als Quarto-Website. Kurze Anleitung, wie du die Seite lokal renderst — empfohlen ist die vorgefertigte DevContainer-Umgebung.
+Dieses Repository enthält Kursmaterialien als Quarto-Website.<br/>
+Kurze Anleitung, wie du die Seite lokal renderst.<br/>
+Es gibt eine vorbereitete DevContainer-Umgebung, die alle notwendigen Tools beinhaltet.
 
 ## Übersicht
 - Quarto-Quellen: `*.qmd`, `*.md` (Root und `files/`, `lektionen_*`)
@@ -8,7 +10,7 @@ Dieses Repository enthält Kursmaterialien als Quarto-Website. Kurze Anleitung, 
 
 ## Empfohlen: Mit VS Code DevContainer
 1. In VS Code das Projekt öffnen.
-2. F1 → `Dev Containers: Rebuild and Reopen in Container` (erstes Mal oder nach Dockerfile-Änderungen).
+2. F1: `Dev Containers: Rebuild and Reopen in Container` (erstes Mal oder nach Dockerfile-Änderungen).
 3. Öffne ein Terminal in VS Code (läuft nun im Container).
 4. Prüfen, ob Quarto installiert ist:
 
@@ -29,15 +31,23 @@ quarto render
 # Ausgabe landet in `docs/` (siehe `_quarto.yml`)
 ```
 
-7. Einzelne Datei als PDF (verwenden XeLaTeX laut `_quarto.yml`):
+weitere Dateien nach docs kopieren (zBsp Dateien zum Download)
 
 ```bash
-quarto render path/to/file.qmd --to pdf
+python3 scripts/copy_notebooks_to_docs.py --ext ipynb,txt,pdf
+````
+
+Links auf `.ipynb`-Dateien fixen (Quarto ersetzt diese durch html links... wieso auch immer...)<br/>
+Achtung im Zusammenhang mit preview funktioniert das nicht, da preview Seite erst rendert, wenn sie im Browser geöffnet wird... und logisch wieder html links drin sind...
+
+```bash
+python3 scripts/fix_notebook_links.py
 ```
+
 
 Hinweis: Die DevContainer-Dockerfile pinnt eine Quarto-Version und lädt automatisch das passende .deb für die Container-Architektur (amd64/arm64). Wenn du die Dockerfile änderst, rebuild den Container.
 
-## Alternative: Manuell per Docker (ohne VS Code)
+# Alternative: Manuell per Docker (ohne VS Code)
 Im Ordner `.devcontainer` existiert ein Dockerfile. Beispiel (aus `.devcontainer/`):
 
 ```bash
@@ -51,9 +61,3 @@ Danach im Container die oben genannten `quarto`-Befehle ausführen.
 - `quarto: command not found`: Container nicht neu gebaut / Quarto nicht installiert — Rebuild des DevContainer oder manuelle Installation im Container.
 - `Invalid archive signature` beim Installieren einer `.deb`: Download war beschädigt (404/HTML). Lösche `/tmp/quarto.deb` und lade die richtige Asset-URL herunter (DevContainer benutzt eine gepinnte Version).
 - PDF/LaTeX-Fehler: Fehlende LaTeX-Pakete. Ergänze die Dockerfile um zusätzliche `texlive-...` Pakete (z. B. `texlive-lang-german`, `texlive-pictures`) und rebuild den Container.
-
-## Wenn du Hilfe brauchst
-Kopiere die Kommandoausgaben (Fehlermeldungen von `quarto render` oder `dpkg`/`apt`) hierher — ich helfe beim Interpretieren.
-
----
-Kurze Anleitung erstellt am: 2025-10-30
