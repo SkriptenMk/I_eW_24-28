@@ -1,4 +1,10 @@
+title: "21 Plain Text Writing"
+author: "Jacques Mock Schindler"
+date: 2026-01-07
+date-format: DD.MM.YYYY
 format:
+  html:
+    code-fold: true
   pdf:
     pdf-engine: xelatex
     highlight-style: tango      # Sorgt für die Farben (ähnlich HTML)
