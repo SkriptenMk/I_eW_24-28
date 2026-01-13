@@ -128,26 +128,25 @@ download a style from the [Zotero Style
 Repository](https://www.zotero.org/styles). 
 
 
-## Einfügen von Referenzen in Markdown
+## Setting references in Markdown
 
-Um Referenzen aus dem Bibliographie Dokument in den Markdown Text zu
-übernehmen, verwendet man den Zitierschlüssel. Eingefügt wird er mit
-`[@zitierschlüssel]`. Soll die Referenz mit einer Seitenzahl versehen
-werden, wird der Eintrag folgendermassen ergänzt: `[@zitierschlüssel,
-25]`. Sollen in der gleichen Referenz mehrere Belege angeführt werden,
-sieht die Syntax folgendermassen aus : `[@zitierschlüssel1, 25;
-@zitierschlüssel2, 33]`.
+To transfer references from the `.bib` file into the Markdown text,
+use the citation key (`[@citation_key]`). If you want to include page numbers
+in your reference, add them to the citation key (`[@citation_key, 25]`).
+If you need to include multiple authors in one reference, you can
+combine multiple citation keys (`[@citation_key_1, 25; @citation_key_2, 33]).
 
-Die Zitierschlüssel braucht man nicht auswendig zu wissen. Die Zotero
-Einträge zeigen sie als obersten Eintrag zu jedem erfassten Werk an.
+There is no need to know memorise the citation keys as Zotero displays
+them as the first item in the metadata.
 
-## Erstellen des PDF mit Referenzen
+## Creating a PDF containing references
 
-Sofern ein entsprechendes Konfigurationsdokument (`.yaml`) erstellt
-worden ist, kann das PDF mit dem Aufruf
+If there exists a `.yaml` file, the pdf can be created with the
+
 
 ```bash
 pandoc -d format.yaml
 ```
 
-erstellt werden.
+command. The command must be executed from the same directory in wich he
+`format.yaml` file is located.
