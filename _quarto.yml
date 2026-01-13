@@ -2,6 +2,8 @@ project:
   type: website
   output-dir: docs
 
+lang: en
+
 bibliography: references.bib
 csl: chicago_custom.csl
 
