@@ -1,19 +1,17 @@
-# Referenzen in Markdown
+# References in Plain Text Writing (Markdown)
 
-Damit in Texten, die im Markdown Format erstellt werden, Literaturzitate
-eingefügt werden können, braucht es neben dem Markdown Dokument mit dem
-eigentlichen Text, drei weitere Dateien:
+Three additional files are required to insert references in Markdown
+files: 
 
-* eine Datei mit allen Formatierungsinformationen (`.yaml`), 
-* eine Datei mit den bibliographischen Angaben (`.bib`) sowie 
-* eine Datei mit den Formatierungsangaben für die Literaturdarstellung
-  (`.csl`). 
+* a file for information about the text format (`.yaml`),
+* a file for bibliographical information (`. bib`), and
+* a file for display format of the bibliographical information (`.bib`).
 
-Von diesen drei Dateien muss lediglich die Datei mit den
-Formatierungsinformationen manuell erstellt werden. Die Datei mit den
-bibliographischen Angaben wird von Zotero erstellt und die Datei für die
-Darstellung der bibliographischen Angaben im Text kann aus dem [Zotero
-Style Repository](https://www.zotero.org/styles) heruntergeladen werden.
+Out of these three files only the one containing text format information
+has to be created manually.
+Zotero will create the `.bib` file and the `.csl` file can be downloaded
+from the [Zotero Style Repository](https://www.zotero.org/styles).
+
 
 ## Textformat (.yaml)
 
