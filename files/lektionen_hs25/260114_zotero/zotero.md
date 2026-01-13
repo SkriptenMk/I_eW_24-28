@@ -56,21 +56,15 @@ for the four-digit year.
 
 ## Create a `.bib` file for the Markdown -- Pandoc-workflow
 
-
-
-Die für das jeweilige Projekt erforderlichen Einträge in Zotero werden
-sinnvollerweise in einer Sammlung zusammengefasst. Diese Sammlung kann dann
-in eine `.bib` Datei exportiert werden. Dazu ist das Kontextmenü der
-Sammlung mit Rechtsklick zu öffnen. Anschliessend ist der Menüpunkt
-'Sammlung Exportieren' auszuwählen. In der sich öffnenden Dialogbox ist
-Better BibLaTeX als Format auszuwählen. Sinnvollerweise werden die beiden
-Optionen 'Halte aktuell' und 'Hintergrund-Export' ausgewählt. Die erste
-Option sorgt dafür, dass Änderungen in Zotero-Einträgen automatisch in die
-`.bib` Datei geschrieben werden, die zweite verhindert, dass der Export
-einfriert.  
-Standardmässig erhält die so erstellte `.bib` Datei den Namen der
-Sammlung. Der Name kann während des Erstellens noch angepasst werden.
-Falls der Name nachträglich angepasst wird, ist nicht sichergestellt,
-dass die automatische Aktualisierung weiterhin funktioniert. Falls man dem
-Automatismus nicht vertraut, kann die `.bib` Datei nach jeder Änderung
-manuell neu aus Zotero exportiert werden.
+For each project, you must compile all the relevant Zotero entries into
+a collection. This collection can then be exported as a .bib file. To do
+so, right-click on the collection and select 'Export Collection' from
+the context menu. In the dialogue box, select 'Better BibLaTeX' as the
+export format. Furthermore, select the "Keep Updated" and "Background
+Export" options. The first option keeps your .bib file up to date, while
+the second prevents the export process from freezing.   
+The standard name of the generated .bib file is the name of the
+collection. During the export setup, you can choose an arbitrary name
+for the .bib file. However, renaming the file after the export setup may
+break the update process. In any case, if you do not trust the automatic
+update process, you can export the collection again at any time. 
