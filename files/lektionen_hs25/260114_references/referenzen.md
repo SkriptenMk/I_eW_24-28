@@ -23,29 +23,27 @@ both a `.bib` file and a `.csl` file.
 
 
 ```yaml
-# Input und Output
+# input and output
 input-files:
-  - mein-text.md  # es können auch mehrere Dateien angegeben werden
-  # - zweiter_teil.md
-  # - dritter_teil.md
-output-file: ausgabe.pdf
+  - my-text.md  # there can be more files
+  # - second_part.md
+  # - thrid_part.md
+output-file: output.pdf
 
-# Grundeinstellungen
+# basic settings
 from: markdown
 to: pdf
-# lualatex als pdf-engine hilft bei der Darstellung
-# von Umlauten und anderen Sonderzeichen
-pdf-engine: lualatex # oder xelatex, pdflatex
+# lualatex is better for special characters
+pdf-engine: lualatex # or xelatex, pdflatex
 
-# Aktiviert citeproc - damit wird die Bibliographie eingebunden
+# activate citeproc - responsible for loading the bibliography
 citeproc: true
 
-# Inhaltsverzeichnis
 table-of-contents: true
 
-# Variablen und Metadaten
+# variables und metadata
 variables:
-  lang: de-CH
+  lang: en # for Switzerland: de-CH
   lof: true
   lot: true
   number-sections: true
@@ -54,9 +52,9 @@ variables:
     - \setcounter{tocdepth}{3}
 
 metadata:
-  title: "Titel des Dokuments"
-  author: "Ihr Name"
-  date: "Heute"
+  title: "Title of the Documnt"
+  author: "Authors Name"
+  date: "Today"
   bibliography: bibliography.bib
   csl: chicago-notes-bibliography-access-dates.csl
   link-citations: true
