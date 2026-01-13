@@ -38,7 +38,7 @@ heruntergeladen werden. Das heruntergeladene `.xpi` Dokument kann über
 das Menü Werkzeuge > Plugins, Zahnradsymbol, Install Plugin from File,
 installiert werden.
 
-## Einträge in Zotero erstellen und organisieren
+## Einträge in Zotero erstellen und organisieren {#sec-zotero_entry}
 
 Wie Einträge in Zotero erfasst werden, wird auf der Website von Zotero
 ausführlich beschrieben. An dieser Stelle darf daher auf die dortigen

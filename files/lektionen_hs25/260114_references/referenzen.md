@@ -99,12 +99,11 @@ configuration file:
 For additional configurations check the [Pandoc User
 Guide](https://pandoc.org/MANUAL.html). 
 
-## Bibliographische Angaben
+## Bibliographic Information
 
-Das Dokument mit den bibliographischen Angaben kann Zotero automatisch
-erstellen. Trotzdem wird hier ein Beispiel eines Eintrags in diesem
-Dokument erklärt. Das Dokument für das Beispiel heist
-`bibliography.bib`.
+Zotero will create the file `bibliography.bib` automatically.
+Nevertheless, there is an example entry from the file `bibliography.bib`
+below. 
 
 ```bib
 @book{healy2020,
@@ -114,21 +113,20 @@ Dokument erklärt. Das Dokument für das Beispiel heist
   }
 ```
 
-Der Eintrag bezieht sich auf ein Buch (`@book`). Unmittelbar auf diesen
-Identifikator folgt nach der geschweiften Klammer der Zitierschlüssel
-(`healy2020`). Dieser wird von Zotero grundsätzlich automatisch
-vergeben, kann aber auch manuell festgelegt werden. Anschliessend folgen
-Zeile für Zeile die notwendigen bibliographischen Angaben als Schlüssel
-\- Werte Paare.
+This entry represents a book, hence the `@book` key. The citation key
+can be found immediately after the curly bracket. Zotero assigns this
+key arbitrarily. However, it is possible to set a citation key
+at will. The details are explained in @sec-zotero_entry.
 
-## Zitierstil
+## Citation Style
 
-Der Zitierstil wird in einem Dokument mit der Endung `.csl` definiert.
-Die Abkürzung csl steht für Citation Style Language und ist eine Form
-von [xml](https://de.wikipedia.org/wiki/Extensible_Markup_Language).
-Grundsätzlich ist es möglich, eigene csl Definitionen zu verfassen. Das
-[Zotero Style Repository](https://www.zotero.org/styles) stellt jedoch
-die gängigsten Zitierstile zur Verfügung. 
+The `.csl` (Citation Style Language) file defines the citation
+style. The `.csl` format is a variant of the
+[xml](https://en.wikipedia.org/wiki/XML) language. Even if it is
+possible to write a csl definition from scratch it is far easier to
+download a style from the [Zotero Style
+Repository](https://www.zotero.org/styles). 
+
 
 ## Einfügen von Referenzen in Markdown
 
