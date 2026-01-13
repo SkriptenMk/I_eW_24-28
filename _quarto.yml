@@ -2,6 +2,9 @@ project:
   type: website
   output-dir: docs
 
+bibliography: references.bib
+csl: chicago_custom.csl
+
 website:
   title: "Computer Science Course Materials for School Year 2025/26   (2eW)"
   repo-url: https://github.com/SkriptenMk/I_eW_24-28
