@@ -1,7 +1,7 @@
 # Managing a Bibliography with Zotero
 
 Zotero calls itself a personal research assistant. For high school
-students, it is a tool to for managing citations in their texts. In
+students, it is a tool for managing citations in their texts. In
 addition, Zotero can act as an e-reader with useful note-taking
 functions. 
 
@@ -21,12 +21,12 @@ On the same website you see the possibility to install the Zotero
 connector plugin for your browser. This plugin is not strictly
 necessary but it simplifies the collection of sources in your database. 
 
-As soon Zotero is installed on your computer, your installation can be
+As soon as Zotero is installed on your computer, your installation can be
 linked to your Zotero account (Edit > Settings, Sync Tab).
 
 In the Markdown -- Pandoc-Workflow you need the
 [BetterBibTeX](https://retorque.re/zotero-better-bibtex/)
-plugin. The Plugin can be downloaded from ist [GitHub
+plugin. The Plugin can be downloaded from its [GitHub
 Repository](https://github.com/retorquere/zotero-better-bibtex/releases/latest).
 To install the downloaded `.xpi` file, go to Tools > Plugins, Cogwheel >
 Install Plugin From File... After you have installed the plugin, you may
