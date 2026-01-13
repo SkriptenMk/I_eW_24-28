@@ -1,10 +1,9 @@
-# Literaturverwaltung mit Zotero
+# Managing a Bibliography with Zotero
 
-Zotero bewirbt sich selber als persönlicher Forschungsassistent. Im
-gymnasialen Umfeld ist Zotero in erster Linie ein Hilfsmittel Zitate in
-Texten korrekt zu formatieren. Darüber hinaus kann Zotero auch als
-E-Reader mit Zusatzfunktionen zur Verwaltung von Notizen verwendet
-werden. 
+Zotero calls itself a personal research assistant. For high school
+students, it is a tool to for managing citations in their texts. In
+addition, Zotero can act as an e-reader with useful note-taking
+functions. 
 
 ## Zotero installieren und einrichten
 

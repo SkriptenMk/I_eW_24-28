@@ -134,7 +134,7 @@ To transfer references from the `.bib` file into the Markdown text,
 use the citation key (`[@citation_key]`). If you want to include page numbers
 in your reference, add them to the citation key (`[@citation_key, 25]`).
 If you need to include multiple authors in one reference, you can
-combine multiple citation keys (`[@citation_key_1, 25; @citation_key_2, 33]).
+combine multiple citation keys (`[@citation_key_1, 25; @citation_key_2, 33]`).
 
 There is no need to know memorise the citation keys as Zotero displays
 them as the first item in the metadata.
