@@ -43,7 +43,6 @@ table-of-contents: true
 
 # variables und metadata
 variables:
-  lang: en # for Switzerland: de-CH
   lof: true
   lot: true
   number-sections: true
@@ -54,6 +53,7 @@ variables:
 metadata:
   title: "Title of the Document"
   author: "Author's Name"
+  lang: en # for Swizterland: de-CH
   date: "Today"
   bibliography: bibliography.bib
   csl: chicago-notes-bibliography-access-dates.csl
@@ -76,9 +76,6 @@ configuration file:
   information. The value `true` activates the software.
 * `table-of-contents` If `true` there will be a table of contents.
 * `variables` bundles the details for the display of the output file.
-* `lang` is the variable to store the language settings. For Swiss
-  German documents it has to be set to `de-CH`. This observes the Swiss
-  German typographical conventions.
 * `lof` creates a list of figures.
 * `lot` creates a list of tables.
 * `number-sections` numbers the sections according to their hierarchical
@@ -92,6 +89,9 @@ configuration file:
 * `title` The title for the front matter.
 * `author` The author's name. Multiple authors can be provided as a
   list (analogue to the input files).
+* `lang` is the variable to store the language settings. For Swiss
+  German documents it has to be set to `de-CH`. This observes the Swiss
+  German typographical conventions.
 * `date` The Date.
 * `bibliography` Stores the path to the bibliography (`.bib`) file. It
   has to be the name chosen for the `.bib` file.

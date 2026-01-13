@@ -241,17 +241,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-18"><a href="#cb1-18"></a></span>
 <span id="cb1-19"><a href="#cb1-19"></a><span class="co"># variables und metadata</span></span>
 <span id="cb1-20"><a href="#cb1-20"></a><span class="fu">variables</span><span class="kw">:</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="at">  </span><span class="fu">lang</span><span class="kw">:</span><span class="at"> en</span><span class="co"> # for Switzerland: de-CH</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="at">  </span><span class="fu">lof</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb1-23"><a href="#cb1-23"></a><span class="at">  </span><span class="fu">lot</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb1-24"><a href="#cb1-24"></a><span class="at">  </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="at">  </span><span class="fu">header-includes</span><span class="kw">:</span></span>
-<span id="cb1-26"><a href="#cb1-26"></a><span class="at">    </span><span class="kw">-</span><span class="at"> \setcounter{secnumdepth}{3}</span></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="at">    </span><span class="kw">-</span><span class="at"> \setcounter{tocdepth}{3}</span></span>
-<span id="cb1-28"><a href="#cb1-28"></a></span>
-<span id="cb1-29"><a href="#cb1-29"></a><span class="fu">metadata</span><span class="kw">:</span></span>
-<span id="cb1-30"><a href="#cb1-30"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Title of the Document"</span></span>
-<span id="cb1-31"><a href="#cb1-31"></a><span class="at">  </span><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Author's Name"</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="at">  </span><span class="fu">lof</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="at">  </span><span class="fu">lot</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="at">  </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="at">  </span><span class="fu">header-includes</span><span class="kw">:</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="at">    </span><span class="kw">-</span><span class="at"> \setcounter{secnumdepth}{3}</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="at">    </span><span class="kw">-</span><span class="at"> \setcounter{tocdepth}{3}</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="fu">metadata</span><span class="kw">:</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Title of the Document"</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="at">  </span><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Author's Name"</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="at">  </span><span class="fu">lang</span><span class="kw">:</span><span class="at"> en</span><span class="co"> # for Swizterland: de-CH</span></span>
 <span id="cb1-32"><a href="#cb1-32"></a><span class="at">  </span><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"Today"</span></span>
 <span id="cb1-33"><a href="#cb1-33"></a><span class="at">  </span><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> bibliography.bib</span></span>
 <span id="cb1-34"><a href="#cb1-34"></a><span class="at">  </span><span class="fu">csl</span><span class="kw">:</span><span class="at"> chicago-notes-bibliography-access-dates.csl</span></span>
@@ -266,7 +266,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>citeproc</code> is the software responsible to handle the bibliographic information. The value <code>true</code> activates the software.</li>
 <li><code>table-of-contents</code> If <code>true</code> there will be a table of contents.</li>
 <li><code>variables</code> bundles the details for the display of the output file.</li>
-<li><code>lang</code> is the variable to store the language settings. For Swiss German documents it has to be set to <code>de-CH</code>. This observes the Swiss German typographical conventions.</li>
 <li><code>lof</code> creates a list of figures.</li>
 <li><code>lot</code> creates a list of tables.</li>
 <li><code>number-sections</code> numbers the sections according to their hierarchical position.</li>
@@ -276,6 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>metadata</code> bundles the metadata of the file.</li>
 <li><code>title</code> The title for the front matter.</li>
 <li><code>author</code> The author’s name. Multiple authors can be provided as a list (analogue to the input files).</li>
+<li><code>lang</code> is the variable to store the language settings. For Swiss German documents it has to be set to <code>de-CH</code>. This observes the Swiss German typographical conventions.</li>
 <li><code>date</code> The Date.</li>
 <li><code>bibliography</code> Stores the path to the bibliography (<code>.bib</code>) file. It has to be the name chosen for the <code>.bib</code> file.</li>
 <li><code>csl</code> Stores the path to the <code>.csl</code> file.</li>
