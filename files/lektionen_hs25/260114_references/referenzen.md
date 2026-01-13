@@ -5,7 +5,7 @@ files:
 
 * a file for information about the text format (`.yaml`),
 * a file for bibliographical information (`. bib`), and
-* a file for display format of the bibliographical information (`.bib`).
+* a file for display format of the bibliographical information (`.csl`).
 
 Out of these three files only the one containing text format information
 has to be created manually.
@@ -27,7 +27,7 @@ both a `.bib` file and a `.csl` file.
 input-files:
   - my-text.md  # there can be more files
   # - second_part.md
-  # - thrid_part.md
+  # - third_part.md
 output-file: output.pdf
 
 # basic settings
@@ -52,15 +52,15 @@ variables:
     - \setcounter{tocdepth}{3}
 
 metadata:
-  title: "Title of the Documnt"
-  author: "Authors Name"
+  title: "Title of the Document"
+  author: "Author's Name"
   date: "Today"
   bibliography: bibliography.bib
   csl: chicago-notes-bibliography-access-dates.csl
   link-citations: true
 ```
 
-The follwoing list provides explanations for the entries in the
+The followoing list provides explanations for the entries in the
 configuration file:
 
 * `input-files` A list of the files to be included in the final output. As
@@ -93,7 +93,8 @@ configuration file:
 * `author` The author's name. Multiple authors can be provided as a
   list (analogue to the input files).
 * `date` The Date.
-* `bibliography` Stores the path to the bibliography (`.bib`) file.
+* `bibliography` Stores the path to the bibliography (`.bib`) file. It
+  has to be the name chosen for the `.bib` file.
 * `csl` Stores the path to the `.csl` file.
 
 For additional configurations check the [Pandoc User
@@ -136,7 +137,7 @@ in your reference, add them to the citation key (`[@citation_key, 25]`).
 If you need to include multiple authors in one reference, you can
 combine multiple citation keys (`[@citation_key_1, 25; @citation_key_2, 33]`).
 
-There is no need to know memorise the citation keys as Zotero displays
+There is no need to memorise the citation keys as Zotero displays
 them as the first item in the metadata.
 
 ## Creating a PDF containing references
@@ -148,5 +149,5 @@ If there exists a `.yaml` file, the pdf can be created with the
 pandoc -d format.yaml
 ```
 
-command. The command must be executed from the same directory in wich he
+command. The command must be executed from the same directory in which he
 `format.yaml` file is located.

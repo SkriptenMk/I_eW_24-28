@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.9">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -68,15 +68,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../../../">
 <script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-5d254f1e278c2921d96b26102a150bb1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap-985b28ec037abca086789749d85d0073.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -276,12 +275,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>Man kann XOR auch auf zwei Bitfolgen anwenden, wobei immer die beiden Bits an der gleichen Position verknüpft werden.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>Beispiel:</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>Beispiel:</span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a>    0100'0100  (Bitfolge A -&gt; Buchstabe 'H')</span>
 <span id="cb1-4"><a href="#cb1-4"></a>XOR 0100'1011  (Bitfolge B -&gt; Schlüssel Buchstabe 'K' )</span>
 <span id="cb1-5"><a href="#cb1-5"></a>--------</span>
-<span id="cb1-6"><a href="#cb1-6"></a>    0000'1111  (Ergebnis, das muss nicht einem Buchstaben entsprechen!)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-6"><a href="#cb1-6"></a>    0000'1111  (Ergebnis, das muss nicht einem Buchstaben entsprechen!)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="xor-verschlüsselung" class="level2">
 <h2 class="anchored" data-anchor-id="xor-verschlüsselung">XOR-Verschlüsselung</h2>
@@ -292,22 +291,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <ol type="1">
 <li><p>Klartext <em>ÌNFORMATIK</em> in Binär umwandeln</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>   I        N        F        O         R       M        A        T        I        K</span>
-<span id="cb2-2"><a href="#cb2-2"></a>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>   I        N        F        O         R       M        A        T        I        K</span>
+<span id="cb2-2"><a href="#cb2-2"></a>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Schlüssel <em>BYTE</em> in Binär umwandeln</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>   B        Y        T        E</span>
-<span id="cb3-2"><a href="#cb3-2"></a>01000010 01011001 01010100 01000101</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>   B        Y        T        E</span>
+<span id="cb3-2"><a href="#cb3-2"></a>01000010 01011001 01010100 01000101</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Klartext und Schlüssel aufreihen, Schlüssel wird über die Länge des Klartexts wiederholt:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>   I        N        F        O          R        M        A        T        I        K</span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>   I        N        F        O          R        M        A        T        I        K</span>
 <span id="cb4-2"><a href="#cb4-2"></a>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</span>
 <span id="cb4-3"><a href="#cb4-3"></a>   B        Y        T        E          B        Y        T        E        B        Y</span>
-<span id="cb4-4"><a href="#cb4-4"></a>01000010 01011001 01010100 01000101 01000010 01011001 01010100 01000101 01000010 01011001</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<span id="cb4-4"><a href="#cb4-4"></a>01000010 01011001 01010100 01000101 01000010 01011001 01010100 01000101 01000010 01011001</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Bei den beiden obigen Bit-Muster XOR bitweise anwenden</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</span>
 <span id="cb5-2"><a href="#cb5-2"></a>01000010 01011001 01010100 01000101 01000010 01011001 01010100 01000101 01000010 01011001</span>
 <span id="cb5-3"><a href="#cb5-3"></a>-----------------------------------------------------------------------------------------</span>
 <span id="cb5-4"><a href="#cb5-4"></a>00001011 00010111 00010010 00001010 00010000 00010100 00010101 00010001 00001011 00010010</span>
-<span id="cb5-5"><a href="#cb5-5"></a>   0B       17       12       0A       10       14       15       11       0B       12</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-5"><a href="#cb5-5"></a>   0B       17       12       0A       10       14       15       11       0B       12</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>ACHTUNG:</strong> Die Bytes des Ergebnisses entsprechen nicht unbedingt druckbaren Zeichen!<br> Man notiert das Ergebnis bin oder kompakter in HEX: <strong><em>0B 17 12 0A 10 14 15 11 0B 12</em></strong></p></li>
 </ol>
 </section>
@@ -321,24 +320,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <ol type="1">
 <li><p>Verschlüsselten Text in Binär umwandeln</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>   0B       17       12       0A       10       14       15       11       0B       12</span>
-<span id="cb6-2"><a href="#cb6-2"></a>00001011 00010111 00010010 00001010 00010000 00010100 00010101 00010001 00001011 00010010</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>   0B       17       12       0A       10       14       15       11       0B       12</span>
+<span id="cb6-2"><a href="#cb6-2"></a>00001011 00010111 00010010 00001010 00010000 00010100 00010101 00010001 00001011 00010010</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Schlüssel in Binär umwandeln</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href="#cb7-1"></a>     B       Y        T        E</span>
-<span id="cb7-2"><a href="#cb7-2"></a> 01000010 01011001 01010100 01000101</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href="#cb7-1"></a>     B       Y        T        E</span>
+<span id="cb7-2"><a href="#cb7-2"></a> 01000010 01011001 01010100 01000101</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Verschlüsselten Text und Schlüssel aufreihen.<br> Schlüssel wird über die Länge des verschlüsselten Texts wiederholt:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>   0B       17       12       0A       10       14       15       11       0B       12</span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>   0B       17       12       0A       10       14       15       11       0B       12</span>
 <span id="cb8-2"><a href="#cb8-2"></a>00001011 00010111 00010010 00001010 00010000 00010100 00010101 00010001 00001011 00010010</span>
 <span id="cb8-3"><a href="#cb8-3"></a>    B        Y        T        E        B        Y        T        E        B        Y</span>
-<span id="cb8-4"><a href="#cb8-4"></a>01000010 01011001 01010100 01000101 01000010 01011001 01010100 01000101 01000010 01011001</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<span id="cb8-4"><a href="#cb8-4"></a>01000010 01011001 01010100 01000101 01000010 01011001 01010100 01000101 01000010 01011001</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Bei den beiden obigen Bit-Muster bitweise XOR anwenden</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href="#cb9-1"></a>00001011 00010111 00010010 00001010 00010000 00010100 00010101 00010001 00001011 00010010</span>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href="#cb9-1"></a>00001011 00010111 00010010 00001010 00010000 00010100 00010101 00010001 00001011 00010010</span>
 <span id="cb9-2"><a href="#cb9-2"></a>01000010 01011001 01010100 01000101 01000010 01011001 01010100 01000101 01000010 01011001</span>
 <span id="cb9-3"><a href="#cb9-3"></a>-----------------------------------------------------------------------------------------</span>
-<span id="cb9-4"><a href="#cb9-4"></a>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<span id="cb9-4"><a href="#cb9-4"></a>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Binär in Klartext umwandeln</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href="#cb10-1"></a>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</span>
-<span id="cb10-2"><a href="#cb10-2"></a>   I        N         F       O        R        M        A        T        I        K</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href="#cb10-1"></a>01001001 01001110 01000110 01001111 01010010 01001101 01000001 01010100 01001001 01001011</span>
+<span id="cb10-2"><a href="#cb10-2"></a>   I        N         F       O        R        M        A        T        I        K</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 <hr>
 </section>
@@ -353,13 +352,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <summary>
 Lösung.. nicht spicken :-)
 </summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href="#cb11-1"></a>    01      1B       04       0A       0D       0C</span>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href="#cb11-1"></a>    01      1B       04       0A       0D       0C</span>
 <span id="cb11-2"><a href="#cb11-2"></a>00000001 00011011 00000100 00001010 00001101 00001100</span>
 <span id="cb11-3"><a href="#cb11-3"></a>    E       I        E        I        E        I</span>
 <span id="cb11-4"><a href="#cb11-4"></a>01000101 01001001 01000101 01001001 01000101 01001001</span>
 <span id="cb11-5"><a href="#cb11-5"></a>-----------------------------------------------------</span>
 <span id="cb11-6"><a href="#cb11-6"></a>01000100 01010010 01000001 01000011 01001000 01000101</span>
-<span id="cb11-7"><a href="#cb11-7"></a>   D        R        A        C        H        E</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-7"><a href="#cb11-7"></a>   D        R        A        C        H        E</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <hr>
 </section>
@@ -380,7 +379,7 @@ Lösung.. nicht spicken :-)
 <li>Weiter zeigt das Beispiel, wie man eine Text zerlegt und in Hex- und Binärdarstellungen ausgibt.</li>
 </ul>
 <div id="28da4eb6" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Starten Sie den Block einmal und schauen Sie die Ausgaben an</span></span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Starten Sie den Block einmal und schauen Sie die Ausgaben an</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a></span>
 <span id="cb12-3"><a href="#cb12-3"></a><span class="co"># XOR-Funktion fuer zwei bytes-arrays definieren</span></span>
 <span id="cb12-4"><a href="#cb12-4"></a><span class="kw">def</span> xor_bytes(data: <span class="bu">bytes</span>, key: <span class="bu">bytes</span>) <span class="op">-&gt;</span> <span class="bu">bytes</span>:</span>
@@ -428,7 +427,7 @@ Lösung.. nicht spicken :-)
 <span id="cb12-46"><a href="#cb12-46"></a><span class="bu">print</span>(<span class="st">"xorResultAlsBytes in BIN:"</span>, <span class="st">" "</span>.join(<span class="ss">f"</span><span class="sc">{</span>x<span class="sc">:08b}</span><span class="ss">"</span> <span class="cf">for</span> x <span class="kw">in</span> xorResultAlsBytes))</span>
 <span id="cb12-47"><a href="#cb12-47"></a></span>
 <span id="cb12-48"><a href="#cb12-48"></a><span class="co"># xorResultAlsBytes in HEX ausgeben</span></span>
-<span id="cb12-49"><a href="#cb12-49"></a><span class="bu">print</span>(<span class="st">"xorResultAlsBytes in HEX:"</span>, <span class="st">" "</span>.join(<span class="ss">f"</span><span class="sc">{</span>x<span class="sc">:02X}</span><span class="ss">"</span> <span class="cf">for</span> x <span class="kw">in</span> xorResultAlsBytes))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-49"><a href="#cb12-49"></a><span class="bu">print</span>(<span class="st">"xorResultAlsBytes in HEX:"</span>, <span class="st">" "</span>.join(<span class="ss">f"</span><span class="sc">{</span>x<span class="sc">:02X}</span><span class="ss">"</span> <span class="cf">for</span> x <span class="kw">in</span> xorResultAlsBytes))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>text HALLO
 text als Buchstaben: H A L L O
@@ -466,8 +465,8 @@ xorResultAlsBytes in HEX: 09 05 09 0D 0B</code></pre>
 <li><p>XOR-Ergebnis in HEX ausgeben</p></li>
 </ul>
 <div id="d6f77a63" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Programmieren Sie das Beschriebene in Python.</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="bu">print</span>(<span class="st">"Meine Verschüsselung"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Programmieren Sie das Beschriebene in Python.</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="bu">print</span>(<span class="st">"Meine Verschüsselung"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Meine Verschüsselung</code></pre>
 </div>
@@ -476,7 +475,7 @@ xorResultAlsBytes in HEX: 09 05 09 0D 0B</code></pre>
 <summary>
 Lösung.. nicht spicken :-)
 </summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb16-1"><a href="#cb16-1"></a>text = "ERAGON"</span>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb16-1"><a href="#cb16-1"></a>text = "ERAGON"</span>
 <span id="cb16-2"><a href="#cb16-2"></a>print("text " + text)</span>
 <span id="cb16-3"><a href="#cb16-3"></a>print("text als Buchstaben:", " ".join(text))</span>
 <span id="cb16-4"><a href="#cb16-4"></a>textInBytes = text.encode("utf-8")</span>
@@ -495,7 +494,7 @@ Lösung.. nicht spicken :-)
 <span id="cb16-17"><a href="#cb16-17"></a># XOR-Operation durchfuehren</span>
 <span id="cb16-18"><a href="#cb16-18"></a>xorResultAlsBytes = xor_bytes(textInBytes, schluesselInBytes)</span>
 <span id="cb16-19"><a href="#cb16-19"></a>print("xorResultAlsBytes in BIN:", " ".join(f"{x:08b}" for x in xorResultAlsBytes))</span>
-<span id="cb16-20"><a href="#cb16-20"></a>print("xorResultAlsBytes in HEX:", " ".join(f"{x:02X}" for x in xorResultAlsBytes))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-20"><a href="#cb16-20"></a>print("xorResultAlsBytes in HEX:", " ".join(f"{x:02X}" for x in xorResultAlsBytes))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <hr>
 </section>
@@ -503,10 +502,10 @@ Lösung.. nicht spicken :-)
 <h2 class="anchored" data-anchor-id="aufgabe-xor-entschlüsselung-mit-python-selber-anwenden">Aufgabe: XOR-Entschlüsselung mit Python selber anwenden</h2>
 <p>Schaffen Sie es den Ablauf für die Entsschlüsselung zu definieren und umzusetzen?<br> <strong>Geben Sie alle Zwischenergebnisse, HEX, BIN, Text … aus.</strong></p>
 <div id="6acb6a12" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Programmieren Sie die zur vorangehenden Aufgabe passend XOR Entschlüsselung in Python.</span></span>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Programmieren Sie die zur vorangehenden Aufgabe passend XOR Entschlüsselung in Python.</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a><span class="bu">print</span>(<span class="st">"Meine Entschlüsselung"</span>)</span>
 <span id="cb17-3"><a href="#cb17-3"></a></span>
-<span id="cb17-4"><a href="#cb17-4"></a>encryptionInBytes <span class="op">=</span> <span class="bu">bytes</span>([<span class="bn">0x16</span>, <span class="bn">0x1B</span>, <span class="bn">0x13</span>, <span class="bn">0x14</span>, <span class="bn">0x06</span>, <span class="bn">0x1C</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-4"><a href="#cb17-4"></a>encryptionInBytes <span class="op">=</span> <span class="bu">bytes</span>([<span class="bn">0x16</span>, <span class="bn">0x1B</span>, <span class="bn">0x13</span>, <span class="bn">0x14</span>, <span class="bn">0x06</span>, <span class="bn">0x1C</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Meine Entschlüsselung</code></pre>
 </div>
@@ -515,7 +514,7 @@ Lösung.. nicht spicken :-)
 <summary>
 Lösung.. nicht spicken :-)
 </summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb19-1"><a href="#cb19-1"></a>encryptionInBytes = bytes([0x16, 0x1B, 0x13, 0x14, 0x06, 0x1C])</span>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb19-1"><a href="#cb19-1"></a>encryptionInBytes = bytes([0x16, 0x1B, 0x13, 0x14, 0x06, 0x1C])</span>
 <span id="cb19-2"><a href="#cb19-2"></a></span>
 <span id="cb19-3"><a href="#cb19-3"></a>print("encryptionInBytes in BIN:", " ".join(f"{x:08b}" for x in encryptionInBytes))</span>
 <span id="cb19-4"><a href="#cb19-4"></a></span>
@@ -525,7 +524,7 @@ Lösung.. nicht spicken :-)
 <span id="cb19-8"><a href="#cb19-8"></a></span>
 <span id="cb19-9"><a href="#cb19-9"></a>decryptionInBytes = xor_bytes(encryptionInBytes, schluesselInBytes)</span>
 <span id="cb19-10"><a href="#cb19-10"></a>print("decryptionInBytes in BIN:", " ".join(f"{x:08b}" for x in decryptionInBytes))</span>
-<span id="cb19-11"><a href="#cb19-11"></a>print(decryptionInBytes.decode("utf-8"))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb19-11"><a href="#cb19-11"></a>print(decryptionInBytes.decode("utf-8"))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <hr>
 </section>
@@ -533,8 +532,8 @@ Lösung.. nicht spicken :-)
 <h2 class="anchored" data-anchor-id="aufgabe-eigenes-beispiel-mit-einem-schlüsselwort">Aufgabe: Eigenes Beispiel mit einem Schlüsselwort</h2>
 <p>Implementieren Sie eine eigenes Beispiel mit einem KEY aus mehreren Buchstaben.<br> <strong>Geben Sie alle Zwischenergebnisse, HEX, BIN, Text … aus.</strong></p>
 <div id="3f4bc862" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="co">## XOR-Verschlüsselung mit Python</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a><span class="bu">print</span>(<span class="st">"Eigenes Beispiel"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="co">## XOR-Verschlüsselung mit Python</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="bu">print</span>(<span class="st">"Eigenes Beispiel"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Eigenes Beispiel</code></pre>
 </div>
@@ -545,8 +544,8 @@ Lösung.. nicht spicken :-)
 <h2 class="anchored" data-anchor-id="aufgabe-gegenseitig-verschlüsseln-und-entschlüsseln">Aufgabe: Gegenseitig Verschlüsseln und Entschlüsseln</h2>
 <p>Tauschen Sie mit einem Partner einen Schlüssel aus.<br> Verschlüsseln Sie einen Text und geben Sie Ihrem Partner das verschlüsselte Ergebniss als HEX-Bytes<br> encryptionInBytes = bytes([0x16, 0x1B, ….<br> Der Partner soll den Text mit dem Schlüssel wieder entschlüsseln.<br> Geben Sie alle Zwischenergebnisse, HEX, BIN, Text … aus.</p>
 <div id="93a2a59b" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># Partenerarbeit</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a><span class="bu">print</span>(<span class="st">"Partenerarbeit"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># Partenerarbeit</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="bu">print</span>(<span class="st">"Partenerarbeit"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Partenerarbeit</code></pre>
 </div>
@@ -567,9 +566,9 @@ Lösung.. nicht spicken :-)
 <li>Bekannter Teil des Schlüssels (UTF8), 4 von 5 Buchstaben, der letzte Buchstabe fehlt: <strong>hmpa</strong></li>
 </ul>
 <div id="9f42f8de" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># hack the code</span></span>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># hack the code</span></span>
 <span id="cb24-2"><a href="#cb24-2"></a>encryptionInBytes <span class="op">=</span> <span class="bu">bytes</span>.fromhex(<span class="st">"1f040215000d0b16041c1d03030c1b1c1d11141e09001d08061c1a1f021a01031404000f1f050706"</span>)</span>
-<span id="cb24-3"><a href="#cb24-3"></a><span class="bu">print</span>(<span class="st">"encryptionInBytes in HEX:"</span>, <span class="st">" "</span>.join(<span class="ss">f"</span><span class="sc">{</span>x<span class="sc">:02X}</span><span class="ss">"</span> <span class="cf">for</span> x <span class="kw">in</span> encryptionInBytes))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="bu">print</span>(<span class="st">"encryptionInBytes in HEX:"</span>, <span class="st">" "</span>.join(<span class="ss">f"</span><span class="sc">{</span>x<span class="sc">:02X}</span><span class="ss">"</span> <span class="cf">for</span> x <span class="kw">in</span> encryptionInBytes))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>encryptionInBytes in HEX: 1F 04 02 15 00 0D 0B 16 04 1C 1D 03 03 0C 1B 1C 1D 11 14 1E 09 00 1D 08 06 1C 1A 1F 02 1A 01 03 14 04 00 0F 1F 05 07 06</code></pre>
 </div>
@@ -631,14 +630,13 @@ Lösung.. nicht spicken :-)
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
