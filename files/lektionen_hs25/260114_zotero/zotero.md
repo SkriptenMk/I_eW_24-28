@@ -5,37 +5,33 @@ students, it is a tool to for managing citations in their texts. In
 addition, Zotero can act as an e-reader with useful note-taking
 functions. 
 
-## Zotero installieren und einrichten
+## Zotero Installation and Set-Up
 
-Um die Funktionen von Zotero im vollen Umfang zu nutzen, ist es sinnvoll
-ein Zotero Account zu erstellen. Der Account kann auf der Website von
-[Zotero](https://www.zotero.org/user/register) erstellt werden. Wenn der
-Account nicht ausschliesslich privat genutzt werden soll, ist es
-sinnvoll die Schul- bzw.\ Geschäftsemail zu verwenden. Im Nutzerprofil
-können auch mehrere Adressen hinterlegt werden. Das ermöglicht es, die
-eigene Datenbank zu behalten, wenn man eine Institution verlässt.
+To use Zotero's full functionality, an optional Zotero account must be
+set up. This can be done on the 
+[Zotero](https://www.zotero.org/user/register) website. If you plan to
+use Zotero for purposes other than strictly private ones, use your school or
+business email address respectively. The user profile allows multiple email
+addresses. This means that you can keep your database if you leave your
+current organisation.
 
-Nachdem optional ein persönlicher Account erstellt worden ist, kann der
-[Zotero Desktop Client](https://www.zotero.org/download/)
-heruntergeladen und installiert werden. Auf der gleichen Seite findet
-sich auch die Möglichkeit den Zotero Connector als Browser Plugin
-herunterzuladen. Dieses Plugin ist für die Arbeit mit Zotero nicht
-zwingend erforderlich, vereinfacht aber die Erfassung von Quellen
-ungemein.
+After setting up your optional personal account, you can download and
+install the [Zotero Desktop Client](https://www.zotero.org/download/).
+On the same website you see the possibility to install the Zotero
+connector plugin for your browser. This plugin is not strictly
+necessary but it simplifies the collection of sources in your database. 
 
-Wenn Zotero installiert ist, kann es über den Menüpunkt Bearbeiten >
-Einstellungen, Registerkarte Sync mit dem eigenen Zotero Account
-verbunden werden.
+As soon Zotero is installed on your computer, your installation can be
+linked to your Zotero account (Edit > Settings, Sync Tab).
 
-Für die Verwendung von Zotero in einem Markdown -- Pandoc-Workflow ist
-die Installation des
-[BetterBibTeX](https://retorque.re/zotero-better-bibtex/) Plugins in
-Zotero unbedingt erforderlich. Das Plugin kann direkt aus seinem 
-[GitHub
-Repository](https://github.com/retorquere/zotero-better-bibtex/releases/latest)
-heruntergeladen werden. Das heruntergeladene `.xpi` Dokument kann über
-das Menü Werkzeuge > Plugins, Zahnradsymbol, Install Plugin from File,
-installiert werden.
+In the Markdown -- Pandoc-Workflow you need the
+[BetterBibTeX](https://retorque.re/zotero-better-bibtex/)
+plugin. The Plugin can be downloaded from ist [GitHub
+Repository](https://github.com/retorquere/zotero-better-bibtex/releases/latest).
+To install the downloaded `.xpi` file, go to Tools > Plugins, Cogwheel >
+Install Plugin From File... After you have installed the plugin, you may
+delete the `.xpi` file.
+
 
 ## Einträge in Zotero erstellen und organisieren {#sec-zotero_entry}
 
