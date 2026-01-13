@@ -33,16 +33,30 @@ Install Plugin From File... After you have installed the plugin, you may
 delete the `.xpi` file.
 
 
-## Einträge in Zotero erstellen und organisieren {#sec-zotero_entry}
+## Create and organise Zotero entries {#sec-zotero_entry}
 
-Wie Einträge in Zotero erfasst werden, wird auf der Website von Zotero
-ausführlich beschrieben. An dieser Stelle darf daher auf die dortigen
-[Erklärungen](https://www.zotero.org/support/adding_items_to_zotero)
-verwiesen werden. Das gleiche gilt für die
-[Organisation](https://www.zotero.org/support/collections_and_tags) der
-eigenen Bibliothek. 
+How to create new entries in Zotero is well explained on the Zotero
+Website. Therefore, here just the link to the tutorial for 
+[adding entries](https://www.zotero.org/support/adding_items_to_zotero)
+and the 
+[organisation of the entries](https://www.zotero.org/support/collections_and_tags)
+respectively.
 
-## Erstellen einer Bibliographie Datei für den Markdown -- Pandoc-Workflow
+For entries from Zotero to be readable in texts, they must be referenced
+using the citation key. The exact syntax for this is explained in
+@sec-citation_key_syntax. Zotero creates a standard key for each entry. However,
+this can be difficult to remember. It is therefore advisable to define
+the citation key yourself.
+
+To do this, enter the 'Key–Value' pair 'citation key: own_key' in the
+'Extra' field of the entry's metadata. The citation key defined in this
+way is saved when you exit the 'Extra' field.  
+The simplest citation key is probably `authorYYYY`, where `YYYY` stands
+for the four-digit year.  
+
+## Create a `.bib` file for the Markdown -- Pandoc-workflow
+
+
 
 Die für das jeweilige Projekt erforderlichen Einträge in Zotero werden
 sinnvollerweise in einer Sammlung zusammengefasst. Diese Sammlung kann dann

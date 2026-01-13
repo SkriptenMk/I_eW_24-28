@@ -128,7 +128,7 @@ download a style from the [Zotero Style
 Repository](https://www.zotero.org/styles). 
 
 
-## Setting references in Markdown
+## Setting references in Markdown {#sec-citation_key_syntax}
 
 To transfer references from the `.bib` file into the Markdown text,
 use the citation key (`[@citation_key]`). If you want to include page numbers
