@@ -117,7 +117,7 @@ below.
 This entry represents a book, hence the `@book` key. The citation key
 can be found immediately after the curly bracket. Zotero assigns this
 key arbitrarily. However, it is possible to set a citation key
-at will. The details are explained in @sec-zotero_entry.
+at will. The details are explained in the [Zotero tutorial](../260114_zotero/zotero.md#sec-zotero_entry).
 
 ## Citation Style
 

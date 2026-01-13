@@ -215,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>a file for information about the text format (<code>.yaml</code>),</li>
 <li>a file for bibliographical information (<code>. bib</code>), and</li>
-<li>a file for display format of the bibliographical information (<code>.bib</code>).</li>
+<li>a file for display format of the bibliographical information (<code>.csl</code>).</li>
 </ul>
 <p>Out of these three files only the one containing text format information has to be created manually. Zotero will create the <code>.bib</code> file and the <code>.csl</code> file can be downloaded from the <a href="https://www.zotero.org/styles">Zotero Style Repository</a>.</p>
 <section id="text-format-file-.yaml" class="level2">
@@ -225,7 +225,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">input-files</span><span class="kw">:</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="at">  </span><span class="kw">-</span><span class="at"> my-text.md</span><span class="co">  # there can be more files</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="co">  # - second_part.md</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="co">  # - thrid_part.md</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co">  # - third_part.md</span></span>
 <span id="cb1-6"><a href="#cb1-6"></a><span class="fu">output-file</span><span class="kw">:</span><span class="at"> output.pdf</span></span>
 <span id="cb1-7"><a href="#cb1-7"></a></span>
 <span id="cb1-8"><a href="#cb1-8"></a><span class="co"># basic settings</span></span>
@@ -250,13 +250,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-27"><a href="#cb1-27"></a><span class="at">    </span><span class="kw">-</span><span class="at"> \setcounter{tocdepth}{3}</span></span>
 <span id="cb1-28"><a href="#cb1-28"></a></span>
 <span id="cb1-29"><a href="#cb1-29"></a><span class="fu">metadata</span><span class="kw">:</span></span>
-<span id="cb1-30"><a href="#cb1-30"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Title of the Documnt"</span></span>
-<span id="cb1-31"><a href="#cb1-31"></a><span class="at">  </span><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Authors Name"</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Title of the Document"</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="at">  </span><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Author's Name"</span></span>
 <span id="cb1-32"><a href="#cb1-32"></a><span class="at">  </span><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"Today"</span></span>
 <span id="cb1-33"><a href="#cb1-33"></a><span class="at">  </span><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> bibliography.bib</span></span>
 <span id="cb1-34"><a href="#cb1-34"></a><span class="at">  </span><span class="fu">csl</span><span class="kw">:</span><span class="at"> chicago-notes-bibliography-access-dates.csl</span></span>
 <span id="cb1-35"><a href="#cb1-35"></a><span class="at">  </span><span class="fu">link-citations</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The follwoing list provides explanations for the entries in the configuration file:</p>
+<p>The followoing list provides explanations for the entries in the configuration file:</p>
 <ul>
 <li><code>input-files</code> A list of the files to be included in the final output. As shown in the example the different files are listed one below the other.</li>
 <li><code>output-file</code> This key sets the path to the output file.</li>
@@ -277,7 +277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>title</code> The title for the front matter.</li>
 <li><code>author</code> The author’s name. Multiple authors can be provided as a list (analogue to the input files).</li>
 <li><code>date</code> The Date.</li>
-<li><code>bibliography</code> Stores the path to the bibliography (<code>.bib</code>) file.</li>
+<li><code>bibliography</code> Stores the path to the bibliography (<code>.bib</code>) file. It has to be the name chosen for the <code>.bib</code> file.</li>
 <li><code>csl</code> Stores the path to the <code>.csl</code> file.</li>
 </ul>
 <p>For additional configurations check the <a href="https://pandoc.org/MANUAL.html">Pandoc User Guide</a>.</p>
@@ -290,7 +290,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-3"><a href="#cb2-3"></a>  <span class="dt">author</span> = {Healy, Kieran},</span>
 <span id="cb2-4"><a href="#cb2-4"></a>  <span class="dt">year</span> = 2020,</span>
 <span id="cb2-5"><a href="#cb2-5"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This entry represents a book, hence the <code>@book</code> key. The citation key can be found immediately after the curly bracket. Zotero assigns this key arbitrarily. However, it is possible to set a citation key at will. The details are explained in <strong>?@sec-zotero_entry</strong>.</p>
+<p>This entry represents a book, hence the <code>@book</code> key. The citation key can be found immediately after the curly bracket. Zotero assigns this key arbitrarily. However, it is possible to set a citation key at will. The details are explained in the <a href="../../../files/lektionen_hs25/260114_zotero/zotero.html#sec-zotero_entry">Zotero tutorial</a>.</p>
 </section>
 <section id="citation-style" class="level2">
 <h2 class="anchored" data-anchor-id="citation-style">Citation Style</h2>
@@ -299,13 +299,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="sec-citation_key_syntax" class="level2">
 <h2 class="anchored" data-anchor-id="sec-citation_key_syntax">Setting references in Markdown</h2>
 <p>To transfer references from the <code>.bib</code> file into the Markdown text, use the citation key (<code>[@citation_key]</code>). If you want to include page numbers in your reference, add them to the citation key (<code>[@citation_key, 25]</code>). If you need to include multiple authors in one reference, you can combine multiple citation keys (<code>[@citation_key_1, 25; @citation_key_2, 33]</code>).</p>
-<p>There is no need to know memorise the citation keys as Zotero displays them as the first item in the metadata.</p>
+<p>There is no need to memorise the citation keys as Zotero displays them as the first item in the metadata.</p>
 </section>
 <section id="creating-a-pdf-containing-references" class="level2">
 <h2 class="anchored" data-anchor-id="creating-a-pdf-containing-references">Creating a PDF containing references</h2>
 <p>If there exists a <code>.yaml</code> file, the pdf can be created with the</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">pandoc</span> <span class="at">-d</span> format.yaml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>command. The command must be executed from the same directory in wich he <code>format.yaml</code> file is located.</p>
+<p>command. The command must be executed from the same directory in which he <code>format.yaml</code> file is located.</p>
 
 
 </section>

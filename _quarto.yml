@@ -44,9 +44,3 @@ format:
     mainfont: "Times New Roman"
     CJKmainfont: "Microsoft YaHei"
     monofont: "Consolas"
-    listings-package:
-      columns: fullflexible
-      break-at-whitespace: true
-  
-
-
