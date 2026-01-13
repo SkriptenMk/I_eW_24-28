@@ -60,53 +60,44 @@ metadata:
   link-citations: true
 ```
 
-Hier die Erklärungen zu den einzelnen Einträgen in dieser
-Konfigurationsdatei:
+The follwoing list provides explanations for the entries in the
+configuration file:
 
-* `input-files` Hier werden alle Dateien erfasst, welche in das finale
-  Ausgabedokument einfliessen sollen. Die einzelnen Dateien werden wie
-  in der Vorlage angedeutet untereinander als Aufzählung aufgelistet.
-* `output-file` Mit diesem Schlüssel wird der Pfad zur Ausgabedatei
-  mit deren Namen erfasst.
-* `from` ist der Schlüssel für das Format der `input-files`.
-* `to` ist der Schlüssel für das Format des `output-file`.
-* `pdf-engine` legt fest, mit welchem Programm das Markdown Dokument in
-  eine PDF Datei umgewandelt wird. Aktuell ist `lualatex` die modernste
-  Variante. `lualatex` unterstützt Schweizerische Umlaute und Akzente
-  sehr gut. Aus diesem Grund wurde hier `lualatex` ausgewählt.
-* `citeproc` ist das Programm, dass für die Übernahme der
-  bibliographischen Angaben verantwortlich ist. Mit dem Wert `true` wird
-  dessen Verwendung aktiviert.
-* `table-of-contents` aktiviert, wenn der Wert `true` ist, die
-  Erstellung eines Inhaltsverzeichnisses.
-* `variables` stellt die Details für die Darstellung des
-  Ausgabedokuments zur Verfügung.
-* `lang` ist die Variabel zur Speicherung der Sprache des
-  Ausgabedokuments. Indem sie hier auf `de-CH` gesetzt wird, werden die
-  typographischen Besonderheiten der Deutschschweiz berücksichtigt.
-* `lof` erstellt ein Abbildungsverzeichnis.
-* `lot` erstellt ein Tabellenverzeichnis.
-* `number-sections` nummeriert die Titel ihrer Hierarchiestufe gemäss.
-* `header-includes` ermöglicht es, LaTeX Formatierungsbefehle zu
-  verwenden. 
-* `- \setcounter{secnumdepth}{3}` ist eine LaTeX Formatierung, die dafür
-  sorgt, dass Titel nur über drei Hierarchieebenen hinweg nummeriert
-  werden. 
-* `- \setcounter{tocdepth}{3}` ist eine LaTeX Formatierung, welche nur
-  Titel bis zur dritten Hierarchieebene ins Inhaltsverzeichnis
-  aufgenommen werden.
-* `metadata` speichert die inhaltlichen Eckwerte für das Dokument.
-* `title` ist jener Titel, der auf dem Deckblatt abgedruckt wird.
-* `author` ist der Name des Autors.
-* `date` ist das Datum. Für Dokumente, welche ein PDF als Ausgabeformat
-  haben, kann auch der Befehl \today verwendet werden. Dieser liest bei
-  der Konvertierung von Markdown zu PDF das aktuelle Systemdatum aus.
-* `bibliography` gibt den Pfad zur Datei mit den bibliographischen
-  Angaben an.
-* `csl` gibt den Pfad zur Datei mit dem gewählten Zitierstil an.
+* `input-files` A list of the files to be included in the final output. As
+  shown in the example the different files are listed one below the
+  other. 
+* `output-file` This key sets the path to the output file.
+* `from` This is the key of the file format of the `input-files`.
+* `to` This is the key of the file format of the `output-file`.
+* `pdf-engine` sets the pdf-engine responsible for the conversion from
+  Markdown to PDF. `lualatex` is chosen for its ability to handle Swiss
+  umlaute. 
+* `citeproc` is the software responsible to handle the bibliographic
+  information. The value `true` activates the software.
+* `table-of-contents` If `true` there will be a table of contents.
+* `variables` bundles the details for the display of the output file.
+* `lang` is the variable to store the language settings. For Swiss
+  German documents it has to be set to `de-CH`. This observes the Swiss
+  German typographical conventions.
+* `lof` creates a list of figures.
+* `lot` creates a list of tables.
+* `number-sections` numbers the sections according to their hierarchical
+  position.
+* `header-includes` This key allows the inclusion of LaTeX commands.
+* `- \setcounter{secnumdepth}{3}` This numbers sections down to the
+  third level.
+* `- \setcounter{tocdepth}{3}` This excludes sections below the third
+  level from the table of contents.
+* `metadata` bundles the metadata of the file.
+* `title` The title for the front matter.
+* `author` The author's name. Multiple authors can be provided as a
+  list (analogue to the input files).
+* `date` The Date.
+* `bibliography` Stores the path to the bibliography (`.bib`) file.
+* `csl` Stores the path to the `.csl` file.
 
-Weitere Konfigurationsmöglichkeiten für die Konvertierung in ein PDF
-finden sich [Pandoc User Guide](https://pandoc.org/MANUAL.html).
+For additional configurations check the [Pandoc User
+Guide](https://pandoc.org/MANUAL.html). 
 
 ## Bibliographische Angaben
 
