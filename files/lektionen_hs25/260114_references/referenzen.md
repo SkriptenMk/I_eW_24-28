@@ -13,14 +13,14 @@ Zotero will create the `.bib` file and the `.csl` file can be downloaded
 from the [Zotero Style Repository](https://www.zotero.org/styles).
 
 
-## Textformat (.yaml)
+## Text Format File (.yaml)
 
-Die Darstellung des Textes sowie dessen Ausgabeformat kann über die
-Datei `format.yaml` gesteuert werden. Der Name der Datei ist frei
-wählbar. Hier wurde `format.yaml` gewählt, weil die Datei genau das
-macht: das Format der Ausgabe steuern. Im folgenden Listing findet sich
-ein Beispiel mit den Angaben für die Verwendung einer `.bib` und `.csl`
-Datei. 
+The `.yaml` file controls both the styling of the text and the output
+format. The file can be given any name. Because the file is responsible
+for the formatting of the text in this tutorial the file is
+called `format.yaml`. The following listing shows an example that uses
+both a `.bib` file and a `.csl` file.
+
 
 ```yaml
 # Input und Output
