@@ -1,50 +1,7 @@
-% preamble.tex -- improve line breaking for long code/output sequences
-% Enables breaking of long words inside verbatim/highlighted code blocks
+% Bessere Code-Formatierung mit fvextra
 \usepackage{fvextra}
-% Global fvextra defaults
-\fvset{breaklines=true,breakanywhere=true,breaksymbolleft={},breakautoindent=false}
-
-% Ensure both the plain `verbatim` environment (used by Pandoc in some cases)
-% and the `Highlighting` environment (used for syntax-highlighted code) are
-% configured to allow line breaks inside long tokens. We recustomize the
-% `verbatim` environment to use fvextra's Verbatim with breaking enabled.
-\RecustomVerbatimEnvironment{verbatim}{Verbatim}{
-  breaklines=true,
-  breakanywhere=true,
-  breaksymbolleft={},
-  breakautoindent=false,
-  fontsize=\small
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{
+  breaklines,
+  breakanywhere,
+  commandchars=\\\{\}
 }
-
-% Also make sure Highlighting (when present) is breakable
-\IfFileExists{fvextra.sty}{%
-  \DefineVerbatimEnvironment{Highlighting}{Verbatim}{
-    breaklines=true,
-    breakanywhere=true,
-    breaksymbolleft={},
-    breakautoindent=false,
-    fontsize=\small
-  }
-}{}
-
-% If fontspec is available (XeLaTeX/LuaLaTeX), set a monospaced font
-% that contains common Unicode glyphs (e.g. DejaVu Sans Mono) so symbols
-% like U+25A0 (■) can be typeset in verbatim environments.
-\makeatletter
-\@ifpackageloaded{fontspec}{%
-  % Use DejaVu Sans Mono if present; fontspec will fall back gracefully.
-  \setmonofont[Scale=MatchLowercase]{DejaVu Sans Mono}
-}{}
-\makeatother
-
-% allow hyphenation in typewriter text and make TeX less strict about overfull boxes
-\usepackage[htt]{hyphenat}
-\sloppy
-
-% Optionally reduce penalties for line-breaking in URLs / long words
-% Use a double-backslash here because some toolchains interpret "\t" as a
-% tab escape when the file is embedded into YAML/strings. Doubling preserves
-% a single backslash in the final LaTeX output.
-% Use a \csname form to avoid any accidental \t escape during inclusion
-\csname tolerance\endcsname=1000
-\emergencystretch=3em

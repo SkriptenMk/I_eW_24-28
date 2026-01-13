@@ -2,6 +2,9 @@ project:
   type: website
   output-dir: docs
 
+bibliography: references.bib
+csl: chicago_custom.csl
+
 website:
   title: "Computer Science Course Materials for School Year 2025/26   (2eW)"
   repo-url: https://github.com/SkriptenMk/I_eW_24-28
@@ -32,16 +35,12 @@ format:
     pdf-engine: xelatex
     pdf-engine-opts:
       - -shell-escape
-    mainfont: Arial
     fontsize: 11pt
     documentclass: scrartcl
     classoption: a4paper
     toc: false
     include-in-header: preamble.tex
     code-line-numbers: true 
-    listings-package:
-      columns: fullflexible
-      break-at-whitespace: true
-  
-
-
+    mainfont: "Times New Roman"
+    CJKmainfont: "Microsoft YaHei"
+    monofont: "Consolas"

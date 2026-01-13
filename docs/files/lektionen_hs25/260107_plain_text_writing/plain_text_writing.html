@@ -56,7 +56,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -221,6 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Accordingly, they can be read in any text editor.<br>
 In contrast, binary files are fundamentally bound to programs that can read their standard for creation, editing, and display. Their contents are stored as a sequence of bytes. An example of a binary file is a document created in MS Word.</p>
 <p>This distinction shows that text files can fundamentally be displayed on any functioning computer with a text editor. By contrast, binary files usually require special programs that can interpret the respective file format, which can lead to a certain dependency on corresponding software.</p>
+<p>Further information on the advantages of plain text writing can be found in the reference<span class="citation" data-cites="healy2020 fix2020">.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></span></p>
 </section>
 <section id="plain-text-formats-for-text-editing" class="level2">
 <h2 class="anchored" data-anchor-id="plain-text-formats-for-text-editing">Plain Text Formats for Text Editing</h2>
@@ -286,10 +306,24 @@ The conversion is performed with the following command:</p>
 <p>The <a href="https://ctan.org/">CTAN Comprehensive TeX Archive Network</a> website provides information on what LaTeX packages are available.</p>
 
 
+
 </section>
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-fix2020" class="csl-entry" role="listitem">
+
+</div>
+<div id="ref-healy2020" class="csl-entry" role="listitem">
+
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p><a href="#ref-healy2020" role="doc-biblioref">Kieran Healy, <em>The <span>Plain Person</span>’s <span>Guide</span> to <span>Plain Text Social Science</span></em> (October 2020)</a>; <a href="#ref-fix2020" role="doc-biblioref">Blair Fix, <span>“Why and <span>How I Write Scientific Documents</span> in <span>Plain Text</span>,”</span> in <em>Economics from the Top Down</em>, December 2020</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

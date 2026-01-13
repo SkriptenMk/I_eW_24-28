@@ -1,0 +1,15 @@
+title: "23 Zotero for Plain Text Writing"
+author: "Jacques Mock Schindler"
+date: 2026-01-14
+date-format: DD.MM.YYYY
+format:
+  html:
+    code-fold: true
+  pdf:
+    pdf-engine: xelatex
+    highlight-style: tango      # Sorgt für die Farben (ähnlich HTML)
+    keep-tex: false
+    include-in-header:
+      text: |
+        \usepackage{fvextra}
+        \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}

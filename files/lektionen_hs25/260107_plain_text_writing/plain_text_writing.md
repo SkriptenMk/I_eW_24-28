@@ -26,6 +26,9 @@ usually require special programs that can interpret the respective file
 format, which can lead to a certain dependency on corresponding
 software. 
 
+Further information on the advantages of plain text writing can be found
+in the reference[@healy2020; @fix2020].
+
 ## Plain Text Formats for Text Editing
 
 The simplest form of a text file is a `.txt` file. This usually involves

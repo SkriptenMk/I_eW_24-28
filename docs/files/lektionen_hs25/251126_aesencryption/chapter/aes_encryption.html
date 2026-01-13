@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.9">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -68,15 +68,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../../../">
 <script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-5d254f1e278c2921d96b26102a150bb1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap-985b28ec037abca086789749d85d0073.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -253,10 +252,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Halten Sie Key, IV, Plain-Text und Cipher-Text unten im Feld fest.</p></li>
 </ul>
 <div id="5688e61f" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#&nbsp;Hier ihren Key, IV, Plain-Tet und Cipher-Text festhalten</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#&nbsp;Hier ihren Key, IV, Plain-Tet und Cipher-Text festhalten</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Hier die Angaben Ihres Lernpartners festhalten, inklusive Ihrer Decodierung</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Hier die Angaben Ihres Lernpartners festhalten, inklusive Ihrer Decodierung</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -264,12 +263,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="aes-mit-python-anwenden" class="level2">
 <h2 class="anchored" data-anchor-id="aes-mit-python-anwenden">AES mit Python anwenden</h2>
 <p>Dieses Beispiel verwendet die Bibliothek <em>pycryptodome</em>.<br> Wenn Sie das Notebook im VSCode ausführen: - öffnen Sie ein Terminal (Menü von VSCode: Terminal -&gt; Neues Terminal)<br> - Geben Sie im Terminal folgendes ein und drücken Enter:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">/bin/python3</span> <span class="at">-m</span> pip install <span class="at">--user</span> pycryptodome</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">/bin/python3</span> <span class="at">-m</span> pip install <span class="at">--user</span> pycryptodome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Danach müssen Sie einen Restart mit dem Notebook durchführen.</p>
 <p>Alternative können Sie das Notebook im Colab ausführen, dort wird die Bibliothek direkt aus dem Notebook installiert:<br> https://colab.research.google.com/</p>
 <p>Starten Sie danach den folgenden Code-Block.<br> Welcher Schritt ergibt welchen Output?</p>
 <div id="c4c548eb" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="op">!</span>pip install pycryptodome</span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="op">!</span>pip install pycryptodome</span>
 <span id="cb3-2"><a href="#cb3-2"></a></span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="im">from</span> Crypto.Cipher <span class="im">import</span> AES</span>
 <span id="cb3-4"><a href="#cb3-4"></a><span class="im">from</span> Crypto.Random <span class="im">import</span> get_random_bytes</span>
@@ -325,7 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-54"><a href="#cb3-54"></a>decrypted_padded <span class="op">=</span> cipher_decrypt.decrypt(ciphertext_decoded)</span>
 <span id="cb3-55"><a href="#cb3-55"></a>decrypted <span class="op">=</span> unpad(decrypted_padded).decode(<span class="st">"utf-8"</span>)</span>
 <span id="cb3-56"><a href="#cb3-56"></a></span>
-<span id="cb3-57"><a href="#cb3-57"></a><span class="bu">print</span>(<span class="st">"Entschlüsselter Text: "</span>, decrypted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-57"><a href="#cb3-57"></a><span class="bu">print</span>(<span class="st">"Entschlüsselter Text: "</span>, decrypted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Defaulting to user installation because normal site-packages is not writeable
 Requirement already satisfied: pycryptodome in /home/vscode/.local/lib/python3.10/site-packages (3.23.0)
@@ -340,7 +339,7 @@ Entschlüsselter Text:  Wir treffen uns mit Paul am Mittwoch in der Gruft</code>
 <h3 class="anchored" data-anchor-id="aufgabe-aes-mit-python-anwenden">Aufgabe : AES mit Python anwenden</h3>
 <p>Kopieren Sie den obigen Code.<br> Kodieren Sie einen kurzen Text.<br> Tauschen Sie den codierten Text, den Schlüssel und den IV mit Ihrem Lernpartner aus.<br> Decodieren Sie den codierten Text ihres Lernpartners mit den Angaben Ihres Lernpartners.</p>
 <div id="d6f77a63" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Mein eigenes Beispiel</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Mein eigenes Beispiel</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
@@ -400,14 +399,13 @@ Entschlüsselter Text:  Wir treffen uns mit Paul am Mittwoch in der Gruft</code>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
