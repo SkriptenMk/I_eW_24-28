@@ -12,26 +12,25 @@ expected during the course of the semester.
 
 | Date | Topic |
 | :--- | :--- |
-| 20.08.2025 | Networks: TCP/IP |
-| 27.08.2025 | Networks: Wireshark |
-| 03.09.2025 | Networks: Exercise |
-| 10.09.2025 | Cryptology: Caesar |
-| 24.09.2025 | Cryptology: Vigenère Chiffre |
-| 22.10.2025 | Test |
-| 29.10.2025 | Cryptology: Break Vigenère |
-| 05.11.2025 | [Cryptology: Symmetric encryption methods](files/lektionen_hs25/251105_symetricencryption/symetricencryption.html) |
-| 12.11.2025 | [Cryptology: Symmetric encryption XOR](files/lektionen_hs25/251112_xorencryption/xorencryption.html) |
-| 19.11.2025 | Lehrerfortbildung |
-| 26.11.2025 | [Cryptology: Symmetric encryption AES](files/lektionen_hs25/251126_aesencryption/aesencryption.html) |
-| 03.12.2025 | [Cryptology: Diffie-Hellmann](files/lektionen_hs25/251203_dh_rsa/deffiehellman.md) / [RSA Asymetric encryption](files/lektionen_hs25/251203_dh_rsa/rsaasymetricencryption.md) |
-| 10.12.2025 | [Cryptology: Signature](files/lektionen_hs25/251210_signature/signatureexplained.md) |
-| 17.12.2025 | [Test zu Cryptology](files/lektionen_hs25/251217_lk_ki/KannListe.md) / [anschl. Start mit AI](files/lektionen_hs25/251217_lk_ki/kiexplained.md)|
-| 07.01.2026 | AI |
-| 14.01.2026 | AI |
-| 21.01.2026 | AI |
-
-
-
+| 18.02.2026 | Einführung: Digitale Nachhaltigkeit & Green IT |
+| 25.02.2026 | Open Source Software: Philosophie & Lizenzmodelle  |
+| 25.02.2026 | Open Source in der Praxis (Zusatztermin)  |
+| 04.03.2026 | Digitale Nachhaltigkeit: Fallstudien & Lösungsansätze  |
+| 11.03.2026 | Leistungsnachweis (Textabgabe) |
+| 18.03.2026 | SQL Vertiefung: Aggregatfunktionen  |
+| 25.03.2026 | SQL Vertiefung: Subqueries & Views  |
+| 01.04.2026 | SQL DML: INSERT, UPDATE, DELETE  |
+| 08.04.2026 | Datenbankdesign: Normalisierung  |
+| 15.04.2026 | Datenbank-Projekt: Konzeption  |
+| 06.05.2026 | Datenbank-Projekt: Implementation  |
+| 13.05.2026 | Informationssicherheit: Schutzziele & Bedrohungen  |
+| 20.05.2026 | Repetition: SQL & Informationssicherheit  |
+| 27.05.2026 | Leistungsnachweis |
+| 10.06.2026 | KI-Vertiefung: Ethik & Bias  |
+| 17.06.2026 | KI-Vertiefung: Aktuelle Entwicklungen  |
+| 24.06.2026 | Projekt: Datenethik-Fallstudie  |
+| 01.07.2026 | Projektpräsentationen  |
+| 08.07.2026 | Semesterabschluss & Ausblick auf Studium/Beruf  |
 
 ## Grading
 
