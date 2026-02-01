@@ -3,56 +3,54 @@ title: "Welcome"
 ---
 
 This site contains all the information you need for your computer
-science course.
+science course. 
 
 ## Schedule
 
 The schedule reflects the current state of planning. Changes are to be
-expected during the course of the semester.
+expected during the course of the semester. 
 
 | Date | Topic |
 | :--- | :--- |
-| 18.02.2026 | Einführung: Digitale Nachhaltigkeit & Green IT |
-| 25.02.2026 | Open Source Software: Philosophie & Lizenzmodelle  |
-| 25.02.2026 | Open Source in der Praxis (Zusatztermin)  |
-| 04.03.2026 | Digitale Nachhaltigkeit: Fallstudien & Lösungsansätze  |
-| 11.03.2026 | Leistungsnachweis (Textabgabe) |
-| 18.03.2026 | SQL Vertiefung: Aggregatfunktionen  |
-| 25.03.2026 | SQL Vertiefung: Subqueries & Views  |
-| 01.04.2026 | SQL DML: INSERT, UPDATE, DELETE  |
-| 08.04.2026 | Datenbankdesign: Normalisierung  |
-| 15.04.2026 | Datenbank-Projekt: Konzeption  |
-| 06.05.2026 | Datenbank-Projekt: Implementation  |
-| 13.05.2026 | Informationssicherheit: Schutzziele & Bedrohungen  |
-| 20.05.2026 | Repetition: SQL & Informationssicherheit  |
-| 27.05.2026 | Leistungsnachweis |
-| 10.06.2026 | KI-Vertiefung: Ethik & Bias  |
-| 17.06.2026 | KI-Vertiefung: Aktuelle Entwicklungen  |
-| 24.06.2026 | Projekt: Datenethik-Fallstudie  |
-| 01.07.2026 | Projektpräsentationen  |
-| 08.07.2026 | Semesterabschluss & Ausblick auf Studium/Beruf  |
+| 18.02.2026 | Introduction: Digital Sustainability & Green IT |
+| 25.02.2026 | Open Source Software: Philosophy & Licensing Models |
+| 25.02.2026 | Open Source in Practice (Additional Session) |
+| 04.03.2026 | Digital Sustainability: Case Studies & Solutions |
+| 11.03.2026 | Assessment (Submission of Text) |
+| 18.03.2026 | Advanced SQL: Aggregate Functions |
+| 25.03.2026 | Advanced SQL: Subqueries & Views |
+| 01.04.2026 | SQL DML: INSERT, UPDATE, DELETE |
+| 08.04.2026 | Database Design: Normalisation |
+| 15.04.2026 | Database Project: Conception |
+| 06.05.2026 | Database Project: Implementation |
+| 13.05.2026 | Information Security: Protection Goals & Threats |
+| 20.05.2026 | Revision: SQL & Information Security |
+| 27.05.2026 | Assessment |
+| 10.06.2026 | AI Specialisation: Ethics & Bias |
+| 17.06.2026 | AI Specialisation: Current Developments |
+| 24.06.2026 | Project: Data Ethics Case Study |
+| 01.07.2026 | Project Presentations |
+| 08.07.2026 | Semester Conclusion & Career Outlook |
 
 ## Grading
 
-Two written examinations are scheduled per semester. In addition,
-oral participation is graded. Oral participation includes, in
-particular, asking questions.  
+Two written examinations are scheduled per semester. In addition, oral
+participation is graded. Oral participation includes, in particular,
+asking questions. 
 
-The Final grades are calculated as a weighted average of the two.
-written examinations and the oral participation grade. The
-Average grade of the two written examinations is weighted at 90%, while
-the grade for oral participation is weighted at 10%.
+The final grades are calculated as a weighted average of the two written
+examinations and the oral participation grade. The average grade of the
+two written examinations is weighted at 90%, while the grade for oral
+participation is weighted at 10%. 
 
 You have the opportunity to improve your mark in an upcoming exam. If
 you report an issue through the link on the right-hand side before the
-exam takes place, you may be awarded a maximum increase of one mark.  
-To report an issue, you must sign up with
-<a href="https://www.github.com" target="_blank">
-GitHub</a>. Use your school email address to register.
+exam takes place, you may be awarded a maximum increase of one mark. To
+report an issue, you must sign up with <a href="https://www.github.com"
+target="_blank">GitHub</a>. Use your school email address to register. 
 
 ## Appointments
 
-
-If you would like a personal appointment, here is the link to 
-<a href="https://calendar.app.google/UynTL5ttVPHhK1Hc8" target="_blank">
-Rent-A-Mock</a>.
+If you would like a personal appointment, here is the link to <a
+href="https://calendar.app.google/UynTL5ttVPHhK1Hc8"
+target="_blank">Rent-A-Mock</a>. 
