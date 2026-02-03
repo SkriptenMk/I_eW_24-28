@@ -34,7 +34,7 @@ format:
     toc: true
     code-line-numbers: true
   pdf:
-    pdf-engine: xelatex
+    pdf-engine: lualatex
     pdf-engine-opts:
       - -shell-escape
     fontsize: 11pt

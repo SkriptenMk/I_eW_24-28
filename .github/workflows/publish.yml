@@ -36,21 +36,16 @@ jobs:
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Cache TinyTeX
-        uses: actions/cache@v4
-        with:
-          path: ~/.TinyTeX
-          key: ${{ runner.os }}-tinytex-v2-${{ hashFiles('.github/workflows/*.yml') }}
-          restore-keys: |
-            ${{ runner.os }}-tinytex-v2-
-
       - name: Install TinyTeX and Fonts
         run: |
-          if [ ! -d ~/.TinyTeX ]; then
-            quarto install tinytex
-          fi
-          tlmgr update --self || true
-          tlmgr install fontspec tex-gyre tex-gyre-math || true
+          quarto install tinytex --update-path
+          tlmgr update --self
+          tlmgr install tex-gyre luatexbase luaotfload fontspec
+
+      - name: Verify Fonts
+        run: |
+          luaotfload-tool --update
+          luaotfload-tool --find="TeX Gyre Termes"
 
       - name: Render Quarto Project
         run: quarto render
