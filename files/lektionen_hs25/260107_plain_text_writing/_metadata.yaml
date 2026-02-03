@@ -6,7 +6,7 @@ format:
   html:
     code-fold: true
   pdf:
-    pdf-engine: xelatex
+    pdf-engine: lualatex
     highlight-style: tango      # Sorgt für die Farben (ähnlich HTML)
     keep-tex: false
     include-in-header:

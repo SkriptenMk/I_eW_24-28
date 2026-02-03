@@ -27,7 +27,7 @@
   }
 }{}
 
-% If fontspec is available (XeLaTeX/LuaLaTeX), set a monospaced font
+% If fontspec is available (lualatex/LuaLaTeX), set a monospaced font
 % that contains common Unicode glyphs (e.g. DejaVu Sans Mono) so symbols
 % like U+25A0 (■) can be typeset in verbatim environments.
 \makeatletter
