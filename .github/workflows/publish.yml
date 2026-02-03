@@ -40,17 +40,17 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.TinyTeX
-          key: ${{ runner.os }}-tinytex-${{ hashFiles('.github/workflows/*.yml') }}
+          key: ${{ runner.os }}-tinytex-v2-${{ hashFiles('.github/workflows/*.yml') }}
           restore-keys: |
-            ${{ runner.os }}-tinytex-
+            ${{ runner.os }}-tinytex-v2-
 
-      - name: Install TinyTeX
+      - name: Install TinyTeX and Fonts
         run: |
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
           tlmgr update --self || true
-          tlmgr install fontspec xecjk || true
+          tlmgr install fontspec tex-gyre tex-gyre-math || true
 
       - name: Render Quarto Project
         run: quarto render
