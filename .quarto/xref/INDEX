@@ -1,0 +1,255 @@
+{
+  "about.qmd": {
+    "about.html": "f813ef2c",
+    "about.tex": "7d23d585",
+    "about.pdf": "d5d502bc"
+  },
+  "files/HS_25.qmd": {
+    "HS_25.html": "0dfee7f2",
+    "HS_25.tex": "6773005f"
+  },
+  "index.qmd": {
+    "index.html": "cfd9ec0e",
+    "index.tex": "44c54d7d"
+  },
+  "files/FS_25.qmd": {
+    "FS_25.html": "f1de17f0",
+    "FS_25.tex": "b9767cc1"
+  },
+  "files/HS_24.qmd": {
+    "HS_24.html": "eab8dd91",
+    "HS_24.tex": "783eb8ee"
+  },
+  "files/lektionen_hs24/240821/einfuehrung.md": {
+    "einfuehrung.html": "c04922a9",
+    "einfuehrung.tex": "f82b080d"
+  },
+  "files/lektionen_hs24/240828/installationsanleitungen.md": {
+    "installationsanleitungen.html": "ec947054",
+    "installationsanleitungen.tex": "f82844a8"
+  },
+  "files/lektionen_hs24/240904/problemloesung.md": {
+    "problemloesung.html": "496568a6",
+    "problemloesung.tex": "a60d5866"
+  },
+  "files/lektionen_hs24/240904/schweizerfahne.ipynb": {
+    "schweizerfahne.html": "9e111782"
+  },
+  "files/lektionen_hs24/240904/schweizerfahne_muloe.ipynb": {
+    "schweizerfahne_muloe.html": "b7bc8a8d"
+  },
+  "files/materialien/240904/schweizerfahne.ipynb": {
+    "schweizerfahne.html": "5aaec04b",
+    "schweizerfahne.tex": "701a0c7e"
+  },
+  "files/materialien/240904/schweizerfahne_muloe.ipynb": {
+    "schweizerfahne_muloe.html": "91ba21d6",
+    "schweizerfahne_muloe.tex": "c0658914"
+  },
+  "files/lektionen_hs24/240911/Variablen.ipynb": {
+    "Variablen.html": "4a37f7c5",
+    "Variablen.tex": "56e66bfb"
+  },
+  "files/lektionen_hs24/240918/main.md": {
+    "main.html": "936b7c93",
+    "main.tex": "5a2020c1"
+  },
+  "files/lektionen_hs24/240925/main.md": {
+    "main.html": "12883756",
+    "main.tex": "005b82cb"
+  },
+  "files/materialien/240925/conditions.ipynb": {
+    "conditions.html": "72f76e9e",
+    "conditions.tex": "a250a5e5"
+  },
+  "files/lektionen_hs24/241023/241023_anwendungsuebungen.ipynb": {
+    "241023_anwendungsuebungen.html": "8d074a7e"
+  },
+  "files/lektionen_hs24/241023/main.md": {
+    "main.html": "a01cdf56",
+    "main.tex": "2f9d3e6c"
+  },
+  "files/lektionen_hs24/241113/lists.md": {
+    "lists.html": "77021123",
+    "lists.tex": "b71a3173"
+  },
+  "files/lektionen_hs24/241120/dictionaries.md": {
+    "dictionaries.html": "5cba04d0",
+    "dictionaries.tex": "3a0f2037"
+  },
+  "files/lektionen_hs24/241127/selection_sort.md": {
+    "selection_sort.html": "700a80b2",
+    "selection_sort.tex": "5e960d1e"
+  },
+  "files/lektionen_hs24/241204/divide_and_conquer.md": {
+    "divide_and_conquer.html": "9f0438ba",
+    "divide_and_conquer.tex": "46b39dec"
+  },
+  "files/lektionen_hs24/241211/schneeflocke.ipynb": {
+    "schneeflocke.html": "f6dbfc77",
+    "schneeflocke.tex": "59ebf50d"
+  },
+  "files/lektionen_hs24/241218/lernziele.md": {
+    "lernziele.html": "f14476ba",
+    "lernziele.tex": "a011c083"
+  },
+  "files/lektionen_hs24/250115/binary_search_tree.md": {
+    "binary_search_tree.html": "896d50bd",
+    "binary_search_tree.tex": "fbcb2a85"
+  },
+  "files/lektionen_hs24/250122/speicherstrukturen.md": {
+    "speicherstrukturen.html": "fb375b75",
+    "speicherstrukturen.tex": "e2b6f164"
+  },
+  "files/lektionen_hs24/250122/src/Sandbox.ipynb": {
+    "Sandbox.html": "7ed4eff7"
+  },
+  "files/lektionen_fs25/250219/queue.md": {
+    "queue.html": "5f9bd63d",
+    "queue.tex": "06cb9c5b"
+  },
+  "files/lektionen_fs25/250226/binaersystem.md": {
+    "binaersystem.html": "f98aad60",
+    "binaersystem.tex": "8a15cf9b"
+  },
+  "files/lektionen_fs25/250305/bst.ipynb": {
+    "bst.html": "e980e244",
+    "bst.tex": "f288f8d6"
+  },
+  "files/lektionen_fs25/250319/base64.md": {
+    "base64.html": "b2c0e12d",
+    "base64.tex": "d1ab76d7"
+  },
+  "files/lektionen_fs25/250326/lernziele.md": {
+    "lernziele.html": "608c710b",
+    "lernziele.tex": "f61ecdd2"
+  },
+  "files/lektionen_fs25/250416/datenbank.md": {
+    "datenbank.html": "be92ea1b",
+    "datenbank.tex": "dd99113a"
+  },
+  "files/lektionen_fs25/250507/sql.md": {
+    "sql.html": "7f21bc05",
+    "sql.tex": "ab00bbc1"
+  },
+  "files/lektionen_fs25/250521/lernziele.md": {
+    "lernziele.html": "9fdd8f33",
+    "lernziele.tex": "1e462a1e"
+  },
+  "files/lektionen_hs25/250820/networks.qmd": {
+    "networks.html": "d832b7ae",
+    "networks.tex": "df6fc838"
+  },
+  "files/lektionen_hs25/250820/tcpip.qmd": {
+    "tcpip.html": "a089804b",
+    "tcpip.tex": "87ff53a1"
+  },
+  "files/lektionen_hs25/250820/nat.qmd": {
+    "nat.html": "67dd2e79",
+    "nat.tex": "5b8806b9"
+  },
+  "files/lektionen_hs25/250820/tld.qmd": {
+    "tld.html": "038975ce",
+    "tld.tex": "17912c81"
+  },
+  "files/lektionen_hs25/250827/three_way_handshake.md": {
+    "three_way_handshake.html": "07447adb",
+    "three_way_handshake.tex": "f5fdc2bf"
+  },
+  "files/lektionen_hs25/250903/sockets.md": {
+    "sockets.html": "6847b940",
+    "sockets.tex": "d5d7f393"
+  },
+  "files/lektionen_hs25/250903/sockets.qmd": {
+    "sockets.html": "26f059f9",
+    "sockets.tex": "a6dbd73f"
+  },
+  "files/lektionen_hs25/250910/caesar_chiffre.ipynb": {
+    "caesar_chiffre.html": "66d4328a",
+    "caesar_chiffre.tex": "692f0432"
+  },
+  "files/lektionen_hs25/250910_file_handling/files.ipynb": {
+    "files.html": "c2e2fdb7",
+    "files.tex": "fafa3ab2"
+  },
+  "files/lektionen_hs25/250917_vigenre/viginere.ipynb": {
+    "viginere.html": "5864d5d2",
+    "viginere.tex": "e33bab2c"
+  },
+  "files/lektionen_hs25/250917_vigenre/vigenere.ipynb": {
+    "vigenere.html": "d28a3e78",
+    "vigenere.tex": "cad3e67e"
+  },
+  "files/lektionen_hs25/250924_break_vienere/break.ipynb": {
+    "break.html": "70e297d8",
+    "break.tex": "b4a5fd79"
+  },
+  "files/lektionen_hs25/250918_vigenere_python/python_implementation.ipynb": {
+    "python_implementation.html": "232d1527",
+    "python_implementation.tex": "a734d342"
+  },
+  "files/lektionen_hs25/260107_plain_text_writing/plain_text_writing.md": {
+    "plain_text_writing.html": "689f0b38",
+    "plain_text_writing.tex": "599aad85"
+  },
+  "files/lektionen_hs25/260114_references/referenzen.md": {
+    "referenzen.html": "8164ab23",
+    "referenzen.tex": "9a39cf92"
+  },
+  "files/lektionen_hs25/260114_zotero/zotero.md": {
+    "zotero.html": "cdb8731a",
+    "zotero.tex": "d0031bbf"
+  },
+  "files/lektionen_hs25/250924_break_vienere/kasisky.ipynb": {
+    "kasisky.html": "0022f292",
+    "kasisky.tex": "2b7770cc"
+  },
+  "files/lektionen_hs25/251105_symetricencryption/chapter/ascii_utf.qmd": {
+    "ascii_utf.html": "42d4b18a",
+    "ascii_utf.tex": "94db2c63"
+  },
+  "files/lektionen_hs25/251105_symetricencryption/chapter/vigenere_saphira_tabelleLSG.md": {
+    "vigenere_saphira_tabelleLSG.html": "d359c272",
+    "vigenere_saphira_tabelleLSG.tex": "5a4582c3"
+  },
+  "files/lektionen_hs25/251105_symetricencryption/symetricencryption.qmd": {
+    "symetricencryption.html": "5d69db8a",
+    "symetricencryption.tex": "c334bdf2"
+  },
+  "files/lektionen_hs25/251112_xorencryption/chapter/xor_encryption.ipynb": {
+    "xor_encryption.html": "4578ed04",
+    "xor_encryption.tex": "86f744f1"
+  },
+  "files/lektionen_hs25/251112_xorencryption/xorencryption.md": {
+    "xorencryption.html": "8e67ad48",
+    "xorencryption.tex": "d06ef971"
+  },
+  "files/lektionen_hs25/251126_aesencryption/aesencryption.md": {
+    "aesencryption.html": "6203a973",
+    "aesencryption.tex": "a8696272"
+  },
+  "files/lektionen_hs25/251126_aesencryption/chapter/aes_encryption.ipynb": {
+    "aes_encryption.html": "56b26440",
+    "aes_encryption.tex": "bf103b46"
+  },
+  "files/lektionen_hs25/251203_dh_rsa/deffiehellman.md": {
+    "deffiehellman.html": "1a35f405",
+    "deffiehellman.tex": "737a394c"
+  },
+  "files/lektionen_hs25/251203_dh_rsa/rsaasymetricencryption.md": {
+    "rsaasymetricencryption.html": "590ddc91",
+    "rsaasymetricencryption.tex": "20f5719c"
+  },
+  "files/lektionen_hs25/251210_signature/signatureexplained.md": {
+    "signatureexplained.html": "665ac9bd",
+    "signatureexplained.tex": "e21442c1"
+  },
+  "files/lektionen_hs25/251217_lk_ki/KannListe.md": {
+    "KannListe.html": "4f66924c",
+    "KannListe.tex": "a7f7c703"
+  },
+  "files/lektionen_hs25/251217_lk_ki/kiexplained.md": {
+    "kiexplained.html": "50bcbf01",
+    "kiexplained.tex": "eb40d0dd"
+  }
+}
