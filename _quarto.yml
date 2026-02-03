@@ -43,6 +43,5 @@ format:
     toc: false
     include-in-header: preamble.tex
     code-line-numbers: true 
-    mainfont: "Times New Roman"
-    CJKmainfont: "Microsoft YaHei"
-    monofont: "Consolas"
+    mainfont: "TeX Gyre Termes"
+    monofont: "TeX Gyre Cursor"
