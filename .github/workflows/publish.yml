@@ -36,16 +36,21 @@ jobs:
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Install TinyTeX and Fonts
+      - name: Install TinyTeX directly
         run: |
-          quarto install tinytex --update-path
-          tlmgr update --self
-          tlmgr install tex-gyre luatexbase luaotfload fontspec
+          wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh
+          echo "$HOME/.TinyTeX/bin/x86_64-linux" >> $GITHUB_PATH
 
-      - name: Verify Fonts
+      - name: Install LaTeX packages
         run: |
+          export PATH="$HOME/.TinyTeX/bin/x86_64-linux:$PATH"
+          tlmgr update --self
+          tlmgr install tex-gyre luatexbase luaotfload fontspec latexmk
+
+      - name: Update font cache
+        run: |
+          export PATH="$HOME/.TinyTeX/bin/x86_64-linux:$PATH"
           luaotfload-tool --update
-          luaotfload-tool --find="TeX Gyre Termes"
 
       - name: Render Quarto Project
         run: quarto render
