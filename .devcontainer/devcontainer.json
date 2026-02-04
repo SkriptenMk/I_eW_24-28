@@ -1,5 +1,5 @@
 {
-  "name": "Quarto Website (XeLaTeX)",
+  "name": "Quarto Website (lualatex)",
   "build": {
     "dockerfile": "Dockerfile",
     "context": ".."

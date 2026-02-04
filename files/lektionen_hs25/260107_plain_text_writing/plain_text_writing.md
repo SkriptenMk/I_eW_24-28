@@ -128,7 +128,7 @@ meaning of the individual entries is largely self-explanatory.
 from: markdown                      # Source format   
 to: pdf                             # Target format  
 standalone: true                    # Forces standalone document  
-pdf-engine: xelatex                 # Selects a specific pdf-engine  
+pdf-engine: lualatex                 # Selects a specific pdf-engine  
 output-file: output.pdf             # Name of the output file  
 metadata:                           # Document-specific details  
   title: "Guide"                    # Title  

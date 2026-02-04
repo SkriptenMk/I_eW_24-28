@@ -47,13 +47,13 @@ quarto render files/lektionen_hs25/251210_dh_rsa/signatureexplained.md --execute
 
 ## Details zum Devcontainer
 
-Diese DevContainer-Konfiguration stellt eine Entwicklungsumgebung bereit, in der Quarto und eine LaTeX-Umgebung (XeLaTeX) installiert sind. Damit kannst du die Website bauen und PDF-Ausgaben erzeugen.<br>
+Diese DevContainer-Konfiguration stellt eine Entwicklungsumgebung bereit, in der Quarto und eine LaTeX-Umgebung (lualatex) installiert sind. Damit kannst du die Website bauen und PDF-Ausgaben erzeugen.<br>
 Weiter ist eine Phython Umgebung vorhanden, so dass die Jupiterlabs des Projektes ausgeführt werden können.
 
 ### Dateien für den Devcontainer
 
 - `.devcontainer/Dockerfile` 
-    — baut ein Ubuntu-basiertes Image mit Quarto CLI und einer minimalen TeX-Installation (`xelatex`).
+    — baut ein Ubuntu-basiertes Image mit Quarto CLI und einer minimalen TeX-Installation (`lualatex`).
 - `.devcontainer/devcontainer.json` 
     — VS Code DevContainer-Konfiguration.
 

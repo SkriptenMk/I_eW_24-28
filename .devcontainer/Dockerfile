@@ -1,4 +1,4 @@
-# Devcontainer base image for Quarto website with XeLaTeX for PDF output
+# Devcontainer base image for Quarto website with lualatex for PDF output
 FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -24,7 +24,7 @@ RUN apt-get update \
        procps \
        sudo \
        build-essential \
-    # minimal TeX packages to support xelatex-based PDF output
+    # minimal TeX packages to support lualatex-based PDF output
     texlive-xetex \
     texlive-latex-recommended \
     texlive-latex-extra \

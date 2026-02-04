@@ -34,7 +34,7 @@ output-file: output.pdf
 from: markdown
 to: pdf
 # lualatex is better for special characters
-pdf-engine: lualatex # or xelatex, pdflatex
+pdf-engine: lualatex # or lualatex, pdflatex
 
 # activate citeproc - responsible for loading the bibliography
 citeproc: true
