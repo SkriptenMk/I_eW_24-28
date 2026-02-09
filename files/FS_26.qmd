@@ -1,0 +1,9 @@
+---
+title: "Spring Term Materials 2026"
+date-format: DD.MM.YYYY
+listing:
+  contents: lektionen_fs26/**
+  type: table
+  sort: date
+---
+
