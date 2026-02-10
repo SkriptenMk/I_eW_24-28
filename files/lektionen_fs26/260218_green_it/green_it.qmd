@@ -1,13 +1,15 @@
 ## Green IT: The Environmental Footprint of Information Technology—With a Focus on Coltan Conflicts
 
-> **Key Takeaway:**  
-> The environmental footprint of IT extends far beyond energy use
-> and e-waste. It includes hidden social and ecological costs, such
-> as violent conflicts over minerals like coltan, which are
-> essential for our digital devices. Understanding these indirect
-> costs is crucial for making technology more sustainable.
+::: {.callout-note}
+## Key Takeaway:
 
----
+The environmental footprint of IT extends far beyond energy use
+and e-waste. It includes hidden social and ecological costs, such
+as violent conflicts over minerals like coltan, which are
+essential for our digital devices. Understanding these indirect
+costs is crucial for making technology more sustainable.
+:::
+
 
 ### Introduction: What Is the Environmental Footprint of IT?
 
@@ -19,7 +21,7 @@ the costs of computing, and the indirect costs, which include the
 often-overlooked consequences of resource conflicts such as those
 surrounding coltan.
 
----
+
 
 ## Environmental Costs of Hardware
 
@@ -185,12 +187,13 @@ economic gains from mineral extraction.
   enforcement is weak, and certification schemes have been
   undermined by fraud and lack of oversight.
 
-> **Key Finding:**  
-> The true cost of our digital devices includes not only
-> environmental degradation but also the perpetuation of conflict
-> and human suffering in mining regions.
+::: {.callout-note}
+## Key Finding  
 
----
+The true cost of our digital devices includes not only
+environmental degradation but also the perpetuation of conflict
+and human suffering in mining regions.
+:::
 
 ## Table: Main Environmental and Social Impacts of IT
 
