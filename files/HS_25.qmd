@@ -11,4 +11,3 @@ listing:
     - "date"
     - "title"
 ---
-
