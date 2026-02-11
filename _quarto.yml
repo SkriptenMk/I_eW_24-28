@@ -27,6 +27,8 @@ website:
           href: files/FS_25.qmd
         - text: Autumn Term 2025/2026
           href: files/HS_25.qmd
+        - text: Spring Term 2026
+          href: files/FS_26.qmd
 
 format:
   html:
