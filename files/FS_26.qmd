@@ -2,7 +2,10 @@
 title: "Spring Term Materials 2026"
 date-format: DD.MM.YYYY
 listing:
-  contents: lektionen_fs26/**
+  contents: 
+    - "lektionen_hs6/**/*.ipynb"
+    - "lektionen_hs6/**/*.qmd"
+    - "lektionen_hs6/**/*.md"
   type: table
   sort: date
 ---
