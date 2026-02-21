@@ -3,6 +3,7 @@ Es geht bei dieser Aufgabe darum, dass Sie lernen, einen Text mit integrierten s
 
 ### Intent
 I want 
+
 * as a first priority, that you use the possibilities of Markdown and Jupyter Notebooks to perform your analysis;
 * as a second priority, that you create a traceable data visualisation within your text and
 * as a third priority, that you can create overview graphics and schematic representations with tools from the 'Diagrams as Code' family (Mermaid, PlantUML).
@@ -32,45 +33,45 @@ The following sources can be used for the quantitative aspects of the analysis.
    These sources show how deeply OSS is already rooted in infrastructure.
    
     * **GitHub – The State of the Octoverse (2025)**:    
-        - **Content**: Statistics on the number of repositories, the most active languages (Python, TypeScript) and the growth of AI projects.        
-        - **Key Value**: Shows enormous growth (e.g. over 395 million repositories worldwide).       
-        - **Link**: [github.blog/octoverse](https://github.blog/news-insights/octoverse/)
+        * **Content**: Statistics on the number of repositories, the most active languages (Python, TypeScript) and the growth of AI projects.        
+        * **Key Value**: Shows enormous growth (e.g. over 395 million repositories worldwide).       
+        * **Link**: [github.blog/octoverse](https://github.blog/news-insights/octoverse/)
         
-    - **Linux Foundation – World of Open Source Survey (2025)**:    
-        - **Content**: Focus on adoption in companies and governments.        
-        - **Key Metric**: OSS penetration in areas such as Cloud (49%), Web development (46%) and AI/ML (40%).        
-        - **Link**: [linuxfoundation.org/research](https://www.linuxfoundation.org/research)
+    * **Linux Foundation – World of Open Source Survey (2025)**:    
+        * **Content**: Focus on adoption in companies and governments.        
+        * **Key Metric**: OSS penetration in areas such as Cloud (49%), Web development (46%) and AI/ML (40%).        
+        * **Link**: [linuxfoundation.org/research](https://www.linuxfoundation.org/research)
         
-    - **W3Techs – Web Technology Surveys**:    
-        - **Content**: Real-time data on the use of web servers (Nginx, Apache) and operating systems on the web.        
-        - **Link**: [w3techs.com](https://w3techs.com/)
+    * **W3Techs – Web Technology Surveys**:    
+        * **Content**: Real-time data on the use of web servers (Nginx, Apache) and operating systems on the web.        
+        * **Link**: [w3techs.com](https://w3techs.com/)
 
 2. Economic Aspects & Costs (TCO)
 
    Arguments on "licence fees vs. operating costs".
 
-    - **State of Open Source Report (Perforce/OSI)**:    
-        - **Content**: Annual survey of IT decision-makers on the reasons for using OSS.        
-        - **2025 Metric**: 53% of companies cite "no licence fees/cost reduction" as the main reason (a significant increase over previous years).        
-        - **Link**: [opensource.org](https://opensource.org/)
+    * **State of Open Source Report (Perforce/OSI)**:    
+        * **Content**: Annual survey of IT decision-makers on the reasons for using OSS.        
+        * **2025 Metric**: 53% of companies cite "no licence fees/cost reduction" as the main reason (a significant increase over previous years).        
+        * **Link**: [opensource.org](https://opensource.org/)
         
-    - **Quandary Peak Research (2025)**:    
-        - **Content**: Scientific analysis of the economic value of OSS.        
-        - **Statement**: Companies would have to spend **3.5 times** as much for proprietary software to obtain the same functionality if OSS did not exist.
+    * **Quandary Peak Research (2025)**:    
+        * **Content**: Scientific analysis of the economic value of OSS.        
+        * **Statement**: Companies would have to spend **3.5 times** as much for proprietary software to obtain the same functionality if OSS did not exist.
         
 
  3. Security & Risks
 
     These sources are essential for the "Security" section of the assignment.
 
-    - **Synopsys (Black Duck) – Open Source Security and Risk Analysis (OSSRA) Report**:    
-        - **Content**: Analysis of over 1,000 commercial codebases for security vulnerabilities and licence conflicts.        
-        - **2025 Metric**: 97% of all applications contain OSS components; 81% have at least one critical security vulnerability (often due to outdated versions).        
-        - **Link**: [blackduck.com/ossra](https://www.blackduck.com/blog/open-source-trends-ossra-report.html)
+    * **Synopsys (Black Duck) – Open Source Security and Risk Analysis (OSSRA) Report**:    
+        * **Content**: Analysis of over 1,000 commercial codebases for security vulnerabilities and licence conflicts.        
+        * **2025 Metric**: 97% of all applications contain OSS components; 81% have at least one critical security vulnerability (often due to outdated versions).        
+        * **Link**: [blackduck.com/ossra](https://www.blackduck.com/blog/open-source-trends-ossra-report.html)
         
-    - **Tidelift – State of the Open Source Maintainer Report**:    
-        - **Content**: Highlights the "risk side" of maintenance. How many projects are managed by only one person? (Keyword: Supply Chain Security).        
-        - **Link**: [tidelift.com](https://tidelift.com/)
+    * **Tidelift – State of the Open Source Maintainer Report**:    
+        * **Content**: Highlights the "risk side" of maintenance. How many projects are managed by only one person? (Keyword: Supply Chain Security).        
+        * **Link**: [tidelift.com](https://tidelift.com/)
 
 
 #### Evaluation

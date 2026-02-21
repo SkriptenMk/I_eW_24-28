@@ -259,5 +259,25 @@
   "files/lektionen_fs26/260218_green_it/green_it.qmd": {
     "green_it.html": "b43ccf90",
     "green_it.tex": "b7a2cf61"
+  },
+  "files/FS_26.qmd": {
+    "FS_26.html": "93e4d240",
+    "FS_26.tex": "c0d0316c"
+  },
+  "files/lektionen_fs26/260218_green_it_ex/green_it.ipynb": {
+    "green_it.html": "b09c3d23",
+    "green_it.tex": "28b6c110"
+  },
+  "files/lektionen_fs26/260225_assignment/assignment.md": {
+    "assignment.html": "8dd32ced",
+    "assignment.tex": "75156bd4"
+  },
+  "files/lektionen_hs25/260121_git/versioning.md": {
+    "versioning.html": "ad018eea",
+    "versioning.tex": "254993ae"
+  },
+  "README-devcontainer.md": {
+    "README-devcontainer.html": "aa5bf817",
+    "README-devcontainer.tex": "53c52a92"
   }
 }
