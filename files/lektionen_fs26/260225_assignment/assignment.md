@@ -94,7 +94,8 @@ The work will be evaluated according to the following criteria. The weighting re
 * **Tech Stack**: Use Jupyter Notebooks with Python and Quarto to create your final product.
 * **Format**: The analysis can be submitted as a PDF or HTML. In any case, all source files used (depending on the workflow .qmd or .ipynb, as well as the .yml file and any images/data) must be submitted.
 * **Basic Configuration**: Along with this assignment,
-  [you will receive a file `_quarto.yml` (right-click to download)](quarto.yml) with a basic configuration for creating a PDF.
+  [you will receive a file `_quarto.yml` (right-click to download and
+  name the file `_quarto.yml` - the underscore is essential)](quarto.yml) with a basic configuration for creating a PDF.
 
 ### Contact
 For questions, I am available during lessons, via Teams or by 
