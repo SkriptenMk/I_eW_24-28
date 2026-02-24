@@ -20,4 +20,4 @@ zurückzugreifen.
 
 Hier die überarbeitete Darstellung der Startsequenz:
 
-![Startsequenz](image.png)
+![Startsequenz](image.png){height="90%" fig-align="center"}
