@@ -261,19 +261,27 @@
     "green_it.tex": "b7a2cf61"
   },
   "files/FS_26.qmd": {
-    "FS_26.html": "0e23b95f",
-    "FS_26.tex": "8ac80f13"
-  },
-  "files/lektionen_hs25/260121_git/versioning.md": {
-    "versioning.html": "2b38791f",
-    "versioning.tex": "5dd771bb"
+    "FS_26.html": "93e4d240",
+    "FS_26.tex": "c0d0316c"
   },
   "files/lektionen_fs26/260218_green_it_ex/green_it.ipynb": {
-    "green_it.html": "e12e3844",
-    "green_it.tex": "28d55d12"
+    "green_it.html": "b09c3d23",
+    "green_it.tex": "28b6c110"
+  },
+  "files/lektionen_fs26/260225_assignment/assignment.md": {
+    "assignment.html": "8dd32ced",
+    "assignment.tex": "75156bd4"
+  },
+  "files/lektionen_hs25/260121_git/versioning.md": {
+    "versioning.html": "ad018eea",
+    "versioning.tex": "254993ae"
   },
   "README-devcontainer.md": {
-    "README-devcontainer.html": "8c731b86",
-    "README-devcontainer.tex": "2cacbe37"
+    "README-devcontainer.html": "aa5bf817",
+    "README-devcontainer.tex": "53c52a92"
+  },
+  "files/lektionen_fs26/260225_oss/oss.md": {
+    "oss.html": "f8cc9a42",
+    "oss.tex": "162050f4"
   }
 }
