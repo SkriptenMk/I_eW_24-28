@@ -7,6 +7,8 @@ listing:
     - "lektionen_fs26/**/*.qmd"
     - "lektionen_fs26/**/*.md"
   type: table
-  sort: date
+  sort: 
+    - "date"
+    - "title"
 ---
 
