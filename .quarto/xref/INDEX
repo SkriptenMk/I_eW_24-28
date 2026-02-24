@@ -279,5 +279,9 @@
   "README-devcontainer.md": {
     "README-devcontainer.html": "aa5bf817",
     "README-devcontainer.tex": "53c52a92"
+  },
+  "files/lektionen_fs26/260225_oss/oss.md": {
+    "oss.html": "f8cc9a42",
+    "oss.tex": "162050f4"
   }
 }
