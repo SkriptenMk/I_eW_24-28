@@ -259,5 +259,21 @@
   "files/lektionen_fs26/260218_green_it/green_it.qmd": {
     "green_it.html": "b43ccf90",
     "green_it.tex": "b7a2cf61"
+  },
+  "files/FS_26.qmd": {
+    "FS_26.html": "0e23b95f",
+    "FS_26.tex": "8ac80f13"
+  },
+  "files/lektionen_hs25/260121_git/versioning.md": {
+    "versioning.html": "2b38791f",
+    "versioning.tex": "5dd771bb"
+  },
+  "files/lektionen_fs26/260218_green_it_ex/green_it.ipynb": {
+    "green_it.html": "e12e3844",
+    "green_it.tex": "28d55d12"
+  },
+  "README-devcontainer.md": {
+    "README-devcontainer.html": "8c731b86",
+    "README-devcontainer.tex": "2cacbe37"
   }
 }
