@@ -1,11 +1,16 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - "**/*.ipynb"
 
 execute:
   freeze: auto
 
 lang: en
+
+language: 
+  code-tools-source: "Right Click to Download"
 
 bibliography: references.bib
 csl: chicago_custom.csl
