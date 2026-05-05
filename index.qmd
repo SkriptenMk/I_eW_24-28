@@ -22,7 +22,7 @@ expected during the course of the semester.
 | 01.04.2026 | SQL DML: INSERT, UPDATE, DELETE |
 | 08.04.2026 | Database Design: Normalisation |
 | 15.04.2026 | Database Project: Conception |
-| 06.05.2026 | Database Project: Implementation |
+| 06.05.2026 | Cyber Threats |
 | 13.05.2026 | Information Security: Protection Goals & Threats |
 | 20.05.2026 | Revision: SQL & Information Security |
 | 27.05.2026 | Assessment |
