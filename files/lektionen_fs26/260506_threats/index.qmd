@@ -1,0 +1,55 @@
+---
+title: "Cyber Risks – From the Everyday Lives of Youth to a Societal Problem"
+lang: en-GB
+date: last-modified
+date-format: "D MMMM YYYY"
+---
+
+## Cyber Risks in the Daily Lives of Secondary School Students
+
+The smartphone lies on the desk, notifications pop up, and a tab with the latest YouTube video is running in the background. For students at grammar schools and sixth forms, the digital world is a natural habitat – and that is precisely why it is also a space with real risks [@jugendmedien2023].
+
+Phishing and Social Engineering encounter young people more often than they realise. A fake email from "Spotify Support", an SMS with a link to a supposed parcel service, or an Instagram message from an unknown account promising an "exclusive prize" – behind all these contact attempts lies the same goal: to trick the recipient into revealing login credentials or installing malware [@bacs2024; @skp2023].
+
+The crucial point: social engineering does not work through technical superiority, but through targeted psychological manipulation. Attackers use a handful of proven mechanisms. Urgency creates stress and prevents calm reflection ("Your account will be blocked in 24 hours"). Authority lowers the threshold for reaction ("Message from the school IT department"). Scarcity triggers the fear of missing out ("Only 2 spots left"). Familiarity fakes an existing relationship – for example, by an attacker using the name of a real classmate whose profile they have previously scouted [@enisa2024]. Those who recognise these patterns can pause and assess a supposedly urgent message with a cool head before acting.
+
+Identity Theft is a direct consequence of successful phishing attacks. Anyone who takes over another person's account credentials can communicate, shop, or cause damage on social networks in that person's name. For young people, this is particularly delicate: a compromised account can spread embarrassing or damaging content that has long-lasting effects [@skp2023].
+
+Cyberbullying and Deepfakes – Technically speaking, cyberbullying is not a classic "cyber attack", but it is one of the most powerful digital risks for the 15-to-20 age group [@projuventute2022]. The ability to act anonymously, spread content in seconds, and reach victims around the clock significantly exacerbates the psychological consequences compared to traditional bullying.
+
+A new, particularly serious dimension is added by Deepfakes. With freely available AI tools, it is now possible to create deceptively real image, audio, and video recordings that show or have a real person saying things that never happened [@enisa2024]. In a school environment, this means that students can create and distribute compromising recordings of others without any technical expertise. The consequences for those affected – damage to reputation, social withdrawal, psychological stress – are real, even if the recordings are forged. In legal terms, the primary instrument in Switzerland is the protection of personality rights under Art. 28 et seq. of the Swiss Civil Code (ZGB). However, these laws date back to an era of analogue communication. Furthermore, asserting the rights guaranteed there often fails due to technical hurdles.
+
+Insecure Passwords and Re-use are widespread in this age group [@jugendmedien2023]. Anyone using the same password for Netflix, their school account, and online banking risks a single data breach triggering a chain reaction. Data leaks are not the exception: large platforms are regularly compromised, and stolen credentials end up on the Darknet within hours [@bacs2024].
+
+Data as Currency – many young people use apps and services for "free"; they do not read the privacy policies and allow access to location data, usage profiles, and personal preferences. This data is then passed on to third parties [@jugendmedien2023]. Advertisers and data brokers pay for this information – the product here is not the app, but the user's data.
+
+## From Personal Threat to Societal Risk
+
+The risks described affect individuals – but they are expressions of a much larger phenomenon. Cyber risks have long since become a societal challenge that threatens the economy, the state, and critical infrastructure alike [@enisa2024; @css2024].
+
+Where a phishing attack empties a bank account in the private sphere, Ransomware targets companies and authorities: attackers encrypt all the data on a system and demand a ransom for its release [@bacsransomware2024]. Hospitals, municipalities, and industrial companies in Switzerland have already been victims of such attacks – with sometimes grave consequences for operational capabilities.
+
+Critical Infrastructure such as power supply, water supply, traffic control systems, or financial market infrastructure are increasingly networked and thus vulnerable [@css2024]. A successful attack on a transformer station or a sewage plant is no longer a science-fiction scenario, but a serious risk that must be accounted for in national security strategies.
+
+Disinformation and Manipulation are the digital equivalent of social engineering in the private sphere: coordinated campaigns use social networks to influence public opinion, undermine trust in institutions, or destabilise political processes [@europol2023]. Deepfakes also play a growing role here – forged statements by politicians can reach millions of people within minutes [@enisa2024].
+
+Finally, increasing connectivity (the "Internet of Things") creates new risks: industrial plants, vehicles, medical devices – the more devices are online, the larger the potential attack surface [@enisa2024].
+
+## Who Is Behind It? A Look at the Perpetrators
+
+Cyber attacks are often associated with the image of the lone hacker in a dark basement. The reality is considerably more complex. Perpetrators can be roughly divided into four categories, which differ greatly in motivation, resources, and professionalism – and which target very different groups depending on the context [@europol2023; @enisa2024].
+
+Opportunists and Youths are at one end of the spectrum. Technical tools – phishing kits, deepfake apps, hacking tutorials – are freely available online [@skp2023]. Cyberbullying or the creation and distribution of deepfakes no longer requires technical expertise. Their primary victims are peers from their immediate social circle: schoolmates, acquaintances, or ex-partners [@projuventute2022]. Often, there is a lack of awareness of wrongdoing – what begins as a prank or "fun" can be punishable under Art. 143, 143bis, 144bis, and 179quater of the Swiss Criminal Code (StGB) and can cause significant and lasting psychological damage to those affected.
+
+Cybercriminals act with clear economic motivation. Organised groups sell stolen credentials, operate "Ransomware-as-a-Service" – meaning they rent out their attack tools to other criminals – or steal millions through industrial-scale phishing campaigns [@europol2023]. Young people are particularly interesting to this perpetrator group as gullible victims of phishing: they have access to means of payment, are less suspicious than adults, and often use insecure login data [@jugendmedien2023]. At the same time, companies and authorities are the focus of ransomware attacks – here, the financial yield of a successful attack is many times higher [@bacsransomware2024].
+
+Hacktivists pursue political or ideological goals. They paralyse the websites of organisations they oppose or publish stolen data to draw attention to a cause. Schools and young people are generally not a primary target for this group; the focus is on state institutions, companies, or media organisations [@europol2023]. The line between political protest and criminal action is fluid and often legally controversial.
+
+State Actors – intelligence services and specialised military units – engage in cyber espionage, sabotage foreign infrastructure, or influence political processes in other countries through disinformation campaigns [@css2024]. They are the only perpetrator group that specifically targets critical infrastructure: power grids, water supplies, financial systems, or military communication. Such operations are highly professional, long-term, and equipped with significant state resources [@css2024; @enisa2024]. For individuals and young people, they are generally not an immediate threat – but they are for society as a whole, which depends on functioning infrastructure.
+
+What connects all categories: cyberspace significantly lowers the entry barrier for attacks. Anonymity, global reach, and the fact that attacks are often cross-border and thus difficult to track make it attractive – for young people with bad intentions as well as for state-funded secret services [@bacs2024]. Cyber risks are thus not just a technical problem, but a legal, economic, and political challenge of the first order. Anyone who understands the perpetrators, their methods, and their goals understands an essential part of the risks of our networked present.
+
+## Literature and Sources {.unnumbered}
+
+::: {#refs}
+:::
