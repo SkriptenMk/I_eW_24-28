@@ -13,4 +13,4 @@ format:
         href: index.pdf
       - text: "Download Notebook (right click to download)"
         icon: journal-code
-        href: index.ipynb
+        href: index.qmd
