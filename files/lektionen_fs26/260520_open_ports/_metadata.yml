@@ -11,6 +11,3 @@ format:
       - text: "Download PDF (right click to download)"
         icon: file-pdf
         href: index.pdf
-      - text: "Download Notebook (right click to download)"
-        icon: journal-code
-        href: index.qmd
