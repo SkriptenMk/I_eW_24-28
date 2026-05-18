@@ -53,7 +53,7 @@ You need two tools: **Wireshark** (passive network sniffer) and **Nmap** (active
 Before we scan, we use built-in tools to see which programs are currently waiting for incoming connections.
 
 
-Open PowerShell as a normal user:
+Open PowerShell as a normal user an enter the following commands:
 
 ```powershell
 Get-NetTCPConnection -State Listen |
