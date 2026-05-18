@@ -1,4 +1,4 @@
-# What this is about
+## What this is about
 
 In this self-experiment you will observe your own computer from two perspectives:
 
@@ -7,7 +7,7 @@ In this self-experiment you will observe your own computer from two perspectives
 
 The goal is not to become a hacker, but to gain a realistic picture of your own attack surface and your own data trail. From this, the concrete measures of «cyber self-defence» – firewall, updates, tracker protection, encryption – follow almost on their own.
 
-## Learning objectives
+### Learning objectives
 
 After this exercise you will be able to
 
@@ -17,7 +17,7 @@ After this exercise you will be able to
 - use display filters in Wireshark to selectively reveal DNS, TLS and tracker traffic;
 - justify why today's protective measures comprise far more than just «closing all ports».
 
-# Legal and ethical framework — **please read first**
+## Legal and ethical framework — **please read first**
 
 Port scans and network captures are unproblematic in Switzerland only on **your own** systems and in **your own** network. Even a scan against a third-party computer may fulfil the offence of unauthorised access to a data processing system (Art. 143bis of the Swiss Criminal Code, StGB).
 
@@ -27,11 +27,10 @@ Port scans and network captures are unproblematic in Switzerland only on **your 
 - On the school network only with explicit permission, and only on your own laptop.
 - Captures may contain third-party data (e.g. devices of classmates on the same WLAN). Therefore do **not share** capture files, and delete them after the exercise.
 
-# Preparation: installing the software
+## Preparation: installing the software
 
 You need two tools: **Wireshark** (passive network sniffer) and **Nmap** (active port scanner).
 
-## Windows 11
 
 1. Download Wireshark from <https://www.wireshark.org/download.html> (64-bit Windows Installer).
 2. Run the installer. During installation, **Npcap** is installed alongside. Important:
@@ -47,78 +46,14 @@ You need two tools: **Wireshark** (passive network sniffer) and **Nmap** (active
 
    should print the version number.
 
-## Linux (Debian / Ubuntu / Mint / TuxedoOS)
 
-1. Install both packages in one step:
 
-   ```bash
-   sudo apt update
-   sudo apt install wireshark nmap
-   ```
-
-2. During the Wireshark installation, the question **«Should non-superusers be able to capture packets?»** appears. Answer **Yes**. If the question does not appear, or you dismissed it too quickly:
-
-   ```bash
-   sudo dpkg-reconfigure wireshark-common
-   ```
-
-3. Add your own user to the `wireshark` group:
-
-   ```bash
-   sudo usermod -aG wireshark $USER
-   ```
-
-4. **Log out and back in** (or reboot) so that the new group membership takes effect. Test:
-
-   ```bash
-   id | grep wireshark
-   ```
-
-   must show `wireshark` in the group list.
-
-5. Quick test:
-
-   ```bash
-   nmap --version
-   wireshark --version
-   ```
-
-## On Fedora / openSUSE
-
-```bash
-# Fedora
-sudo dnf install wireshark nmap
-
-# openSUSE
-sudo zypper install wireshark nmap
-```
-
-For both distributions, analogously run `sudo usermod -aG wireshark $USER` and log in again.
-
-# Part 1 — Which services are listening on my computer?
+## Part 1 — Which services are listening on my computer?
 
 Before we scan, we use built-in tools to see which programs are currently waiting for incoming connections.
 
-## Linux
 
-In the terminal:
-
-```bash
-ss -tlnp
-```
-
-- `-t` TCP, `-l` listening, `-n` numeric (no DNS resolution), `-p` with process name.
-- For processes belonging to other users, use `sudo ss -tlnp`.
-
-For UDP additionally:
-
-```bash
-ss -ulnp
-```
-
-## Windows 11
-
-PowerShell as a normal user:
+Open PowerShell as a normal user:
 
 ```powershell
 Get-NetTCPConnection -State Listen |
@@ -139,13 +74,13 @@ The classic form also works:
 netstat -ano | findstr LISTENING
 ```
 
-## Observation questions
+### Observation questions
 
 - Which ports are open on your machine? Which services do you suspect behind them?
 - Look up unfamiliar ports (`5353`, `631`, `139`, `445`, `5355`, `5040` …). Do you actually need the corresponding service?
 - On which address is the service listening? `127.0.0.1` (local only), `0.0.0.0` (all network interfaces) or a specific IP?
 
-# Part 2 — Port scan against your own computer
+## Part 2 — Port scan against your own computer
 
 Now we check from the «outside perspective» what actually responds.
 
@@ -166,22 +101,21 @@ nmap -sT -sV -p 1-1024 127.0.0.1
 
 `-sV` attempts to guess the running software and its version on an open port.
 
-## Observation questions
+### Observation questions
 
 - Does the result match your list from Part 1? Where not – why?
 - What do `open`, `closed` and `filtered` mean?
 - What would probably change if you replaced `localhost` with the **IP of your machine on the WLAN**? (Hint: the operating system firewall.)
 
-# Part 3 — Wireshark observes the scan
+## Part 3 — Wireshark observes the scan
 
 Now we look at the same scan from the network perspective. Wireshark records *what actually happens on the wire*.
 
-## Step 1: Start Wireshark and choose an interface
+### Step 1: Start Wireshark and choose an interface
 
-- **Linux**: In the Wireshark start window, double-click the **`lo`** (loopback) interface.
-- **Windows 11**: Double-click **«Adapter for loopback traffic capture»**. If it does not appear, the loopback option is missing from Npcap (see Installation).
+Double-click **«Adapter for loopback traffic capture»**. If it does not appear, the loopback option is missing from Npcap (see Installation).
 
-## Step 2: (Optional) set a capture filter
+### Step 2: (Optional) set a capture filter
 
 In the start window, in the field next to the interface, enter the capture filter:
 
@@ -191,11 +125,11 @@ tcp
 
 This strips out ARP, mDNS and IPv6 background noise already during capture.
 
-## Step 3: Start the capture
+### Step 3: Start the capture
 
 Click the blue shark-fin icon at the top left. Wireshark now shows all packets live.
 
-## Step 4: In a second window, run the scan
+### Step 4: In a second window, run the scan
 
 Open a terminal/PowerShell and run:
 
@@ -203,7 +137,7 @@ Open a terminal/PowerShell and run:
 nmap -sT -p 1-1024 127.0.0.1
 ```
 
-## Step 5: Stop the capture and analyse
+### Step 5: Stop the capture and analyse
 
 Click the red square. You now see several thousand packets. We use **display filters** to bring out the structure:
 
@@ -216,35 +150,34 @@ Click the red square. You now see several thousand packets. We use **display fil
 
 Enter the filter in the field directly below the toolbar and press Enter.
 
-## Observation questions
+### Observation questions
 
 - How many SYN packets per second does nmap send? What would this mean for a scan across all 65 535 ports?
 - Which of the ports you identified as `open` in Part 2 do you now see with SYN-ACK?
 - What happens after the three-way handshake on an open port with `-sT`? (Tip: look at the FIN or RST packets at the end.)
 
-# Part 4 — What does the computer do when I do nothing?
+## Part 4 — What does the computer do when I do nothing?
 
 Now we reverse the setup: no activity on the computer, but Wireshark listens on the **real network interface**.
 
-## Step 1: Preparation
+### Step 1: Preparation
 
 - Close **all** browser windows.
 - Leave mail clients, cloud sync (OneDrive, Nextcloud, …), messengers and similar tools running, if you have them – we want to observe precisely these.
 
-## Step 2: Restart Wireshark
+### Step 2: Restart Wireshark
 
 This time the interface is:
 
-- **Linux**: `wlan0`, `wlp…` or `eth0` (the real card, *not* `lo`).
-- **Windows 11**: «Wi-Fi» or «Ethernet».
+* «Wi-Fi» or «Ethernet».
 
 Do not set a capture filter.
 
-## Step 3: Wait two minutes
+### Step 3: Wait two minutes
 
 Leave the computer alone for two minutes. Then stop the capture.
 
-## Step 4: Explore with display filters
+### Step 4: Explore with display filters
 
 | Display filter | What you see |
 |---|---|
@@ -256,27 +189,27 @@ Leave the computer alone for two minutes. Then stop the capture.
 
 Particularly informative: **right-click on a DNS row → Follow → UDP Stream**, or **right-click on a TLS Hello → Expand → Server Name Indication**.
 
-## Observation questions
+### Observation questions
 
 - Which hostnames appear even though you are doing nothing? Which applications reveal themselves through them?
 - Can you find update checks, cloud sync, telemetry? Note three concrete examples.
 - Which hostnames do you *not* recognise? How could you identify them?
 
-# Part 5 — Visiting a «harmless» website
+## Part 5 — Visiting a «harmless» website
 
 Now we look at what the browser does when you open a single news page.
 
-## Step 1: Preparation
+### Step 1: Preparation
 
 - Wireshark is still running on the real network card.
 - The browser is still **closed**.
 - Start the capture.
 
-## Step 2: Open one website
+### Step 2: Open one website
 
 Start the browser and visit **one** web page, for example a Swiss news site. Wait until the page has fully loaded, then stop the capture.
 
-## Step 3: Make third parties visible
+### Step 3: Make third parties visible
 
 Display filter:
 
@@ -288,32 +221,32 @@ Wireshark now shows only those TLS handshakes in which the negotiated hostname i
 
 Also useful: **Statistics → Endpoints → IPv4** shows a list of all contacted counterparties with packet counts.
 
-## Observation questions
+### Observation questions
 
 - How many distinct hostnames were contacted for *one* page?
 - Which of them are the news site itself, and which are third parties?
 - Which third parties are recognisably advertising or tracking providers (`doubleclick.net`, `googletagmanager.com`, `facebook.net`, `criteo.com`, `adnxs.com` …)?
 - What does this say about the business model of the site?
 
-## Optional comparison
+### Optional comparison
 
 Install **uBlock Origin** in the browser, clear the cache, repeat Step 2 with the same page and compare the number of third parties.
 
-# Synthesis: what do we take away?
+## Synthesis: what do we take away?
 
 1. **Active view (port scan).** The computer has an attack surface made up of *listening services*. Defence: disable services you do not need, enable the firewall, keep up with updates.
 2. **Passive view (capture at idle).** The computer talks to dozens of servers without any action on your part. Defence: minimise telemetry, choose cloud services deliberately, possibly deploy Pi-hole or NextDNS.
 3. **Passive view (visiting a website).** Browsing creates data trails across entire advertising ecosystems. Defence: content blockers, a privacy-friendly browser, tracking protection, possibly your own DNS resolver.
 4. **What Wireshark does *not* show.** Phishing emails, social engineering, compromised credentials, supply-chain attacks against installed software. This is where the greater risk lies today – which is why we complement technical measures with **behaviour** (password manager, 2FA / passkeys, scepticism towards emails), **resilience** (backups) and **hygiene** (updates, patch management).
 
-# Optional / further exploration
+## Optional / further exploration
 
 - **Enable DNS over HTTPS** (in the browser or system-wide) and repeat the capture: the `dns` filter row stays empty, the DNS traffic now travels wrapped in TLS to a configured resolver.
 - **Survey your own home network** (only there!) with `nmap -sn 192.168.1.0/24` for host discovery. How many devices are connected? Do you recognise all of them?
 - **Try OS fingerprinting** with `nmap -O` against your own computer. How accurate is the guess?
 - **Display filter gallery in Wireshark** (Statistics → Protocol Hierarchy): shows which protocols accounted for which share of your traffic over time.
 
-# Appendix: common pitfalls
+## Appendix: common pitfalls
 
 | Problem | Cause / solution |
 |---|---|
