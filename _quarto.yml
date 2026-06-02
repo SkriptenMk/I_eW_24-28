@@ -13,7 +13,7 @@ language:
   code-tools-source: "Right Click to Download"
 
 bibliography: references.bib
-csl: chicago_custom.csl
+csl: chicagocustom.csl
 
 website:
   title: "Computer Science Course Materials for School Year 2025/26   (2eW)"

@@ -289,5 +289,13 @@
   },
   "files/lektionen_fs26/260520_open_ports/index.qmd": {
     "index.html": "b07efc6e"
+  },
+  "files/lektionen_fs26/260603_leverage_effect/index.ipynb": {
+    "index.html": "7f03bab0"
+  },
+  "files/lektionen_fs26/260603_leverage_effect/draft.ipynb": {
+    "draft.typ": "3696c6ca",
+    "draft.html": "699bd961",
+    "draft.tex": "cda9fafc"
   }
 }
