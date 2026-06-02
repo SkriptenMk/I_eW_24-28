@@ -1,0 +1,13 @@
+title: "8 Leverage Effect"
+author: "Jacques Mock Schindler"
+date: 2026-06-03
+date-format: DD.MM.YYYY
+callout-icon: false
+format:
+  html:
+    code-tools:
+      source: true
+    other-links:
+      - text: "Download PDF (right click to download)"
+        icon: file-pdf
+        href: index.pdf
