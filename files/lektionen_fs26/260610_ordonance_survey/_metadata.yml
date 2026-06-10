@@ -1,0 +1,13 @@
+title: "9 Ordonance Survey"
+author: "Jacques Mock Schindler"
+date: 2026-06-10
+date-format: DD.MM.YYYY
+callout-icon: false
+format:
+  html:
+    code-tools:
+      source: true
+    other-links:
+      - text: "Download PDF (right click to download)"
+        icon: file-pdf
+        href: index.pdf
