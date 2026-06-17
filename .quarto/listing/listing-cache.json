@@ -1,10 +1,9 @@
 {
   "listingMap": {
-    "files\\FS_25.qmd": [
-      "lektionen_fs25/**"
-    ],
-    "files\\HS_24.qmd": [
-      "lektionen_hs24/**"
+    "files/FS_26.qmd": [
+      "lektionen_fs26/**/*.ipynb",
+      "lektionen_fs26/**/*.qmd",
+      "lektionen_fs26/**/*.md"
     ],
     "files/HS_25.qmd": [
       "lektionen_hs25/**/*.ipynb",
@@ -16,11 +15,6 @@
     ],
     "files/HS_24.qmd": [
       "lektionen_hs24/**"
-    ],
-    "files/FS_26.qmd": [
-      "lektionen_fs26/**/*.ipynb",
-      "lektionen_fs26/**/*.qmd",
-      "lektionen_fs26/**/*.md"
     ]
   }
 }
